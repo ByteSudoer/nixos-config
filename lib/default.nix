@@ -5,6 +5,5 @@ in
 {
   inherit (helpers) mkHome;
   inherit (helpers) mkHost;
-  inherit (helpers) mkSystem;
   inherit (helpers) forAllSystems;
 }

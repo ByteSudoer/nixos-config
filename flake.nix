@@ -28,16 +28,18 @@
       pkgs = inputs.nixpkgs;
       inherit (nixpkgs) lib;
       libx = import ./lib { inherit inputs outputs stateVersion; };
-      mkSystem = pkgs: system: hostname: 
-        pkgs.lib.nixosSystem{
+      mkSystem = pkgs: system: hostname:
+        pkgs.lib.nixosSystem {
           inherit system;
-          modules = [];
-          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+          ];
+          specialArgs = { inherit inputs; };
         };
     in
     {
 
-nixosConfigurations = {
+      nixosConfigurations = {
         # bytesudoer = mkSystem inputs.nixpkgs "x86_64-linux" "bytesudoer";
         vm = mkSystem inputs.nixpkgs "x86_64-linux" "vm";
       };

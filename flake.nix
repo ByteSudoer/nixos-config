@@ -28,22 +28,15 @@
       pkgs = inputs.nixpkgs;
       inherit (nixpkgs) lib;
       libx = import ./lib { inherit inputs outputs stateVersion; };
-      mkSystem = pkgs: system: hostname:
-        pkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-          ];
-          specialArgs = { inherit inputs; };
-        };
     in
     {
 
       nixosConfigurations = {
         # bytesudoer = mkSystem inputs.nixpkgs "x86_64-linux" "bytesudoer";
-        vm = mkSystem inputs.nixpkgs "x86_64-linux" "vm";
+        vm = libx.mkHost { hostname = "nixos"; username = "vm"; };
       };
 
+      #nix fmt
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {
           pkgs = nixpkgs.legacyPackages.${system};
@@ -55,13 +48,16 @@
           };
         }
       );
+
       # Devshell for bootstrapping; acessible via 'nix develop' or 'nix-shell' (legacy)
       devShells = libx.forAllSystems (system:
         let pkgs = nixpkgs.legacyPackages.${system};
         in import ./shell.nix { inherit pkgs; }
       );
+
       # Custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs outputs; };
+
       # Custom packages; acessible via 'nix build', 'nix shell', etc
       packages = libx.forAllSystems (system:
         let pkgs = nixpkgs.legacyPackages.${system};

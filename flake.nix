@@ -7,8 +7,8 @@
 
     agenix = {
 
-    url = "github:ryantm/agenix";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
@@ -17,26 +17,26 @@
     };
 
     home-manager = {
-    url = "github:nix-community/home-manager/release-23.11";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-formatter-pack = {
-    url = "github:Gerschtli/nix-formatter-pack";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Gerschtli/nix-formatter-pack";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
 
-  outputs = { self, nixpkgs,nix-formatter-pack,... }@ inputs:
-   let 
-   inherit (self) outputs;
-         libx = import ./lib { inherit inputs outputs stateVersion; };
+  outputs = { self, nixpkgs, nix-formatter-pack, ... }@ inputs:
+    let
+      inherit (self) outputs;
+      libx = import ./lib { inherit inputs outputs stateVersion; };
 
-   stateVersion = "23.11";
-in
-   {
-# nix fmt
+      stateVersion = "23.11";
+    in
+    {
+      # nix fmt
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {
           pkgs = nixpkgs.legacyPackages.${system};
@@ -50,5 +50,5 @@ in
       );
 
 
-  };
+    };
 }

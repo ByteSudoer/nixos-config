@@ -1,11 +1,54 @@
 {
-  description = "A very basic flake";
+  description = "ByteSudoer's Nixos Config";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-  outputs = { self, nixpkgs }: {
+    agenix = {
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+    url = "github:ryantm/agenix";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+    url = "github:nix-community/home-manager/release-23.11";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-formatter-pack = {
+    url = "github:Gerschtli/nix-formatter-pack";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+  };
+
+  outputs = { self, nixpkgs,nix-formatter-pack,... }@ inputs:
+   let 
+   inherit (self) outputs;
+         libx = import ./lib { inherit inputs outputs stateVersion; };
+
+   stateVersion = "23.11";
+in
+   {
+# nix fmt
+      formatter = libx.forAllSystems (system:
+        nix-formatter-pack.lib.mkFormatter {
+          pkgs = nixpkgs.legacyPackages.${system};
+          config.tools = {
+            alejandra.enable = false;
+            deadnix.enable = true;
+            nixpkgs-fmt.enable = true;
+            statix.enable = true;
+          };
+        }
+      );
+
 
   };
 }

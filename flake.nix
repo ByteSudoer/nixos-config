@@ -48,6 +48,19 @@
           };
         }
       );
+      # Devshell for bootstrapping; acessible via 'nix develop' or 'nix-shell' (legacy)
+      devShells = libx.forAllSystems (system:
+        let pkgs = nixpkgs.legacyPackages.${system};
+        in import ./shell.nix { inherit pkgs; }
+      );
+      # Custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs; };
+
+      # Custom packages; acessible via 'nix build', 'nix shell', etc
+      packages = libx.forAllSystems (system:
+        let pkgs = nixpkgs.legacyPackages.${system};
+        in import ./pkgs { inherit pkgs; }
+      );
 
 
     };

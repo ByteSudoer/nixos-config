@@ -1,4 +1,16 @@
-{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, username, pkgs, ... }: {
+{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, username, ... }: {
+
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    (./. + "/${hostname}/boot.nix")
+    (./. + "/${hostname}/hardware.nix")
+
+    ./common/base
+    ./common/users/${username}
+  ]
+  ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) ./${hostname}/extra.nix
+  # Include desktop config if a desktop is defined
+  ++ lib.optional (builtins.isString desktop) ./common/desktop;
 
   nixpkgs = {
     overlays = [
@@ -62,5 +74,5 @@
     #       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff /run/current-system "$systemConfig"
     #     '';
     #   };
-    # };
-  }
+  };
+}

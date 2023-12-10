@@ -36,6 +36,13 @@
       stateVersion = "23.11";
     in
     {
+
+       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
+      nixosConfigurations = {
+        # Virtual machines
+        vm = libx.mkHost { hostname="vm";desktop="plasma"; username="bytesudoer";};
+      };
+
       # nix fmt
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {

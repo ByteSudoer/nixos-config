@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   basePackages = with pkgs; [
-    agenix
     bat
+    firefox
     binutils
     curl
     dua

@@ -8,7 +8,7 @@ in
 {
   users.users.bytesudoer = {
     isNormalUser = true;
-    shell = pkgs.bahs;
+    shell = pkgs.bash;
     extraGroups =
       [
         "audio"

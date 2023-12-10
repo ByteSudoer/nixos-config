@@ -28,9 +28,7 @@ in
 
   environment.systemPackages = basePackages;
 
-  programs = {
-    bash.enable = true;
-  };
+  
 
   # services = {
   #   chrony.enable = true;

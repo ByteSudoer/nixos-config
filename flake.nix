@@ -1,7 +1,7 @@
 {
   description = "ByteSudoer's Nixos Config";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -37,10 +37,10 @@
     in
     {
 
-       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
+      # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
       nixosConfigurations = {
         # Virtual machines
-        vm = libx.mkHost { hostname="vm";desktop="plasma"; username="bytesudoer";};
+        vm = libx.mkHost { hostname = "vm"; desktop = "plasma"; username = "bytesudoer"; };
       };
 
       # nix fmt

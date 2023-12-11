@@ -16,7 +16,7 @@ in
 
     # ../services/avahi.nix
     # ../services/firewall.nix
-    # ../services/openssh.nix
+    ../services/openssh.nix
     # ../services/swapfile.nix
     # ../services/tailscale.nix
   ];
@@ -28,7 +28,7 @@ in
 
   environment.systemPackages = basePackages;
 
-  
+
 
   # services = {
   #   chrony.enable = true;

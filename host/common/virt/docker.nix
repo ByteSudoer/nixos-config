@@ -2,13 +2,13 @@
   virtualisation = {
     docker = {
       enable = true;
-      storageDriver = "btrfs";
+      # storageDriver = "btrfs";
     };
   };
 
   environment.systemPackages = with pkgs; [
     ctop
-    dive
-    skopeo
+    # dive
+    # skopeo
   ];
 }

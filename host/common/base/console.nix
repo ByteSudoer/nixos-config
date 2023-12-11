@@ -3,8 +3,9 @@
 }:
 {
   console = {
+    keyMap = "fr";
     earlySetup = true;
     packages = with pkgs; [ terminus_font powerline-fonts ];
-    font = "ter-powerline-v32n";
+    font = "ter-powerline-v20n";
   };
 }

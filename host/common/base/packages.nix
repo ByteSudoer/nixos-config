@@ -22,5 +22,6 @@
     usbutils
     vim
     wget
+    vscodium
   ];
 }

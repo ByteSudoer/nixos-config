@@ -9,14 +9,14 @@ on:
 jobs:
   lock-updater:
     name: Flake Lock Updater
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: DeterminateSystems/nix-installer-action@v9
-      - uses: DeterminateSystems/magic-nix-cache-action@v2
-      - uses: DeterminateSystems/update-flake-lock@v20
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-title: "chore: update flake.lock"
           # Labels to be set on the PR

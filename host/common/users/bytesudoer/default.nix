@@ -6,9 +6,9 @@ let
   ifExists = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
-  users.users.jon = {
+  users.users.bytesudoer = {
     isNormalUser = true;
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     extraGroups =
       [
         "audio"

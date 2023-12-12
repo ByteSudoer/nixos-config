@@ -4,30 +4,30 @@
     #Stable Branch
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     #Unstable Branch
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     #Nixos Hardware Repository
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nix-formatter-pack = {
       url = "github:Gerschtli/nix-formatter-pack";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     disko = {
 
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-  
+
   };
 
   outputs =
     { self
-    , unstable
+    , nixpkgs-unstable
     , nix-formatter-pack
     , ...
     } @ inputs:
@@ -40,16 +40,16 @@
     in
     {
 
-       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
+      # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
       nixosConfigurations = {
         # Desktop machines
-        vm = libx.mkHost { hostname = "nixos"; desktop = "plasma"; };
+        vm = libx.mkHost { hostname = "vm"; desktop = "plasma"; };
       };
 
 
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {
-          pkgs = unstable.legacyPackages.${system};
+          pkgs = nixpkgs-unstable.legacyPackages.${system};
           config.tools = {
             deadnix.enable = true;
             nixpkgs-fmt.enable = true;
@@ -61,7 +61,7 @@
 
       # Custom packages; acessible via 'nix build', 'nix shell', etc
       packages = libx.forAllSystems (system:
-        let pkgs = unstable.legacyPackages.${system};
+        let pkgs = nixpkgs-unstable.legacyPackages.${system};
         in import ./pkgs { inherit pkgs; }
       );
 
@@ -71,7 +71,7 @@
       # Devshell for bootstrapping
       # Accessible via 'nix develop' or 'nix-shell' (legacy)
       devShells = libx.forAllSystems (system:
-        let pkgs = unstable.legacyPackages.${system};
+        let pkgs = nixpkgs-unstable.legacyPackages.${system};
         in import ./shell.nix { inherit pkgs; }
       );
 

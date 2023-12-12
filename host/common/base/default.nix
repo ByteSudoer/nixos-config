@@ -1,7 +1,6 @@
 { hostname
 , pkgs
 , lib
-, username
 , ...
 }:
 let
@@ -26,9 +25,6 @@ in
 
   environment.systemPackages = basePackages;
 
-  programs = {
-    bash.enable = true;
-  };
 
 
   security = {

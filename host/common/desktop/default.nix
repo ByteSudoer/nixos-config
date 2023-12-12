@@ -1,4 +1,4 @@
-{ desktop, pkgs, theme, ... }: {
+{ desktop, ... }: {
   imports = [
     (./. + "/${desktop}.nix")
     ../services/networkmanager.nix
@@ -9,7 +9,7 @@
   # Enable Plymouth and surpress some logs by default.
   # boot.plymouth.enable = true;
   # boot.kernelParams = [
-     # The 'splash' arg is included by the plymouth option
+  # The 'splash' arg is included by the plymouth option
   #   "quiet"
   #   "loglevel=3"
   #   "rd.udev.log_priority=3"

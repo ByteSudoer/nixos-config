@@ -8,6 +8,7 @@
     unstable.eza
     fd
     file
+    htop
     git
     jq
     killall

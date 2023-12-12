@@ -40,6 +40,12 @@
     in
     {
 
+      # nix build .#homeConfigurations."jon@freyja".activationPackage
+      homeConfigurations = {
+        # Desktop machines
+        "${username}@vm" = libx.mkHome { hostname = "vm"; desktop = "plasma"; };
+      };
+
       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
       nixosConfigurations = {
         # Desktop machines

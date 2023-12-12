@@ -22,5 +22,10 @@
     usbutils
     vim
     wget
+
+
+    # TODO: Remove
+    firefox
+    vscodium
   ];
 }

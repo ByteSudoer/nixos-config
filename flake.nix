@@ -20,7 +20,7 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };
@@ -41,17 +41,23 @@
     {
 
       # nix build .#homeConfigurations."jon@freyja".activationPackage
-      homeConfigurations = {
-        # Desktop machines
-        "${username}@vm" = libx.mkHome { hostname = "vm"; desktop = "plasma"; };
-      };
+      # homeConfigurations = {
+      #   # Desktop machines
+      #   "${username}@vm" = libx.mkHome { hostname = "vm"; desktop = "plasma"; };
+      # };
 
-      # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
-      nixosConfigurations = {
-        # Desktop machines
-        vm = libx.mkHost { hostname = "vm"; desktop = "plasma"; };
-      };
+      # # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
+      # nixosConfigurations = {
+      #   # Desktop machines
+      #   vm = libx.mkHost { hostname = "vm"; desktop = "plasma"; };
+      # };
 
+      vm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          
+        ]
+      }
 
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {

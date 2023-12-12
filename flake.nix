@@ -40,6 +40,12 @@
     in
     {
 
+       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
+      nixosConfigurations = {
+        # Desktop machines
+        vm = libx.mkHost { hostname = "nixos"; desktop = "plasma"; };
+      };
+
 
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {

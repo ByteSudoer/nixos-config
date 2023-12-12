@@ -33,9 +33,17 @@
       inherit (self) outputs;
       libx = import ./lib { inherit inputs outputs stateVersion; };
 
+      username = "bytesudoer";
       stateVersion = "23.11";
     in
     {
+
+      # nix build .#homeConfigurations."jon@freyja".activationPackage
+      homeConfigurations = {
+        # Desktop machines
+        "${username}@nixos" = libx.mkHome { hostname = "nixos"; desktop = "plasma"; };
+      };
+
 
       # nix build .#nixosConfigurations.freyja.config.system.build.toplevel
       nixosConfigurations = {

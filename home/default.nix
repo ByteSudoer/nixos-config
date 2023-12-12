@@ -10,9 +10,9 @@
     # inputs.nix-colors.homeManagerModules.default
 
     ./common/shell
-  ]
-  ++ lib.optional (builtins.isString desktop) ./common/desktop
-  ++ lib.optional (builtins.pathExists (./. + "/common/users/${username}")) ./common/users/${username};
+  ];
+  # ++ lib.optional (builtins.isString desktop) ./common/desktop
+  # ++ lib.optional (builtins.pathExists (./. + "/common/users/${username}")) ./common/users/${username};
 
   home = {
     inherit username stateVersion;
@@ -32,10 +32,6 @@
       # You can also add overlays exported from other flakes:
       inputs.crafts.overlay
       inputs.agenix.overlays.default
-    ]
-    ++ lib.optionals (desktop == "hyprland") [
-      inputs.hyprland.overlays.default
-      inputs.hyprland-contrib.overlays.default
     ];
 
     config = {

@@ -30,6 +30,8 @@
       {
         home-manager = {
 
+                useUserPackages = true;
+
           users.${username} = ../. + "/home";
           extraSpecialArgs = {
             inherit inputs outputs stateVersion hostname desktop;

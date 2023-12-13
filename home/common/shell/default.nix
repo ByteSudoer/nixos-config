@@ -4,11 +4,11 @@
   imports = [
     ./bash.nix
     ./bat.nix
+    ./env_variables.nix
     ./git.nix
     ./neofetch.nix
     ./nix.nix
     # ./helix.nix
-    # ./neofetch.nix
     ./starship.nix
     ./tmux.nix
     ./xdg.nix

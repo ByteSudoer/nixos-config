@@ -5,6 +5,7 @@
     ./alacritty.nix
     ./fonts.nix
     ./gtk.nix
+    ./picom.nix
     ./qt.nix
     ./xdg.nix
     ./zathura.nix

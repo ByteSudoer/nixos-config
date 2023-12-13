@@ -10,7 +10,7 @@
   };
 
   # Helper function for generating host configs
-  mkHost = { hostname, desktop ? null, pkgsInput ? inputs.nixpkgs-unstable }: pkgsInput.lib.nixosSystem {
+  mkHost = { hostname, desktop ? null, pkgsInput ? inputs.nixpkgs }: pkgsInput.lib.nixosSystem {
     specialArgs = {
       inherit inputs outputs stateVersion username hostname desktop;
     };
@@ -26,13 +26,17 @@
 
     modules = [
       ../host
-      inputs.home-manager.lib.homeManagerConfiguration
+      inputs.home-manager.nixosModules.home-manager
       {
+        home-manager = {
+
+          users.${username} = ../. + "/home";
           extraSpecialArgs = {
             inherit inputs outputs stateVersion hostname desktop;
             username = user;
           };
-        modules = [ ../home ];
+
+        };
       }
     ];
 

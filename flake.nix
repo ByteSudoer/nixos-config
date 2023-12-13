@@ -26,7 +26,6 @@
 
   outputs =
     { self
-    , nixpkgs
     , nixpkgs-unstable
     , nix-formatter-pack
     , ...
@@ -41,9 +40,9 @@
     {
 
 
+
       nixosConfigurations = {
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; };
-
       };
 
       formatter = libx.forAllSystems (system:

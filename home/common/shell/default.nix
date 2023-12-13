@@ -2,12 +2,16 @@
 , ...
 }: {
   imports = [
+    ./bash.nix
     ./bat.nix
     ./git.nix
+    ./neofetch.nix
+    ./nix.nix
     # ./helix.nix
     # ./neofetch.nix
-    # ./starship.nix
-    # ./tmux.nix
+    ./starship.nix
+    ./tmux.nix
+    ./xdg.nix
   ];
 
   programs = {

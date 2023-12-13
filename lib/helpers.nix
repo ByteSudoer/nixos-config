@@ -19,14 +19,22 @@
     ];
   };
 
-  mkSystem = {hostname, desktop ? null, pkgs? inputs.nixpkgs}:pkgs.lib.nixosSystem{
+  mkSystem = { hostname, desktop ? null, pkgs ? inputs.nixpkgs, user ? username }: pkgs.lib.nixosSystem {
     specialArgs = {
       inherit inputs outputs stateVersion username hostname desktop;
     };
 
-      modules = [
-        ../host
-      ];
+    modules = [
+      ../host
+      inputs.home-manager.lib.homeManagerConfiguration
+      {
+          extraSpecialArgs = {
+            inherit inputs outputs stateVersion hostname desktop;
+            username = user;
+          };
+        modules = [ ../home ];
+      }
+    ];
 
   };
 

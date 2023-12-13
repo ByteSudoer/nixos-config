@@ -13,7 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     disko = {
-
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -40,6 +39,11 @@
     in
     {
 
+
+      nixosConfiguration = {
+        vm = libx.mkSystem {hostname="vm"; desktop="plasma";};
+
+      };
 
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {

@@ -1,4 +1,4 @@
-{ config, lib, outputs, stateVersion, username, pkgs, ... }:
+{ config, desktop, lib, outputs, stateVersion, username, inputs, pkgs, ... }:
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings
@@ -10,8 +10,8 @@
     # inputs.nix-colors.homeManagerModules.default
 
     ./common/shell
-  ];
-  # ++ lib.optional (builtins.isString desktop) ./common/desktop
+  ]
+  ++ lib.optional (builtins.isString desktop) ./common/desktop;
   # ++ lib.optional (builtins.pathExists (./. + "/common/users/${username}")) ./common/users/${username};
 
   home = {
@@ -33,15 +33,16 @@
       # inputs.crafts.overlay
       # inputs.agenix.overlays.default
     ];
+    # ++ lib.optionals (desktop == "hyprland") [
+    #   inputs.hyprland.overlays.default
+    #   inputs.hyprland-contrib.overlays.default
+    # ];
 
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      # allowUnfreePredicate = _: true;
-      # permittedInsecurePackages = [
-      #   "electron-21.4.0"
-      # ];
+      allowUnfreePredicate = _: true;
     };
   };
 }

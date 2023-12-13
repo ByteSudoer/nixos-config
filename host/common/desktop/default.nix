@@ -1,6 +1,7 @@
 { desktop, ... }: {
   imports = [
     (./. + "/${desktop}.nix")
+    (./. + "/sddm.nix")
     ../services/networkmanager.nix
     ../services/pipewire.nix
     ../virt

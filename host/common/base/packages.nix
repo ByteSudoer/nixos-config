@@ -10,6 +10,7 @@
     fd
     file
     git
+    htop
     jq
     killall
     ntfs3g
@@ -22,5 +23,9 @@
     usbutils
     vim
     wget
+
+    #TODO to be removed
+    vscodium
+    firefox
   ];
 }

@@ -40,7 +40,7 @@
     {
 
 
-      nixosConfiguration = {
+      nixosConfigurations = {
         vm = libx.mkSystem {hostname="vm"; desktop="plasma";};
 
       };

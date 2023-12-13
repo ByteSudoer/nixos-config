@@ -22,10 +22,11 @@
   mkSystem = {hostname, desktop ? null, pkgs? inputs.nixpkgs}:pkgs.lib.nixosSystem{
     specialArgs = {
       inherit inputs outputs stateVersion username hostname desktop;
+    };
+
       modules = [
         ../host
       ];
-    };
 
   };
 

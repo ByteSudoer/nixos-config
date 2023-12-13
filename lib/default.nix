@@ -3,5 +3,5 @@ let
   helpers = import ./helpers.nix { inherit inputs outputs stateVersion username; };
 in
 {
-  inherit (helpers) mkHome mkHost forAllSystems;
+  inherit (helpers) mkHome mkHost mkSystem forAllSystems;
 }

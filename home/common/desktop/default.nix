@@ -3,6 +3,7 @@
     # (./. + "/${desktop}")
 
     ./alacritty.nix
+    ./fonts.nix
     ./gtk.nix
     ./qt.nix
     ./xdg.nix
@@ -16,12 +17,10 @@
   };
 
   home.packages = with pkgs; [
-    catppuccin-gtk
     libnotify
     pavucontrol
     xdg-utils
     xorg.xlsclients
   ];
 
-  fonts.fontconfig.enable = true;
 }

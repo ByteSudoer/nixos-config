@@ -21,7 +21,7 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-        nix-colors.url = "github:misterio77/nix-colors";
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -45,7 +45,7 @@
 
 
       nixosConfigurations = {
-        vm = libx.mkSystem { hostname = "vm"; desktop = "plasma" ;colorscheme= "${colorscheme}"; };
+        vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
       };
 
       formatter = libx.forAllSystems (system:

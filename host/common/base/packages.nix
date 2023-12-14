@@ -9,6 +9,7 @@
     unstable.eza
     fd
     file
+    fzf
     git
     github-cli
     gnumake
@@ -20,6 +21,7 @@
     # permer
     ripgrep
     rsync
+    statix
     traceroute
     trash-cli
     tree

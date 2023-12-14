@@ -8,6 +8,7 @@
     ./git.nix
     ./neofetch.nix
     ./nix.nix
+    ./scripts.nix
     ./starship.nix
     ./tmux.nix
     ./xdg.nix

@@ -2,6 +2,7 @@
   imports = [
     (./. + "/${desktop}.nix")
     (./. + "/sddm.nix")
+    (./. + "/thunar.nix")
     ../services/networkmanager.nix
     ../services/pipewire.nix
     ../virt

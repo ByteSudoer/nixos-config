@@ -1,8 +1,8 @@
 { pkgs, colorscheme, ... }:
 
 let
-  themeConfig = pkgs.lib.match colorscheme {
-    dracula = {
+  themeConfig = if colorscheme == "dracula" then
+    {
       cursorTheme = {
         package = pkgs.dracula-theme;
         name = "Dracula";
@@ -15,8 +15,9 @@ let
         package = pkgs.dracula-icon-theme;
         name = "Dracula";
       };
-    };
-    gruvbox = {
+    }
+  else if colorscheme == "gruvbox" then
+    {
       cursorTheme = {
         package = pkgs.capitaine-cursors-themed;
         name = "Capitaine Cursors (Gruvbox)";
@@ -29,12 +30,11 @@ let
         package = pkgs.gruvbox-dark-icons-gtk;
         name = "oomox-gruvbox-dark";
       };
-    };
-    # Add more patterns for other color schemes
-    _ = {
+    }
+  else
+    {
       # Default configuration or handle other color schemes
     };
-  };
 in
 {
   gtk = {
@@ -42,3 +42,4 @@ in
     inherit (themeConfig) cursorTheme theme iconTheme;
   };
 }
+

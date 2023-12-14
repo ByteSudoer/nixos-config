@@ -10,6 +10,7 @@
     fd
     file
     git
+    github-cli
     htop
     jq
     killall
@@ -26,6 +27,5 @@
 
     #TODO to be removed
     vscodium
-    firefox
   ];
 }

@@ -3,6 +3,7 @@
     # (./. + "/${desktop}")
 
     ./alacritty.nix
+    ./betterlockscreen.nix
     ./firefox.nix
     ./fonts.nix
     ./gtk.nix

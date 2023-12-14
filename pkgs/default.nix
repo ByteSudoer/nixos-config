@@ -7,6 +7,7 @@
   # permer = pkgs.callPackage ./permer { };
     nerdfetch = pkgs.callPackage ./nerdfetch { };
 
+    templateInit = pkgs.callPackage ./templateInit{ };
     scripts = pkgs.callPackage ./scripts/default.nix { };
 
 

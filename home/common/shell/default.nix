@@ -8,7 +8,6 @@
     ./git.nix
     ./neofetch.nix
     ./nix.nix
-    # ./helix.nix
     ./starship.nix
     ./tmux.nix
     ./xdg.nix
@@ -16,8 +15,8 @@
 
   programs = {
     eza.enable = true;
-    git.enable = true;
-    home-manager.enable = true;
+    # git.enable = true;
+    # home-manager.enable = true;
     jq.enable = true;
   };
 

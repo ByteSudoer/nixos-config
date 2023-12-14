@@ -1,4 +1,4 @@
-{ config, desktop, lib, outputs, stateVersion, username, inputs, pkgs, ... }:
+{ config, desktop, lib, outputs, stateVersion, username, pkgs, ... }:
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings
@@ -45,4 +45,5 @@
       allowUnfreePredicate = _: true;
     };
   };
+
 }

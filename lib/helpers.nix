@@ -30,7 +30,7 @@
       {
         home-manager = {
 
-                useUserPackages = true;
+          useUserPackages = true;
 
           users.${username} = ../. + "/home";
           extraSpecialArgs = {

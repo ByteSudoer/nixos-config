@@ -1,4 +1,4 @@
-{config,...}:
+{ config, ... }:
 {
   systemd.user.sessionVariables = rec {
 

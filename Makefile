@@ -1,9 +1,13 @@
-USER=bytesudoer
+HOSTNAME=$(shell hostname)
+
+ifndef HOSTNAME
+	$(error Hostname unknown)
+endif
 
 all: clean format check
 
 build:
-	sudo nixos-rebuild switch --verbose --flake .#${USER}
+	sudo nixos-rebuild switch --flake .#${HOSTNAME}
 check:
 	nix flake check
 clean:
@@ -14,7 +18,7 @@ format:
 	nix fmt
 
 test:
-	sudo nixos-rebuild test --verbose --flake .#${USER}
+	sudo nixos-rebuild test --verbose --flake .#${HOSTNAME}
 
 unlock:
 	rm -f ./flake.lock
@@ -23,4 +27,4 @@ update:
 	nix flake update
 
 vm:
-	sudo nixos-rebuild build-vm --verbose --flake .#${USER}
+	sudo nixos-rebuild build-vm --verbose --flake .#${HOSTNAME}

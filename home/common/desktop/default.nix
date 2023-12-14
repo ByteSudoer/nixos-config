@@ -20,7 +20,7 @@
   };
 
   home.packages = with pkgs; [
-    
+
     libnotify
     pavucontrol
     xdg-utils

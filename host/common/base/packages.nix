@@ -11,12 +11,13 @@
     file
     git
     github-cli
+    gnumake
     htop
     jq
     killall
     ntfs3g
     pciutils
-    permer
+    # permer
     ripgrep
     rsync
     traceroute

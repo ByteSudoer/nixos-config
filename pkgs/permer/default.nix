@@ -5,15 +5,17 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "Permer";
-  version = "1.1.0";
+  version = "d5c47102922c219c1660a03ba07c1e0504558b46";
   src = fetchFromGitHub {
     owner = "ByteSudoer";
     repo = pname;
-    version = version;
-    sha256 = "sha256-OlGjXrg2Zd4Y6eEtXyGGxRd+qiCEKFGT41mKb8fFh9A=";
+    rev = version;
+    # sha256 = "sha256-OlGjXrg2Zd4Y6eEtXyGGxRd+qiCEKFGT41mKb8fFh9A=";
+    sha256 = "sha256-0YJwyz/wVVy+af4BrrppokmKA0mAq0oVmezzCa5N7mk=";
+
   };
 
-  # cargoHash = "sha256-66zqPDHPpSnPBXDh5r4Mq7FruTsEo4lrtSZJNc5w5zg=";
+  cargoHash = lib.fakeHash;
 
   meta = with lib; {
     description = "A Rust CLI tool to check file permissions";

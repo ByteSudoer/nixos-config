@@ -10,6 +10,7 @@
     ./picom.nix
     ./qt.nix
     ./rofi.nix
+    ./thunar.nix
     ./xdg.nix
     ./zathura.nix
   ];

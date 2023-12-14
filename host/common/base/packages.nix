@@ -21,6 +21,7 @@
     ripgrep
     rsync
     traceroute
+    trash-cli
     tree
     unzip
     usbutils

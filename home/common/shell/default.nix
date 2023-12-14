@@ -9,6 +9,7 @@
     ./git.nix
     ./neofetch.nix
     ./nix.nix
+    ./nvim.nix
     ./scripts.nix
     ./starship.nix
     ./tmux.nix

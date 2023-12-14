@@ -5,6 +5,7 @@
     ./bash.nix
     ./bat.nix
     ./env_variables.nix
+    ./direnv.nix
     ./git.nix
     ./neofetch.nix
     ./nix.nix

@@ -7,5 +7,6 @@
     scripts.sp
     scripts.tmuxSession
     scripts.wallpapers
+    templateInit
   ];
 }

@@ -21,6 +21,7 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+        nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -28,6 +29,7 @@
     { self
     , nixpkgs-unstable
     , nix-formatter-pack
+    , nix-colors
     , ...
     } @ inputs:
 
@@ -35,14 +37,15 @@
       inherit (self) outputs;
       stateVersion = "23.11";
       username = "bytesudoer";
-      libx = import ./lib { inherit inputs outputs stateVersion username; };
+      colorscheme = "dracula";
+      libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in
     {
 
 
 
       nixosConfigurations = {
-        vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; };
+        vm = libx.mkSystem { hostname = "vm"; desktop = "plasma" ;colorscheme= "${colorscheme}"; };
       };
 
       formatter = libx.forAllSystems (system:

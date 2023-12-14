@@ -1,4 +1,4 @@
-{ config, desktop, lib, outputs, stateVersion, username, pkgs, ... }:
+{ config, desktop, lib, outputs, stateVersion, username, pkgs,colorscheme, ... }:
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings
@@ -15,7 +15,7 @@
   # ++ lib.optional (builtins.pathExists (./. + "/common/users/${username}")) ./common/users/${username};
 
   home = {
-    inherit username stateVersion;
+    inherit username stateVersion ;
     homeDirectory = "/home/${username}";
     activation.report-changes = config.lib.dag.entryAnywhere ''
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath

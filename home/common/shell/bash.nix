@@ -45,7 +45,7 @@ _:
       pdf = "zathura";
       cat = "bat --theme=Dracula";
       oldcat = "cat";
-      configs = "cd $HOME/nixos-dotfiles";
+      configs = "cd $HOME/nixos-config";
       dotfiles = "cd $HOME/.config/Dotfiles";
       tmuxattach = "tmux attach-session -t";
       tmuxnew = "tmux new -s";

@@ -4,4 +4,6 @@ _: rec
 
 {
   # example = pkgs.callPackage ./example { };
+    permer = pkgs.callPackage ./permer { };
+
 } 

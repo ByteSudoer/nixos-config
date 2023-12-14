@@ -16,6 +16,7 @@
     killall
     ntfs3g
     pciutils
+    permer
     ripgrep
     rsync
     traceroute

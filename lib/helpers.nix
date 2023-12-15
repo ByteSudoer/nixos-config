@@ -19,7 +19,7 @@
     ];
   };
 
-  mkSystem = { hostname, desktop ? null, pkgs ? inputs.nixpkgs, user ? username, colorscheme ,platform ? "x86_64-linux"}: pkgs.lib.nixosSystem {
+  mkSystem = { hostname,installer ? null, desktop ? null, pkgs ? inputs.nixpkgs, user ? username, colorscheme ,platform ? "x86_64-linux"}: pkgs.lib.nixosSystem {
     specialArgs = {
       inherit inputs outputs stateVersion platform username hostname desktop colorscheme;
     };

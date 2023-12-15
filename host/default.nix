@@ -1,4 +1,4 @@
-{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, username, pkgs, ... }: {
+{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, username, pkgs,platform, ... }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (./. + "/${hostname}/boot.nix")
@@ -75,4 +75,6 @@
       '';
     };
   };
+    nixpkgs.hostPlatform = lib.mkDefault "${platform}";
+
 }

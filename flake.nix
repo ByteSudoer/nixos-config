@@ -27,6 +27,7 @@
 
   outputs =
     { self
+    , nixpkgs
     , nixpkgs-unstable
     , nix-formatter-pack
     , ...
@@ -44,7 +45,8 @@
 
 
       nixosConfigurations = {
-        iso-desktop = libx.mkSystem { hostname = "iso-desktop"; username = "nixos"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
+        #  - nix build .#nixosConfigurations.{iso-console|iso-desktop}.config.system.build.isoImage
+        iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
         vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };

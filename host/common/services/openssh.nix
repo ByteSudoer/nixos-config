@@ -9,7 +9,7 @@ _: {
 
   programs.ssh.startAgent = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
-    #Configure SSH
+  #Configure SSH
   programs.ssh = {
     extraConfig = ''
       Host github.com

@@ -29,7 +29,6 @@
     { self
     , nixpkgs-unstable
     , nix-formatter-pack
-    , nix-colors
     , ...
     } @ inputs:
 
@@ -46,6 +45,7 @@
 
       nixosConfigurations = {
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
+        vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };
       };
 
       formatter = libx.forAllSystems (system:

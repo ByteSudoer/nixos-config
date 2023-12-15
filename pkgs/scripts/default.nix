@@ -1,4 +1,4 @@
-{ pkgs,... }:
+{ pkgs, ... }:
 {
   defaultLayout = pkgs.callPackage ./defaultLayout.nix { };
   fehrandom = pkgs.callPackage ./fehrandom.nix { };

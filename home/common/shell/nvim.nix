@@ -111,6 +111,7 @@
       unstable.nodePackages_latest.yaml-language-server
       unstable.nodePackages.typescript-language-server
       unstable.stylua
+      luajitPackages.luacheck
 
     ];
 

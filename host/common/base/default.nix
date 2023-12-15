@@ -13,6 +13,7 @@ in
   imports = [
     ./boot.nix
     ./console.nix
+    ./fonts.nix
     ./locale.nix
 
     ../services/openssh.nix

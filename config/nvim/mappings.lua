@@ -1,28 +1,28 @@
 local consts = {
-    modes = {
-      all = "",
-      normal = "n",
-      visual_select = "v",
-      select = "s",
-      visual = "x",
-      operator_pending = "o",
-      insert_command = "!",
-      insert = "i",
-      insert_command_lang_arg = "l",
-      command_line = "c",
-      terminal = "t"
-    },
-    runtime_path = runtime_path
-  }
+	modes = {
+		all = "",
+		normal = "n",
+		visual_select = "v",
+		select = "s",
+		visual = "x",
+		operator_pending = "o",
+		insert_command = "!",
+		insert = "i",
+		insert_command_lang_arg = "l",
+		command_line = "c",
+		terminal = "t",
+	},
+	runtime_path = runtime_path,
+}
 local mode = consts.modes
 local wk = require("which-key")
 local function map(mode, mapping, cmd, options)
-  local opts = { noremap = true }
-  if options then
-    opts = vim.tbl_extend("force", opts, options)
-  end
+	local opts = { noremap = true }
+	if options then
+		opts = vim.tbl_extend("force", opts, options)
+	end
 
-  vim.api.nvim_set_keymap(mode, mapping, cmd, opts)
+	vim.api.nvim_set_keymap(mode, mapping, cmd, opts)
 end
 
 -- set Space Key as map leader
@@ -80,50 +80,50 @@ map(mode.normal, "<C-u>", ":PackerSync<CR>")
 -- Adding key Maps to the WhichKey help menu
 
 wk.register({
-  ["<leader>"] = {
-    name = "+leader",
-    x = { "<cmd>NvimTreeToggle<CR>", "Open/Close NvimTree" },
-    w = { "<cmd>WhichKey<CR>", "Open WhichKey help Menu" },
-    q = { "<cmd>CheatSH<CR>", "Open CheatSheet for Language and Keyword under Cursor" },
-    f = {
-      name = "+file",
-      f = { "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<CR>", "Telescope file finder" },
-      b = { "<cmd>Telescope buffers<CR>", "Telescope buffer list" },
-      g = { "<cmd>Telescope live_grep<CR>", "Search for a string in a current directory" },
-      s = { "<cmd>Telescope grep_string<CR>", "Search the string under the cursor" },
-      h = { "<cmd>Telescope help_tags<CR>", "List Available Help Tags" },
-    },
-    b = {
-      name = "+buffers",
-      m = { "<cmd>Telescope man_pages<CR>", "Lists Manpage entries" },
-      c = { "<cmd>Telescope colorscheme<CR>", "Lists Available colorschemes" },
-    },
-    a = { "<cmd>Lspsaga code_action<CR>", "Show Code Actions" },
-    j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Show next LSP Message" },
-    k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Show previous LSP Message" },
-  },
+	["<leader>"] = {
+		name = "+leader",
+		x = { "<cmd>NvimTreeToggle<CR>", "Open/Close NvimTree" },
+		w = { "<cmd>WhichKey<CR>", "Open WhichKey help Menu" },
+		q = { "<cmd>CheatSH<CR>", "Open CheatSheet for Language and Keyword under Cursor" },
+		f = {
+			name = "+file",
+			f = { "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<CR>", "Telescope file finder" },
+			b = { "<cmd>Telescope buffers<CR>", "Telescope buffer list" },
+			g = { "<cmd>Telescope live_grep<CR>", "Search for a string in a current directory" },
+			s = { "<cmd>Telescope grep_string<CR>", "Search the string under the cursor" },
+			h = { "<cmd>Telescope help_tags<CR>", "List Available Help Tags" },
+		},
+		b = {
+			name = "+buffers",
+			m = { "<cmd>Telescope man_pages<CR>", "Lists Manpage entries" },
+			c = { "<cmd>Telescope colorscheme<CR>", "Lists Available colorschemes" },
+		},
+		a = { "<cmd>Lspsaga code_action<CR>", "Show Code Actions" },
+		j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Show next LSP Message" },
+		k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Show previous LSP Message" },
+	},
 })
 
 wk.register({
-  q = {
-    a = { "<cmd>quitall<CR>", "Close All Windows and Tabs" },
-    q = { "<cmd>Lspsaga hover_doc<CR>", "LSP Hover doc" },
-  },
+	q = {
+		a = { "<cmd>quitall<CR>", "Close All Windows and Tabs" },
+		q = { "<cmd>Lspsaga hover_doc<CR>", "LSP Hover doc" },
+	},
 })
 
 -- LSP Mappings
 wk.register({
-  ["<leader>"] = {
-    l = {
-      name = "Code",
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      q = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-      d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
-      i = { "<cmd>LspInfo<CR>", "LSP Indo" },
-    },
-    g = {
-      d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
-      D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Goto Declaration" },
-    },
-  },
+	["<leader>"] = {
+		l = {
+			name = "Code",
+			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+			q = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
+			i = { "<cmd>LspInfo<CR>", "LSP Indo" },
+		},
+		g = {
+			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
+			D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Goto Declaration" },
+		},
+	},
 })

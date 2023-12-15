@@ -17,6 +17,9 @@
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs;[
+          # Rust Code Runner
+          bacon
+
           rustc
           cargo
           rustfmt

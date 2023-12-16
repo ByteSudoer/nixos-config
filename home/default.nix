@@ -11,7 +11,7 @@
 
     ./common/shell
   ]
-  ++ lib.optional (builtins.isString desktop) ./common/desktop;
+  ++ lib.optional (builtins.isString desktop) ./common/desktop
   ++ lib.optional (builtins.pathExists (./. + "/users/${username}")) ./users/${username};
 
   home = {

@@ -1,5 +1,3 @@
-local winsize = require("utils").winsize
-
 local function inc_width()
   local width, _height = winsize()
   vim.cmd(string.format("NvimTreeResize %d", width + 10))

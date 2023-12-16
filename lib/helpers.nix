@@ -37,6 +37,10 @@
             inherit inputs outputs stateVersion hostname desktop colorscheme;
             username = user;
           };
+          # Ensure Plasma Manager is available:
+          sharedModules = [
+            inputs.plasma-manager.homeManagerModules.plasma-manager
+          ];
 
         };
       }

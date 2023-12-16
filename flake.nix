@@ -52,6 +52,8 @@
 
       nixosConfigurations = {
         #  - nix build .#nixosConfigurations.{iso-console|iso-desktop}.config.system.build.isoImage
+        iso-console = libx.mkSystem { hostname = "iso-console"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"; };
+
         iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };

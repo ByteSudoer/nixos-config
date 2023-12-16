@@ -56,6 +56,8 @@ _:
       his = "history | cut -c 29- | sort -u | fzf | sh -";
       update = "sudo nix-chanel --update";
       copy = "xclip -selection clipboard";
+      vim = "nvim -p";
+      ssha = "eval $(ssh-agent)";
 
     };
     shellOptions =

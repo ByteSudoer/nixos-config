@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 
 
 {
@@ -15,6 +15,8 @@
     withNodeJs = true;
 
     extraConfig = ''
+
+      colorscheme ${colorscheme}
       luafile $HOME/nixos-config/config/nvim/options.lua
       luafile $HOME/nixos-config/config/nvim/autotag.lua
       luafile $HOME/nixos-config/config/nvim/comment.lua
@@ -38,7 +40,11 @@
       luafile $HOME/nixos-config/config/nvim/devicons.lua
       luafile $HOME/nixos-config/config/nvim/which_key.lua
 
+
     '';
+    # extraLuaConfig = ''
+    #
+    # '';
 
     plugins = with pkgs.unstable.vimPlugins; [
       #Color Scheme
@@ -57,7 +63,19 @@
       nvim-ts-autotag
       #Nvim lualine
       nvim-navic
-      lualine-nvim
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = ''
+          require("lualine").setup({
+            options= {
+              theme = "${colorscheme}",
+            },
+          })
+        '';
+
+
+      }
       #Fidget Loading Bar 
       fidget-nvim
       #Comment Line and Blocks of code

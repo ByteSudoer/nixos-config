@@ -1,10 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
+
+let
+  colorPlugin = if colorscheme == "dracula" then "catppuccin" else if colorscheme == "gruvbox" then "gruvbox" else "dracula";
+in
 {
 
   # Configure Tmux
   programs.tmux = {
     enable = true;
     package = pkgs.tmux;
+    #Base index for windows and panes
     baseIndex = 1;
     clock24 = true;
     historyLimit = 100000;
@@ -17,7 +22,7 @@
     plugins = with pkgs; [
       {
 
-        plugin = tmuxPlugins.catppuccin;
+        plugin = tmuxPlugins.${colorPlugin};
         extraConfig = ''
                   set -g @catppuccin_window_right_separator "█ "
           set -g @catppuccin_window_number_position "right"

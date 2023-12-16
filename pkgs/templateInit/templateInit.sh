@@ -3,7 +3,7 @@
 #
 set -euo pipefail
 
-dir="$HOME/nixos-dotfiles/templates"
+dir="$HOME/nixos-config/templates"
 destination=${2:-$PWD}
 lang=${1:-}
 

@@ -1,7 +1,7 @@
 {
   description = "Nix Shell with Rust tools";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
     flake-utils.url = "github:numtide/flake-utils";
   };
 

@@ -17,17 +17,17 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     };
+    #Manage Home Directory and ~/.config
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #Manage Plasma Desktop
     plasma-manager = {
       url = "github:pjones/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -51,18 +51,18 @@
 
 
       nixosConfigurations = {
+        # ISO imagegs
         #  - nix build .#nixosConfigurations.{iso-console|iso-desktop}.config.system.build.isoImage
         iso-console = libx.mkSystem { hostname = "iso-console"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"; };
-
         iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
-        # Virtual Machines
+        #WorkStations
+        lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
+
+        #Servers
         vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };
 
-        #Physical Machines
-        #Laptop Lenovo
-        lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
       };
 
       formatter = libx.forAllSystems (system:

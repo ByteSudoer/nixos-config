@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  xsession.windowManaer.bspwm = {
+  xsession.windowManager.bspwm = {
     enable = true;
     package = pkgs.bspwm;
   };

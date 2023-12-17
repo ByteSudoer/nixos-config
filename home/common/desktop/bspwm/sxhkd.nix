@@ -3,10 +3,16 @@
   services.sxhkd = {
     enable = true;
     package = pkgs.sxhkd;
-    sxhkd.keybindings = {
+    keybindings = {
+      # Lock Screen
       "F12" = "lock";
-      "super + return" = "alacritty";
-      "super+ w" = "firefox";
+      # Terminal and Web-Browser
+      "super + Return" = "alacritty";
+      "super + w" = "firefox";
+      #File Manager
+      "super + shift + Return" = "thunar";
+      # Quit/Restart bspwm
+      "super + shift + {r,c}" = "bspc {quit,wm -r}";
     };
   };
 }

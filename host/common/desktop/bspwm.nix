@@ -4,6 +4,6 @@ _: {
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.windowManaer.bspwm = true;
+  services.xserver.windowManager.bspwm.enable = true;
 
 }

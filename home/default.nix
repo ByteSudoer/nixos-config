@@ -1,4 +1,4 @@
-{ config, desktop, lib, outputs, stateVersion, username, pkgs, ... }:
+{ config, extra, desktop, lib, outputs, stateVersion, username, pkgs, ... }:
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings
@@ -12,6 +12,7 @@
     ./common/shell
   ]
   ++ lib.optional (builtins.isString desktop) ./common/desktop
+  ++ lib.optional (builtins.isString extra) ./extra
   ++ lib.optional (builtins.pathExists (./. + "/users/${username}")) ./users/${username};
 
   home = {

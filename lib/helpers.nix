@@ -19,9 +19,9 @@
     ];
   };
 
-  mkSystem = { hostname, installer ? null, desktop ? null, pkgs ? inputs.nixpkgs, user ? username, colorscheme ? "dracula", platform ? "x86_64-linux" }: pkgs.lib.nixosSystem {
+  mkSystem = { hostname, installer ? null, desktop ? null, extra ? null, pkgs ? inputs.nixpkgs, user ? username, colorscheme ? "dracula", platform ? "x86_64-linux" }: pkgs.lib.nixosSystem {
     specialArgs = {
-      inherit inputs outputs stateVersion platform username hostname desktop colorscheme;
+      inherit inputs outputs stateVersion platform username hostname desktop extra colorscheme;
     };
 
     modules = [
@@ -34,7 +34,7 @@
 
           users.${username} = ../. + "/home";
           extraSpecialArgs = {
-            inherit inputs outputs stateVersion hostname desktop colorscheme;
+            inherit inputs outputs stateVersion hostname desktop extra colorscheme;
             username = user;
           };
           # Ensure Plasma Manager is available:

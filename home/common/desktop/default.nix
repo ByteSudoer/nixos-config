@@ -25,6 +25,8 @@
     pavucontrol
     xdg-utils
     xorg.xlsclients
+    #Screenshot
+    flameshot
   ];
 
 }

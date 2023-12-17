@@ -58,7 +58,7 @@
 
         #WorkStations
         lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
-        vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
+        vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "${colorscheme}"; };
 
         #Servers
         vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };

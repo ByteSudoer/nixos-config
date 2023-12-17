@@ -21,5 +21,8 @@
   #Templates for dev environments
   templateInit = pkgs.callPackage ./templateInit { };
 
+  # Spotifty
+  spotifty = pkgs.callPackage ./spotify { };
+
 
 } 

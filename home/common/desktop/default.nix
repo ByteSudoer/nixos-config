@@ -1,6 +1,6 @@
 { pkgs, desktop, ... }: {
   imports = [
-    (./. + "/${desktop}.nix")
+    (./. + "/${desktop}")
 
     ./alacritty.nix
     ./betterlockscreen.nix

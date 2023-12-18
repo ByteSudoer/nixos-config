@@ -9,6 +9,7 @@ function run {
   fi
 }
 
+defaultayout &
 run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 run fehrandom &
 run wallpapers &

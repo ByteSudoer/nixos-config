@@ -2,7 +2,6 @@ _: {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.windowManager.bspwm.enable = true;
 

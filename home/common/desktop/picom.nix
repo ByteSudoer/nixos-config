@@ -2,8 +2,8 @@ _:
 {
   services.picom = {
     enable = false;
-    backend = "glx";
-    vSync = true;
+    # backend = "glx";
+    # vSync = true;
     # Opacity
     activeOpacity = 1.0;
     inactiveOpacity = 0.8;

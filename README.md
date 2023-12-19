@@ -19,3 +19,10 @@ This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for confi
 [overlays]: ./overlays
 [pkgs]: ./pkgs
 [scripts]: ./scripts
+
+
+## TODO
+- [ ] Add Disko support for different host 
+- [ ] Add Install scripts
+- [ ] Add nix-index to home-manager
+- [ ] Documentation for nix-ld(whether to integrate it or not)

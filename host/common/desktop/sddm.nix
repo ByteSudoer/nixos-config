@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 {
   services.xserver = {
     enable = true;
@@ -7,7 +7,7 @@
       sddm = {
         enable = true;
         theme =
-          "${import ../../../pkgs/sddm-themes/sddm-astronaut.nix { inherit pkgs; }}";
+          "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
         autoNumlock = true;
         enableHidpi = true;
       };

@@ -24,7 +24,7 @@ unlock:
 	rm -f ./flake.lock
 
 update:
-	nix flake update
+	nix flake update --commit-lock-file
 
 vm:
 	sudo nixos-rebuild build-vm --verbose --flake .#${HOSTNAME}

@@ -1,4 +1,11 @@
 { lib, ... }: {
+  # Nvidia
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
 
     modesetting.enable = true;
@@ -6,6 +13,12 @@
     open = false;
 
     nvidiaSettings = true;
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    powerManagement.enable = false;
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
 
     prime = {
       sync.enable = true;

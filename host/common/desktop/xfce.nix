@@ -1,4 +1,4 @@
-{ config, pkgs, callPackage, ... }: {
+_: {
 
   services.xserver = {
     enable = true;

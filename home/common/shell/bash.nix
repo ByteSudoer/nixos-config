@@ -17,7 +17,7 @@ _:
     '';
 
     initExtra = ''
-      neofetch
+      nerdfetch
 
     '';
     shellAliases = {

@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
 
+    nerdfetch
     libnotify
     xdg-utils
     xorg.xlsclients

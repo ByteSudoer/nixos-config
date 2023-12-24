@@ -16,6 +16,13 @@
   ++ lib.optional (builtins.isString desktop) ./common/desktop;
 
   nixpkgs = {
+
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
@@ -31,12 +38,6 @@
       # (_: _: { embr = inputs.embr.packages."${pkgs.system}".embr; })
     ];
 
-    config = {
-      allowUnfree = true;
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-    };
   };
 
   nix = {

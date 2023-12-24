@@ -22,7 +22,7 @@
   templateInit = pkgs.callPackage ./templateInit { };
 
   # Spotifty
-  # spotifty = pkgs.callPackage ./spotify { };
+  spotify-ad = pkgs.callPackage ./spotify { };
 
 
 } 

@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./bitwarden.nix
     ./discord.nix
@@ -9,4 +9,8 @@
     ./spotify.nix
     ./utils.nix
   ];
+
+  # home.packages = with pkgs;[
+  #   linux-wifi-hotspot
+  # ];
 }

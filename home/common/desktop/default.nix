@@ -22,11 +22,12 @@
   home.packages = with pkgs; [
 
     libnotify
-    pavucontrol
     xdg-utils
     xorg.xlsclients
     #Screenshot
     flameshot
+    #WebCam
+    gnome.cheese
   ];
 
 }

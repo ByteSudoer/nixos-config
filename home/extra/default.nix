@@ -6,5 +6,6 @@
     ./ferdium.nix
     ./imagers.nix
     # ./obsidian.nix
+    ./utils.nix
   ];
 }

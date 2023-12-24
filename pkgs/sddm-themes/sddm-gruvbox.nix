@@ -1,4 +1,4 @@
-{ pgks }:
+{ pkgs }:
 pkgs.stdenv.mkDerivation {
   name = "sddm-gruvbox";
   src = pkgs.fetchFromGitHub {

@@ -24,4 +24,7 @@
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  #Enable Nested virtualization
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
 }

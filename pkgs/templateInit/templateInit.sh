@@ -64,7 +64,7 @@ case $lang in
     cp "$dir"/Arion/arion-pkgs.nix "$destination"
     cp "$dir"/Arion/arion-compose.nix "$destination"
     ;;
-  js)
+  Node.js)
     echo "Node.js env"
     cp "$dir"/Node.js/flake.nix "$destination"
     init_envrc_file

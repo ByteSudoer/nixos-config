@@ -9,7 +9,7 @@
     # dejavu_fonts
     # comic-mono
     # source-code-pro
-    # jetbrains-mono
+    jetbrains-mono
     # fira-code-symbols
     # ibm-plex
   ];

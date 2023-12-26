@@ -89,7 +89,7 @@ in
         save_to_clipboard = true;
       };
       font = {
-        size = 10;
+        size = 9;
         normal = {
           family = font;
           style = "Regular";

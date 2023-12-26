@@ -12,8 +12,8 @@
       enable = true;
       createDirectories = lib.mkDefault true;
 
-      download = config.home.homeDirectory + "/downloads";
-      pictures = config.home.homeDirectory + "/pictures";
+      download = config.home.homeDirectory + "/Downloads";
+      pictures = config.home.homeDirectory + "/Pictures";
 
       desktop = config.home.homeDirectory;
       documents = config.home.homeDirectory;
@@ -23,9 +23,8 @@
       videos = config.home.homeDirectory;
 
       extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/screenshots";
+        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
       };
     };
   };
 }
-

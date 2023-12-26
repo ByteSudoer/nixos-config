@@ -1,6 +1,6 @@
 { pkgs, colorscheme, ... }:
 let
-  font = "JetBrains Mono";
+  font = "ComicMono";
 
   # Define the color schemes
   colorConfig =
@@ -71,8 +71,6 @@ in
     package = pkgs.alacritty;
     settings = {
       # ... other settings ...
-      enable = true;
-      package = pkgs.alacritty;
       settings = {
         cursor = {
           style = "Block";
@@ -95,21 +93,19 @@ in
         font = {
           size = 9;
           normal = {
-            family = "${font}";
-            style = "
-            Regular ";
+            family = font;
+            style = "Regular";
           };
           bold = {
-            family = " ${font}";
+            family = font;
             style = "Bold";
           };
           italic = {
-            family = "${font}";
-            style = "
-            Italic ";
+            family = font;
+            style = "Italic";
           };
           bold_italic = {
-            family = "${font}";
+            family = font;
             style = "Bold Italic";
           };
         };

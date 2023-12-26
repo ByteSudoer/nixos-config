@@ -18,6 +18,7 @@ in
         "wheel"
       ]
       ++ ifExists [
+        "libvirtd"
         "docker"
         "plugdev"
         "render"

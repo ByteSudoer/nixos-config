@@ -1,6 +1,6 @@
 { pkgs, colorscheme, ... }:
 let
-  font = "ComicMono";
+  font = "JetBrainsMono";
 
   # Define the color schemes
   colorConfig =
@@ -70,44 +70,41 @@ in
     enable = true;
     package = pkgs.alacritty;
     settings = {
-      # ... other settings ...
-      settings = {
-        cursor = {
-          style = "Block";
-          vi_mode_style = "Beam";
-          unfocused_hollow = true;
-          thickness = 0.15;
+      cursor = {
+        style = "Block";
+        vi_mode_style = "Beam";
+        unfocused_hollow = true;
+        thickness = 0.15;
+      };
+      env = {
+        TERM = "xterm-256color";
+        IS_ALACRITTY = "true";
+      };
+      scrolling = {
+        history = 100000;
+        multiplier = 3;
+      };
+      selection = {
+        semantic_escape_chars = '',│`|:"' ()[]{}<>	'';
+        save_to_clipboard = true;
+      };
+      font = {
+        size = 10;
+        normal = {
+          family = font;
+          style = "Regular";
         };
-        env = {
-          TERM = "xterm-256color";
-          IS_ALACRITTY = "true";
+        bold = {
+          family = font;
+          style = "Bold";
         };
-        scrolling = {
-          history = 100000;
-          multiplier = 3;
+        italic = {
+          family = font;
+          style = "Italic";
         };
-        selection = {
-          semantic_escape_chars = '',│`|:"' ()[]{}<>	'';
-          save_to_clipboard = true;
-        };
-        font = {
-          size = 9;
-          normal = {
-            family = font;
-            style = "Regular";
-          };
-          bold = {
-            family = font;
-            style = "Bold";
-          };
-          italic = {
-            family = font;
-            style = "Italic";
-          };
-          bold_italic = {
-            family = font;
-            style = "Bold Italic";
-          };
+        bold_italic = {
+          family = font;
+          style = "Bold Italic";
         };
       };
 

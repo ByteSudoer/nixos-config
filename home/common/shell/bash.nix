@@ -5,6 +5,8 @@ _:
     enableCompletion = true;
     historyIgnore = [ "ls" "cd" "exit" "shutdown" "reboot" "clear" ];
     bashrcExtra = ''
+      HISTTIMEFORMAT="%F %T  "
+      export HISCONTROL=ignoreboth:erasedups
 
       set -o vi
       force_color_prompt=yes

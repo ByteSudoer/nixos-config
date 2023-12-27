@@ -6,6 +6,7 @@
     ./ferdium.nix
     ./imagers.nix
     ./obsidian.nix
+    ./qbittorent.nix
     ./spotify.nix
     ./utils.nix
   ];

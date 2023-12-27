@@ -5,8 +5,9 @@
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix
+    ./libreoffice.nix
     ./obsidian.nix
-    ./qbittorent.nix
+    ./qbittorrent.nix
     ./spotify.nix
     ./utils.nix
   ];

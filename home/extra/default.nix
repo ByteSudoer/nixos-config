@@ -2,6 +2,7 @@
   imports = [
     ./bitwarden.nix
     ./discord.nix
+    ./distrobox.nix
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix

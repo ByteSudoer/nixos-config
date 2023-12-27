@@ -31,6 +31,7 @@
         home-manager = {
 
           useUserPackages = true;
+          useGlobalPkgs = true;
 
           users.${username} = ../. + "/home";
           extraSpecialArgs = {

@@ -5,7 +5,7 @@
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix
-    # ./obsidian.nix
+    ./obsidian.nix
     ./spotify.nix
     ./utils.nix
   ];

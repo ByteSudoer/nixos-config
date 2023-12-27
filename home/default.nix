@@ -23,28 +23,32 @@
     '';
   };
 
-  nixpkgs = {
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
-      # inputs.crafts.overlay
-      # inputs.agenix.overlays.default
-    ];
-    # ++ lib.optionals (desktop == "hyprland") [
-    #   inputs.hyprland.overlays.default
-    #   inputs.hyprland-contrib.overlays.default
-    # ];
-
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
+  # nixpkgs = {
+  #   overlays = [
+  #     # Add overlays your own flake exports (from overlays and pkgs dir):
+  #     outputs.overlays.additions
+  #     outputs.overlays.modifications
+  #     outputs.overlays.unstable-packages
+  #
+  #     # You can also add overlays exported from other flakes:
+  #     # inputs.crafts.overlay
+  #     # inputs.agenix.overlays.default
+  #   ];
+  #   # ++ lib.optionals (desktop == "hyprland") [
+  #   #   inputs.hyprland.overlays.default
+  #   #   inputs.hyprland-contrib.overlays.default
+  #   # ];
+  #
+  #   config = {
+  #     # Disable if you don't want unfree packages
+  #     allowUnfree = true;
+  #     # Workaround for https://github.com/nix-community/home-manager/issues/2942
+  #     allowUnfreePredicate = _: true;
+  #     permittedInsecurePackages = [
+  #       "electron-25.9.0"
+  #     ];
+  #   };
+  # };
 
 }

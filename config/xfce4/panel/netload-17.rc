@@ -1,1 +1,15 @@
-/nix/store/170b36ch9vcp2an5jv9vhx94mqsk034d-home-manager-files/.config/xfce4/panel/netload-17.rc
+Use_Label=true
+Show_Values=false
+Show_Bars=true
+Colorize_Values=false
+Color_In=rgb(255,79,0)
+Color_Out=rgb(255,229,0)
+Text=Net
+Network_Device=wlan0
+Max_In=4096
+Max_Out=4096
+Auto_Max=true
+Update_Interval=250
+Values_As_Bits=false
+Digits=2
+

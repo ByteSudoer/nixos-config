@@ -1,1 +1,11 @@
-/nix/store/170b36ch9vcp2an5jv9vhx94mqsk034d-home-manager-files/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-screensaver.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-screensaver" version="1.0">
+  <property name="saver" type="empty">
+    <property name="mode" type="int" value="0"/>
+    <property name="enabled" type="bool" value="false"/>
+  </property>
+  <property name="lock" type="empty">
+    <property name="enabled" type="bool" value="false"/>
+  </property>
+</channel>

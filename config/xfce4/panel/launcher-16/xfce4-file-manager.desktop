@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Exec=exo-open --launch FileManager %u
-Icon=org.xfce.filemanager
+Icon=system-file-manager
 StartupNotify=true
 Terminal=false
 Categories=Utility;X-XFCE;X-Xfce-Toplevel;

@@ -1,1 +1,9 @@
-/nix/store/170b36ch9vcp2an5jv9vhx94mqsk034d-home-manager-files/.config/xfce4/xfconf/xfce-perchannel-xml/ristretto.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="ristretto" version="1.0">
+  <property name="window" type="empty">
+    <property name="navigationbar" type="empty">
+      <property name="position" type="string" value="left"/>
+    </property>
+  </property>
+</channel>

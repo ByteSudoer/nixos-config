@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/0239.jpg"/>
+          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/retro_computer.jpg"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-timer" type="uint" value="5"/>
         </property>
@@ -55,7 +55,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/wallhaven-eyj8dk_1920x1080.png"/>
+          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/kernel.png"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-timer" type="uint" value="5"/>
         </property>
@@ -79,7 +79,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/gnu-and-freedo.png"/>
+          <property name="last-image" type="string" value="/home/bytesudoer/Pictures/Wallpapers/dracula/image15.png"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-timer" type="uint" value="5"/>
         </property>

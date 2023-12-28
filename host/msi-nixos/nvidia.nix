@@ -1,4 +1,4 @@
-{ lib, ... }: {
+_: {
   # Nvidia
   hardware.opengl = {
     enable = true;

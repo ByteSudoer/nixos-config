@@ -1,4 +1,4 @@
-{ config, extra, desktop, lib, outputs, stateVersion, username, pkgs, ... }:
+{ config, extra, desktop, lib, stateVersion, username, pkgs, ... }:
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings

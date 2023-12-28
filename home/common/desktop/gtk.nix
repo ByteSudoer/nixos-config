@@ -43,4 +43,3 @@ in
     inherit (themeConfig) cursorTheme theme iconTheme;
   };
 }
-

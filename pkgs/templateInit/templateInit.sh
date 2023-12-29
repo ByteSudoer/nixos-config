@@ -8,6 +8,7 @@ destination=${2:-$PWD}
 lang=${1:-}
 
 supported_projects=(
+"init"
 "Arion"
 "Rust"
 "C"
@@ -67,6 +68,11 @@ case $lang in
   Node.js)
     echo "Node.js env"
     cp "$dir"/Node.js/flake.nix "$destination"
+    init_envrc_file
+    ;;
+  init)
+    echo "Devops env"
+    cp "$dir"/init/flake.nix "$destination"
     init_envrc_file
     ;;
   *)

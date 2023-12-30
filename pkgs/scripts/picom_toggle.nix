@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "picom_toggle" ''
   then
     killall picom
   else
-    picom -b --config ~/.config/awesome/picom.conf
+    picom -b --config ~/.config/picom/picom.conf
   fi
 
 ''

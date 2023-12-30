@@ -1,7 +1,16 @@
-_:
+{ desktop, ... }:
+let
+
+  isInList = element: list: builtins.elem element list;
+  windowManagers = [
+    "bspwm"
+    "awesome"
+    "hyperland"
+  ];
+in
 {
   services.picom = {
-    enable = false;
+    enable = isInList desktop windowManagers;
     # backend = "glx";
     # vSync = true;
     # Opacity

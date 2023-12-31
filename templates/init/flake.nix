@@ -1,5 +1,5 @@
 {
-  description = "Nix Shell for  development";
+  description = "Nix Shell for DevOps";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
     flake-utils.url = "github:numtide/flake-utils";
@@ -18,8 +18,9 @@
       devShells.default = pkgs.mkShell {
         packages = with pkgs;[
           ansible
-          minikube
           ctop
+          minikube
+          yamllint
         ];
         # shellHook = ''
         # '';

@@ -14,6 +14,8 @@ run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 run fehrandom &
 run wallpapers &
 
+run polybar &
+
 numlockx on &
 run nm-applet &
 run volumeicon &

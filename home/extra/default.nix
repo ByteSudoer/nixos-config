@@ -1,7 +1,7 @@
 { ... }: {
   imports = [
     ./bitwarden.nix
-    ./chromium.nix
+    # ./chromium.nix
     ./discord.nix
     ./distrobox.nix
     ./dropbox.nix

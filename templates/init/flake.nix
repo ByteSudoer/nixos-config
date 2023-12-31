@@ -20,6 +20,7 @@
           ansible
           ctop
           minikube
+          taplo
           yamllint
         ];
         # shellHook = ''

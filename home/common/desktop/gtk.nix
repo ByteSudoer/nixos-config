@@ -40,6 +40,13 @@ in
 {
   gtk = {
     enable = true;
+    font = {
+      package = pkgs.jetbrains-mono;
+      name = "JatBrains Mono";
+      size = 10;
+
+    };
+
     inherit (themeConfig) cursorTheme theme iconTheme;
   };
 }

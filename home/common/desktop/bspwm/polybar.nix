@@ -1,18 +1,22 @@
 { pkgs, ... }:
+let
+  colors = {
+    background = "#282A2E";
+    background-alt = "#373B41";
+    foreground = "#C5C8C6";
+    foreground-alt = "#C5C8C6";
+    primary = "#F0C674";
+    secondary = "#8ABEB7";
+    alert = "#A54242";
+    disabled = "#707880";
+  };
+in
 {
   services.polybar = {
     enable = true;
     package = pkgs.polybar;
     config = {
-      "colors" = {
-        background = "#282A2E";
-        background-alt = "#373B41";
-        foreground = "#C5C8C6";
-        primary = "#F0C674";
-        secondary = "#8ABEB7";
-        alert = "#A54242";
-        disabled = "#707880";
-      };
+      "colors" = colors;
       "bar/mainbar-bspwm" = {
         width = "100%";
         height = "24pt";
@@ -57,7 +61,26 @@
         label-unmounted = "%mountpoint% not mounted";
         label-unmounted-foreground = "${colors.disabled}";
       };
+      "module/memory" = {
+        type = "internal/memory";
+        interval = "2";
+        format-prefix = " ";
+        format-prefix-foreground = "${colors.foreground-alt}";
+        format-underline = "#4bffdc";
+        label = "%percentage_used%%";
+      };
+
+      "module/cpu" = {
+        type = "internal/cpu";
+        interval = "2";
+        format-prefix = "";
+        format-prefix-foreground = "${colors.foreground-alt}";
+        format-underline = "#f90000";
+        label = "%percentage:2%%";
+      };
     };
-    script = "";
+    script = "
+      polybar mainbar-bspwm &
+    ";
   };
 }

@@ -1,6 +1,15 @@
-_: {
+{ pkgs, ... }: {
 
   fonts = {
+    # Enable a basic set of fonts providing several font styles and families and reasonable coverage of Unicode.
+    enableDefaultPackages = false;
+    fontDir.enable = true;
+    # packages = with pkgs; [
+    #   (nerdfonts.override { fonts = [ "FiraCode" "SourceCodePro" "UbuntuMono" ]; })
+    #   fira
+    #   fira-go
+    # ];
+
     fontconfig = {
       antialias = true;
       # defaultFonts = {

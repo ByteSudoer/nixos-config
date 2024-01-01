@@ -17,6 +17,8 @@
       "super + {_,shift + }{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}";
       # Close Window
       "super + {_,shift,+}q" = "bspc node -{c,k}";
+      # Rofi Launcher
+      "super + <" = ".config/rofi/launchers/type-3/launcher.sh";
 
     };
   };

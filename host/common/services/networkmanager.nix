@@ -1,6 +1,10 @@
 _:
 {
   networking = {
+    extraHosts = ''
+      192.168.100.1 router
+      192.168.12.10 controller
+    '';
     networkmanager = {
       enable = true;
       # wifi = {

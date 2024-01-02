@@ -43,7 +43,7 @@
       inherit (self) outputs;
       stateVersion = "23.11";
       username = "bytesudoer";
-      colorscheme = "gruvbox";
+      colorscheme = "dracula";
       libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in
     {
@@ -57,7 +57,7 @@
         iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
         #WorkStations
-        msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "bspwm"; colorscheme = "${colorscheme}"; extra = "yes"; };
+        msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "plasma"; colorscheme = "${colorscheme}"; extra = "yes"; };
         lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
 

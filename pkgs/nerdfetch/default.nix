@@ -1,17 +1,14 @@
 { lib
 , stdenv
 , fetchFromGitHub
+, fetchgit
 }:
 stdenv.mkDerivation rec {
   pname = "NerdFetch";
   version = "v5.0.2";
-  src = fetchFromGitHub {
-    owner = "ThatOneCalculator";
-    repo = pname;
-    #last commit hash or version number
-    rev = version;
-    #lib.fakeSha256;
-    sha256 = "sha256-vtYDVyG5TjJY4AUCTtPPzXGYe9Hgtb41OoBCTY0bvso=";
+  src = fetchgit {
+    url = "https://codeberg.org/thatonecalculator/NerdFetch.git";
+    hash = "sha256-olDOu+dxn6JEnolcYgodq98y/ek+aGdDKT5cUAIBums=";
   };
   dontUnpack = true;
   dontConfigure = true;

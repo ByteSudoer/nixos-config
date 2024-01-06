@@ -16,11 +16,11 @@
       pictures = config.home.homeDirectory + "/Pictures";
 
       desktop = config.home.homeDirectory;
-      documents = config.home.homeDirectory;
-      music = config.home.homeDirectory;
-      publicShare = config.home.homeDirectory;
-      templates = config.home.homeDirectory;
-      videos = config.home.homeDirectory;
+      documents = config.home.homeDirectory + "/Documents";
+      music = config.home.homeDirectory + "/Music";
+      publicShare = config.home.homeDirectory + "/Public";
+      templates = config.home.homeDirectory + "/Templates";
+      videos = config.home.homeDirectory + "/Videos";
 
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";

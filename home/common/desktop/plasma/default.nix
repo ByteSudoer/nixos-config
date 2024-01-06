@@ -182,6 +182,7 @@
       "kwin"."view_actual_size" = "Meta+0";
       "kwin"."view_zoom_in" = ["Meta++" "Meta+="];
       "kwin"."view_zoom_out" = "Meta+-";
+      "lock.desktop"."_launch" = "F12";
       "mediacontrol"."mediavolumedown" = [ ];
       "mediacontrol"."mediavolumeup" = [ ];
       "mediacontrol"."nextmedia" = "Media Next";
@@ -264,8 +265,10 @@
       "kcminputrc"."Tmp"."update_info" = "delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize";
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kded5rc"."PlasmaBrowserIntegration"."shownCount" = 1;
+      "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
       "kdeglobals"."General"."XftHintStyle" = "hintslight";
       "kdeglobals"."General"."XftSubPixel" = "rgb";
+      "kdeglobals"."KDE"."SingleClick" = true;
       "kdeglobals"."WM"."activeBackground" = "47,52,63";
       "kdeglobals"."WM"."activeBlend" = "47,52,63";
       "kdeglobals"."WM"."activeForeground" = "211,218,227";
@@ -283,6 +286,7 @@
       "kglobalshortcutsrc"."kmix"."_k_friendly_name" = "Audio Volume";
       "kglobalshortcutsrc"."ksmserver"."_k_friendly_name" = "Session Management";
       "kglobalshortcutsrc"."kwin"."_k_friendly_name" = "KWin";
+      "kglobalshortcutsrc"."lock.desktop"."_k_friendly_name" = "lock";
       "kglobalshortcutsrc"."mediacontrol"."_k_friendly_name" = "Media Controller";
       "kglobalshortcutsrc"."org.kde.dolphin.desktop"."_k_friendly_name" = "Dolphin";
       "kglobalshortcutsrc"."org.kde.konsole.desktop"."_k_friendly_name" = "Konsole";
@@ -567,7 +571,7 @@
       "khotkeysrc"."Data_3Conditions0"."Type" = "ACTIVE_WINDOW";
       "khotkeysrc"."Data_3Conditions0Window"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window"."WindowsCount" = 1;
-      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konqueror\s";
+      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konquerors";
       "khotkeysrc"."Data_3Conditions0Window0"."ClassType" = 3;
       "khotkeysrc"."Data_3Conditions0Window0"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window0"."Role" = "konqueror-mainwindow#1";

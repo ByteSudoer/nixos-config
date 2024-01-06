@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+_: {
 
   fonts = {
     # Enable a basic set of fonts providing several font styles and families and reasonable coverage of Unicode.

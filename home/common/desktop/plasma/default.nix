@@ -780,6 +780,7 @@
       "khotkeysrc"."Data_3_9Triggers"."TriggersCount" = 1;
       "khotkeysrc"."Data_3_9Triggers0"."GesturePointData" = "0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1";
       "khotkeysrc"."Data_3_9Triggers0"."Type" = "GESTURE";
+      "khotkeysrc"."General"."AllowKDEAppsToRememberWindowPositions[$d]" = "";
       "khotkeysrc"."General"."ColorSchemeHash[$d]" = "";
       "khotkeysrc"."General"."ColorScheme[$d]" = "";
       "khotkeysrc"."General"."XftHintStyle[$d]" = "";
@@ -796,6 +797,7 @@
       "khotkeysrc"."GesturesExclude"."WindowsCount" = 0;
       "khotkeysrc"."Icons"."Theme[$d]" = "";
       "khotkeysrc"."KDE"."LookAndFeelPackage[$d]" = "";
+      "khotkeysrc"."KDE"."SingleClick[$d]" = "";
       "khotkeysrc"."KDE"."widgetStyle[$d]" = "";
       "khotkeysrc"."Main"."AlreadyImported" = "defaults,kde32b1,konqueror_gestures_kde321";
       "khotkeysrc"."Main"."Disabled" = false;

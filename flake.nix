@@ -3,8 +3,10 @@
   inputs = {
     #Stable Branch
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+
     #Unstable Branch
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     #Nixos Hardware Repository
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -13,23 +15,26 @@
       url = "github:Gerschtli/nix-formatter-pack";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
     #Configure Partitions and Disk Layout declaratively
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-
     };
+
     #Manage Home Directory and ~/.config
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     #Manage Plasma Desktop
     plasma-manager = {
       url = "github:pjones/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
     #Locate Binaries and Libraries in nixpkgs
     nix-index-database = {
       url = "github:Mic92/nix-index-database";

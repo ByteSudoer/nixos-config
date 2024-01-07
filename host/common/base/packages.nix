@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   basePackages = with pkgs; [
-    bat
     binutils
     curl
     dig
@@ -10,7 +9,6 @@
     fd
     file
     fzf
-    git
     github-cli
     gnumake
     htop
@@ -29,8 +27,5 @@
     usbutils
     vim
     wget
-
-    #TODO to be removed
-    vscodium
   ];
 }

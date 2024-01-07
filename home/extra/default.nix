@@ -1,12 +1,14 @@
 { ... }: {
   imports = [
     ./bitwarden.nix
-    # ./chromium.nix
+    ./chromium.nix
     ./discord.nix
     ./distrobox.nix
+    ./drawio.nix
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix
+    ./insomnia.nix
     ./libreoffice.nix
     ./obsidian.nix
     ./qbittorrent.nix

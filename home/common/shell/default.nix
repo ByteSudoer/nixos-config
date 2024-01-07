@@ -1,4 +1,5 @@
 { pkgs
+, coloescheme
 , ...
 }: {
   imports = [

@@ -8,10 +8,12 @@
     #Nixos Hardware Repository
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    #Nix Formatting and Linting tools
     nix-formatter-pack = {
       url = "github:Gerschtli/nix-formatter-pack";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    #Configure Partitions and Disk Layout declaratively
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -27,6 +29,11 @@
       url = "github:pjones/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+    #Locate Binaries and Libraries in nixpkgs
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
   };

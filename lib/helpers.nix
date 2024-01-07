@@ -40,6 +40,7 @@
           };
           # Ensure Plasma Manager is available:
           sharedModules = [
+            inputs.nix-index-database.hmModules.nix-index
             inputs.plasma-manager.homeManagerModules.plasma-manager
           ];
 

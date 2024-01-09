@@ -10,7 +10,6 @@
     file
     fzf
     github-cli
-    gnumake
     htop
     jq
     killall

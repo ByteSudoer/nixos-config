@@ -258,6 +258,8 @@
       "baloofilerc"."General"."dbVersion" = 2;
       "baloofilerc"."General"."exclude filters" = "*~,*.part,*.o,*.la,*.lo,*.loT,*.moc,moc_*.cpp,qrc_*.cpp,ui_*.h,cmake_install.cmake,CMakeCache.txt,CTestTestfile.cmake,libtool,config.status,confdefs.h,autom4te,conftest,confstat,Makefile.am,*.gcode,.ninja_deps,.ninja_log,build.ninja,*.csproj,*.m4,*.rej,*.gmo,*.pc,*.omf,*.aux,*.tmp,*.po,*.vm*,*.nvram,*.rcore,*.swp,*.swap,lzo,litmain.sh,*.orig,.histfile.*,.xsession-errors*,*.map,*.so,*.a,*.db,*.qrc,*.ini,*.init,*.img,*.vdi,*.vbox*,vbox.log,*.qcow2,*.vmdk,*.vhd,*.vhdx,*.sql,*.sql.gz,*.ytdl,*.class,*.pyc,*.pyo,*.elc,*.qmlc,*.jsc,*.fastq,*.fq,*.gb,*.fasta,*.fna,*.gbff,*.faa,po,CVS,.svn,.git,_darcs,.bzr,.hg,CMakeFiles,CMakeTmp,CMakeTmpQmake,.moc,.obj,.pch,.uic,.npm,.yarn,.yarn-cache,__pycache__,node_modules,node_packages,nbproject,.venv,venv,core-dumps,lost+found";
       "baloofilerc"."General"."exclude filters version" = 8;
+      "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
+      "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
       "kactivitymanagerdrc"."activities"."b0b334e0-2a65-468c-b086-035bacaddc9a" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "b0b334e0-2a65-468c-b086-035bacaddc9a";
       "kcminputrc"."Mouse"."X11LibInputXAccelProfileFlat" = true;
@@ -811,10 +813,13 @@
       "khotkeysrc"."WM"."inactiveBlend[$d]" = "";
       "khotkeysrc"."WM"."inactiveForeground[$d]" = "";
       "kscreenlockerrc"."Daemon"."Autolock" = false;
+      "kscreenlockerrc"."Greeter.Wallpaper.org.kde.image.General"."Image" = "/nix/store/a7jszbwh7l4k0zvghkssav97qjnj6k1b-plasma-workspace-wallpapers-5.27.10/share/wallpapers/Honeywave/";
+      "kscreenlockerrc"."Greeter.Wallpaper.org.kde.image.General"."PreviewImage" = "/nix/store/a7jszbwh7l4k0zvghkssav97qjnj6k1b-plasma-workspace-wallpapers-5.27.10/share/wallpapers/Honeywave/";
       "kwalletrc"."Wallet"."First Use" = false;
       "kwinrc"."Desktops"."Id_1" = "8d725d18-9b04-4b15-8e5d-c66a5b650806";
-      "kwinrc"."Desktops"."Number" = 1;
-      "kwinrc"."Desktops"."Rows" = 1;
+      "kwinrc"."Desktops"."Id_2" = "85d1e6ae-b65c-437a-8312-89208fe1de8f";
+      "kwinrc"."Desktops"."Number" = 2;
+      "kwinrc"."Desktops"."Rows" = 2;
       "kwinrc"."NightColor"."LatitudeAuto" = 36.7496;
       "kwinrc"."NightColor"."LongitudeAuto" = 10.2126;
       "kwinrc"."Tiling"."padding" = 4;

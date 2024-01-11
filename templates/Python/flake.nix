@@ -18,6 +18,8 @@
       devShells.default = pkgs.mkShell {
         packages = with pkgs;[
           python3Full
+          #The PyPA recommended tool for installing Python packages
+          python311Packages.pip
           virtualenv
           # For LSP
           pylint

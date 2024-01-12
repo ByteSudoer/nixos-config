@@ -29,7 +29,6 @@
     };
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #Manage Plasma Desktop
@@ -60,6 +59,7 @@
       stateVersion = "23.11";
       username = "bytesudoer";
       colorscheme = "dracula";
+      desktop = "hyprland";
       libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in
     {
@@ -73,7 +73,7 @@
         iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
         #WorkStations
-        msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "plasma"; colorscheme = "${colorscheme}"; extra = "yes"; };
+        msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
         lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
         vm = libx.mkSystem { hostname = "vm"; desktop = "plasma"; colorscheme = "${colorscheme}"; };
 

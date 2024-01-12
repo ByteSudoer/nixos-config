@@ -9,5 +9,14 @@
   home.packages = with pkgs; [
     #Clipman manager
     copyq
+
+    ## Manage Wallpapers
+    swww
+
+
+    wev
+
+    #Eq of xrandr
+    wlr-randr
   ];
 }

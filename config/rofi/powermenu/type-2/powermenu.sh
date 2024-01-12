@@ -18,6 +18,7 @@ theme='style-1'
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
+
 # Options
 shutdown=''
 reboot=''
@@ -26,7 +27,6 @@ suspend=''
 logout=''
 yes=''
 no=''
-
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \

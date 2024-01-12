@@ -20,6 +20,19 @@
         "$mod,return,exec,alacritty"
         "$mod,w,exec,firefox"
         "$mod SHIFT,q,killactive"
+        "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
+
+        ## Change focus
+        "$mod,l,movefocus,r"
+        "$mod,h,movefocus,l"
+        "$mod,k,movefocus,u"
+        "$mod,j,movefocus,d"
+
+        ## Move Window
+        "$mod SHIFT,l,movewindow,r"
+        "$mod SHIFT,h,movewindow,l"
+        "$mod SHIFT,k,movewindow,u"
+        "$mod SHIFT,j,movewindow,d"
       ];
       # Window Rules
       windowrule = [

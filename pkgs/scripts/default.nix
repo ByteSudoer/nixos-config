@@ -5,6 +5,7 @@
   lock = pkgs.callPackage ./lock.nix { };
   picom_toggle = pkgs.callPackage ./picom_toggle.nix { };
   sp = pkgs.callPackage ./sp.nix { };
+  swww_random = pkgs.callPackage ./swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./tmuxSession.nix { };
   wallpapers = pkgs.callPackage ./wallpapers.nix { };
 }

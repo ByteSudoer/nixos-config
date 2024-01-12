@@ -36,6 +36,10 @@
         "$mod SHIFT,h,movewindow,l"
         "$mod SHIFT,k,movewindow,u"
         "$mod SHIFT,j,movewindow,d"
+
+        ## Switch between workspaces
+        "ALT,l,workspace,+1"
+        "ALT,h,workspace,-1"
       ];
 
       ## Misc

@@ -64,7 +64,7 @@ in
       "module/memory" = {
         type = "internal/memory";
         interval = "2";
-        format-prefix = " ";
+        format-prefix = "";
         format-prefix-foreground = "${colors.foreground-alt}";
         format-underline = "#4bffdc";
         label = "%percentage_used%%";
@@ -73,10 +73,18 @@ in
       "module/cpu" = {
         type = "internal/cpu";
         interval = "2";
-        format-prefix = "";
+        format-prefix = "󰍛";
         format-prefix-foreground = "${colors.foreground-alt}";
         format-underline = "#f90000";
         label = "%percentage:2%%";
+      };
+
+      "module/eth" = {
+
+        # inherit = "network-base$";
+        interface-type = "wired$";
+        label-connected = "%{F#F0C674}%ifname%%{F-} %local_ip%$";
+
       };
     };
     script = "

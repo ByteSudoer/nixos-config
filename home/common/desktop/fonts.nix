@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     (nerdfonts.override
       {
-        fonts = [ "JetBrainsMono" "SourceCodePro" "FiraCode" "Iosevka" "ComicShannsMono" ];
+        fonts = [ "JetBrainsMono" "SourceCodePro" "FiraCode" "Iosevka" "ComicShannsMono" "FantasqueSansMono" ];
       }
     )
     dejavu_fonts

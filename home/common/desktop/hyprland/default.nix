@@ -12,8 +12,7 @@
 
     ## Manage Wallpapers
     swww
-
-
+    swww_randomize
     wev
 
     #Eq of xrandr

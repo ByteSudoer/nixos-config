@@ -1,5 +1,5 @@
 { pkgs, ... }:
-pkgs.writeShellScriptBin "lock" ''
+pkgs.writeShellScriptBin "swww_randomize" ''
     #!/usr/bin/env bash 
 
 

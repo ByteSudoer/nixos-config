@@ -5,7 +5,6 @@ let
   windowManagers = [
     "bspwm"
     "awesome"
-    "hyperland"
   ];
 in
 {

@@ -12,6 +12,7 @@
   lock = pkgs.callPackage ./scripts/lock.nix { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };
   sp = pkgs.callPackage ./scripts/sp.nix { };
+  swww_randomize = pkgs.callPackage ./scripts/swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./scripts/tmuxSession.nix { };
   wallpapers = pkgs.callPackage ./scripts/wallpapers.nix { };
 

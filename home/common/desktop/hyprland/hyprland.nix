@@ -7,14 +7,17 @@
     systemd.enable = true;
     settings = {
 
-      exec-once = [
-        "waybar"
-        "copyq --start-server"
-      ];
       "$mod" = "SUPER";
+
       input = {
         kb_layout = "fr";
       };
+      exec-once = [
+        "waybar"
+        "copyq --start-server"
+        "swww init"
+        "swww_randomize $HOME/nixos-config/Wallpapers"
+      ];
       # KeyBorad Bindings
       bind = [
         "$mod,return,exec,alacritty"
@@ -34,6 +37,16 @@
         "$mod SHIFT,k,movewindow,u"
         "$mod SHIFT,j,movewindow,d"
       ];
+
+      ## Misc
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        mouse_move_enables_dpms = true;
+        enable_swallow = true;
+
+      };
+
       # Window Rules
       windowrule = [
         "float,^(pavucontrol)$"

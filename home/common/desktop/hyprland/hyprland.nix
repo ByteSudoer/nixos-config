@@ -4,16 +4,20 @@
     enable = true;
     # enableNvidiaPatches = true;
     #https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.hyprland.systemd.enable
-    systemd.enable = true;
+    # systemd.enable = true;
     settings = {
 
       "$mod" = "SUPER";
 
       input = {
         kb_layout = "fr";
+        numlock_by_default = true;
+
+
       };
       exec-once = [
         "waybar"
+        "lxqt-policykit-agent"
         "copyq --start-server"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers"
@@ -22,6 +26,7 @@
       bind = [
         "$mod,return,exec,alacritty"
         "$mod,w,exec,firefox"
+        "$mod SHIFT,return,exec,thunar"
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
 
@@ -40,6 +45,22 @@
         ## Switch between workspaces
         "ALT,l,workspace,+1"
         "ALT,h,workspace,-1"
+
+        #Hyprctl keymaps
+        "$mod SHIFT,r,exec,hyprctl reload"
+
+        #Brightness and Audio Controls
+        ",XF86MonBrightnessUp,exec,brightnessctl set 10%+"
+        ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
+        ",XF86AudioRaiseVolume,exec,amixer sset Master 10%+"
+        ",XF86AudioLowerVolume,exec,amixer sset Master 10%-"
+        ",XF86AudioMute,exec,amixer sset Master toggle"
+      ];
+
+      ## Mouse Bindings
+      bindm = [
+        "$mod,mouse:272,movewindow"
+        "$mod,mouse:273,resizewindow"
       ];
 
       ## Misc
@@ -54,6 +75,11 @@
       # Window Rules
       windowrule = [
         "float,^(pavucontrol)$"
+        "center,^(xfce4-taskmanager)$"
+      ];
+      windowrulev2 = [
+        "float,class:(lxqt-policykit-agent)"
+
       ];
     };
 

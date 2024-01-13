@@ -7,8 +7,14 @@
     ./wofi.nix
   ];
   home.packages = with pkgs; [
+    #Control Brightness
+    brightnessctl
     #Clipman manager
     copyq
+
+    #GTK Apps
+    lxappearance
+    glib
 
     ## Manage Wallpapers
     swww
@@ -17,5 +23,8 @@
 
     #Eq of xrandr
     wlr-randr
+
+    # Task manager
+    xfce.xfce4-taskmanager
   ];
 }

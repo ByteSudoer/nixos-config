@@ -1,5 +1,7 @@
 { pkgs, ... }:
+
 {
+  programs.network-manager-applet.enable = true;
   programs.waybar = {
     enable = true;
     # systemd.enable = true;
@@ -8,7 +10,7 @@
       mainBar = {
         layer = "top";
         modules-left = [ "hyprland/workspaces" ];
-        modules-right = [ "wireplumber" "memory" "cpu" "battery" "clock" ];
+        modules-right = [ "tray" "wireplumber" "memory" "cpu" "battery" "clock" ];
 
         "clock" = {
           format = "{:%H:%M}  ";
@@ -96,9 +98,14 @@
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
-          # persistent-workspaces = {
-          #   "*" = 5;
-          # };
+          persistent-workspaces = {
+            "*" = 5;
+          };
+        };
+        "tray" = {
+          icon-size = 21;
+          spacing = 10;
+
         };
       };
     };
@@ -152,27 +159,27 @@
         margin-right: 5px;
       }
 
-#workspaces button.active {
+      #workspaces button.active {
         color: #a6adc8;
-        }
+      }
 
 #workspaces button.focused {
-        color: #a6adc8;
-        background: #eba0ac;
-        border-radius: 10px;
-        }
+              color: #a6adc8;
+              background: #eba0ac;
+              border-radius: 10px;
+              }
 
 #workspaces button.urgent {
-        color: #11111b;
-        background: #a6e3a1;
-        border-radius: 10px;
-        }
+              color: #11111b;
+              background: #a6e3a1;
+              border-radius: 10px;
+              }
 
 #workspaces button:hover {
-        background: #11111b;
-        color: #cdd6f4;
-        border-radius: 10px;
-        }
+              background: #11111b;
+              color: #cdd6f4;
+              border-radius: 10px;
+              }
 
 
 

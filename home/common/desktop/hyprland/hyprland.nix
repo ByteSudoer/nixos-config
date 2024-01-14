@@ -12,17 +12,16 @@
       input = {
         kb_layout = "fr";
         numlock_by_default = true;
-
-
       };
       exec-once = [
         "waybar"
-        ""
+        "discord --start-minimised"
+        "ferdium"
+        "nm-applet"
         "lxqt-policykit-agent"
         "copyq --start-server"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers"
-        "hyprctl setcursor Dracula 24"
       ];
       # KeyBorad Bindings
       bind = [

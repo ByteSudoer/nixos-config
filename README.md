@@ -23,6 +23,6 @@ This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for confi
 
 ## TODO
 - [ ] Add Disko support for different host 
-- [ ] Add Install scripts
-- [ ] Add nix-index to home-manager
+- [X] Add nix-index to home-manager
+- [ ] Configure env variables for hyprland with colorscheme global variable support
 - [ ] Documentation for nix-ld(whether to integrate it or not)

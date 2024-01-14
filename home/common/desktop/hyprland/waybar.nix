@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 {
-  programs.network-manager-applet.enable = true;
+  services.network-manager-applet.enable = true;
   programs.waybar = {
     enable = true;
-    # systemd.enable = true;
+    systemd.enable = true;
 
     settings = {
       mainBar = {

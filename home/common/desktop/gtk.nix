@@ -38,11 +38,17 @@ let
       };
 in
 {
+  home.pointerCursor =
+    {
+      gtk.enable = true;
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+      size = 16;
+    };
   gtk = {
     enable = true;
     font = {
-      package = pkgs.jetbrains-mono;
-      name = "JatBrains Mono";
+      name = "JatBrainsMono";
       size = 10;
 
     };

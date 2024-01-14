@@ -14,6 +14,7 @@
 
     #GTK Apps
     lxappearance
+    nwg-look
     glib
 
     ## Manage Wallpapers

@@ -17,10 +17,12 @@
       };
       exec-once = [
         "waybar"
+        ""
         "lxqt-policykit-agent"
         "copyq --start-server"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers"
+        "hyprctl setcursor Dracula 24"
       ];
       # KeyBorad Bindings
       bind = [
@@ -75,12 +77,39 @@
       # Window Rules
       windowrule = [
         "float,^(pavucontrol)$"
-        "center,^(xfce4-taskmanager)$"
       ];
       windowrulev2 = [
         "float,class:(lxqt-policykit-agent)"
+        "float,class:(xfce4-taskmanager)"
+
+        ## Opacity Rules
+        "opacity 0.8 0.8,class:^(Alacritty)$"
+        "opacity 0.8 0.8,class:^(firefox)$"
+        "opacity 0.8 0.8,class:^(thunar)$"
 
       ];
+
+      ## Environment Variables
+      env = [
+        "QT_QPA_PLATFORM,wayland"
+        # "QT_QPA_PLATFORMTHEME,qt5ct"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      ];
+
+      ## Decoration
+      decoration = {
+        rounding = 5;
+
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 3;
+          new_optimizations = true;
+          ignore_opacity = true;
+        };
+
+      };
     };
 
 

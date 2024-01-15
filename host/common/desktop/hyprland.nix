@@ -9,6 +9,7 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
   };
@@ -19,4 +20,5 @@
     libsForQt5.polkit-kde-agent
     lxqt.lxqt-policykit
   ];
+
 }

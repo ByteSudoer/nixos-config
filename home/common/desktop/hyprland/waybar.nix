@@ -11,7 +11,7 @@
         layer = "top";
         modules-left = [ "custom/logout" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "wireplumber" "network" "memory" "cpu" "battery" "clock" ];
+        modules-right = [ "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
 
         "clock" = {
           format = "{:%H:%M}  ";
@@ -79,6 +79,7 @@
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          on-click = "blueberry";
         };
         wireplumber = {
           format = "{volume}% {icon}";
@@ -275,6 +276,17 @@ window#waybar.hidden {
 	transition: none;
 	color: #161320;
 	background: #96CDFB;
+}
+#bluetooth {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #ABE9B3;
 }
 
 #tray {

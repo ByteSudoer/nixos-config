@@ -79,6 +79,9 @@
       windowrulev2 = [
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
+        "float,title:(Bluetooth)"
+        "float,title:(Picture-in-Picture"
+
 
         ## Opacity Rules
         "opacity 0.8 0.8,class:^(Alacritty)$"

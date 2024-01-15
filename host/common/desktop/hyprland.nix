@@ -2,6 +2,10 @@
 {
   programs.hyprland = {
     enable = true;
+
+    xwayland.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+
   };
   # For Screen Sharing
   services.dbus.enable = true;
@@ -9,7 +13,6 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
   };

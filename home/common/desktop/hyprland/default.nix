@@ -24,6 +24,8 @@
     swww_randomize
     wev
 
+    xwaylandvideobridge
+
     #Eq of xrandr
     wlr-randr
 

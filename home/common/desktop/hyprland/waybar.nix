@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+_:
 
 {
   services.network-manager-applet.enable = true;

@@ -21,4 +21,7 @@
     lxqt.lxqt-policykit
   ];
 
+  ## Needed fot swaylock
+  security.pam.services.swaylock = { };
+
 }

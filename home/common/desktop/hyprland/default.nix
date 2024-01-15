@@ -3,6 +3,7 @@
   imports = [
     ./dunst.nix
     ./hyprland.nix
+    ./swaylock.nix
     ./waybar.nix
     ./wlogout.nix
     ./wofi.nix

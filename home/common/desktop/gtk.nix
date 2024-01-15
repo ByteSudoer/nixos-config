@@ -6,7 +6,7 @@ let
       {
         cursorTheme = {
           package = pkgs.dracula-theme;
-          name = "Dracula";
+          name = "Dracula-cursors";
         };
         theme = {
           package = pkgs.dracula-theme;
@@ -42,13 +42,14 @@ in
     {
       gtk.enable = true;
       package = pkgs.dracula-theme;
-      name = "Dracula";
+      name = "Dracula-cursors";
       size = 16;
+      x11.enable = true;
     };
   gtk = {
     enable = true;
     font = {
-      name = "JatBrainsMono";
+      name = "JetBrains Mono";
       size = 10;
 
     };

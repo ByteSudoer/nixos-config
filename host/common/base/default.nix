@@ -19,6 +19,7 @@ in
     ../services/openssh.nix
   ];
 
+
   networking = {
     hostName = hostname;
     useDHCP = lib.mkDefault true;

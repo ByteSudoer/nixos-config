@@ -5,6 +5,7 @@
     (./. + "/thunar.nix")
     ../services/networkmanager.nix
     ../services/pipewire.nix
+    ../hardware/bluetooth.nix
     ../virt
   ];
 

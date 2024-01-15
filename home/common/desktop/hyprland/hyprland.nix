@@ -14,11 +14,12 @@
         numlock_by_default = true;
       };
       exec-once = [
+        "waybar"
         "lxqt-policykit-agent"
         "copyq --start-server"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers"
-        "discord --start-minimised"
+        "discord --start-minimized"
         "ferdium"
       ];
       # KeyBorad Bindings

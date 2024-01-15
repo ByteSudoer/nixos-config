@@ -31,7 +31,6 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "$host" \
 		-mesg "Uptime: $uptime" \
-		-select $lock \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -45,7 +44,6 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-select $yes \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -78,6 +76,8 @@ run_cmd() {
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
 				i3-msg exit
+			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
+				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
 			fi
 		fi
 	else

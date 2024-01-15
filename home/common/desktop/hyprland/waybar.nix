@@ -4,17 +4,18 @@
   services.network-manager-applet.enable = true;
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    # systemd.enable = true;
 
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "wireplumber" "memory" "cpu" "battery" "clock" ];
+        modules-left = [ "custom/logout" ];
+        modules-center = [ "hyprland/workspaces" ];
+        modules-right = [ "tray" "wireplumber" "network" "memory" "cpu" "battery" "clock" ];
 
         "clock" = {
           format = "{:%H:%M}  ";
-          format-alt = "{:%A, %B %d, %Y (%R)}  ";
+          format-alt = "{:%A, %B %d, %Y (%R)}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             "mode" = "year";
@@ -58,7 +59,28 @@
           ];
           max-length = 25;
         };
-        "wireplumber" = {
+        "network" = {
+          # interface = "wlp2s0";
+          format = "{ifname}";
+          format-wifi = "({signalStrength}%) ";
+          format-ethernet = "{ipaddr}/{cidr} 󰊗";
+          format-disconnected = "";
+          tooltip-format = "{ifname} via {gwaddr} 󰊗";
+          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
+          tooltip-format-ethernet = "{ifname} ";
+          tooltip-format-disconnected = "Disconnected";
+          max-length = 50;
+        };
+        bluetooth = {
+          format = " {status}";
+          format-connected = " {device_alias}";
+          format-connected-battery = " {device_alias} {device_battery_percentage}%";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
+        wireplumber = {
           format = "{volume}% {icon}";
           format-muted = "";
           on-click = "pavucontrol";
@@ -67,8 +89,8 @@
           max-volume = 100;
           scroll-step = 1;
         };
-        "cpu" = {
-          interval = 10;
+        cpu = {
+          interval = 5;
           format = "{usage}% ";
           max-length = 10;
           on-click = "xfce4-taskmanager";
@@ -78,7 +100,7 @@
             normal = 16;
           };
         };
-        "memory" = {
+        memory = {
           interval = 20;
           format = "{used}G ";
           max-length = 10;
@@ -92,94 +114,193 @@
             "3" = "";
             "4" = "";
             "5" = "";
-            active = "";
-            default = "";
           };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
-          persistent-workspaces = {
-            "*" = 5;
-          };
+          # persistent-workspaces = {
+          #   "eDP-1" = 5;
+          #   "HDMI-A-1" = 5;
+          # };
         };
-        "tray" = {
+        tray = {
           icon-size = 21;
           spacing = 10;
-
+        };
+        "custom/logout" = {
+          format = "󱄅 ByteSudoer";
+          on-click = "wlogout";
+          on-click-right = "killall wlogout";
         };
       };
     };
     style = ''
 
-      * {
-        border: none;
-        border-radius: 0;
-        font-family: JetBrains Nerd Font, monospace;
-        font-weight: bold;
-        font-size: 14px;
-        min-height: 0;
-      }
-
-      #battery {
-        color: #a6e3a1;
-        border-radius: 0 10px 10px 0;
-        margin-right: 10px;
-        border-left: 0px;
-      }
-      #battery.warning {
-        color: #FF5500;
-      }
-      #battery.critical {
-        color: #FF0000;
-      }
-      #battery.discharging {
-        color: #3067dd;
-      }
-
-      #cpu.high {
-        color: #FF1111;
-      }
-      #cpu.idle {
-        color: #30dd47;
-
-      }
-      cpu.normal {
-        color: #1faf43;
-      }
-      #workspaces {
-    background: #1e1e2e;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;
+    * {
+	border: none;
+	border-radius: 10;
+    font-family: "JetBrainsMono Nerd Font" ;
+	font-size: 15px;
+	min-height: 10px;
 }
-      #workspaces button {
-        padding: 5px;
-        color: #313244;
-        margin-right: 5px;
-      }
 
-      #workspaces button.active {
-        color: #a6adc8;
-      }
+window#waybar {
+	background: transparent;
+}
 
-#workspaces button.focused {
-              color: #a6adc8;
-              background: #eba0ac;
-              border-radius: 10px;
-              }
+window#waybar.hidden {
+	opacity: 0.2;
+}
 
-#workspaces button.urgent {
-              color: #11111b;
-              background: #a6e3a1;
-              border-radius: 10px;
-              }
+#window {
+	margin-top: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+    color: transparent;
+	background: transparent;
+}
+#workspaces {
+	margin-top: 6px;
+	margin-left: 12px;
+	font-size: 4px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	background: #161320;
+	transition: none;
+}
 
-#workspaces button:hover {
-              background: #11111b;
-              color: #cdd6f4;
-              border-radius: 10px;
-              }
+
+#network {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #bd93f9;
+}
+
+#wireplumber {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #1A1826;
+	background: #FAE3B0;
+}
+
+#battery {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #B5E8E0;
+}
+
+#battery.charging, #battery.plugged {
+	color: #161320;
+    background-color: #B5E8E0;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #B5E8E0;
+    color: #161320;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #BF616A;
+        color: #B5E8E0;
+    }
+}
+
+#backlight {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #F8BD96;
+}
+#clock {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #ABE9B3;
+	/*background: #1A1826;*/
+}
+
+#memory {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #DDB6F2;
+}
+#cpu {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #96CDFB;
+}
+
+#tray {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #B5E8E0;
+	background: #161320;
+}
+  #custom-logout {
+	font-size: 14px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	border-radius: 10px;
+	transition: none;
+    color: #89DCEB;
+    background: #161320;
+}
+
+
 
 
 

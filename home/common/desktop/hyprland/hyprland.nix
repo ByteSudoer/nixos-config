@@ -80,7 +80,7 @@
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
         "float,title:(Bluetooth)"
-        "float,title:(Picture-in-Picture"
+        "float,title:(Picture-in-Picture)"
 
 
         ## Opacity Rules

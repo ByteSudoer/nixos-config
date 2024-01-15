@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  icons_path = "/home/bytesudoer/nixos-config/config/icons";
+in
 {
   programs.wlogout = {
     enable = true;
@@ -9,17 +12,43 @@
         label = "shutdown";
         action = "systemctl shutdown";
         text = "Shutdown";
+        keybind = "s";
+      }
+      {
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+        keybind = "r";
       }
       {
         label = "lock";
         action = "lock";
         text = "Lock Screen";
+        keybind = "l";
+      }
+      {
+        label = "logout";
+        action = "hyprctl exit";
+        text = "Logout";
+        keybind = "k";
+      }
+      {
+        label = "hibernate";
+        action = "systemctl hibernate";
+        text = "Hibernate";
+        keybind = "h";
+      }
+      {
+        label = "suspend";
+        action = "systemctl hibernate";
+        text = "Suspend";
+        keybind = "p";
       }
     ];
 
     style = ''
-          /** ********** Fonts ********** **/
-      * {
+            /** ********** Fonts ********** **/
+        * {
           font-family: "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
           font-size: 14px;
           font-weight: bold;
@@ -48,27 +77,27 @@
 
       /** ********** Icons ********** **/
       #lock {
-          background-image: image(url("../../../../config/icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
+          background-image: image(url("${icons_path}/lock.png"));
       }
 
       #logout {
-          background-image: image(url("../../../../config/icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
+          background-image: image(url("${icons_path}/logout.png"));
       }
 
       #suspend {
-          background-image: image(url("../../../../config/icons/suspend.png"), url("/usr/share/wlogout/icons/suspend.png"));
+          background-image: image(url("${icons_path}/suspend.png"));
       }
 
       #hibernate {
-          background-image: image(url("../../../../config/icons/hibernate.png"), url("/usr/share/wlogout/icons/hibernate.png"));
+          background-image: image(url("${icons_path}/hibernate.png"));
       }
 
       #shutdown {
-          background-image: image(url("../../../../config/icons/shutdown.png"), url("/usr/share/wlogout/icons/shutdown.png"));
+          background-image: image(url("${icons_path}/shutdown.png"));
       }
 
       #reboot {
-          background-image: image(url("../../../../config/icons/reboot.png"), url("/usr/share/wlogout/icons/reboot.png"));
+          background-image: image(url("${icons_path}/reboot.png"));
       }
     '';
 

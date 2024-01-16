@@ -19,6 +19,9 @@
     nwg-look
     glib
 
+    #Spotify Control 
+    playerctl
+
     ## Manage Wallpapers
     swww
     swww_randomize

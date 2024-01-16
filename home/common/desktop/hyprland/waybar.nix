@@ -9,7 +9,7 @@ _:
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "custom/logout" "custom/weather" ];
+        modules-left = [ "custom/logout" "custom/weather" "custom/spotify" ];
         modules-center = [ "hyprland/workspaces" ];
         modules-right = [ "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
 
@@ -142,6 +142,20 @@ _:
           format = "{}";
           tooltip = true;
           interval = 3600;
+        };
+        "custom/spotify" = {
+          format = "{icon} {}";
+          escape = true;
+          return-type = "json";
+          max-length = 40;
+          interval = 30;
+          on-click = "playerctl -p spotify play-pause";
+          on-click-right = "killall spotify";
+          smooth-scrolling-threshold = 10;
+          on-scroll-up = "playerctl -p spotify next";
+          on-scroll-down = "playerctl -p spotify previous";
+          exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+          exec-if = "pgrep spotify";
         };
       };
     };
@@ -322,6 +336,19 @@ window#waybar.hidden {
     background: #161320;
 }
 #custom-weather {
+
+	font-size: 14px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+#custom-spotify {
 
 	font-size: 14px;
 	margin-top: 6px;

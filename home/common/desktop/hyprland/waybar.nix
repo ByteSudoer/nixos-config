@@ -102,7 +102,7 @@ _:
           };
         };
         memory = {
-          interval = 20;
+          interval = 5;
           format = "{used}G ";
           max-length = 10;
         };
@@ -119,10 +119,13 @@ _:
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
-          # persistent-workspaces = {
-          #   "eDP-1" = 5;
-          #   "HDMI-A-1" = 5;
-          # };
+          persistent-workspaces = {
+            "1" = [ ];
+            "2" = [ ];
+            "3" = [ ];
+            "4" = [ ];
+            "5" = [ ];
+          };
         };
         tray = {
           icon-size = 21;
@@ -132,6 +135,13 @@ _:
           format = "󱄅 ByteSudoer";
           on-click = "wlogout";
           on-click-right = "killall wlogout";
+        };
+        "custom/weather" = {
+          exec = "get_weather Tunis+Tunisia";
+          return-type = "json";
+          format = "{}";
+          tooltip = true;
+          interval = 3600;
         };
       };
     };

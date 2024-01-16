@@ -148,13 +148,13 @@ _:
           escape = true;
           return-type = "json";
           max-length = 40;
-          interval = 30;
+          # interval = 30;
           on-click = "playerctl -p spotify play-pause";
           on-click-right = "killall spotify";
           smooth-scrolling-threshold = 10;
           on-scroll-up = "playerctl -p spotify next";
           on-scroll-down = "playerctl -p spotify previous";
-          exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+          exec = "waybar-mediaplayer --player spotify 2> /dev/null";
           exec-if = "pgrep spotify";
         };
       };
@@ -360,10 +360,6 @@ window#waybar.hidden {
     color: #ffffff;
     background: #383c4a;
 }
-
-
-
-
 
     '';
 

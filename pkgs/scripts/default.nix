@@ -4,6 +4,7 @@
   fehrandom = pkgs.callPackage ./fehrandom.nix { };
   get_weather = pkgs.callPackage ./get_weather.nix { };
   lock = pkgs.callPackage ./lock.nix { };
+  mediaplayer = pkgs.callPackage ./mediaplayer.nix { };
   picom_toggle = pkgs.callPackage ./picom_toggle.nix { };
   sp = pkgs.callPackage ./sp.nix { };
   swww_randomize = pkgs.callPackage ./swww_randomize.nix { };

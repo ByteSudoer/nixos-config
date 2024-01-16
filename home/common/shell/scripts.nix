@@ -4,6 +4,7 @@
     fehrandom
     get_weather
     lock
+    mediaplayer
     picom_toggle
     sp
     tmuxSession

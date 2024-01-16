@@ -11,6 +11,7 @@
   fehrandom = pkgs.callPackage ./scripts/fehrandom.nix { };
   get_weather = pkgs.callPackage ./scripts/get_weather.nix { };
   lock = pkgs.callPackage ./scripts/lock.nix { };
+  mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };
   sp = pkgs.callPackage ./scripts/sp.nix { };
   swww_randomize = pkgs.callPackage ./scripts/swww_randomize.nix { };

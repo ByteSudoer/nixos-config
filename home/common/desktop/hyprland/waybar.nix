@@ -9,7 +9,7 @@ _:
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "custom/logout" ];
+        modules-left = [ "custom/logout" "custom/weather" ];
         modules-center = [ "hyprland/workspaces" ];
         modules-right = [ "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
 
@@ -320,6 +320,18 @@ window#waybar.hidden {
 	transition: none;
     color: #89DCEB;
     background: #161320;
+}
+#custom-weather {
+
+	font-size: 14px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
 }
 
 

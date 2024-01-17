@@ -48,6 +48,9 @@
         "ALT,l,workspace,+1"
         "ALT,h,workspace,-1"
 
+        #Toggle between windows
+        "ALT,Tab,exec,rofi_window"
+
         #Hyprctl keymaps
         "$mod SHIFT,r,exec,hyprctl reload"
 

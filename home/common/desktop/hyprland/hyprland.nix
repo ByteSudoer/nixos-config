@@ -31,6 +31,7 @@
         "$mod SHIFT,return,exec,thunar"
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
+        "$mod,v,exec,pavucontrol"
 
         ## Change focus
         "$mod,l,movefocus,r"
@@ -60,6 +61,9 @@
         ",XF86AudioRaiseVolume,exec,amixer sset Master 10%+"
         ",XF86AudioLowerVolume,exec,amixer sset Master 10%-"
         ",XF86AudioMute,exec,amixer sset Master toggle"
+
+        #General Dispatechers
+        "$mod,f,exec,hyprctl dispatch togglefloating"
       ];
 
       ## Mouse Bindings
@@ -84,14 +88,18 @@
       windowrulev2 = [
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
+        "float,class:(thunar)"
         "float,title:(Bluetooth)"
         "float,title:(Picture-in-Picture)"
+        "float,title:(wihotspot-gui)"
 
 
         ## Opacity Rules
         "opacity 0.8 0.8,class:^(Alacritty)$"
         "opacity 0.8 0.8,class:^(firefox)$"
         "opacity 0.8 0.8,class:^(thunar)$"
+
+        #xwaylandvideobridge Rules
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"

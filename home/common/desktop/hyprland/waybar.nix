@@ -110,11 +110,12 @@ _:
           all-outputs = true;
           format = "{name}: {icon}";
           format-icons = {
-            "1" = "";
-            "2" = "";
+            "1" = "";
+            "2" = "";
             "3" = "";
             "4" = "";
             "5" = "";
+            "6" = "";
           };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -125,6 +126,7 @@ _:
             "3" = [ ];
             "4" = [ ];
             "5" = [ ];
+            "6" = [ ];
           };
         };
         tray = {

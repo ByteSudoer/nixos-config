@@ -165,7 +165,7 @@ _:
 
     * {
 	border: none;
-	border-radius: 10;
+	border-radius: 10px;
     font-family: "JetBrainsMono Nerd Font" ;
 	font-size: 15px;
 	min-height: 10px;
@@ -196,6 +196,10 @@ window#waybar.hidden {
 	border-radius: 10px;
 	background: #161320;
 	transition: none;
+}
+#workspaces button.active {
+
+  background: #bd93f9;
 }
 
 
@@ -362,7 +366,6 @@ window#waybar.hidden {
     color: #ffffff;
     background: #44475a;
 }
-
     '';
 
   };

@@ -6,6 +6,7 @@
     lock
     mediaplayer
     picom_toggle
+    rofi_window
     sp
     tmuxSession
     wallpapers

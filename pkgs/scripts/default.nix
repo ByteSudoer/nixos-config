@@ -6,6 +6,7 @@
   lock = pkgs.callPackage ./lock.nix { };
   mediaplayer = pkgs.callPackage ./mediaplayer.nix { };
   picom_toggle = pkgs.callPackage ./picom_toggle.nix { };
+  rofi_window = pkgs.callPackage ./rofi_window.nix { };
   sp = pkgs.callPackage ./sp.nix { };
   swww_randomize = pkgs.callPackage ./swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./tmuxSession.nix { };

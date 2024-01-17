@@ -13,6 +13,7 @@
   lock = pkgs.callPackage ./scripts/lock.nix { };
   mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };
+  rofi_window = pkgs.callPackage ./scripts/rofi_window.nix { };
   sp = pkgs.callPackage ./scripts/sp.nix { };
   swww_randomize = pkgs.callPackage ./scripts/swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./scripts/tmuxSession.nix { };

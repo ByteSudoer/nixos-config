@@ -22,6 +22,7 @@
         "swww_randomize $HOME/nixos-config/Wallpapers"
         "discord --start-minimized"
         "ferdium"
+        "xwaylandvideobridge"
       ];
       # KeyBorad Bindings
       bind = [
@@ -88,6 +89,11 @@
         "opacity 0.8 0.8,class:^(Alacritty)$"
         "opacity 0.8 0.8,class:^(firefox)$"
         "opacity 0.8 0.8,class:^(thunar)$"
+        "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
+        "noanim,class:^(xwaylandvideobridge)$"
+        "noinitialfocus,class:^(xwaylandvideobridge)$"
+        "maxsize 1 1,class:^(xwaylandvideobridge)$"
+        "noblur,class:^(xwaylandvideobridge)$"
 
       ];
 

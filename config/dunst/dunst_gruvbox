@@ -4,7 +4,6 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = 0
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -292,21 +291,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282a36"
-    foreground = "#6272a4"
+    background = "#3c3836"
+    foreground = "#d79921"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #new_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#282a36"
+    background = "#3c3836"
     foreground = "#bd93f9"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #new_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#ff5555"
-    foreground = "#f8f8f2"
-    frame_color = "#ff5555"
+    background = "#fb4943"
+    foreground = "#ebdbb2"
+    frame_color = "#cc241D"
     timeout = 0

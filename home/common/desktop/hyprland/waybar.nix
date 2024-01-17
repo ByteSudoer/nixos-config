@@ -150,10 +150,10 @@ _:
           max-length = 40;
           # interval = 30;
           on-click = "playerctl -p spotify play-pause";
-          on-click-right = "killall spotify";
+          on-click-right = "killall .spotify-wrapped";
           smooth-scrolling-threshold = 10;
-          on-scroll-up = "playerctl -p spotify next";
-          on-scroll-down = "playerctl -p spotify previous";
+          on-scroll-up = "sp next";
+          on-scroll-down = "sp previous";
           exec = "waybar-mediaplayer --player spotify 2> /dev/null";
           exec-if = "pgrep spotify";
         };

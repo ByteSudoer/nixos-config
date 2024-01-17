@@ -64,6 +64,15 @@
 
         #General Dispatechers
         "$mod,f,exec,hyprctl dispatch togglefloating"
+        "$mod,m,exec,hyprctl dispatch fullscreen 1"
+        # "$mod,1,exec,hyprctl dispatch movetoworkspace 1"
+        "$mod SHIFT,code:10,exec,hyprctl dispatch movetoworkspace 1"
+        "$mod SHIFT,code:11,exec,hyprctl dispatch movetoworkspace 2"
+        "$mod SHIFT,code:12,exec,hyprctl dispatch movetoworkspace 3"
+        "$mod SHIFT,code:13,exec,hyprctl dispatch movetoworkspace 4"
+        "$mod SHIFT,code:14,exec,hyprctl dispatch movetoworkspace 5"
+        "$mod SHIFT,code:15,exec,hyprctl dispatch movetoworkspace 6"
+
       ];
 
       ## Mouse Bindings

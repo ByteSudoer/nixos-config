@@ -98,6 +98,8 @@
         "opacity 0.8 0.8,class:^(Alacritty)$"
         "opacity 0.8 0.8,class:^(firefox)$"
         "opacity 0.8 0.8,class:^(thunar)$"
+        "opacity 0.8 0.8,class:^(Spotify)$"
+        "opacity 0.8 0.8,class:^(discord)$"
 
         #xwaylandvideobridge Rules
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"

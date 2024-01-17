@@ -360,7 +360,7 @@ window#waybar.hidden {
 	border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: #44475a;
 }
 
     '';

@@ -22,6 +22,8 @@
     #Spotify Control 
     playerctl
 
+    #Notification Center
+    swaynotificationcenter
     ## Manage Wallpapers
     swww
     swww_randomize

@@ -159,6 +159,26 @@ _:
           exec = "waybar-mediaplayer --player spotify 2> /dev/null";
           exec-if = "pgrep spotify";
         };
+        "custom/notification" = {
+          tooltip = false;
+          format = "{icon}";
+          format-icons = {
+            notification = "<span foreground='red'><sup></sup></span>";
+            none = "";
+            dnd-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-none = "";
+            inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            inhibited-none = "";
+            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
+          on-click-right = "swaync-client -d -sw";
+          escape = true;
+        };
       };
     };
     style = ''
@@ -365,6 +385,18 @@ window#waybar.hidden {
     transition: none;
     color: #ffffff;
     background: #44475a;
+}
+#custom-notification {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+    transition: none;
+	background: #161320;
+  font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
 }
     '';
 

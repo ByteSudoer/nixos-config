@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 status=$(nmcli n)
 if [[ "$status" == "enabled" ]]; then
     nmcli n off

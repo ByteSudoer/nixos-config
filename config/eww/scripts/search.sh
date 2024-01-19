@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 list=$(ls /usr/bin/ | grep -m 10 -i "$1")
 buf=""
 for l in $list ; do

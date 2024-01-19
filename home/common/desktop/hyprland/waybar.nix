@@ -11,7 +11,7 @@ _:
         layer = "top";
         modules-left = [ "custom/logout" "custom/weather" "custom/spotify" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
+        modules-right = [ "custom/notifhistory" "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
 
         "clock" = {
           format = "{:%H:%M}  ";
@@ -158,6 +158,15 @@ _:
           on-scroll-down = "sp previous";
           exec = "waybar-mediaplayer --player spotify 2> /dev/null";
           exec-if = "pgrep spotify";
+        };
+        "custom-notifhistory" = {
+          exec = "dunstctl history";
+          return-type = "json";
+          format = "{icon} {}";
+
+          # format-icons = {
+          #   none = "";
+          # };
         };
         "custom/notification" = {
           tooltip = false;
@@ -376,17 +385,29 @@ window#waybar.hidden {
 
 #custom-spotify {
 
-	font-size: 14px;
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 10px;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 10px;
     transition: none;
     color: #ffffff;
     background: #44475a;
-}
+  }
 #custom-notification {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+  transition: none;
+	background: #161320;
+  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
+}
+#custom-notifhistory{
 	margin-top: 6px;
 	margin-left: 8px;
 	padding-left: 10px;
@@ -397,6 +418,7 @@ window#waybar.hidden {
 	background: #161320;
   font-size: 14px;
     font-family: "JetBrainsMono Nerd Font";
+
 }
     '';
 

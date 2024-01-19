@@ -10,9 +10,9 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "mediaplayer";
-  version = waybar.version;
+  inherit (waybar) version;
 
-  src = waybar.src;
+  inherit (waybar) src;
 
   dontBuild = true;
   dontConfigure = true;

@@ -91,7 +91,7 @@ _:
           scroll-step = 1;
         };
         cpu = {
-          interval = 5;
+          interval = 1;
           format = "{usage}% ";
           max-length = 10;
           on-click = "xfce4-taskmanager";

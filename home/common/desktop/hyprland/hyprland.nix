@@ -106,9 +106,9 @@
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
         "float,class:(thunar)"
+        "float,class:(wihotspot-gui)"
         "float,title:(Bluetooth)"
         "float,title:(Picture-in-Picture)"
-        "float,title:(wihotspot-gui)"
 
 
         ## Opacity Rules

@@ -67,6 +67,9 @@
         "SHIFT,Print,exec,grimblast --notify save area"
         "$mod SHIFT,Print,exec,grimblast --notify save output"
 
+        #Lock Screen 
+        ",F12,exec,lock"
+
         #General Dispatechers
         "$mod,f,exec,hyprctl dispatch togglefloating"
         "$mod,m,exec,hyprctl dispatch fullscreen 1"

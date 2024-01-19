@@ -2,6 +2,7 @@
 {
   imports = [
     ./dunst.nix
+    ./eww.nix
     ./hyprland.nix
     ./swaylock.nix
     ./waybar.nix

@@ -7,7 +7,7 @@ endif
 all: clean format check
 
 build:
-	sudo nixos-rebuild switch --flake .#${HOSTNAME}
+	sudo nixos-rebuild switch --flake .#${HOSTNAME} && notify-send "Update Done"
 check:
 	nix flake check
 clean:

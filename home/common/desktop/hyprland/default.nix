@@ -22,6 +22,8 @@
     #Spotify Control 
     playerctl
 
+    grimblast
+
     #Notification Center
     swaynotificationcenter
     ## Manage Wallpapers

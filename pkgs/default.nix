@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # Build them using 'nix build .#example' or (legacy) 'nix-build -A example'
 
@@ -8,7 +8,7 @@
 
   # Scripts
   defaultLayout = pkgs.callPackage ./scripts/defaultLayout.nix { };
-  fehrandom = pkgs.callPackage ./scripts/fehrandom.nix { };
+  fehrandom = pkgs.callPackage ./scripts/fehrandom.nix { inherit colorscheme; };
   get_weather = pkgs.callPackage ./scripts/get_weather.nix { };
   lock = pkgs.callPackage ./scripts/lock.nix { };
   mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };

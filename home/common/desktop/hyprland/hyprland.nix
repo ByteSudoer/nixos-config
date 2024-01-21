@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -19,7 +19,7 @@
         "lxqt-policykit-agent"
         "copyq --start-server"
         "swww init"
-        "swww_randomize $HOME/nixos-config/Wallpapers"
+        "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
         "discord --start-minimized"
         "ferdium"
         "xwaylandvideobridge"

@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 {
   defaultLayout = pkgs.callPackage ./defaultLayout.nix { };
-  fehrandom = pkgs.callPackage ./fehrandom.nix { };
+  fehrandom = pkgs.callPackage ./fehrandom.nix { inherit colorscheme; };
   get_weather = pkgs.callPackage ./get_weather.nix { };
   lock = pkgs.callPackage ./lock.nix { };
   mediaplayer = pkgs.callPackage ./mediaplayer.nix { };

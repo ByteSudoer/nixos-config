@@ -98,11 +98,11 @@
       # Custom packages; acessible via 'nix build', 'nix shell', etc
       packages = libx.forAllSystems (system:
         let pkgs = nixpkgs-unstable.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; }
+        in import ./pkgs { inherit pkgs colorscheme; }
       );
 
       # Custom overlays
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs colorscheme; };
 
       # Devshell for bootstrapping
       # Accessible via 'nix develop' or 'nix-shell' (legacy)

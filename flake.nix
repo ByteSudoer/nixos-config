@@ -43,6 +43,7 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -58,7 +59,7 @@
       inherit (self) outputs;
       stateVersion = "23.11";
       username = "bytesudoer";
-      colorscheme = "dracula";
+      colorscheme = "gruvbox";
       desktop = "hyprland";
       libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in

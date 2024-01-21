@@ -1,6 +1,13 @@
-_:
+{ inputs, colorscheme, config, ... }:
+let
+  color = if colorscheme == "dracula" then "dracula" else if colorscheme == "gruvbox" then "gruvbox-dark-hard" else "Dracula";
+in
 
 {
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+  ];
+  colorScheme = inputs.nix-colors.colorSchemes.${color};
   services.network-manager-applet.enable = true;
   programs.waybar = {
     enable = true;
@@ -223,15 +230,13 @@ window#waybar.hidden {
 	font-size: 4px;
 	margin-bottom: 0px;
 	border-radius: 10px;
-	background: #161320;
+	background: #${config.colorScheme.colors.base00};
 	transition: none;
 }
 #workspaces button.active {
 
-  background: #bd93f9;
+  background: #${config.colorScheme.colors.base09};
 }
-
-
 #network {
 	margin-top: 6px;
 	margin-left: 8px;
@@ -240,8 +245,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #bd93f9;
+	color: #${config.colorScheme.colors.base00};
+	background: #${config.colorScheme.colors.base09};
 }
 
 #wireplumber {
@@ -252,8 +257,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #1A1826;
-	background: #FAE3B0;
+	color: #${config.colorScheme.colors.base00};
+	background: #${config.colorScheme.colors.base0B};
 }
 
 #battery {
@@ -264,18 +269,18 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #B5E8E0;
+	color: #${config.colorScheme.colors.base00};
+	background: #${config.colorScheme.colors.base0C};
 }
 
 #battery.charging, #battery.plugged {
-	color: #161320;
-    background-color: #B5E8E0;
+	color: #${config.colorScheme.colors.base00};
+    background-color: #${config.colorScheme.colors.base04};
 }
 
 #battery.critical:not(.charging) {
-    background-color: #B5E8E0;
-    color: #161320;
+    background-color: #${config.colorScheme.colors.base04};
+    color: #fb4943;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -309,8 +314,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #161320;
-	background: #ABE9B3;
+	color: #${config.colorScheme.colors.base00};
+  background: #${config.colorScheme.colors.base0D};
 	/*background: #1A1826;*/
 }
 
@@ -323,7 +328,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #DDB6F2;
+	background: #${config.colorScheme.colors.base0A};
 }
 #cpu {
 	margin-top: 6px;
@@ -334,7 +339,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #96CDFB;
+	background: #${config.colorScheme.colors.base0E};
 }
 #bluetooth {
 	margin-top: 6px;
@@ -345,7 +350,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #ABE9B3;
+	background: #${config.colorScheme.colors.base05};
 }
 
 #tray {
@@ -367,7 +372,7 @@ window#waybar.hidden {
 	padding-right: 5px;
 	border-radius: 10px;
 	transition: none;
-    color: #89DCEB;
+    color: #${config.colorScheme.colors.base09};
     background: #161320;
 }
 #custom-weather {

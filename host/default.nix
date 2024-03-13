@@ -60,7 +60,6 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     optimise.automatic = true;
-
     settings = {
       auto-optimise-store = true;
       experimental-features = [

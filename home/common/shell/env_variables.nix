@@ -2,10 +2,11 @@
 {
   systemd.user.sessionVariables = rec {
 
+    TERM = "alacritty";
     EDITOR = "nvim";
     VISUAL = "nvim";
     MANPAGER = "nvim +Man!";
-    TERM = "screen-256color";
+    # TERM = "screen-256color";
     HISCONTROL = "ignoreboth:erasedups";
     XDG_CONFIG_HOME = config.home.homeDirectory + "/.config";
     XDG_DATA_HOME = config.home.homeDirectory + "/.local/share";

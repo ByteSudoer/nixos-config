@@ -77,7 +77,7 @@ in
         thickness = 0.15;
       };
       env = {
-        TERM = "xterm-256color";
+        TERM = "alacritty";
         IS_ALACRITTY = "true";
       };
       scrolling = {

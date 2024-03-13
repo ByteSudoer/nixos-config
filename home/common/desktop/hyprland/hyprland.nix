@@ -17,12 +17,12 @@
       exec-once = [
         "waybar"
         "lxqt-policykit-agent"
-        "copyq --start-server"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
         "discord --start-minimized"
         "ferdium"
         "xwaylandvideobridge"
+        "copyq --start-server"
       ];
       # KeyBorad Bindings
       bind = [

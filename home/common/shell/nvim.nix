@@ -121,7 +121,7 @@
     ];
     extraPackages = with pkgs;[
       unstable.marksman
-      unstable.rnix-lsp
+      unstable.nil
       unstable.nixpkgs-fmt
       unstable.shellcheck
       unstable.lua-language-server

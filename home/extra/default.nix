@@ -9,6 +9,7 @@
     ./ferdium.nix
     ./imagers.nix
     ./insomnia.nix
+    ./intellij.nix
     ./libreoffice.nix
     ./obsidian.nix
     ./qbittorrent.nix

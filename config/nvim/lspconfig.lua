@@ -31,7 +31,7 @@ lspconfig.lua_ls.setup({
 })
 
 -- Nix Config
-lspconfig.nil_ls({})
+lspconfig.nil_ls.setup{}
 lspconfig.bashls.setup({})
 lspconfig.cmake.setup({})
 lspconfig.clangd.setup({})

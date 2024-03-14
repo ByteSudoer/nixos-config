@@ -4,14 +4,14 @@
 }:
 stdenv.mkDerivation rec {
   pname = "NerdFetch";
-  version = "v5.0.2";
+  version = "v8.1.0";
   src = fetchFromGitea
     {
       domain = "codeberg.org";
       owner = "thatonecalculator";
       repo = "NerdFetch";
-      rev = "228ad50b770a5bc02ad073dcfdbb687e912aa6de";
-      hash = "sha256-2Adxh0UlmAovYPk3R4yYDpW5RBZgPSNkEj+C+9DaiLE=";
+      rev = "35a06786361f139298ca75424dc0b4eb660400ec";
+      hash = "sha256-Z1R0mFraDNVioN3yZAlGJMfNbDyIUBZowGFqchi6LXM=";
     };
   dontUnpack = true;
   dontConfigure = true;
@@ -25,6 +25,7 @@ stdenv.mkDerivation rec {
     {
       description = "A POSIX *nix (Linux, macOS, Android, *BSD, etc) fetch script using Nerdfonts";
       homepage = "https://codeberg.org/thatonecalculator/nerdfetch";
+      license = licenses.mit;
     };
 
 }

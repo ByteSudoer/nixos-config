@@ -16,6 +16,7 @@ supported_projects=(
 "Python"
 "Java"
 "PHP/symfony"
+"Go"
 "Node.js"
 )
 
@@ -72,6 +73,11 @@ case $lang in
     ;;
   init)
     echo "Devops env"
+    cp "$dir"/init/flake.nix "$destination"
+    init_envrc_file
+    ;;
+  Go)
+    echo "Go env"
     cp "$dir"/init/flake.nix "$destination"
     init_envrc_file
     ;;

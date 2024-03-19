@@ -30,6 +30,7 @@
     #WebCam
     gnome.cheese
     xfce.xfce4-appfinder
+    kolourpaint
   ];
 
 }

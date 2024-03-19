@@ -13,7 +13,7 @@
     flake-utils.lib.eachDefaultSystem (system:
     let
       goVersion = 20;
-      overlays = [ (final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
+      overlays = [ (_final: prev: { go = prev."go_1_${toString goVersion}"; }) ];
       pkgs = import nixpkgs { inherit overlays system; };
     in
     {

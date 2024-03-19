@@ -14,7 +14,7 @@
     let
       javaVersion = 21; # Change this value to update the whole stack
       overlays = [
-        (final: prev: rec {
+        (_final: prev: rec {
           jdk = prev."jdk${toString javaVersion}";
           gradle = prev.gradle.override { java = jdk; };
           maven = prev.maven.override { inherit jdk; };

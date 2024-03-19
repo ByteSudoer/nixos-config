@@ -12,19 +12,22 @@
     }:
     flake-utils.lib.eachDefaultSystem (system:
     let
-      pkgs = import nixpkgs { inherit system; };
+      javaVersion = 21; # Change this value to update the whole stack
+      overlays = [
+        (final: prev: rec {
+          jdk = prev."jdk${toString javaVersion}";
+          gradle = prev.gradle.override { java = jdk; };
+          maven = prev.maven.override { inherit jdk; };
+        })
+      ];
+      pkgs = import nixpkgs { inherit overlays system; };
     in
     {
       devShells.default = pkgs.mkShell {
         packages = with pkgs;[
-          jdk
-          # Build tools
-          maven
-          ant
           gradle
-          #Editor
-          eclipses.eclipse-java
-          # jetbrains.idea-community
+          jdk
+          maven
         ];
         # shellHook = ''
         # '';

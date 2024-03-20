@@ -15,6 +15,7 @@
     ./qbittorrent.nix
     ./spotify.nix
     ./utils.nix
+    ./vscodium.nix
   ];
 
   # home.packages = with pkgs;[

@@ -54,6 +54,7 @@ _:
       cat = "bat --theme=Dracula";
       oldcat = "cat";
       configs = "cd $HOME/nixos-config";
+      nixpkgs-repo = "cd $HOME/AllDev/Nix/nixpkgs";
       dotfiles = "cd $HOME/.config/Dotfiles";
       tmuxattach = "tmux attach-session -t";
       tmuxnew = "tmux new -s";

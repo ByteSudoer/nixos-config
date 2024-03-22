@@ -13,6 +13,7 @@
     htop
     jq
     killall
+    nmap
     ntfs3g
     pciutils
     # permer

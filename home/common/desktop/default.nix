@@ -29,6 +29,7 @@
     flameshot
     #WebCam
     gnome.cheese
+    gparted
     xfce.xfce4-appfinder
     kolourpaint
   ];

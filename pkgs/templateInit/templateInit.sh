@@ -10,9 +10,9 @@ lang=${1:-}
 supported_projects=(
 "init"
 "Arion"
-"Rust"
 "C"
-"Network"
+"Rust"
+"Nix"
 "Python"
 "Java"
 "PHP/symfony"
@@ -74,6 +74,11 @@ case $lang in
   init)
     echo "Devops env"
     cp "$dir"/init/flake.nix "$destination"
+    init_envrc_file
+    ;;
+  Nix)
+    echo "Nix env"
+    cp "$dir"/Nix/flake.nix "$destination"
     init_envrc_file
     ;;
   Go)

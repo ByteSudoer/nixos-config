@@ -16,8 +16,12 @@ _:
         truncation_length = 5;
         format = "[$path]($style)[$lock_symbol]($lock_style) ";
       };
+      hostname = {
+        ssh_only = true;
+        format = "[ $ssh_symbol ] (bold blue) on [ $hostname ] (bold red) ";
+        disabled = false;
+      };
       username = {
-
         style_user = "bold dimmed blue";
         disabled = false;
         show_always = true;

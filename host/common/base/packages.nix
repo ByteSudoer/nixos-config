@@ -13,6 +13,7 @@
     htop
     jq
     killall
+    manix
     nmap
     ntfs3g
     pciutils

@@ -21,7 +21,7 @@
 
   home.packages = with pkgs; [
 
-    nerdfetch
+    unstable.nerdfetch
     libnotify
     xdg-utils
     xorg.xlsclients

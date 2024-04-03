@@ -20,7 +20,7 @@
   wallpapers = pkgs.callPackage ./scripts/wallpapers.nix { };
 
   # Utilities
-  nerdfetch = pkgs.callPackage ./nerdfetch { };
+  # nerdfetch = pkgs.callPackage ./nerdfetch { };
 
   #Templates for dev environments
   templateInit = pkgs.callPackage ./templateInit { };

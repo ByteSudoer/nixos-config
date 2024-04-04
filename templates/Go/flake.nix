@@ -18,6 +18,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
+        name = "Go-Dev-Shell";
         packages = with pkgs;[
           go
           gotools

@@ -5,6 +5,10 @@ _: {
         User git 
         Hostname github.com
         IdentityFile ~/.ssh/github_key
+      Host github.com-uni
+        User git 
+        Hostname github.com
+        IdentityFile ~/.ssh/github_uni
       Host pi
         User bytesudoer
         Hostname 192.168.100.29

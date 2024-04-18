@@ -13,6 +13,7 @@
     htop
     jq
     killall
+    macchanger
     manix
     nmap
     ntfs3g

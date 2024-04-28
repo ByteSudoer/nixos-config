@@ -27,6 +27,7 @@
       luafile $HOME/nixos-config/config/nvim/lspconfig.lua
       luafile $HOME/nixos-config/config/nvim/lspsaga.lua
       luafile $HOME/nixos-config/config/nvim/lspkind.lua
+      luafile $HOME/nixos-config/config/nvim/null-ls.lua
       luafile $HOME/nixos-config/config/nvim/cmp.lua
       luafile $HOME/nixos-config/config/nvim/gitsigns.lua
 
@@ -100,6 +101,7 @@
       ##LSP
       nvim-lspconfig
       rust-tools-nvim
+      null-ls-nvim
       lspkind-nvim
       lspsaga-nvim
 

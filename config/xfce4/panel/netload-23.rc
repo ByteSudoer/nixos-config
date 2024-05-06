@@ -1,15 +1,1 @@
-Use_Label=true
-Show_Values=false
-Show_Bars=true
-Colorize_Values=false
-Color_In=rgb(255,79,0)
-Color_Out=rgb(255,229,0)
-Text=Net
-Network_Device=wlan0
-Max_In=4096
-Max_Out=4096
-Auto_Max=true
-Update_Interval=250
-Values_As_Bits=false
-Digits=2
-
+/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/panel/netload-23.rc

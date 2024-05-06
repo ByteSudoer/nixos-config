@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<channel name="keyboards" version="1.0">
-  <property name="Default" type="empty">
-    <property name="Numlock" type="bool" value="true"/>
-  </property>
-</channel>
+/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml

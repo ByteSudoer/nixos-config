@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<channel name="xfce4-settings-manager" version="1.0">
-  <property name="last" type="empty">
-    <property name="window-width" type="int" value="856"/>
-    <property name="window-height" type="int" value="629"/>
-  </property>
-</channel>
+/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml

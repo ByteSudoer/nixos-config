@@ -1,15 +1,1 @@
-[xfdesktop-version-4.10.3+-rcfile_format]
-4.10.3+=true
-
-[Trash]
-row=0
-col=0
-
-[/]
-row=1
-col=0
-
-[/home/bytesudoer]
-row=2
-col=0
-
+/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/desktop/icons.screen0-3824x1033.rc

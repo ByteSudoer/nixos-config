@@ -60,7 +60,7 @@
       stateVersion = "23.11";
       username = "bytesudoer";
       colorscheme = "dracula";
-      desktop = "plasma";
+      desktop = "xfce";
       libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in
     {

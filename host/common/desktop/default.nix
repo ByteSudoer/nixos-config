@@ -9,8 +9,6 @@
     ../virt
   ];
 
-  services.xserver.layout = "fr";
-
   # Enable Plymouth and surpress some logs by default.
   # boot.plymouth.enable = true;
   # boot.kernelParams = [

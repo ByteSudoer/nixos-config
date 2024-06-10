@@ -16,7 +16,7 @@
     in
     {
       devShells.default = pkgs.mkShell {
-        name  = "C-dev shell";
+        name = "C-dev shell";
         packages = with pkgs;[
           binutils
           cmake

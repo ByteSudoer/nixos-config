@@ -1,6 +1,6 @@
-{pkgs,...}:
+{ pkgs, ... }:
 
-let 
+let
   change-mac = pkgs.writeShellScript "change-mac" ''
     card=$1
     tmp=$(mktemp)
@@ -24,7 +24,7 @@ in
     extraHosts = ''
       192.168.100.1 router
       192.168.12.10 controller
-      '';
+    '';
     networkmanager = {
       enable = true;
       # wifi = {

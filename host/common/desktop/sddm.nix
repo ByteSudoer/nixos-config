@@ -1,18 +1,20 @@
 { pkgs, colorscheme, ... }:
 {
+  services.displayManager = {
+
+    sddm = {
+      enable = true;
+      theme =
+        "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
+      autoNumlock = true;
+      enableHidpi = true;
+    };
+  };
   services.xserver = {
     enable = true;
-    displayManager = {
-      # defaultSession = "none+awesome";
-      sddm = {
-        enable = true;
-        theme =
-          "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
-        autoNumlock = true;
-        enableHidpi = true;
-      };
+    xkb = {
+      layout = "fr";
+      variant = "azerty";
     };
-    layout = "fr";
-    xkbVariant = "azerty";
   };
 }

@@ -1,4 +1,4 @@
-{ pkgs, colorscheme, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = [
     (

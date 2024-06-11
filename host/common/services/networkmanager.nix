@@ -24,6 +24,7 @@ in
     extraHosts = ''
       192.168.100.1 router
       192.168.12.10 controller
+      192.168.122.10 ubuntu
     '';
     networkmanager = {
       enable = true;

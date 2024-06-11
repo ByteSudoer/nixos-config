@@ -83,6 +83,9 @@
       #show Indentation Line
       indent-blankline-nvim
 
+      #Preview Markdown Live in the browser
+      markdown-preview-nvim
+
       #TreeSitter
       nvim-treesitter.withAllGrammars
 

@@ -20,6 +20,8 @@ format:
 test:
 	sudo nixos-rebuild test --verbose --flake .#${HOSTNAME}
 
+plasma:
+	nix run github:pjones/plasma-manager > ./home/common/desktop/plasma/default.nix
 unlock:
 	rm -f ./flake.lock
 

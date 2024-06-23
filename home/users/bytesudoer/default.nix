@@ -13,6 +13,9 @@ _: {
         User bytesudoer
         Hostname 192.168.100.29
         IdentityFile ~/.ssh/raspberry_pi
+      Host ubuntu
+        User ubuntu
+        Hostname 192.168.122.10
     ";
   };
 }

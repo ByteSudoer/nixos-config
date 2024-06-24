@@ -230,12 +230,12 @@ window#waybar.hidden {
 	font-size: 4px;
 	margin-bottom: 0px;
 	border-radius: 10px;
-	background: #${config.colorScheme.colors.base00};
+	background: #${config.colorScheme.palette.base00};
 	transition: none;
 }
 #workspaces button.active {
 
-  background: #${config.colorScheme.colors.base09};
+  background: #${config.colorScheme.palette.base09};
 }
 #network {
 	margin-top: 6px;
@@ -245,8 +245,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #${config.colorScheme.colors.base00};
-	background: #${config.colorScheme.colors.base09};
+	color: #${config.colorScheme.palette.base00};
+	background: #${config.colorScheme.palette.base09};
 }
 
 #wireplumber {
@@ -257,8 +257,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #${config.colorScheme.colors.base00};
-	background: #${config.colorScheme.colors.base0B};
+	color: #${config.colorScheme.palette.base00};
+	background: #${config.colorScheme.palette.base0B};
 }
 
 #battery {
@@ -269,17 +269,17 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #${config.colorScheme.colors.base00};
-	background: #${config.colorScheme.colors.base0C};
+	color: #${config.colorScheme.palette.base00};
+	background: #${config.colorScheme.palette.base0C};
 }
 
 #battery.charging, #battery.plugged {
-	color: #${config.colorScheme.colors.base00};
-    background-color: #${config.colorScheme.colors.base04};
+	color: #${config.colorScheme.palette.base00};
+    background-color: #${config.colorScheme.palette.base04};
 }
 
 #battery.critical:not(.charging) {
-    background-color: #${config.colorScheme.colors.base04};
+    background-color: #${config.colorScheme.palette.base04};
     color: #fb4943;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -314,8 +314,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #${config.colorScheme.colors.base00};
-  background: #${config.colorScheme.colors.base0D};
+	color: #${config.colorScheme.palette.base00};
+  background: #${config.colorScheme.palette.base0D};
 	/*background: #1A1826;*/
 }
 
@@ -328,7 +328,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #${config.colorScheme.colors.base0A};
+	background: #${config.colorScheme.palette.base0A};
 }
 #cpu {
 	margin-top: 6px;
@@ -339,7 +339,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #${config.colorScheme.colors.base0E};
+	background: #${config.colorScheme.palette.base0E};
 }
 #bluetooth {
 	margin-top: 6px;
@@ -350,7 +350,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #${config.colorScheme.colors.base05};
+	background: #${config.colorScheme.palette.base05};
 }
 
 #tray {
@@ -372,7 +372,7 @@ window#waybar.hidden {
 	padding-right: 5px;
 	border-radius: 10px;
 	transition: none;
-    color: #${config.colorScheme.colors.base09};
+    color: #${config.colorScheme.palette.base09};
     background: #161320;
 }
 #custom-weather {

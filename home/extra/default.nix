@@ -13,6 +13,7 @@
     ./libreoffice.nix
     ./obsidian.nix
     ./qbittorrent.nix
+    ./slack.nix
     ./spotify.nix
     ./utils.nix
     ./vscodium.nix

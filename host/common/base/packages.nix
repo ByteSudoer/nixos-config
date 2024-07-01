@@ -15,6 +15,7 @@
     killall
     macchanger
     manix
+    nix-output-monitor
     nmap
     ntfs3g
     pciutils

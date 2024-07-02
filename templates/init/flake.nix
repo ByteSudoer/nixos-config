@@ -16,15 +16,19 @@
     in
     {
       devShells.default = pkgs.mkShell {
+        name = "devops";
         packages = with pkgs;[
           ansible
           ctop
+          kubectl
           minikube
           taplo
+          terraform
           yamllint
         ];
-        # shellHook = ''
-        # '';
+        shellHook = ''
+          export NIXPKGS_ALLOW_UNFREE=1
+        '';
       };
     }
     );

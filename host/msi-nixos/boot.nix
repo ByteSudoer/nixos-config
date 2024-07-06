@@ -7,5 +7,7 @@ _: {
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    # Whether to delete all files in /tmp during boot.
+    tmp.cleanOnBoot = true;
   };
 }

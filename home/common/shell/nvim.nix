@@ -123,6 +123,7 @@
       vim-nix
     ];
     extraPackages = with pkgs;[
+      unstable.terraform-ls
       unstable.marksman
       unstable.nil
       unstable.nixpkgs-fmt

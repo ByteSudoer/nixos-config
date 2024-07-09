@@ -15,6 +15,7 @@
     killall
     macchanger
     manix
+    unstable.nix-init
     nix-output-monitor
     nmap
     ntfs3g

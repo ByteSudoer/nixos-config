@@ -124,6 +124,7 @@
     ];
     extraPackages = with pkgs;[
       unstable.terraform-ls
+      unstable.prettierd
       unstable.marksman
       unstable.nil
       unstable.nixpkgs-fmt

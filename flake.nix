@@ -18,12 +18,12 @@
 
     #Configure Partitions and Disk Layout declaratively
     disko = {
-      url = "github:nix-community/disko";
+            url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     #Manage Home Directory and ~/.config
-    home-manager = {
+      home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };

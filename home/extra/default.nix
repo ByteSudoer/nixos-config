@@ -11,6 +11,7 @@
     ./insomnia.nix
     ./intellij.nix
     ./libreoffice.nix
+    ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
     ./slack.nix

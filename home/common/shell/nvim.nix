@@ -127,6 +127,7 @@
       unstable.prettierd
       unstable.marksman
       unstable.nil
+      unstable.nixfmt-rfc-style
       unstable.nixpkgs-fmt
       unstable.shellcheck
       unstable.lua-language-server

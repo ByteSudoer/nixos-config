@@ -60,7 +60,7 @@
       stateVersion = "24.05";
       username = "bytesudoer";
       colorscheme = "dracula";
-      desktop = "awesome";
+      desktop = "plasma";
       libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
     in
     {

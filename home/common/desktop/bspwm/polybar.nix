@@ -31,9 +31,10 @@ in
         module-margin = "1";
         separator = "|";
         separator-foreground = "${colors.disabled}";
-        font-0 = "monospace;2";
-        modules-left = "xworkspaces xwindow";
-        modules-right = "filesystem pulseaudio xkeyboard memory cpu wlan eth date";
+        font-0 = "JetBrainsMono Nerd Font Mono";
+        modules-left = "xworkspaces";
+        modules-center = "xwindow kernel";
+        modules-right = " tray network filesystem memory cpu clock";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         enable-ipc = "true";
@@ -79,16 +80,50 @@ in
         label = "%percentage:2%%";
       };
 
-      "module/eth" = {
-
-        # inherit = "network-base$";
-        interface-type = "wired$";
-        label-connected = "%{F#F0C674}%ifname%%{F-} %local_ip%$";
-
+      "module/network" = {
+        type = "internal/network";
+        interface-type = "wired";
+        interface = "enp1s0";
+        label-connected = "%{F#F0C674}%ifname%%{F-} %local_ip%";
       };
+
+      "module/clock" = {
+        type = "internal/date";
+        date = "%%{T3}%Y-%m-%d %H:%M:%S%{T-}";
+      };
+
+      "module/tray" = {
+        type = "internal/tray";
+        tray-size = "20";
+        tray-padding = "2";
+        tray-offset-x = "0";
+        tray-offset-y = "0";
+        tray-foreground = "${colors.foreground}";
+        tray-background = "${colors.background}";
+        format-background = "${colors.background}";
+      };
+
+      "module/xwindow" = {
+        type = "internal/xwindow";
+        label = "%title%";
+        label-maxlen = "30";
+      };
+      "module/kernel" = {
+        type = "custom/script";
+        exec = "uname -r";
+        tail = "false";
+        interval = "1024";
+        format-foreground = "${ colors. foreground}";
+        format-background = "${ colors. background}";
+        format-prefix = "";
+        format-prefix-foreground = "#0084FF";
+        format-underline = "#0084FF";
+      };
+
     };
     script = "
-      polybar mainbar-bspwm &
+      polybar
+      mainbar-bspwm &
     ";
   };
 }

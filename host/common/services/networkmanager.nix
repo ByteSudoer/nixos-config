@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 
 let
+  card = if hostname == "msi-nixos" then "wlo1" else "enp1s0";
   change-mac = pkgs.writeShellScript "change-mac" ''
     card=$1
     tmp=$(mktemp)
@@ -43,7 +44,7 @@ in
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${change-mac} wlo1";
+      ExecStart = "${change-mac} ${card}";
     };
   };
 

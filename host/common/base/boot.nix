@@ -1,21 +1,29 @@
-_: {
+{ lib, hostname, ... }:
+let
+  bootConfig =
+    if hostname == "msi-nixos" then {
+      loader = {
+        efi = {
+          canTouchEfiVariables = lib.mkForce true;
+          efiSysMountPoint = "/boot"; # ← use the same mount point here.
+        };
+        grub = {
+          efiSupport = true;
+          #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+          device = "nodev";
+        };
+      };
 
+    }
+    else {
+      loader = {
+        grub.enable = lib.mkForce true;
+        grub.device = "/dev/vda";
+        grub.useOSProber = true;
+      };
 
-  # Bootloader.
-  # boot.loader.grub.enable = lib.mkForce true;
-  # boot.loader.grub.device = "nodev";
-  # boot.loader.grub.useOSProber = true;
-
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot"; # ← use the same mount point here.
     };
-    grub = {
-      efiSupport = true;
-      #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-      device = "nodev";
-    };
-  };
-
+in
+{
+  boot = bootConfig;
 }

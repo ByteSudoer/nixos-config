@@ -26,4 +26,3 @@
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
 
 }
-

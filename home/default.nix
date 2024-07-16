@@ -24,14 +24,15 @@
   };
 
   sops = lib.mkIf (username == "bytesudoer") {
+    # sops-nix options: https://dl.thalheim.io/
     age = {
       keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
       generateKey = false;
     };
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets = {
-      github_key = "${config.home.homeDirectory}/.ssh/github_key";
-      github_key_pub = "${config.home.homeDirectory}/.ssh/github_key.pub";
+      github_key.path = "${config.home.homeDirectory}/.ssh/github_key";
+      github_key_pub.path = "${config.home.homeDirectory}/.ssh/github_key.pub";
     };
 
   };

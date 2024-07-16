@@ -1,9 +1,8 @@
-{ disks ? [ "/dev/vda" ], ... }:
-{
+{ disks ? [ "/dev/vda" ], ... }: {
   disko.devices = {
     disk = {
       my-disk = {
-        device = disks.elemAt disks 0;
+        device = builtins.elemAt disks 0;
         type = "disk";
         content = {
           type = "gpt";

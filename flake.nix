@@ -76,7 +76,7 @@
         #WorkStations
         msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
         lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
-        vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "${colorscheme}"; };
+        vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "gruvbox"; };
 
         #Servers
         vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };

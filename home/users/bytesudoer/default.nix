@@ -17,5 +17,6 @@ _: {
         User ubuntu
         Hostname 192.168.122.10
     ";
+    file.".face".source = ../../../Wallpapers/dracula/tux.png;
   };
 }

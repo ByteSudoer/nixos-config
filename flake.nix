@@ -22,6 +22,13 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+
+    #Atomic, declarative, and reproducible secret provisioning
+    sops = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #Manage Home Directory and ~/.config
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";

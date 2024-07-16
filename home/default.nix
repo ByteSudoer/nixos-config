@@ -23,6 +23,15 @@
     '';
   };
 
+  sops = lib.mkIf (username == "bytesudoer") {
+    age = {
+      keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+      generateKey = false;
+    };
+    defaultSopsFile = ../secrets/secrets.yaml;
+
+  };
+
 
   # nixpkgs = {
   #   overlays = [

@@ -26,6 +26,7 @@
 
     modules = [
       ../host
+      inputs.sops.nixosModules.sops
       inputs.disko.nixosModules.disko
       inputs.home-manager.nixosModules.home-manager
       {
@@ -41,6 +42,7 @@
           };
           # Ensure Plasma Manager is available:
           sharedModules = [
+            inputs.sops.homeManagerModules.sops
             inputs.hyprland.homeManagerModules.default
             inputs.nix-index-database.hmModules.nix-index
             inputs.plasma-manager.homeManagerModules.plasma-manager

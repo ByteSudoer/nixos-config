@@ -20,6 +20,7 @@
     file.".face".source = ../../../Wallpapers/dracula/tux.png;
     packages = with pkgs;[
       age
+      sops
       ssh-to-age
     ];
   };

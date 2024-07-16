@@ -29,6 +29,10 @@
       generateKey = false;
     };
     defaultSopsFile = ../secrets/secrets.yaml;
+    secrets = {
+      github_key = "${config.home.homeDirectory}/.ssh/github_key";
+      github_key_pub = "${config.home.homeDirectory}/.ssh/github_key.pub";
+    };
 
   };
 

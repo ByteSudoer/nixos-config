@@ -15,6 +15,14 @@ let
       };
 
     }
+    else if hostname == "vm" then {
+      loader = {
+        grub.enable = lib.mkForce true;
+        grub.device = "/dev/vda";
+        grub.useOSProber = true;
+      };
+
+    }
     else {
       loader = {
         grub.enable = lib.mkForce true;

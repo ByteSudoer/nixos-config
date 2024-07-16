@@ -12,7 +12,9 @@ _: {
       "sr_mod"
       "virtio_blk"
     ];
-    initrd.kernelModules = [ ];
+    initrd.kernelModules = [
+      "kvm-intel"
+    ];
     kernelModules = [ ];
     extraModulePackages = [ ];
 

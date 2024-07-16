@@ -3,7 +3,7 @@
   imports = [
     (import ./boot.nix { })
     (import ./hardware.nix { inherit lib modulesPath; })
-    (import ./disks.nix)
+    (import ./disks.nix { })
   ];
 
   services.spice-vdagentd.enable = true;

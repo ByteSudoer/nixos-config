@@ -24,14 +24,8 @@
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "bcachefs";
-                extraArgs = [ "-f" ];
+                format = "ext4";
                 mountpoint = "/";
-                mountOptions = [
-                  "defaults"
-                  "relatime"
-                  "nodiratime"
-                ];
               };
             };
           };

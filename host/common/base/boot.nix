@@ -18,8 +18,9 @@ let
     else if hostname == "vm" then {
       loader = {
         grub.enable = lib.mkForce true;
-        grub.device = "/dev/vda";
         grub.useOSProber = true;
+        grub.efiSupport = true;
+        grub.efiInstallAsRemovable = true;
       };
 
     }

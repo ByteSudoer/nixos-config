@@ -27,7 +27,8 @@
     # sops-nix options: https://dl.thalheim.io/
     age = {
       keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
-      generateKey = false;
+      # Generate key if the one above does not exist
+      generateKey = true;
     };
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets = {

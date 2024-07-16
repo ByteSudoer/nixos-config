@@ -1,7 +1,9 @@
 keys:
   - &admin_bytesudoer age1l7gqrfhgjf0n6q0tp2mx4jc8w6zanvfnh8742wqczu83249lc9ds3ew42k
+  - &user_backup age1xxk3huttwvcxmcn7mzefs20yfe3nrnpt68wg895yqtyzudh2c5sqgl7h7e
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
           - *admin_bytesudoer
+          - *user_backup

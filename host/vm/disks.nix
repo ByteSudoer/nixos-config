@@ -2,8 +2,8 @@
   disko.devices = {
     disk = {
       my-disk = {
-        device = builtins.elemAt disks 0;
         type = "disk";
+        device = builtins.elemAt disks 0;
         content = {
           type = "gpt";
           partitions = {
@@ -14,14 +14,24 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
+                mountOptions = [
+                  "defaults"
+                  "umask=0077"
+                ];
               };
             };
             root = {
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "ext4";
+                format = "bcachefs";
+                extraArgs = [ "-f" ];
                 mountpoint = "/";
+                mountOptions = [
+                  "defaults"
+                  "relatime"
+                  "nodiratime"
+                ];
               };
             };
           };

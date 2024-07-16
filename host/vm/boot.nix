@@ -2,10 +2,18 @@ _: {
 
 
   boot = {
-
-    initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ohci_pci"
+      "ehci_pci"
+      "virtio_pci"
+      "ahci"
+      "usbhid"
+      "sr_mod"
+      "virtio_blk"
+    ];
     initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ ];
     extraModulePackages = [ ];
 
   };

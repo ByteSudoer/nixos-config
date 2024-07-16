@@ -1,4 +1,4 @@
-{ desktop, lib, extra, ... }: {
+{ lib, extra, ... }: {
   imports = [
     ./docker.nix
   ] # Include quickemu if a desktop is defined

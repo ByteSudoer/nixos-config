@@ -1,4 +1,4 @@
-{ colorscheme, desktop, lib, ... }:
+{ colorscheme, desktop, ... }:
 let
 
   isInList = element: list: builtins.elem element list;

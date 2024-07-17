@@ -7,6 +7,7 @@
     ./btop.nix
     ./env_variables.nix
     ./direnv.nix
+    ./eza.nix
     ./git.nix
     ./neofetch.nix
     ./nix.nix
@@ -18,7 +19,6 @@
   ];
 
   programs = {
-    eza.enable = true;
     jq.enable = true;
   };
 

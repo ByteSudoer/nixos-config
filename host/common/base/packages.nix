@@ -5,7 +5,6 @@
     dig
     dua
     duf
-    unstable.eza
     fd
     file
     fzf

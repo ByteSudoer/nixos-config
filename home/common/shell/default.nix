@@ -8,6 +8,7 @@
     ./env_variables.nix
     ./direnv.nix
     ./eza.nix
+    ./fd.nix
     ./git.nix
     ./neofetch.nix
     ./nix.nix

@@ -5,7 +5,6 @@
     dig
     dua
     duf
-    fd
     file
     fzf
     github-cli

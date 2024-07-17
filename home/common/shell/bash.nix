@@ -21,7 +21,6 @@ _:
       batdiff() {
         git diff --name-only --relative --diff-filter=d | xargs bat --diff
       }
-      eval "$(gh completion -s bash)" 
     '';
 
     initExtra = ''
@@ -30,10 +29,10 @@ _:
     '';
     shellAliases = {
       # Better Format with exa
-      ls = "eza -al --color=always --group-directories-first";
-      la = "eza -a --color=always --group-directories-first";
-      ll = "eza -l --color=always --group-directories-first";
-      lt = "eza -aT --color=always --group-directories-first";
+      ls = "eza -al --color=always --git --icons --group-directories-first";
+      la = "eza -a --color=always  --git --icons --group-directories-first";
+      ll = "eza -l --color=always  --git --icons --group-directories-first";
+      lt = "eza -aT --color=always --git --icons --group-directories-first";
       cp = "cp -i -v";
       mv = "mv -i -v";
       mkdir = "mkdir -p";

@@ -1,4 +1,4 @@
-{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, pkgs, platform, ... }: {
+{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, pkgs, platform, extra, ... }: {
   imports = [
     inputs.disko.nixosModules.disko
 

@@ -1,7 +1,4 @@
-{ desktop, lib, ... }:
-let
-  isDesktop = builtins.isString desktop;
-in
+{ desktop, ... }:
 {
   imports = [
     (./. + "/${desktop}.nix")
@@ -11,7 +8,8 @@ in
     ../services/pipewire.nix
     ../hardware/bluetooth.nix
     ../virt
-  ] ++ lib.optional isDesktop ./web-browsers;
+    ./web-browsers
+  ];
 
   # Enable Plymouth and surpress some logs by default.
   # boot.plymouth.enable = true;
@@ -29,7 +27,7 @@ in
 
   programs = {
 
-    dconf.enable = isDesktop;
+    dconf.enable = true;
 
     # Archive manager
     # file-roller.enable = true;

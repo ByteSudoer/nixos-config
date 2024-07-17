@@ -3,8 +3,9 @@
   programs.gh = {
     enable = true;
     package = pkgs.gh;
-    extension = with pkgs;[
+    extensions = with pkgs;[
       gh-eco
+      gh-graph
     ];
   };
 }

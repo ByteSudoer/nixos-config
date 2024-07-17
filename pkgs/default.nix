@@ -10,6 +10,7 @@
   defaultLayout = pkgs.callPackage ./scripts/defaultLayout.nix { };
   fehrandom = pkgs.callPackage ./scripts/fehrandom.nix { inherit colorscheme; };
   get_weather = pkgs.callPackage ./scripts/get_weather.nix { };
+  gh-graph = pkgs.callPackage ./gh-graph { };
   lock = pkgs.callPackage ./scripts/lock.nix { };
   mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };

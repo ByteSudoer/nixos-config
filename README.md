@@ -22,7 +22,8 @@ This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for confi
 
 
 ## TODO
-- [ ] Add Disko support for different host 
+- [X] Add Disko support for different host 
 - [X] Add nix-index to home-manager
+- [X] Encrypt Secrets with sops
 - [ ] Configure env variables for hyprland with colorscheme global variable support
 - [ ] Documentation for nix-ld(whether to integrate it or not)

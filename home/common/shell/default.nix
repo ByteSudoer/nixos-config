@@ -9,7 +9,9 @@
     ./direnv.nix
     ./eza.nix
     ./fd.nix
+    ./fzf.nix
     ./git.nix
+    ./gh.nix
     ./neofetch.nix
     ./nix.nix
     ./nvim.nix

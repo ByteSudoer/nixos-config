@@ -6,8 +6,6 @@
     dua
     duf
     file
-    fzf
-    github-cli
     htop
     jq
     killall

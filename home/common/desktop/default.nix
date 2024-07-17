@@ -5,7 +5,6 @@
     ./alacritty.nix
     ./betterlockscreen.nix
     ./dunst.nix
-    ./firefox.nix
     ./fonts.nix
     ./gtk.nix
     ./picom.nix

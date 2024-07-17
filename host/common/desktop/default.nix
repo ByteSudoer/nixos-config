@@ -1,4 +1,4 @@
-{ desktop, ... }:
+{ desktop, lib, ... }:
 let
   isDesktop = builtins.isString desktop;
 in
@@ -11,7 +11,7 @@ in
     ../services/pipewire.nix
     ../hardware/bluetooth.nix
     ../virt
-  ] ++ isDesktop ./web-browsers;
+  ] ++ lib.optional isDesktop ./web-browsers;
 
   # Enable Plymouth and surpress some logs by default.
   # boot.plymouth.enable = true;

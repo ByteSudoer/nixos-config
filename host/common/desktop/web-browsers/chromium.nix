@@ -4,7 +4,6 @@ let
 in
 {
   programs.chromium = {
-    package = pkgs.chromium;
     enable = isExtra;
   };
 }

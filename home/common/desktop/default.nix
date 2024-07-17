@@ -5,6 +5,7 @@
     ./alacritty.nix
     ./betterlockscreen.nix
     ./dunst.nix
+    ./feh.nix
     ./fonts.nix
     ./flameshot.nix
     ./gtk.nix
@@ -17,7 +18,6 @@
 
   programs = {
     mpv.enable = true;
-    feh.enable = true;
   };
 
   home.packages = with pkgs; [

@@ -86,7 +86,7 @@
         vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "gruvbox"; };
 
         #Servers
-        vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; };
+        vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; fs = "btrfs"; };
 
       };
 

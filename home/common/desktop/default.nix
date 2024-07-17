@@ -6,6 +6,7 @@
     ./betterlockscreen.nix
     ./dunst.nix
     ./fonts.nix
+    ./flameshot.nix
     ./gtk.nix
     ./picom.nix
     ./qt.nix
@@ -25,8 +26,6 @@
     libnotify
     xdg-utils
     xorg.xlsclients
-    #Screenshot
-    flameshot
     #WebCam
     gnome.cheese
     gparted

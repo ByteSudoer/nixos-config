@@ -39,7 +39,7 @@
     };
     #Automatic CPU speed & power optimizer for Linux
     auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq/34ebd04df0fd605c6c741f834f7b2d9205999f30";
+      url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

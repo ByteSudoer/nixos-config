@@ -18,6 +18,7 @@
   sp = pkgs.callPackage ./scripts/sp.nix { };
   swww_randomize = pkgs.callPackage ./scripts/swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./scripts/tmuxSession.nix { };
+  tlp-ui = pkgs.callPackage ./tlp-ui { };
   wallpapers = pkgs.callPackage ./scripts/wallpapers.nix { };
 
   # Utilities

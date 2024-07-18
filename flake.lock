@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "auto-cpufreq": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1721064947,
+        "narHash": "sha256-4etmm/nDmpDD2wxEBJuiamZqcqgq/niwdapZd0Kcy4g=",
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "rev": "34ebd04df0fd605c6c741f834f7b2d9205999f30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "rev": "34ebd04df0fd605c6c741f834f7b2d9205999f30",
+        "type": "github"
+      }
+    },
     "base16-schemes": {
       "flake": false,
       "locked": {
@@ -431,6 +452,7 @@
     },
     "root": {
       "inputs": {
+        "auto-cpufreq": "auto-cpufreq",
         "disko": "disko",
         "home-manager": "home-manager",
         "hyprland": "hyprland",

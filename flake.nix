@@ -37,6 +37,11 @@
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
+    #Automatic CPU speed & power optimizer for Linux
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq/34ebd04df0fd605c6c741f834f7b2d9205999f30";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #Manage Plasma Desktop
     plasma-manager = {

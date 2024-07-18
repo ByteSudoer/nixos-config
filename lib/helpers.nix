@@ -26,6 +26,7 @@
 
     modules = [
       ../host
+      inputs.auto-cpufreq.nixosModules.default
       inputs.sops.nixosModules.sops
       inputs.disko.nixosModules.disko
       inputs.home-manager.nixosModules.home-manager

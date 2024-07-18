@@ -6,7 +6,6 @@ let
     else if colorscheme == "gruvbox"
     then "gruvbox_material_dark"
     else "default";
-  isDesktop = builtins.isString desktop;
 in
 {
   programs.btop = {

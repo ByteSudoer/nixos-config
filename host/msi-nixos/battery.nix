@@ -23,9 +23,6 @@
   #   };
   # };
 
-  environment.systemPackages = with pkgs;[
-    tlp-ui
-  ];
   services.tlp = {
     enable = lib.mkForce true;
     settings = {

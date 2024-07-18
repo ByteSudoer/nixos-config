@@ -1,4 +1,8 @@
-_: {
+{ config, ... }:
+let
+  msi-ec = config.boot.kernelPackages.callPackage ../../pkgs/msi-ec;
+in
+{
   boot = {
 
     # kernelPackages = pkgs.linuxPackages_latest;
@@ -6,7 +10,7 @@ _: {
     # initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
+    extraModulePackages = [ msi-ec ];
     # Whether to delete all files in /tmp during boot.
     tmp.cleanOnBoot = true;
   };

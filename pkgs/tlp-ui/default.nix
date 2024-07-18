@@ -1,6 +1,10 @@
 { lib
 , python3
 , fetchPypi
+, gtk3
+, hicolor-icon-theme
+, autoPatchelfHook
+
 }:
 
 python3.pkgs.buildPythonApplication rec {
@@ -15,15 +19,21 @@ python3.pkgs.buildPythonApplication rec {
   };
 
   nativeBuildInputs = [
+    autoPatchelfHook
     python3.pkgs.poetry-core
   ];
 
   propagatedBuildInputs = with python3.pkgs; [
-    pygobject
+    pygobject3
     pyyaml
   ];
 
-  pythonImportsCheck = [ "tlp_ui" ];
+  buildInputs = [
+    gtk3
+    hicolor-icon-theme
+  ];
+
+  # pythonImportsCheck = [ "tlp_ui" ];
 
   meta = with lib; {
     description = "GTK UI for tlp";

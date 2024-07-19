@@ -5,17 +5,18 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
-    ./env_variables.nix
     ./direnv.nix
+    ./env_variables.nix
     ./eza.nix
     ./fd.nix
     ./fzf.nix
-    ./git.nix
     ./gh.nix
+    ./git.nix
     ./jq.nix
     ./neofetch.nix
     ./nix.nix
     ./nvim.nix
+    ./ripgrep.nix
     ./scripts.nix
     ./starship.nix
     ./tmux.nix

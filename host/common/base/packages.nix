@@ -16,7 +16,6 @@
     ntfs3g
     pciutils
     # permer
-    ripgrep
     rsync
     statix
     traceroute

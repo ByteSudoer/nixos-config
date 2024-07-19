@@ -7,7 +7,6 @@
     duf
     file
     htop
-    jq
     killall
     macchanger
     manix

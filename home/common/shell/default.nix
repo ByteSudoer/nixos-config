@@ -12,6 +12,7 @@
     ./fzf.nix
     ./git.nix
     ./gh.nix
+    ./jq.nix
     ./neofetch.nix
     ./nix.nix
     ./nvim.nix

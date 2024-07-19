@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  msi-ec = config.boot.kernelPackages.callPackage ../../pkgs/msi-ec;
+  msi_ec = config.boot.kernelPackages.callPackage ../../pkgs/msi-ec/default.nix { };
 in
 {
   boot = {
@@ -10,7 +10,7 @@ in
     # initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ msi-ec ];
+    extraModulePackages = [ ];
     # Whether to delete all files in /tmp during boot.
     tmp.cleanOnBoot = true;
   };

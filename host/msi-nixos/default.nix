@@ -3,7 +3,7 @@
   imports = [
     (import ./disks.nix { })
     (import ./battery.nix { inherit pkgs lib; })
-    (import ./boot.nix { inherit pkgs; })
+    (import ./boot.nix { inherit pkgs config; })
     (import ./hardware.nix { inherit lib config modulesPath inputs; })
     (import ./nvidia.nix { inherit lib; })
   ];

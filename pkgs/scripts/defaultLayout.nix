@@ -1,6 +1,9 @@
 { pkgs, ... }:
 pkgs.writeShellScriptBin "defaultLayout" ''
 
+  # Get hostname
+  hostname=$(hostname)
+  #Detect if running in Virtual-Machine so dual monitor is not needed
   virt=$(systemd-detect-virt)
 
   if [ "$virt" == "kvm" ] || [ "$virt" == "oracle" ];then
@@ -15,7 +18,5 @@ pkgs.writeShellScriptBin "defaultLayout" ''
      xrandr --output  "$primary" --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output "$externel" --off --output HDMI-1-1 --off
     fi
   fi
-
-
 
 ''

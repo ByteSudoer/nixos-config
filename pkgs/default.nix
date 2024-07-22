@@ -13,6 +13,7 @@
   gh-graph = pkgs.callPackage ./gh-graph { };
   lock = pkgs.callPackage ./scripts/lock.nix { };
   mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };
+  # m-control-center = pkgs.callPackage ./MControlerCenter { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };
   rofi_window = pkgs.callPackage ./scripts/rofi_window.nix { };
   sp = pkgs.callPackage ./scripts/sp.nix { };

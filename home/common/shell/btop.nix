@@ -1,4 +1,4 @@
-{ pkgs, colorscheme, desktop, ... }:
+{ pkgs, colorscheme, ... }:
 let
   palette =
     if colorscheme == "dracula"

@@ -1,7 +1,4 @@
 { config, ... }:
-let
-  msi_ec = config.boot.kernelPackages.callPackage ../../pkgs/msi-ec/default.nix { };
-in
 {
   boot = {
 

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 {
   ## KDE uses this service which conflicts with tlp
   services.power-profiles-daemon.enable = lib.mkForce false;

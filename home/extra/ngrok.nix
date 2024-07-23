@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+_:
 {
   programs.ngrok = {
     enable = true;

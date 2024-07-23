@@ -16,7 +16,7 @@ in
     };
     settings = lib.mkOption
       {
-        type = yamlFormat.type;
+        inherit (yamlFormat) type;
         default = { };
         example = lib.literalExpression ''
           authtoken = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
@@ -41,7 +41,7 @@ in
       {
         source = (yamlFormat.generate "ngrok.yml" cfg.settings).overrideAttrs
           (
-            finalAttrs: prevAttrs: {
+            _finalAttrs: prevAttrs: {
               buildCommand = lib.concatStringsSep "\n" [
 
                 prevAttrs.buildCommand

@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.programs.bat;
+  cfg = config.programs.ngrok;
   yamlFormat = pkgs.format.yaml { };
 in
 {

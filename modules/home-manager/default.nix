@@ -1,0 +1,3 @@
+{
+  ngrok = import ./ngrok.nix;
+}

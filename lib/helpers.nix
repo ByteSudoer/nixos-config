@@ -8,7 +8,7 @@
     };
     modules = [
       ../home
-      ../modules
+      ../modules/home-manager
     ];
   };
 
@@ -19,7 +19,6 @@
     };
     modules = [
       ../host
-      ../modules
     ];
   };
 

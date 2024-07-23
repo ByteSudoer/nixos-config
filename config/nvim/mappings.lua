@@ -80,36 +80,50 @@ map(mode.normal, "<C-u>", ":PackerSync<CR>")
 -- Adding key Maps to the WhichKey help menu
 
 wk.register({
-	{ "<leader>", group = "leader" },
-	{ "<leader>a", "<cmd>Lspsaga code_action<CR>", desc = "Show Code Actions" },
-	{ "<leader>b", group = "buffers" },
-	{ "<leader>bc", "<cmd>Telescope colorscheme<CR>", desc = "Lists Available colorschemes" },
-	{ "<leader>bm", "<cmd>Telescope man_pages<CR>", desc = "Lists Manpage entries" },
-	{ "<leader>f", group = "file" },
-	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Telescope buffer list" },
-	{ "<leader>ff", "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<CR>", desc = "Telescope file finder" },
-	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Search for a string in a current directory" },
-	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "List Available Help Tags" },
-	{ "<leader>fs", "<cmd>Telescope grep_string<CR>", desc = "Search the string under the cursor" },
-	{ "<leader>j", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Show next LSP Message" },
-	{ "<leader>k", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Show previous LSP Message" },
-	{ "<leader>q", "<cmd>CheatSH<CR>", desc = "Open CheatSheet for Language and Keyword under Cursor" },
-	{ "<leader>w", "<cmd>WhichKey<CR>", desc = "Open WhichKey help Menu" },
-	{ "<leader>x", "<cmd>NvimTreeToggle<CR>", desc = "Open/Close NvimTree" },
+	["<leader>"] = {
+		name = "+leader",
+		x = { "<cmd>NvimTreeToggle<CR>", "Open/Close NvimTree" },
+		w = { "<cmd>WhichKey<CR>", "Open WhichKey help Menu" },
+		q = { "<cmd>CheatSH<CR>", "Open CheatSheet for Language and Keyword under Cursor" },
+		f = {
+			name = "+file",
+			f = { "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<CR>", "Telescope file finder" },
+			b = { "<cmd>Telescope buffers<CR>", "Telescope buffer list" },
+			g = { "<cmd>Telescope live_grep<CR>", "Search for a string in a current directory" },
+			s = { "<cmd>Telescope grep_string<CR>", "Search the string under the cursor" },
+			h = { "<cmd>Telescope help_tags<CR>", "List Available Help Tags" },
+		},
+		b = {
+			name = "+buffers",
+			m = { "<cmd>Telescope man_pages<CR>", "Lists Manpage entries" },
+			c = { "<cmd>Telescope colorscheme<CR>", "Lists Available colorschemes" },
+		},
+		a = { "<cmd>Lspsaga code_action<CR>", "Show Code Actions" },
+		j = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Show next LSP Message" },
+		k = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Show previous LSP Message" },
+	},
 })
 
 wk.register({
-	{ "qa", "<cmd>quitall<CR>", desc = "Close All Windows and Tabs" },
-	{ "qq", "<cmd>Lspsaga hover_doc<CR>", desc = "LSP Hover doc" },
+	q = {
+		a = { "<cmd>quitall<CR>", "Close All Windows and Tabs" },
+		q = { "<cmd>Lspsaga hover_doc<CR>", "LSP Hover doc" },
+	},
 })
 
 -- LSP Mappings
 wk.register({
-	{ "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Goto Declaration" },
-	{ "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Goto Definition" },
-	{ "<leader>l", group = "Code" },
-	{ "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Line Diagnostics" },
-	{ "<leader>li", "<cmd>LspInfo<CR>", desc = "LSP Indo" },
-	{ "<leader>lq", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Action" },
-	{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+	["<leader>"] = {
+		l = {
+			name = "Code",
+			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+			q = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
+			i = { "<cmd>LspInfo<CR>", "LSP Indo" },
+		},
+		g = {
+			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto Definition" },
+			D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Goto Declaration" },
+		},
+	},
 })

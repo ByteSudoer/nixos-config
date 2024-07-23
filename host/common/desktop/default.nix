@@ -1,6 +1,11 @@
-{ desktop, ... }:
+{ desktop, hostname, lib, ... }:
 let
   isDesktop = builtins.isString desktop;
+  isVM = element: list: builtins.elem element list;
+  vms = [
+    "vm"
+    "vm-mini"
+  ];
 in
 {
   imports = [
@@ -9,13 +14,12 @@ in
     (./. + "/thunar.nix")
     ../services/networkmanager.nix
     ../services/pipewire.nix
-    ../hardware/bluetooth.nix
     ../virt
     ./web-browsers
-  ];
+  ] ++ lib.optionals (isVM hostname vms) ../hardware/bluetooth.nix;
+
 
   programs = {
-
     dconf.enable = isDesktop;
   };
 

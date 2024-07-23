@@ -6,7 +6,10 @@
       inherit inputs outputs stateVersion hostname desktop;
       username = user;
     };
-    modules = [ ../home ];
+    modules = [
+      ../home
+      ../modules
+    ];
   };
 
   # Helper function for generating host configs
@@ -16,6 +19,7 @@
     };
     modules = [
       ../host
+      ../modules
     ];
   };
 

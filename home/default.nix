@@ -35,6 +35,8 @@
       github_key.path = "${config.home.homeDirectory}/.ssh/github_key";
       github_key_pub.path = "${config.home.homeDirectory}/.ssh/github_key.pub";
       github_token = { };
+      ngrok_token = { };
+
     };
 
   };

@@ -9,7 +9,7 @@
     ];
     extraOptions = [
       "--absolute-path"
-      "--colors=always"
+      "--color=always"
     ];
   };
 }

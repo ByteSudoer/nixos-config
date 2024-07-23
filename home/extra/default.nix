@@ -10,6 +10,7 @@
     ./insomnia.nix
     ./intellij.nix
     ./libreoffice.nix
+    ./ngrok.nix
     ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix

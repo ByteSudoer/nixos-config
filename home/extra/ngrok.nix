@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.ngrok = {
-    enable = false;
+    enable = true;
+    settings = {
+      version = 2;
+      # authtoken = "${config.sops.placeholder.ngrok_token}";
+    };
   };
 }

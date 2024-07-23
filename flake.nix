@@ -94,6 +94,7 @@
         vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; fs = "btrfs"; };
 
       };
+      homeManagerModules = import ./modules/home-manager;
 
       formatter = libx.forAllSystems (system:
         nix-formatter-pack.lib.mkFormatter {

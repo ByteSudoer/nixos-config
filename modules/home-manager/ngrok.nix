@@ -2,7 +2,7 @@
 
 let
   cfg = config.programs.ngrok;
-  yamlFormat = pkgs.format.yaml { };
+  yamlFormat = pkgs.formats.yaml { };
 in
 {
   meta.maintainers = with lib.maintainers;[ ByteSudoer ];
@@ -14,13 +14,13 @@ in
       defaultText = lib.literalExpression "pkgs.ngrok";
       description = "The ngrock package to install";
     };
-    settings = lib.mkOpton
+    settings = lib.mkOption
       {
         type = yamlFormat.type;
         default = { };
         example = lib.literalExpression ''
-          authtoken = 4nq9771bPxe8ctg7LKr_2ClH7Y15Zqe4bWLWF9p;
-          api_key = 24yRd5U3DestCQapJrrVHLOqiAC_7RviwRqpd3wc9dKLujQZN;
+          authtoken = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
+          api_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
           connect_timeout =  30s
           dns_resolver_ips = [
             1.1.1.1
@@ -36,13 +36,13 @@ in
       };
   };
   config = lib.mkIf cfg.enable {
-    home.package = [ cfg.package ];
+    home.packages = [ cfg.package ];
     xdg.configFile."ngrok/ngrok.yml" = lib.mkIf (cfg.settings != { })
       {
         source = (yamlFormat.generate "ngrok.yml" cfg.settings).overrideAttrs
           (
             finalAttrs: prevAttrs: {
-              buildCommand = lib.concatStringSep "\n" [
+              buildCommand = lib.concatStringsSep "\n" [
 
                 prevAttrs.buildCommand
                 "substituteInPlace $out --replace '\\\\' '\\'"

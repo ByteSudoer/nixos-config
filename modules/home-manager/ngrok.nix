@@ -41,7 +41,7 @@ in
       {
         source = (yamlFormat.generate "ngrok.yml" cfg.settings).overrideAttrs
           (
-            finalAttrs: prevAttrs: {
+            _finalAttrs: prevAttrs: {
               buildCommand = lib.concatStringsSep "\n" [
 
                 prevAttrs.buildCommand

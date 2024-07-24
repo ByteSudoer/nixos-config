@@ -1,7 +1,7 @@
-{ lib, modulesPath, platform, ... }:
+{ pkgs, lib, modulesPath, platform, ... }:
 {
   imports = [
-    (import ./boot.nix { })
+    (import ./boot.nix { inherit pkgs; })
     (import ./hardware.nix { inherit lib modulesPath; })
     (import ./disks.nix { })
   ];

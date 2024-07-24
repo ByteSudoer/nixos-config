@@ -1,4 +1,21 @@
-{ inputs, outputs, stateVersion, username, ... }: {
+{ inputs, outputs, stateVersion, username, ... }:
+let
+  workstations = [
+    "msi-nixos"
+    "lenovo"
+  ];
+  virtual_machines = [
+    "vm"
+    "vm-mini"
+  ];
+in
+{
+  # Function to use to check if hostname is a VM
+  isVM = hostname: builtins.elem hostname virtual_machines;
+  # Function to use to check if hostname is a Workstation
+  # Helpful for Enabling/Disabling some options globally depending on the hostname
+  isWorkStation = hostname: builtins.elem hostname workstations;
+
   # Helper function for generating home-manager configs
   mkHome = { hostname, user ? username, desktop ? null }: inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;

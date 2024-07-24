@@ -1,10 +1,10 @@
 { desktop, hostname, lib, ... }:
 let
   isDesktop = builtins.isString desktop;
-  isVM = element: list: builtins.elem element list;
-  vms = [
-    "vm"
-    "vm-mini"
+  isNotVM = element: list: builtins.elem element list;
+  workstations = [
+    "msi-nixos"
+    "lenovo-nixos"
   ];
 in
 {
@@ -16,7 +16,7 @@ in
     ../services/pipewire.nix
     ../virt
     ./web-browsers
-  ] ++ lib.optionals (isVM hostname vms) ../hardware/bluetooth.nix;
+  ] ++ lib.optional (isNotVM hostname workstations) ../hardware/bluetooth.nix;
 
 
   programs = {

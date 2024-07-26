@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    bitwarden
-  ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ bitwarden ];
 }

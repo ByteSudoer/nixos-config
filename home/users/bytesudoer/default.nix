@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home = {
     file.".ssh/config".text = "
       Host github.com
@@ -18,7 +19,7 @@
         Hostname 192.168.122.10
     ";
     file.".face".source = ../../../Wallpapers/dracula/tux.png;
-    packages = with pkgs;[
+    packages = with pkgs; [
       age
       sops
       ssh-to-age

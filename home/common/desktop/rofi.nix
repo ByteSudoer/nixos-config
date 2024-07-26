@@ -1,8 +1,6 @@
 { pkgs, desktop, ... }:
 let
-  rofi_package =
-    if desktop == "hyprland" then "rofi-wayland"
-    else "rofi";
+  rofi_package = if desktop == "hyprland" then "rofi-wayland" else "rofi";
 in
 {
   programs.rofi = {

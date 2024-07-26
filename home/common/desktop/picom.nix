@@ -39,7 +39,10 @@ in
     ];
     # Fading
     fade = true;
-    fadeSteps = [ 0.03 0.03 ];
+    fadeSteps = [
+      3.0e-2
+      3.0e-2
+    ];
     fadeExclude = [ "class_g = 'slop'" ];
     #Shadow
     shadow = true;

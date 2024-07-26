@@ -1,4 +1,9 @@
-{ desktop, hostname, lib, ... }:
+{
+  desktop,
+  hostname,
+  lib,
+  ...
+}:
 let
   isDesktop = builtins.isString desktop;
   isNotVM = element: list: builtins.elem element list;
@@ -18,7 +23,6 @@ in
     ../virt
     ./web-browsers
   ] ++ lib.optional (isNotVM hostname workstations) ../hardware/bluetooth.nix;
-
 
   programs = {
     dconf.enable = isDesktop;

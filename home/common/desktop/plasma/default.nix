@@ -16,7 +16,13 @@
       "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
       "kcm_touchpad"."Toggle Touchpad" = "Touchpad Toggle";
       "kded5"."Show System Activity" = "Ctrl+Esc";
-      "kded5"."display" = [ "" "" "" "Display" "Meta+P" ];
+      "kded5"."display" = [
+        ""
+        ""
+        ""
+        "Display"
+        "Meta+P"
+      ];
       "khotkeys"."{d03619b6-9b3c-48cc-9d9c-a2aadb485550}" = "none";
       "kmix"."decrease_microphone_volume" = "Microphone Volume Down";
       "kmix"."decrease_volume" = "Volume Down";
@@ -24,10 +30,18 @@
       "kmix"."increase_microphone_volume" = "Microphone Volume Up";
       "kmix"."increase_volume" = "Volume Up";
       "kmix"."increase_volume_small" = "Shift+Volume Up";
-      "kmix"."mic_mute" = [ "" "Microphone Mute" "Meta+Volume Mute" ];
+      "kmix"."mic_mute" = [
+        ""
+        "Microphone Mute"
+        "Meta+Volume Mute"
+      ];
       "kmix"."mute" = "Volume Mute";
       "ksmserver"."Halt Without Confirmation" = "none";
-      "ksmserver"."Lock Session" = [ "" "Meta+L" "Screensaver" ];
+      "ksmserver"."Lock Session" = [
+        ""
+        "Meta+L"
+        "Screensaver"
+      ];
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
       "ksmserver"."Log Out Without Confirmation" = "none";
       "ksmserver"."Reboot" = "none";
@@ -39,7 +53,11 @@
       "kwin"."Decrease Opacity" = "none";
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
-      "kwin"."ExposeAll" = [ "" "Ctrl+F10" "Launch (C)" ];
+      "kwin"."ExposeAll" = [
+        ""
+        "Ctrl+F10"
+        "Launch (C)"
+      ];
       "kwin"."ExposeClass" = "Ctrl+F7";
       "kwin"."ExposeClassCurrentDesktop" = "none";
       "kwin"."Grid View" = "Meta+G";
@@ -204,8 +222,21 @@
       "org.kde.konsole.desktop"."NewWindow" = "none";
       "org.kde.konsole.desktop"."_launch" = "Ctrl+Alt+T";
       "org.kde.krunner.desktop"."RunClipboard" = "Alt+Shift+F2";
-      "org.kde.krunner.desktop"."_launch" = [ "" "" "" "Alt+Space" "Alt+F2" "Search" ];
-      "org.kde.plasma.emojier.desktop"."_launch" = [ "" "" "" "Meta+." "Meta+Ctrl+Alt+Shift+Space" ];
+      "org.kde.krunner.desktop"."_launch" = [
+        ""
+        ""
+        ""
+        "Alt+Space"
+        "Alt+F2"
+        "Search"
+      ];
+      "org.kde.plasma.emojier.desktop"."_launch" = [
+        ""
+        ""
+        ""
+        "Meta+."
+        "Meta+Ctrl+Alt+Shift+Space"
+      ];
       "org.kde.spectacle.desktop"."ActiveWindowScreenShot" = "Meta+Print";
       "org.kde.spectacle.desktop"."CurrentMonitorScreenShot" = "none";
       "org.kde.spectacle.desktop"."FullScreenScreenShot" = "Shift+Print";
@@ -225,7 +256,11 @@
       "org_kde_powerdevil"."Sleep" = "Sleep";
       "org_kde_powerdevil"."Toggle Keyboard Backlight" = "Keyboard Light On/Off";
       "org_kde_powerdevil"."Turn Off Screen" = "none";
-      "org_kde_powerdevil"."powerProfile" = [ "" "Battery" "Meta+B" ];
+      "org_kde_powerdevil"."powerProfile" = [
+        ""
+        "Battery"
+        "Meta+B"
+      ];
       "plasmashell"."activate task manager entry 1" = "Meta+1";
       "plasmashell"."activate task manager entry 10" = "none";
       "plasmashell"."activate task manager entry 2" = "Meta+2";

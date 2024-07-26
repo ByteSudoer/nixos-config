@@ -1,7 +1,8 @@
-{ hostname
-, pkgs
-, lib
-, ...
+{
+  hostname,
+  pkgs,
+  lib,
+  ...
 }:
 let
   # Break these packages out so they can be imported elsewhere as a common set
@@ -19,14 +20,12 @@ in
     ../services/openssh.nix
   ];
 
-
   networking = {
     hostName = hostname;
     useDHCP = lib.mkDefault true;
   };
 
   environment.systemPackages = basePackages;
-
 
   security = {
     polkit.enable = true;

@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.ngrok = {
     enable = true;
     settings = {

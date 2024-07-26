@@ -16,5 +16,9 @@ in
   };
 
   programs.ssh.startAgent = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 9000 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    80
+    9000
+  ];
 }

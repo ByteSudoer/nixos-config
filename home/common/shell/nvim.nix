@@ -1,6 +1,5 @@
 { pkgs, colorscheme, ... }:
 
-
 {
   programs.neovim = {
     enable = true;
@@ -74,7 +73,6 @@
           })
         '';
 
-
       }
       #Fidget Loading Bar 
       fidget-nvim
@@ -122,7 +120,7 @@
 
       vim-nix
     ];
-    extraPackages = with pkgs;[
+    extraPackages = with pkgs; [
       unstable.terraform-ls
       unstable.prettierd
       unstable.marksman
@@ -140,4 +138,3 @@
 
   };
 }
-   

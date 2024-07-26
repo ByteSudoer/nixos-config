@@ -19,7 +19,6 @@ _: {
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
     # powerManagement.finegrained = false;
 
-
     prime = {
       # sync.enable = true;
       offload = {

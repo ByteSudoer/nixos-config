@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.command-not-found.enable = false;
   programs.nix-index = {
     enable = true;
@@ -9,7 +8,14 @@ _:
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    historyIgnore = [ "ls" "cd" "exit" "shutdown" "reboot" "clear" ];
+    historyIgnore = [
+      "ls"
+      "cd"
+      "exit"
+      "shutdown"
+      "reboot"
+      "clear"
+    ];
     bashrcExtra = ''
       HISTTIMEFORMAT="%F %T  "
       export HISCONTROL=ignoreboth:erasedups
@@ -68,8 +74,14 @@ _:
       ssha = "eval $(ssh-agent)";
 
     };
-    shellOptions =
-      [ "autocd" "cdspell" "cmdhist" "dotglob" "histappend" "expand_aliases" ];
+    shellOptions = [
+      "autocd"
+      "cdspell"
+      "cmdhist"
+      "dotglob"
+      "histappend"
+      "expand_aliases"
+    ];
 
   };
 }

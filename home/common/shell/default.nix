@@ -1,6 +1,5 @@
-{ pkgs
-, ...
-}: {
+{ pkgs, ... }:
+{
   imports = [
     ./bash.nix
     ./bat.nix
@@ -27,7 +26,5 @@
     jq.enable = true;
   };
 
-  home.packages = with pkgs; [
-    xclip
-  ];
+  home.packages = with pkgs; [ xclip ];
 }

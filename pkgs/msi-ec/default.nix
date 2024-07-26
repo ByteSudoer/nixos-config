@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, kernel, kmod }:
+{ stdenv, lib, fetchFromGitHub, kernel }:
 
 #https://wiki.nixos.org/wiki/Linux_kernel
 stdenv.mkDerivation rec {

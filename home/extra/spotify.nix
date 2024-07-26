@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs;[
-    spotify-ad
-  ];
+  home.packages = with pkgs; [ spotify-ad ];
 }

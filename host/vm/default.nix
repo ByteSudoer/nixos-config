@@ -1,4 +1,10 @@
-{ pkgs, lib, modulesPath, platform, ... }:
+{
+  pkgs,
+  lib,
+  modulesPath,
+  platform,
+  ...
+}:
 {
   imports = [
     (import ./boot.nix { inherit pkgs; })

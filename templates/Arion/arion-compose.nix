@@ -1,5 +1,4 @@
-_:
-{
+_: {
   # Template for container
   project.name = "webapp";
   services = {

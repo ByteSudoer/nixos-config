@@ -1,5 +1,4 @@
-_:
-{
+_: {
 
   #Configure Starship
   programs.starship = {
@@ -26,9 +25,15 @@ _:
         disabled = false;
         show_always = true;
       };
-      cmd_duration = { format = " took [$duration](bold yellow)"; };
-      package = { disabled = true; };
-      line_break = { disabled = false; };
+      cmd_duration = {
+        format = " took [$duration](bold yellow)";
+      };
+      package = {
+        disabled = true;
+      };
+      line_break = {
+        disabled = false;
+      };
 
     };
 

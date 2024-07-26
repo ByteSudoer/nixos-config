@@ -1,12 +1,21 @@
-{ inputs, colorscheme, config, ... }:
+{
+  inputs,
+  colorscheme,
+  config,
+  ...
+}:
 let
-  color = if colorscheme == "dracula" then "dracula" else if colorscheme == "gruvbox" then "gruvbox-dark-hard" else "Dracula";
+  color =
+    if colorscheme == "dracula" then
+      "dracula"
+    else if colorscheme == "gruvbox" then
+      "gruvbox-dark-hard"
+    else
+      "Dracula";
 in
 
 {
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-  ];
+  imports = [ inputs.nix-colors.homeManagerModules.default ];
   colorScheme = inputs.nix-colors.colorSchemes.${color};
   services.network-manager-applet.enable = true;
   programs.waybar = {
@@ -16,9 +25,23 @@ in
     settings = {
       mainBar = {
         layer = "top";
-        modules-left = [ "custom/logout" "custom/weather" "custom/spotify" ];
+        modules-left = [
+          "custom/logout"
+          "custom/weather"
+          "custom/spotify"
+        ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "custom/notifhistory" "tray" "wireplumber" "bluetooth" "network" "memory" "cpu" "battery" "clock" ];
+        modules-right = [
+          "custom/notifhistory"
+          "tray"
+          "wireplumber"
+          "bluetooth"
+          "network"
+          "memory"
+          "cpu"
+          "battery"
+          "clock"
+        ];
 
         "clock" = {
           format = "{:%H:%M}  ";
@@ -93,7 +116,11 @@ in
           format-muted = "";
           on-click = "pavucontrol";
           on-click-right = "amixer set Master toggle";
-          format-icons = [ "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
           max-volume = 100;
           scroll-step = 1;
         };
@@ -199,232 +226,232 @@ in
     };
     style = ''
 
-    * {
-	border: none;
-	border-radius: 10px;
-    font-family: "JetBrainsMono Nerd Font" ;
-	font-size: 15px;
-	min-height: 10px;
-}
+          * {
+      	border: none;
+      	border-radius: 10px;
+          font-family: "JetBrainsMono Nerd Font" ;
+      	font-size: 15px;
+      	min-height: 10px;
+      }
 
-window#waybar {
-	background: transparent;
-}
+      window#waybar {
+      	background: transparent;
+      }
 
-window#waybar.hidden {
-	opacity: 0.2;
-}
+      window#waybar.hidden {
+      	opacity: 0.2;
+      }
 
-#window {
-	margin-top: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-    color: transparent;
-	background: transparent;
-}
-#workspaces {
-	margin-top: 6px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	background: #${config.colorScheme.palette.base00};
-	transition: none;
-}
-#workspaces button.active {
+      #window {
+      	margin-top: 6px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+      	transition: none;
+          color: transparent;
+      	background: transparent;
+      }
+      #workspaces {
+      	margin-top: 6px;
+      	margin-left: 12px;
+      	font-size: 4px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	background: #${config.colorScheme.palette.base00};
+      	transition: none;
+      }
+      #workspaces button.active {
 
-  background: #${config.colorScheme.palette.base09};
-}
-#network {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #${config.colorScheme.palette.base00};
-	background: #${config.colorScheme.palette.base09};
-}
+        background: #${config.colorScheme.palette.base09};
+      }
+      #network {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #${config.colorScheme.palette.base00};
+      	background: #${config.colorScheme.palette.base09};
+      }
 
-#wireplumber {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #${config.colorScheme.palette.base00};
-	background: #${config.colorScheme.palette.base0B};
-}
+      #wireplumber {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #${config.colorScheme.palette.base00};
+      	background: #${config.colorScheme.palette.base0B};
+      }
 
-#battery {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #${config.colorScheme.palette.base00};
-	background: #${config.colorScheme.palette.base0C};
-}
+      #battery {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #${config.colorScheme.palette.base00};
+      	background: #${config.colorScheme.palette.base0C};
+      }
 
-#battery.charging, #battery.plugged {
-	color: #${config.colorScheme.palette.base00};
-    background-color: #${config.colorScheme.palette.base04};
-}
+      #battery.charging, #battery.plugged {
+      	color: #${config.colorScheme.palette.base00};
+          background-color: #${config.colorScheme.palette.base04};
+      }
 
-#battery.critical:not(.charging) {
-    background-color: #${config.colorScheme.palette.base04};
-    color: #fb4943;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+      #battery.critical:not(.charging) {
+          background-color: #${config.colorScheme.palette.base04};
+          color: #fb4943;
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
+      }
 
-@keyframes blink {
-    to {
-        background-color: #BF616A;
-        color: #B5E8E0;
-    }
-}
+      @keyframes blink {
+          to {
+              background-color: #BF616A;
+              color: #B5E8E0;
+          }
+      }
 
-#backlight {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F8BD96;
-}
-#clock {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #${config.colorScheme.palette.base00};
-  background: #${config.colorScheme.palette.base0D};
-	/*background: #1A1826;*/
-}
+      #backlight {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #161320;
+      	background: #F8BD96;
+      }
+      #clock {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      	margin-bottom: 0px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #${config.colorScheme.palette.base00};
+        background: #${config.colorScheme.palette.base0D};
+      	/*background: #1A1826;*/
+      }
 
-#memory {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #${config.colorScheme.palette.base0A};
-}
-#cpu {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #${config.colorScheme.palette.base0E};
-}
-#bluetooth {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #${config.colorScheme.palette.base05};
-}
+      #memory {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #161320;
+      	background: #${config.colorScheme.palette.base0A};
+      }
+      #cpu {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #161320;
+      	background: #${config.colorScheme.palette.base0E};
+      }
+      #bluetooth {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #161320;
+      	background: #${config.colorScheme.palette.base05};
+      }
 
-#tray {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #B5E8E0;
-	background: #161320;
-}
-  #custom-logout {
-	font-size: 14px;
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 10px;
-	transition: none;
-    color: #${config.colorScheme.palette.base09};
-    background: #161320;
-}
-#custom-weather {
+      #tray {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+      	transition: none;
+      	color: #B5E8E0;
+      	background: #161320;
+      }
+        #custom-logout {
+      	font-size: 14px;
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 5px;
+      	border-radius: 10px;
+      	transition: none;
+          color: #${config.colorScheme.palette.base09};
+          background: #161320;
+      }
+      #custom-weather {
 
-	font-size: 14px;
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
+      	font-size: 14px;
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	padding-right: 5px;
+      	border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #383c4a;
+      }
 
-#custom-spotify {
+      #custom-spotify {
 
-    font-size: 14px;
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #44475a;
-  }
-#custom-notification {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-  transition: none;
-	background: #161320;
-  font-size: 14px;
-  font-family: "JetBrainsMono Nerd Font";
-}
-#custom-notifhistory{
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-    transition: none;
-	background: #161320;
-  font-size: 14px;
-    font-family: "JetBrainsMono Nerd Font";
+          font-size: 14px;
+          margin-top: 6px;
+          margin-left: 8px;
+          padding-left: 10px;
+          padding-right: 5px;
+          border-radius: 10px;
+          transition: none;
+          color: #ffffff;
+          background: #44475a;
+        }
+      #custom-notification {
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+        transition: none;
+      	background: #161320;
+        font-size: 14px;
+        font-family: "JetBrainsMono Nerd Font";
+      }
+      #custom-notifhistory{
+      	margin-top: 6px;
+      	margin-left: 8px;
+      	padding-left: 10px;
+      	margin-bottom: 0px;
+      	padding-right: 10px;
+      	border-radius: 10px;
+          transition: none;
+      	background: #161320;
+        font-size: 14px;
+          font-family: "JetBrainsMono Nerd Font";
 
-}
+      }
     '';
 
   };

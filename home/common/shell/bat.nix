@@ -1,6 +1,12 @@
 { pkgs, colorscheme, ... }:
 let
-  color = if colorscheme == "dracula" then "Dracula" else if colorscheme == "gruvbox" then "gruvbox-dark" else "Dracula";
+  color =
+    if colorscheme == "dracula" then
+      "Dracula"
+    else if colorscheme == "gruvbox" then
+      "gruvbox-dark"
+    else
+      "Dracula";
 in
 {
   # Configure Bat
@@ -10,8 +16,12 @@ in
       pager = "less -FR";
       theme = "${color}";
     };
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+    extraPackages = with pkgs.bat-extras; [
+      batdiff
+      batman
+      batgrep
+      batwatch
+    ];
   };
-
 
 }

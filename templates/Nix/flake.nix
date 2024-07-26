@@ -6,30 +6,27 @@
   };
 
   outputs =
-    { nixpkgs
-    , flake-utils
-    , ...
-    }:
-    flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      devShells.default = pkgs.mkShell {
-        name = "Nix Dev & Packaging";
-        packages = with pkgs;
-          [
+    { nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          name = "Nix Dev & Packaging";
+          packages = with pkgs; [
             nurl
             nixpkgs-review
             nix-index
             nix
             git
           ];
-        shellHook = ''
-          # Allow Unfree packages
-          export NIXPKGS_ALLOW_UNFREE=1
-        '';
-      };
-    }
+          shellHook = ''
+            # Allow Unfree packages
+            export NIXPKGS_ALLOW_UNFREE=1
+          '';
+        };
+      }
     );
 }

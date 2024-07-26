@@ -1,7 +1,13 @@
 { pkgs, colorscheme, ... }:
 
 let
-  colorPlugin = if colorscheme == "dracula" then "catppuccin" else if colorscheme == "gruvbox" then "gruvbox" else "dracula";
+  colorPlugin =
+    if colorscheme == "dracula" then
+      "catppuccin"
+    else if colorscheme == "gruvbox" then
+      "gruvbox"
+    else
+      "dracula";
 in
 {
 

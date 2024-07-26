@@ -1,4 +1,11 @@
-{ pkgs, desktop, extra, lib, hostname, ... }:
+{
+  pkgs,
+  desktop,
+  extra,
+  lib,
+  hostname,
+  ...
+}:
 let
   isDesktop = builtins.isString desktop;
   isExtra = builtins.isString extra;

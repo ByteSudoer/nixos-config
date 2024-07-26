@@ -1,6 +1,4 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs;[
-    vscodium
-  ];
+  home.packages = with pkgs; [ vscodium ];
 }

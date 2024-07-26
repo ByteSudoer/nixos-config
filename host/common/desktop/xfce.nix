@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   services.xserver = {
     enable = true;
@@ -8,7 +9,7 @@
     };
     displayManager.defaultSession = "xfce";
   };
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
 
     xfce.xfce4-whiskermenu-plugin
     xfce.xfce4-weather-plugin

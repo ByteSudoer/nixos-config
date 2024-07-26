@@ -1,4 +1,10 @@
-{ config, lib, modulesPath, platform, ... }:
+{
+  config,
+  lib,
+  modulesPath,
+  platform,
+  ...
+}:
 {
   imports = [
     (import ./boot.nix { })

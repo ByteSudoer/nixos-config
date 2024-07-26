@@ -1,3 +1,1 @@
-{
-  ngrok = import ./ngrok.nix;
-}
+{ ngrok = import ./ngrok.nix; }

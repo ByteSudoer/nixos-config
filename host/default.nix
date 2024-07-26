@@ -1,19 +1,33 @@
-{ config, desktop, hostname, inputs, lib, modulesPath, outputs, stateVersion, pkgs, platform, ... }: {
-  imports = [
-    inputs.disko.nixosModules.disko
+{
+  config,
+  desktop,
+  hostname,
+  inputs,
+  lib,
+  modulesPath,
+  outputs,
+  stateVersion,
+  pkgs,
+  platform,
+  ...
+}:
+{
+  imports =
+    [
+      inputs.disko.nixosModules.disko
 
-    (modulesPath + "/installer/scan/not-detected.nix")
-    ./${hostname}
+      (modulesPath + "/installer/scan/not-detected.nix")
+      ./${hostname}
 
-    # (./. + "/${hostname}/boot.nix")
-    # (./. + "/${hostname}/hardware.nix")
+      # (./. + "/${hostname}/boot.nix")
+      # (./. + "/${hostname}/hardware.nix")
 
-    ./common/base
-    ./common/users
-  ]
-  ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) ./${hostname}/extra.nix
-  # Include desktop config if a desktop is defined
-  ++ lib.optional (builtins.isString desktop) ./common/desktop;
+      ./common/base
+      ./common/users
+    ]
+    ++ lib.optional (builtins.pathExists (./. + "/${hostname}/extra.nix")) ./${hostname}/extra.nix
+    # Include desktop config if a desktop is defined
+    ++ lib.optional (builtins.isString desktop) ./common/desktop;
 
   nixpkgs = {
 

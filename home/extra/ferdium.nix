@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    ferdium
-  ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ ferdium ];
 }

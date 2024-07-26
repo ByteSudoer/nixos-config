@@ -113,8 +113,8 @@ in
         exec = "uname -r";
         tail = "false";
         interval = "1024";
-        format-foreground = "${ colors. foreground}";
-        format-background = "${ colors. background}";
+        format-foreground = "${colors.foreground}";
+        format-background = "${colors.background}";
         format-prefix = "";
         format-prefix-foreground = "#0084FF";
         format-underline = "#0084FF";

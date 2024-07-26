@@ -1,11 +1,12 @@
 { pkgs, colorscheme, ... }:
 let
   palette =
-    if colorscheme == "dracula"
-    then "dracula"
-    else if colorscheme == "gruvbox"
-    then "gruvbox_material_dark"
-    else "default";
+    if colorscheme == "dracula" then
+      "dracula"
+    else if colorscheme == "gruvbox" then
+      "gruvbox_material_dark"
+    else
+      "default";
 in
 {
   programs.btop = {

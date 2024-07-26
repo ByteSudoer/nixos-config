@@ -1,5 +1,4 @@
-_:
-{
+_: {
   project.name = "webapp";
   services = {
     webserver = {

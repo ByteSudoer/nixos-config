@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-
+{ pkgs, ... }:
+{
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_9;
@@ -13,9 +13,7 @@
       "sr_mod"
       "virtio_blk"
     ];
-    initrd.kernelModules = [
-      "kvm-intel"
-    ];
+    initrd.kernelModules = [ "kvm-intel" ];
     kernelModules = [ ];
     extraModulePackages = [ ];
 

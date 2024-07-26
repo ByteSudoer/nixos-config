@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-
     #Atomic, declarative, and reproducible secret provisioning
     sops = {
       url = "github:Mic92/sops-nix";
@@ -65,7 +64,7 @@
     , nixpkgs-unstable
     , nix-formatter-pack
     , ...
-    } @ inputs:
+    }@inputs:
 
     let
       inherit (self) outputs;
@@ -73,31 +72,68 @@
       username = "bytesudoer";
       colorscheme = "dracula";
       desktop = "plasma";
-      libx = import ./lib { inherit inputs outputs stateVersion username colorscheme; };
+      libx = import ./lib {
+        inherit
+          inputs
+          outputs
+          stateVersion
+          username
+          colorscheme
+          ;
+      };
     in
     {
-
-
-
       nixosConfigurations = {
         # ISO imagegs
         #  - nix build .#nixosConfigurations.{iso-console|iso-desktop}.config.system.build.isoImage
-        iso-console = libx.mkSystem { hostname = "iso-console"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"; };
-        iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
+        iso-console = libx.mkSystem {
+          hostname = "iso-console";
+          installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix";
+        };
+        iso-desktop = libx.mkSystem {
+          hostname = "iso-desktop";
+          colorscheme = "${colorscheme}";
+          installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix";
+          desktop = "plasma";
+        };
 
         #WorkStations
-        t16-nixos = libx.mkSystem { hostname = "t16-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
-        msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
-        lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
-        vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "gruvbox"; };
+        t16-nixos = libx.mkSystem {
+          hostname = "t16-nixos";
+          desktop = "${desktop}";
+          colorscheme = "${colorscheme}";
+          extra = "yes";
+        };
+        msi-nixos = libx.mkSystem {
+          hostname = "msi-nixos";
+          desktop = "${desktop}";
+          colorscheme = "${colorscheme}";
+          extra = "yes";
+        };
+        lenovo = libx.mkSystem {
+          hostname = "lenovo";
+          desktop = "plasma";
+          colorscheme = "gruvbox";
+        };
+        vm = libx.mkSystem {
+          hostname = "vm";
+          desktop = "bspwm";
+          colorscheme = "gruvbox";
+        };
 
         #Servers
-        vm-mini = libx.mkSystem { hostname = "vm-mini"; colorscheme = "${colorscheme}"; fs = "btrfs"; };
+        vm-mini = libx.mkSystem {
+          hostname = "vm-mini";
+          colorscheme = "${colorscheme}";
+          fs = "btrfs";
+        };
 
       };
+
       homeManagerModules = import ./modules/home-manager;
 
-      formatter = libx.forAllSystems (system:
+      formatter = libx.forAllSystems (
+        system:
         nix-formatter-pack.lib.mkFormatter {
           pkgs = nixpkgs-unstable.legacyPackages.${system};
           config.tools = {
@@ -108,11 +144,13 @@
         }
       );
 
-
       # Custom packages; acessible via 'nix build', 'nix shell', etc
-      packages = libx.forAllSystems (system:
-        let pkgs = nixpkgs-unstable.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs colorscheme; }
+      packages = libx.forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs-unstable.legacyPackages.${system};
+        in
+        import ./pkgs { inherit pkgs colorscheme; }
       );
 
       # Custom overlays
@@ -120,9 +158,12 @@
 
       # Devshell for bootstrapping
       # Accessible via 'nix develop' or 'nix-shell' (legacy)
-      devShells = libx.forAllSystems (system:
-        let pkgs = nixpkgs-unstable.legacyPackages.${system};
-        in import ./shell.nix { inherit pkgs; }
+      devShells = libx.forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs-unstable.legacyPackages.${system};
+        in
+        import ./shell.nix { inherit pkgs; }
       );
 
     };

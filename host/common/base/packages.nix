@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   basePackages = with pkgs; [
     binutils
     curl
@@ -8,7 +9,6 @@
     file
     htop
     killall
-    macchanger
     manix
     unstable.nix-init
     nix-output-monitor

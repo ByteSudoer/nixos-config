@@ -62,7 +62,6 @@ let
     else
       { };
 
-
 in
 {
   # Configure Alacritty
@@ -109,7 +108,6 @@ in
       };
 
       colors = colorConfig;
-
 
     };
   };

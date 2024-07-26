@@ -27,7 +27,11 @@
       ll = "log --oneline";
       st = "status -sb";
     };
-    extraConfig = { init = { defaultBranch = "main"; }; };
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
 
   };
 

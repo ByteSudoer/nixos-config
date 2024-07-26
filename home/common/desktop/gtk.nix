@@ -38,14 +38,13 @@ let
       };
 in
 {
-  home.pointerCursor =
-    {
-      gtk.enable = true;
-      package = pkgs.dracula-theme;
-      name = "Dracula-cursors";
-      size = 16;
-      x11.enable = true;
-    };
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.dracula-theme;
+    name = "Dracula-cursors";
+    size = 16;
+    x11.enable = true;
+  };
   gtk = {
     enable = true;
     font = {

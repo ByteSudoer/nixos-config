@@ -6,37 +6,35 @@
   };
 
   outputs =
-    { nixpkgs
-    , flake-utils
-    , ...
-    }:
-    flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs;[
-          # Rust Code Runner
-          bacon
+    { nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            # Rust Code Runner
+            bacon
 
-          rustc
-          cargo
-          rustfmt
-          rust-analyzer
-          clippy
+            rustc
+            cargo
+            rustfmt
+            rust-analyzer
+            clippy
 
-          ##Needed for the openssl crate
-          pkg-config
-          openssl
+            ##Needed for the openssl crate
+            pkg-config
+            openssl
 
-          #Alternative to `cargo test`
-          cargo-nextest
-        ];
-        shellHook = ''
-          export RUST_BACKTRACE=1
-        '';
-      };
-    }
+            #Alternative to `cargo test`
+            cargo-nextest
+          ];
+          shellHook = ''
+            export RUST_BACKTRACE=1
+          '';
+        };
+      }
     );
 }

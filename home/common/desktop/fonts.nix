@@ -2,11 +2,16 @@
 {
   # Get the Needed fonts
   home.packages = with pkgs; [
-    (nerdfonts.override
-      {
-        fonts = [ "JetBrainsMono" "SourceCodePro" "FiraCode" "Iosevka" "ComicShannsMono" "FantasqueSansMono" ];
-      }
-    )
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        "SourceCodePro"
+        "FiraCode"
+        "Iosevka"
+        "ComicShannsMono"
+        "FantasqueSansMono"
+      ];
+    })
     dejavu_fonts
     comic-mono
     source-code-pro

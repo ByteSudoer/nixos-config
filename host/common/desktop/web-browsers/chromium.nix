@@ -1,6 +1,6 @@
 { pkgs, username, ... }:
 {
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     #By default, chromium does not support playing DRM protected media. However, there is a build time flag to include the unfree Widevine blob from nixpkgs: 
     (chromium.override { enableWideVine = true; })
   ];

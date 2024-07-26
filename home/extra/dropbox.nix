@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    dropbox
-  ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ dropbox ];
 }

@@ -1,4 +1,7 @@
-{ pkgs ? (import ./nixpkgs.nix) { } }: {
+{
+  pkgs ? (import ./nixpkgs.nix) { },
+}:
+{
   default = pkgs.mkShell {
     name = "dotfiles";
     # Enable experimental features without having to specify the argument

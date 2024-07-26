@@ -1,15 +1,13 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    (
-      pkgs.catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "Noto Sans";
-        fontSize = "9";
-        background = "${../../../Wallpapers/dracula/tux.png}";
-        loginBackground = true;
-      }
-    )
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Noto Sans";
+      fontSize = "9";
+      background = "${../../../Wallpapers/dracula/tux.png}";
+      loginBackground = true;
+    })
   ];
   services.displayManager = {
 

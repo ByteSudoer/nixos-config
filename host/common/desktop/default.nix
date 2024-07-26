@@ -4,7 +4,8 @@ let
   isNotVM = element: list: builtins.elem element list;
   workstations = [
     "msi-nixos"
-    "lenovo-nixos"
+    "t16-nixos"
+    "lenovo"
   ];
 in
 {

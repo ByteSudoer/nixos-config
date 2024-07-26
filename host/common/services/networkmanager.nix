@@ -1,7 +1,7 @@
 { pkgs, hostname, ... }:
 
 let
-  card = if hostname == "msi-nixos" then "wlo1" else "enp1s0";
+  card = if hostname == "msi-nixos" || "t16-nixos" then "wlo1" else "enp1s0";
   change-mac = pkgs.writeShellScript "change-mac" ''
     card=$1
     tmp=$(mktemp)

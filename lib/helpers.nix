@@ -2,6 +2,7 @@
 let
   workstations = [
     "msi-nixos"
+    "t16-nixos"
     "lenovo"
   ];
   virtual_machines = [

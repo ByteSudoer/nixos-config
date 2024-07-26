@@ -1,7 +1,7 @@
 { lib, hostname, ... }:
 let
   bootConfig =
-    if hostname == "msi-nixos" then {
+    if hostname == "msi-nixos" || "t16-nixos" then {
       loader = {
         efi = {
           canTouchEfiVariables = lib.mkForce true;

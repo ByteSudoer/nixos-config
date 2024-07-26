@@ -86,6 +86,7 @@
         iso-desktop = libx.mkSystem { hostname = "iso-desktop"; colorscheme = "${colorscheme}"; installer = nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix"; desktop = "plasma"; };
 
         #WorkStations
+        t16-nixos = libx.mkSystem { hostname = "t16-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
         msi-nixos = libx.mkSystem { hostname = "msi-nixos"; desktop = "${desktop}"; colorscheme = "${colorscheme}"; extra = "yes"; };
         lenovo = libx.mkSystem { hostname = "lenovo"; desktop = "plasma"; colorscheme = "gruvbox"; };
         vm = libx.mkSystem { hostname = "vm"; desktop = "bspwm"; colorscheme = "gruvbox"; };

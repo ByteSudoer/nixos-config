@@ -3,10 +3,14 @@
   boot = {
 
     kernelPackages = pkgs.linuxPackages_6_9;
-    initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    # initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" ];
-    initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" ];
+    initrd = {
+      availableKernelModules = [
+        "xhci_pci"
+        "ahci"
+        "nvme"
+      ];
+      kernelModules = [ "kvm-intel" ];
+    };
     kernelParams = [
       # Force use of the thinkpad_acpi driver for backlight control.
       # This allows the backlight save/load systemd service to work.

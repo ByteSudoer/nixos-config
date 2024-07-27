@@ -28,6 +28,9 @@
       # Force use of the thinkpad_acpi driver for backlight control.
       # This allows the backlight save/load systemd service to work.
       "acpi_backlight=native"
+      #Audio
+      # "snd_hda_intel.dmic_detect=0"
+      # "snd-intel-dspcfg.dsp_driver=1"
     ];
     #Enable Nested virtualization
     extraModprobeConfig = "options kvm_intel nested=1";

@@ -1,10 +1,12 @@
 { pkgs, lib, ... }:
 {
   services.pipewire = {
+    audio.enable = true;
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
   };
+  sound.enable = true;
 
   hardware = {
     pulseaudio.enable = lib.mkForce false;

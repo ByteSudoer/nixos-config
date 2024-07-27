@@ -2,7 +2,7 @@
 {
   boot = {
 
-    kernelPackages = pkgs.linuxPackages_6_9;
+    # kernelPackages = pkgs.linuxPackages_6_9;
     initrd = {
       availableKernelModules = [
         #eXtensible Host Controller Interface (xHCI) Host Controller Driver(usb 3.0 and 2.0)

@@ -1,14 +1,14 @@
-{
-  lib,
-  pkgs,
-  config,
-  modulesPath,
-  platform,
-  inputs,
-  ...
+{ lib
+, pkgs
+, config
+, modulesPath
+, platform
+, inputs
+, ...
 }:
 {
   imports = [
+    (import ./battery.nix { inherit lib; })
     (import ./disks.nix { inherit pkgs; })
     (import ./boot.nix { inherit pkgs config; })
     (import ./hardware.nix {

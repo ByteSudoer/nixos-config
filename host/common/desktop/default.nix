@@ -1,15 +1,14 @@
-{
-  desktop,
-  hostname,
-  lib,
-  ...
+{ desktop
+, hostname
+, lib
+, ...
 }:
 let
   isDesktop = builtins.isString desktop;
   isNotVM = element: list: builtins.elem element list;
   workstations = [
     "msi-nixos"
-    "t16-nixos"
+    "e16-nixos"
     "lenovo"
   ];
 in

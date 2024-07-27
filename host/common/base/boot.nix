@@ -1,7 +1,7 @@
 { lib, hostname, ... }:
 let
   bootConfig =
-    if hostname == "t16-nixos" then
+    if hostname == "e16-nixos" then
       {
         loader = {
           efi = {

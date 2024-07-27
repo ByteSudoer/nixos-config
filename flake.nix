@@ -98,8 +98,8 @@
         };
 
         #WorkStations
-        t16-nixos = libx.mkSystem {
-          hostname = "t16-nixos";
+        e16-nixos = libx.mkSystem {
+          hostname = "e16-nixos";
           desktop = "${desktop}";
           colorscheme = "${colorscheme}";
           extra = "yes";

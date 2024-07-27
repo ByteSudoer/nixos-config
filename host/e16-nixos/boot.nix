@@ -2,7 +2,7 @@
 {
   boot = {
 
-    # kernelPackages = pkgs.linuxPackages_6_9;
+    kernelPackages = pkgs.linuxPackages_6_9;
     initrd = {
       availableKernelModules = [
         #eXtensible Host Controller Interface (xHCI) Host Controller Driver(usb 3.0 and 2.0)
@@ -29,8 +29,8 @@
       # This allows the backlight save/load systemd service to work.
       "acpi_backlight=native"
       #Audio
-      # "snd_hda_intel.dmic_detect=0"
-      # "snd-intel-dspcfg.dsp_driver=1"
+      #"snd_hda_intel.dmic_detect=0"
+      "snd-intel-dspcfg.dsp_driver=1"
     ];
     #Enable Nested virtualization
     extraModprobeConfig = "options kvm_intel nested=1";

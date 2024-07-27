@@ -102,7 +102,7 @@
           hostname = "e16-nixos";
           desktop = "${desktop}";
           colorscheme = "${colorscheme}";
-          # extra = "yes";
+          extra = "yes";
         };
         msi-nixos = libx.mkSystem {
           hostname = "msi-nixos";

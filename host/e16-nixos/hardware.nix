@@ -49,5 +49,11 @@
   };
   hardware.intel-gpu-tools.enable = true;
   #Whether to enable fix for Intel CPU throttling.
-  #services.throttled.enable = true;
+  # services.throttled.enable = true;
+
+  #Whether to enable thermald, the temperature management daemon.
+  # services.thermald = {
+  #   enable = true;
+  # };
+
 }

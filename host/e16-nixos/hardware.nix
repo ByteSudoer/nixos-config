@@ -13,9 +13,9 @@
 
   imports = [
     # acpi_call makes tlp work for newer thinkpads
-    # inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
-    # inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
-    # inputs.nixos-hardware.nixosModules.common-gpu-intel
+    inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
+    inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    inputs.nixos-hardware.nixosModules.common-gpu-intel
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 

@@ -36,4 +36,18 @@
       emulateWheel = lib.mkDefault config.hardware.trackpoint.enable;
     };
   };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+    driSupport = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      libvdpau-va-gl
+    ];
+  };
+  hardware.intel-gpu-tools.enable = true;
+  #Whether to enable fix for Intel CPU throttling.
+  #services.throttled.enable = true;
 }

@@ -17,6 +17,7 @@
         config
         modulesPath
         inputs
+        pkgs
         ;
     })
   ];

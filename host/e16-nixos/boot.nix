@@ -27,11 +27,11 @@
     kernelParams = [
       # Force use of the thinkpad_acpi driver for backlight control.
       # This allows the backlight save/load systemd service to work.
-      "acpi_backlight=native"
+      # "acpi_backlight=native"
       #Audio
-      "snd_hda_intel.model=dmic-thinkpad"
-      "snd_hda_intel.enable=true"
-      "snd_intel_dspcfg.dsp_driver=3"
+      # "snd_hda_intel.model=dmic-thinkpad"
+      # "snd_hda_intel.enable=true"
+      # "snd_intel_dspcfg.dsp_driver=3"
     ];
     # blacklistedKernelModules = [
     #   "snd_soc_avs"

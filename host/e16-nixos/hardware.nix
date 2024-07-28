@@ -13,9 +13,9 @@
 
   imports = [
     # acpi_call makes tlp work for newer thinkpads
-    inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
-    inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
-    inputs.nixos-hardware.nixosModules.common-gpu-intel
+    # inputs.nixos-hardware.nixosModules.common-pc-laptop-acpi_call
+    # inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    # inputs.nixos-hardware.nixosModules.common-gpu-intel
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -29,8 +29,8 @@
     # enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # firmware = [
-    #    pkgs.sof-firmware
-    #  ];
+    #   pkgs.sof-firmware
+    # ];
     trackpoint = {
       enable = lib.mkDefault true;
       emulateWheel = lib.mkDefault config.hardware.trackpoint.enable;

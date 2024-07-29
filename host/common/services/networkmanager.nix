@@ -26,6 +26,8 @@ in
       192.168.100.1 router
       192.168.12.10 controller
       192.168.122.10 ubuntu
+      172.16.32.100 master
+      172.16.32.200 worker
     '';
     networkmanager = {
       enable = true;

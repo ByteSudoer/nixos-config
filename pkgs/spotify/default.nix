@@ -1,7 +1,7 @@
-{
-  spotify,
-  rustPlatform,
-  fetchFromGitHub,
+{ spotify
+, rustPlatform
+, fetchFromGitHub
+,
 }:
 let
   spotify-adblock = rustPlatform.buildRustPackage {

@@ -123,6 +123,7 @@
     ];
     extraPackages = with pkgs; [
       unstable.terraform-ls
+      unstable.actionlint
       unstable.prettierd
       unstable.marksman
       unstable.nil

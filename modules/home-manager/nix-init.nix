@@ -3,13 +3,13 @@
 with lib;
 let
   cfg = config.programs.nix-init;
-  tomlFormat = pkgs.format.toml { };
+  tomlFormat = pkgs.formats.toml { };
 in
 {
   options = {
     programs.nix-init = {
       enable = mkEnableOption "nix-init";
-      package = mlOption {
+      package = mkOption {
         type = types.package;
         default = pkgs.nix-init;
         defaultText = literalExpression "pkgs.nix-init";
@@ -43,12 +43,12 @@ in
 
   config = mkIf cfg.enable {
     home.packages = [ cfg.package ];
-    xdg.configFile."nix-init/config.toml" = lib.mkIf (vfg.settings != { }) {
+    xdg.configFile."nix-init/config.toml" = lib.mkIf (cfg.settings != { }) {
       source = (tomlFormat.generate "config.toml" cfg.settings).overrideAttrs (
         finalAttrs: prevAttrs: {
           buildCommand = lib.concatStringsSep "\n" [
             prevAttrs.buildCommand
-            "substitureInPlace $out --replace '\\\\' '\\'"
+            "substituteInPlace $out --replace '\\\\' '\\'"
           ];
         }
       );

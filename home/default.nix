@@ -1,13 +1,12 @@
-{
-  config,
-  extra,
-  desktop,
-  lib,
-  outputs,
-  stateVersion,
-  username,
-  pkgs,
-  ...
+{ config
+, extra
+, desktop
+, lib
+, outputs
+, stateVersion
+, username
+, pkgs
+, ...
 }:
 {
   # Only import desktop configuration if the host is desktop enabled
@@ -16,6 +15,7 @@
     [
       # If you want to use modules your own flake exports (from modules/home-manager):
       outputs.homeManagerModules.ngrok
+      outputs.homeManagerModules.nix-init
 
       # Or modules exported from other flakes (such as nix-colors):
       # inputs.nix-colors.homeManagerModules.default

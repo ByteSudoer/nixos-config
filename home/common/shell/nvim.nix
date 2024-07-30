@@ -102,7 +102,8 @@
       ##LSP
       nvim-lspconfig
       rust-tools-nvim
-      null-ls-nvim
+      none-ls-nvim
+      # null-ls-nvim
       lspkind-nvim
       lspsaga-nvim
 
@@ -126,8 +127,11 @@
       unstable.marksman
       unstable.nil
       unstable.nixfmt-rfc-style
-      unstable.nixpkgs-fmt
+      unstable.deadnix
+      unstable.statix
+      # unstable.nixpkgs-fmt
       unstable.shellcheck
+      unstable.shfmt
       unstable.lua-language-server
       unstable.nodePackages_latest.bash-language-server
       unstable.nodePackages_latest.yaml-language-server

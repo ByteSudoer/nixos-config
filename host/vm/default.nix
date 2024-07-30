@@ -1,9 +1,8 @@
-{
-  pkgs,
-  lib,
-  modulesPath,
-  platform,
-  ...
+{ pkgs
+, lib
+, modulesPath
+, platform
+, ...
 }:
 {
   imports = [

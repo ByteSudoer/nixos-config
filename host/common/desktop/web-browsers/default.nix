@@ -1,8 +1,7 @@
-{
-  lib,
-  extra,
-  desktop,
-  ...
+{ lib
+, extra
+, desktop
+, ...
 }:
 let
   isDesktop = builtins.isString desktop;

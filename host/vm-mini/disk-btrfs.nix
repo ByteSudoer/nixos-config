@@ -1,7 +1,6 @@
-{
-  disks ? [ "/dev/vda" ],
-  username,
-  ...
+{ disks ? [ "/dev/vda" ]
+, username
+, ...
 }:
 {
   disko.devices = {

@@ -16,7 +16,7 @@ in
         description = "The nix-init package to install";
       };
       settings = mkOption {
-        type = tomlFormat.type;
+        inherit (tomlFormat) type;
         default = { };
         example = literalExpression ''
           maintainers = "Username";
@@ -45,7 +45,7 @@ in
     home.packages = [ cfg.package ];
     xdg.configFile."nix-init/config.toml" = lib.mkIf (cfg.settings != { }) {
       source = (tomlFormat.generate "config.toml" cfg.settings).overrideAttrs (
-        finalAttrs: prevAttrs: {
+        _finalAttrs: prevAttrs: {
           buildCommand = lib.concatStringsSep "\n" [
             prevAttrs.buildCommand
             "substituteInPlace $out --replace '\\\\' '\\'"

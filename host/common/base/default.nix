@@ -1,8 +1,7 @@
-{
-  hostname,
-  pkgs,
-  lib,
-  ...
+{ hostname
+, pkgs
+, lib
+, ...
 }:
 let
   # Break these packages out so they can be imported elsewhere as a common set

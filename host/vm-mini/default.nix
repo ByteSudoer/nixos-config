@@ -1,9 +1,8 @@
-{
-  lib,
-  modulesPath,
-  platform,
-  fs,
-  ...
+{ lib
+, modulesPath
+, platform
+, fs
+, ...
 }:
 {
   imports = [

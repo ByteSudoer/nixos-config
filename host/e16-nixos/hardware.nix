@@ -30,6 +30,7 @@
   services = {
     fprintd = {
       enable = true;
+      package = pkgs.fprintd-tod;
       tod.enable = true;
       tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
       # tod.driver = pkgs.libfprint-2-tod1-vfs0090; # driver for 2016 ThinkPads
@@ -39,7 +40,7 @@
 
   # powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
   hardware = {
-    # enableRedistributableFirmware = true;
+    enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # firmware = [
     #   pkgs.sof-firmware
@@ -60,6 +61,16 @@
       libvdpau-va-gl
     ];
   };
+  #  services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
+
+
+  #Enable firmware update service
+  services.fwupd.enable = lib.mkDefault true;
+  # Cooling management
+  # services.thermald = {
+  #   enable = lib.mkDefault true;
+  #   ignoreCpuidCheck = true;
+  # };
   hardware.intel-gpu-tools.enable = true;
   #Whether to enable fix for Intel CPU throttling.
   # services.throttled.enable = true;

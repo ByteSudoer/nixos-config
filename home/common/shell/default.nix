@@ -14,6 +14,7 @@
     ./jq.nix
     ./neofetch.nix
     ./nix.nix
+    ./nix-init.nix
     ./nvim.nix
     ./ripgrep.nix
     ./scripts.nix

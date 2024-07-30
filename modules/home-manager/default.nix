@@ -1,1 +1,4 @@
-{ ngrok = import ./ngrok.nix; }
+{
+  ngrok = import ./ngrok.nix;
+  nix-init = import ./nix-init.nix;
+}

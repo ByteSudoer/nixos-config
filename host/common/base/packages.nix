@@ -10,7 +10,6 @@
     htop
     killall
     manix
-    unstable.nix-init
     nix-output-monitor
     nmap
     ntfs3g

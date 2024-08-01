@@ -17,10 +17,10 @@
       # "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
       autoNumlock = true;
       enableHidpi = true;
-      extraPackages = with pkgs;[
-        kdePackages.qtsvg
-        kdePackages.qtdeclarative
-      ];
+      # extraPackages = with pkgs;[
+      #   kdePackages.qtsvg
+      #   kdePackages.qtdeclarative
+      # ];
     };
   };
   services.xserver = {

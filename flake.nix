@@ -59,11 +59,12 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-unstable
-    , nix-formatter-pack
-    , ...
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      nix-formatter-pack,
+      ...
     }@inputs:
 
     let
@@ -117,7 +118,7 @@
         };
         vm = libx.mkSystem {
           hostname = "vm";
-          desktop = "bspwm";
+          desktop = "i3";
           colorscheme = "gruvbox";
         };
 

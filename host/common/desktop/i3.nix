@@ -5,9 +5,9 @@
     package = pkgs.i3;
 
     extraPackages = with pkgs; [
+      numlockx
       dmenu
       networkmanagerapplet
-      numlockx
       volumeicon
     ];
 

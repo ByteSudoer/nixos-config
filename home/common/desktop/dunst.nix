@@ -4,6 +4,7 @@ let
   isInList = element: list: builtins.elem element list;
   windowManagers = [
     "bspwm"
+    "i3"
     "hyprland"
     "awesome"
   ];

@@ -63,4 +63,12 @@ in
 
   };
 
+  # i3status bar configuration
+  programs.i3status = {
+    enable = true;
+    enableDefault = false;
+    package = pkgs.i3status;
+
+  };
+
 }

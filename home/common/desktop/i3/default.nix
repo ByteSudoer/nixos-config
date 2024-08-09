@@ -56,6 +56,20 @@ in
         "${modifier}+Shift+q" = "kill";
         "${modifier}+w" = "exec firefox";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+
+        #Change focus
+        "${modifier}+h" = "focus left";
+        "${modifier}+l" = "focus right";
+        "${modifier}+k" = "focus up";
+        "${modifier}+j" = "focus down";
+        #Change Focus using cursor/arrow keys 
+        "${modifier}+113" = "focus left";
+        "${modifier}+114" = "focus right";
+        "${modifier}+111" = "focus up";
+        "${modifier}+116" = "focus down";
+
+        #Toggling fullsceen
+        "${modifier}+f" = "fullsceen toggle global";
         # Lock Screen
         "F12" = "exec lock";
       };

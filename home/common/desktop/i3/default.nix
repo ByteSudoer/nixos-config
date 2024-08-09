@@ -62,7 +62,7 @@ in
         "${modifier}+l" = "focus right";
         "${modifier}+k" = "focus up";
         "${modifier}+j" = "focus down";
-        #Change Focus using cursor/arrow keys 
+        #Change Focus using cursor/arrow keys
         "${modifier}+113" = "focus left";
         "${modifier}+114" = "focus right";
         "${modifier}+111" = "focus up";
@@ -82,6 +82,14 @@ in
     enable = true;
     enableDefault = false;
     package = pkgs.i3status;
+    modules = {
+      "disk /" = {
+        position = 1;
+        settings = {
+          format = "/ %avail";
+        };
+      };
+    };
 
   };
 

@@ -1,12 +1,13 @@
-{ config
-, extra
-, desktop
-, lib
-, outputs
-, stateVersion
-, username
-, pkgs
-, ...
+{
+  config,
+  extra,
+  desktop,
+  lib,
+  outputs,
+  stateVersion,
+  username,
+  pkgs,
+  ...
 }:
 {
   # Only import desktop configuration if the host is desktop enabled
@@ -45,6 +46,8 @@
     secrets = {
       github_key.path = "${config.home.homeDirectory}/.ssh/github_key";
       github_key_pub.path = "${config.home.homeDirectory}/.ssh/github_key.pub";
+      raspberry_pi.path = "${config.home.homeDirectory}/.ssh/raspberry_pi";
+      raspberry_pi_pub.path = "${config.home.homeDirectory}/.ssh/raspberry_pi.pub";
       github_token = { };
       ngrok_token = { };
     };

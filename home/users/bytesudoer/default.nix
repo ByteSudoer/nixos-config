@@ -3,11 +3,11 @@
   home = {
     file.".ssh/config".text = "
       Host github.com
-        User git 
+        User git
         Hostname github.com
         IdentityFile ~/.ssh/github_key
       Host github.com-uni
-        User git 
+        User git
         Hostname github.com
         IdentityFile ~/.ssh/github_uni
       Host pi

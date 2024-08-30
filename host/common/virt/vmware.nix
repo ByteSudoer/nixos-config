@@ -1,8 +1,7 @@
-{
-  pkgs,
-  extra,
-  lib,
-  ...
+{ pkgs
+, extra
+, lib
+, ...
 }:
 {
   virtualisation.vmware = {

@@ -9,13 +9,13 @@
     ./ferdium.nix
     ./imagers.nix
     ./insomnia.nix
-    ./intellij.nix
+    # ./intellij.nix
     ./libreoffice.nix
     ./ngrok.nix
     ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
-    ./slack.nix
+    # ./slack.nix
     ./spotify.nix
     ./utils.nix
     ./vscodium.nix

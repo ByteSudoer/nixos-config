@@ -2,6 +2,7 @@
 {
   imports = [
     ./bitwarden.nix
+    ./ciscoPacketTracer.nix
     ./discord.nix
     ./distrobox.nix
     ./drawio.nix

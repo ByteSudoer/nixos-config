@@ -7,8 +7,8 @@
 {
   virtualisation.virtualbox = {
     host.enable = lib.isString extra;
-    host.package = pkgs.vmware-workstation;
-    host.enableKvm = true;
+    host.package = pkgs.virtualbox;
+    # host.enableKvm = true;
   };
 
 }

@@ -78,19 +78,11 @@ in
   };
 
   # i3status bar configuration
-  # programs.i3status = {
-  #   enable = true;
-  #   enableDefault = false;
-  #   package = pkgs.i3status;
-  #   modules = {
-  #     "disk /" = {
-  #       position = 1;
-  #       settings = {
-  #         format = "/ %avail";
-  #       };
-  #     };
-  #   };
-  #
-  # };
+  programs.i3status = {
+    enable = true;
+    enableDefault = true;
+    package = pkgs.i3status;
+
+  };
 
 }

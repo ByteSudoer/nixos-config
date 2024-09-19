@@ -2,7 +2,7 @@
 {
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_9;
+    # kernelPackages = pkgs.linuxPackages_6_9;
     initrd.availableKernelModules = [
       "xhci_pci"
       "ohci_pci"

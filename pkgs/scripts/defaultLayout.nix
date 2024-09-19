@@ -8,7 +8,7 @@ pkgs.writeShellScriptBin "defaultLayout" ''
 
   if [ "$virt" == "kvm" ] || [ "$virt" == "oracle" ];then
     primary="Virtual-1"
-    xrandr --output  "$primary" --primary --mode 1920x1200 --pos 0x0 --rotate normal 
+    xrandr --output  "$primary" --primary --mode 1920x1200 --pos 0x0 --rotate normal
   else
     primary="eDP-1"
     externel="HDMI-1"

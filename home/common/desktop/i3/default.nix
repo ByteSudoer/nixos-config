@@ -6,16 +6,35 @@
 }:
 let
   inherit (config.xsession.windowManager.i3.config) modifier;
+  terminal = "alacritty";
+  browser = "firefox";
 in
 
 {
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3;
+
     config = {
+      terminal = "alacritty";
       ## Super Key
       modifier = "Mod4";
-      terminal = "alacritty";
+
+      modes = {
+        resize = {
+          Down = "resize grow height 10 px or 10 ppt";
+          Escape = "mode default";
+          Left = "resize shrink width 10 px or 10 ppt";
+          Return = "mode default";
+          Right = "resize grow width 10 px or 10 ppt";
+          Up = "resize shrink height 10 px or 10 ppt";
+        };
+      };
+      fonts = {
+        name = [ "JetBrains Mono" ];
+        style = "Regular";
+        size = 11.0;
+      };
       startup = [
         ### Wallpapers
         {
@@ -51,27 +70,55 @@ in
         }
       ];
       keybindings = lib.mkOptionDefault {
-        "${modifier}+Return" = "exec alacritty";
+        "${modifier}+Return" = "exec ${terminal}";
         "${modifier}+Shift+Return" = "exec thunar";
         "${modifier}+Shift+q" = "kill";
-        "${modifier}+w" = "exec firefox";
+        "${modifier}+w" = "exec ${browser}";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+        "${modifier}+<" = "exec xfce4-appfinder";
+
+        # kill focused window
+        "${modifier}+c" = "kill";
+        "$alt+F4" = "kill";
 
         #Change focus
         "${modifier}+h" = "focus left";
         "${modifier}+l" = "focus right";
         "${modifier}+k" = "focus up";
         "${modifier}+j" = "focus down";
+
         #Change Focus using cursor/arrow keys
         "${modifier}+113" = "focus left";
         "${modifier}+114" = "focus right";
         "${modifier}+111" = "focus up";
         "${modifier}+116" = "focus down";
 
+        #Split in horizontal or vertical orientation
+        "${modifier}+h" = "split h";
+        "${modifier}+v" = "split v";
+
+        #Move windows
+        "${modifier}+Shift+h" = "move left";
+        "${modifier}+Shift+l" = "move right";
+        "${modifier}+Shift+k" = "move up";
+        "${modifier}+Shift+j" = "move down";
+
         #Toggling fullsceen
-        "${modifier}+f" = "fullsceen toggle global";
+        "${modifier}+f" = "fullsceen toggle";
+
+        # toggle tiling / floating
+        "${modifier}+space" = "floating toggle";
+
+        # Change modes
+        "${modifier}+r" = "mode resize";
+
         # Lock Screen
         "F12" = "exec lock";
+      };
+      focus = {
+        followMouse = true;
+        newWindow = true;
+        mouseWrapping = true;
       };
     };
 

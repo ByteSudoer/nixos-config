@@ -1,7 +1,8 @@
-{ pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 let
   inherit (config.xsession.windowManager.i3.config) modifier;
@@ -77,19 +78,19 @@ in
   };
 
   # i3status bar configuration
-  programs.i3status = {
-    enable = true;
-    enableDefault = false;
-    package = pkgs.i3status;
-    modules = {
-      "disk /" = {
-        position = 1;
-        settings = {
-          format = "/ %avail";
-        };
-      };
-    };
-
-  };
+  # programs.i3status = {
+  #   enable = true;
+  #   enableDefault = false;
+  #   package = pkgs.i3status;
+  #   modules = {
+  #     "disk /" = {
+  #       position = 1;
+  #       settings = {
+  #         format = "/ %avail";
+  #       };
+  #     };
+  #   };
+  #
+  # };
 
 }

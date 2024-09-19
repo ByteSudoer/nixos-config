@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   environment.systemPackages = [
     (pkgs.catppuccin-sddm.override {
@@ -13,6 +13,7 @@
 
     sddm = {
       enable = true;
+      package = lib.mkForce pkgs.kdePackages.sddm;
       theme = "catppuccin-mocha";
       # "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
       autoNumlock = true;

@@ -10,6 +10,9 @@ let
   browser = "firefox";
   altModifier = "Mod1";
   gapValue = 5;
+  workspace1 = "Linux: ";
+  workspace2 = "Web: ";
+
 in
 
 {
@@ -143,6 +146,9 @@ in
         criteria = [
           {
             class = "Pavucontrol";
+          }
+          {
+            class = "Xfce4-appfinder";
           }
         ];
       };

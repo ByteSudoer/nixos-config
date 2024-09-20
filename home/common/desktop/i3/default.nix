@@ -8,6 +8,7 @@ let
   inherit (config.xsession.windowManager.i3.config) modifier;
   terminal = "alacritty";
   browser = "firefox";
+  altModifier = "Mod1";
 in
 
 {
@@ -31,7 +32,7 @@ in
         };
       };
       fonts = {
-        name = [ "JetBrains Mono" ];
+        names = [ "JetBrains Mono" ];
         style = "Regular";
         size = 11.0;
       };
@@ -94,8 +95,8 @@ in
         "${modifier}+116" = "focus down";
 
         #Split in horizontal or vertical orientation
-        "${modifier}+h" = "split h";
-        "${modifier}+v" = "split v";
+        "${altModifier}+h" = "split h";
+        "${altModifier}+v" = "split v";
 
         #Move windows
         "${modifier}+Shift+h" = "move left";
@@ -117,8 +118,8 @@ in
       };
       focus = {
         followMouse = true;
-        newWindow = true;
-        mouseWrapping = true;
+        newWindow = "smart";
+        mouseWarping = true;
       };
     };
 

@@ -25,7 +25,7 @@ let
         };
         theme = {
           package = pkgs.gruvbox-gtk-theme;
-          name = "Gruvbox-Dark-B";
+          name = "Gruvbox-Dark";
         };
         iconTheme = {
           package = pkgs.gruvbox-dark-icons-gtk;

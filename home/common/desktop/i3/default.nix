@@ -76,11 +76,11 @@ in
         "${modifier}+Shift+q" = "kill";
         "${modifier}+w" = "exec ${browser}";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
-        "${modifier}+<" = "exec xfce4-appfinder";
+        "${modifier}+x" = "exec xfce4-appfinder";
 
         # kill focused window
         "${modifier}+c" = "kill";
-        "$alt+F4" = "kill";
+        "${altModifier}+F4" = "kill";
 
         #Change focus
         "${modifier}+h" = "focus left";
@@ -105,10 +105,10 @@ in
         "${modifier}+Shift+j" = "move down";
 
         #Toggling fullsceen
-        "${modifier}+f" = "fullsceen toggle";
+        "${modifier}+f" = "fullscreen toggle";
 
         # toggle tiling / floating
-        "${modifier}+space" = "floating toggle";
+        #"${modifier}+space" = "floating toggle";
 
         # Change modes
         "${modifier}+r" = "mode resize";

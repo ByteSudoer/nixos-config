@@ -9,6 +9,7 @@ let
   terminal = "alacritty";
   browser = "firefox";
   altModifier = "Mod1";
+  gapValue = 5;
 in
 
 {
@@ -24,17 +25,34 @@ in
       modes = {
         resize = {
           Down = "resize grow height 10 px or 10 ppt";
+          j = "resize grow height 10 px or 10 ppt";
           Escape = "mode default";
           Left = "resize shrink width 10 px or 10 ppt";
+          h = "resize shrink width 10 px or 10 ppt";
           Return = "mode default";
           Right = "resize grow width 10 px or 10 ppt";
+          l = "resize grow width 10 px or 10 ppt";
           Up = "resize shrink height 10 px or 10 ppt";
+          k = "resize shrink height 10 px or 10 ppt";
         };
       };
       fonts = {
         names = [ "JetBrains Mono" ];
         style = "Regular";
         size = 11.0;
+      };
+      gaps = {
+        bottom = gapValue;
+        top = gapValue;
+        horizontal = gapValue;
+        vertical = gapValue;
+        inner = gapValue;
+        outer = gapValue;
+        left = gapValue;
+        right = gapValue;
+        smartBorders = "on";
+        smartGaps = true;
+
       };
       startup = [
         ### Wallpapers
@@ -121,7 +139,20 @@ in
         newWindow = "smart";
         mouseWarping = true;
       };
+      floating = {
+        criteria = [
+          {
+            class = "Pavucontrol";
+          }
+        ];
+      };
     };
+    extraConfig = ''
+      #Display the popup if it belongs to the fullscreen application only
+      popup_during_fullscreen smart
+      # Only initiate a tiling drag when the modifier is held:
+      tiling_drag modifier
+    '';
 
   };
 

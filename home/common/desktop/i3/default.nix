@@ -125,6 +125,11 @@ in
         "${modifier}+Shift+k" = "move up";
         "${modifier}+Shift+j" = "move down";
 
+        #Move aroun workspaces
+        "${altModifier}+Shift+l" = "workspace next";
+        "${altModifier}+Shift+h" = "workspace prev";
+        "${altModifier}+Tab" = "workspace back_and_forth";
+
         #Toggling fullsceen
         "${modifier}+f" = "fullscreen toggle";
 

@@ -230,7 +230,7 @@ in
         }
         #Applications
         {
-          command = "discord --start-minized";
+          command = "discord --start-minimized";
           notification = false;
         }
         {
@@ -323,14 +323,6 @@ in
           }
         ];
       };
-      bars = [
-        {
-          colors = barConfiguration;
-          position = "bottom";
-          trayOutput = "primary";
-        }
-
-      ];
     };
     extraConfig = ''
       #Display the popup if it belongs to the fullscreen application only
@@ -344,8 +336,52 @@ in
   # i3status bar configuration
   programs.i3status = {
     enable = true;
-    enableDefault = true;
+    enableDefault = false;
     package = pkgs.i3status;
+
+    modules = {
+      "time" = {
+        position = 5;
+        settings = {
+          format = "%Y-%m-%d  %H:%M:%S";
+        };
+
+      };
+      "disk /" = {
+        position = 4;
+        settings = {
+          format = " %avail";
+        };
+
+      };
+      "cpu_usage" = {
+        position = 3;
+        settings = {
+          format = ": %usage";
+          max_threshold = 75;
+        };
+
+      };
+      "memory" = {
+        position = 2;
+        settings = {
+          memory_used_method = "classical";
+          format = "RAM :: %used / %total";
+
+        };
+      };
+      "battery BAT0" = {
+        position = 1;
+        settings = {
+          format = "BAT0 ⚡: %percentage";
+          threshold_type = "percentage";
+          low_threshold = 10;
+
+        };
+
+      };
+
+    };
 
   };
 

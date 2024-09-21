@@ -3,7 +3,6 @@ let
 
   isInList = element: list: builtins.elem element list;
   windowManagers = [
-    "i3"
     "bspwm"
     "awesome"
   ];

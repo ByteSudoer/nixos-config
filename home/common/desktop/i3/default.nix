@@ -19,6 +19,8 @@ let
   workspace2 = "2: Web ";
   workspace3 = "3: Music ";
   workspace4 = "4: Files ";
+  workspace5 = "5: Mail ";
+  workspace6 = "6: Virt ";
 
   colorsConfiguration =
     if colorscheme == "dracula" then
@@ -254,12 +256,12 @@ in
           notification = false;
         }
         {
-          command = "volumeicon";
+          command = "numlockx on";
+          always = true;
           notification = false;
         }
         {
-          command = "numlockx on";
-          always = true;
+          command = "volumeicon";
           notification = false;
         }
       ];
@@ -324,10 +326,14 @@ in
         "${workspace2}" = [ { class = "firefox$"; } ];
         "${workspace3}" = [ { class = "Spotify"; } ];
         "${workspace4}" = [ { class = "Thunar"; } ];
+        "${workspace6}" = [
+          { class = "Virt-manager"; }
+          { class = "VirtualBox Manager"; }
+        ];
       };
       focus = {
         followMouse = true;
-        newWindow = "smart";
+        newWindow = "focus";
         mouseWarping = true;
       };
       floating = {

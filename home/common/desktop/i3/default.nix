@@ -61,6 +61,42 @@ let
       }
     else
       {
+        background = "#282828";
+        focused = {
+          background = "#282828";
+          border = "#98971";
+          childBorder = "#1d2021";
+          indicator = "#b16286";
+          text = "#1d2021";
+        };
+        focusedInactive = {
+          background = "#1d2021";
+          border = "#1d2021";
+          childBorder = "#1d2021";
+          indicator = "#b16286";
+          text = "#d79921";
+        };
+        placeholder = {
+          background = "#282A36";
+          border = "#282A36";
+          childBorder = "#282A36";
+          indicator = "#282A36";
+          text = "#F8F8F2";
+        };
+        unfocused = {
+          background = "#1d2021";
+          border = "#1d2021";
+          childBorder = "#1d2021";
+          indicator = "#b16286";
+          text = "#d79921";
+        };
+        urgent = {
+          background = "#cc241d";
+          border = "#cc241d";
+          childBorder = "#cc241d";
+          indicator = "#cc241d";
+          text = "#F8F8F2";
+        };
 
       };
 
@@ -99,6 +135,34 @@ let
       }
     else
       {
+        background = "#282828";
+        statusline = "#d79921";
+        separator = "#a8984";
+        activeWorkspace = {
+          background = "#1d2021";
+          border = "#1d2021";
+          text = "#d79921";
+        };
+        bindingMode = {
+          background = "#cc241d";
+          border = "#cc241d";
+          text = "#F8F8F2";
+        };
+        focusedWorkspace = {
+          background = "#689d68";
+          border = "#689d68";
+          text = "#1d2021";
+        };
+        inactiveWorkspace = {
+          background = "#282A36";
+          border = "#282A36";
+          text = "#d79921";
+        };
+        urgentWorkspace = {
+          background = "#cc241d";
+          border = "#cc241d";
+          text = "#F8F8F2";
+        };
 
       };
 

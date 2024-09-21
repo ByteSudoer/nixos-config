@@ -5,15 +5,15 @@
     ./ciscoPacketTracer.nix
     ./discord.nix
     ./distrobox.nix
-    ./drawio.nix
+    # ./drawio.nix
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix
     ./insomnia.nix
     # ./intellij.nix
     ./libreoffice.nix
-    ./ngrok.nix
-    ./obs.nix
+    # ./ngrok.nix
+    # ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
     # ./slack.nix

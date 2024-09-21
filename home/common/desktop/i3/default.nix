@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  colorscheme,
   ...
 }:
 let
@@ -10,8 +11,96 @@ let
   browser = "firefox";
   altModifier = "Mod1";
   gapValue = 5;
+
+  display1 = "eDP-1";
+  display2 = "HDMI-1";
+
   workspace1 = "Linux: ";
   workspace2 = "Web: ";
+
+  colorsConfiguration =
+    if colorscheme == "dracula" then
+      {
+        background = "#F8F8F2";
+        focused = {
+          background = "#6272A4";
+          border = "#6272A4";
+          childBorder = "#6272A4";
+          indicator = "#6272A4";
+          text = "#F8F8F2";
+        };
+        focusedInactive = {
+          background = "#44475A";
+          border = "#44475";
+          childBorder = "#44475";
+          indicator = "#44475";
+          text = "#F8F8F2";
+        };
+        placeholder = {
+          background = "#282A36";
+          border = "#282A36";
+          childBorder = "#282A36";
+          indicator = "#282A36";
+          text = "#F8F8F2";
+        };
+        unfocused = {
+          background = "#282A36";
+          border = "#282A36";
+          childBorder = "#282A36";
+          indicator = "#282A36";
+          text = "#BFBFBF";
+        };
+        urgent = {
+          background = "#FF5555";
+          border = "#44475A";
+          childBorder = "#FF5555";
+          indicator = "#FF5555";
+          text = "#F8F8F2";
+        };
+
+      }
+    else
+      {
+
+      };
+
+  barConfiguration =
+    if colorscheme == "dracula" then
+      {
+        background = "#282A36";
+        statusline = "#F8F8F2";
+        separator = "#44475A";
+        activeWorkspace = {
+          background = "#44475A";
+          border = "#6272A4";
+          text = "#F8F8F2";
+        };
+        bindingMode = {
+          background = "#FF5555";
+          border = "#FF5555";
+          text = "#F8F8F2";
+        };
+        focusedWorkspace = {
+          background = "#44475A";
+          border = "#44475A";
+          text = "#F8F8F2";
+        };
+        inactiveWorkspace = {
+          background = "#282A36";
+          border = "#282A36";
+          text = "#BFBFBF";
+        };
+        urgentWorkspace = {
+          background = "#FF5555";
+          border = "#FF5555";
+          text = "#F8F8F2";
+        };
+
+      }
+    else
+      {
+
+      };
 
 in
 
@@ -25,6 +114,7 @@ in
       ## Super Key
       modifier = "Mod4";
 
+      colors = colorsConfiguration;
       modes = {
         resize = {
           Down = "resize grow height 10 px or 10 ppt";
@@ -74,17 +164,29 @@ in
           always = true;
           notification = false;
         }
+        #Applications
+        {
+          command = "discord --start-minized";
+          notification = false;
+        }
+        {
+          command = "ferdium";
+          notification = false;
+        }
+        {
+          command = "flameshot";
+          notification = false;
+        }
+
         ### Tray
         {
           command = "nm-applet";
           notification = false;
         }
-
         {
           command = "volumeicon";
           notification = false;
         }
-
         {
           command = "numlockx on";
           always = true;
@@ -157,6 +259,14 @@ in
           }
         ];
       };
+      bars = [
+        {
+          colors = barConfiguration;
+          position = "bottom";
+          trayOutput = "primary";
+        }
+
+      ];
     };
     extraConfig = ''
       #Display the popup if it belongs to the fullscreen application only

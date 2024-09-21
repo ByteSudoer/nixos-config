@@ -13,6 +13,7 @@
     ./picom.nix
     ./qt.nix
     ./rofi.nix
+    ./volumeicon.nix
     ./xdg.nix
     ./zathura.nix
   ];

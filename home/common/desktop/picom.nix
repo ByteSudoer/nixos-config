@@ -1,4 +1,4 @@
-{ desktop, ... }:
+{ desktop, pkgs, ... }:
 let
 
   isInList = element: list: builtins.elem element list;
@@ -10,7 +10,9 @@ in
 {
   services.picom = {
     enable = isInList desktop windowManagers;
-    # backend = "glx";
+    package = pkgs.picom-pijulius;
+    backend = "glx";
+    extraArgs = [ "--experimental-backends" ];
     # vSync = true;
     # Opacity
     activeOpacity = 1.0;

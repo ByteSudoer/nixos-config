@@ -28,8 +28,8 @@ let
           name = "Gruvbox-Dark";
         };
         iconTheme = {
-          package = pkgs.gruvbox-dark-icons-gtk;
-          name = "oomox-gruvbox-dark";
+          package = pkgs.arc-icon-theme;
+          name = "Arc";
         };
       }
     else

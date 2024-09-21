@@ -15,8 +15,10 @@ let
   display1 = "eDP-1";
   display2 = "HDMI-1";
 
-  workspace1 = "Linux: ";
-  workspace2 = "Web: ";
+  workspace1 = "1: Linux ";
+  workspace2 = "2: Web ";
+  workspace3 = "3: Music ";
+  workspace4 = "4: Files ";
 
   colorsConfiguration =
     if colorscheme == "dracula" then
@@ -211,6 +213,10 @@ in
         smartGaps = true;
 
       };
+
+      window = {
+        titlebar = false;
+      };
       startup = [
         ### Wallpapers
         {
@@ -307,6 +313,17 @@ in
 
         # Lock Screen
         "F12" = "exec lock";
+
+        #Workspaces
+        "${modifier}+1" = "workspace number ${workspace1}";
+        "${modifier}+2" = "workspace number ${workspace2}";
+        "${modifier}+3" = "workspace number ${workspace3}";
+        "${modifier}+4" = "workspace number ${workspace4}";
+      };
+      assigns = {
+        "${workspace2}" = [ { class = "firefox$"; } ];
+        "${workspace3}" = [ { class = "Spotify"; } ];
+        "${workspace4}" = [ { class = "Thunar"; } ];
       };
       focus = {
         followMouse = true;
@@ -341,21 +358,21 @@ in
 
     modules = {
       "time" = {
-        position = 5;
+        position = 6;
         settings = {
           format = "%Y-%m-%d  %H:%M:%S";
         };
 
       };
       "disk /" = {
-        position = 4;
+        position = 5;
         settings = {
           format = " %avail";
         };
 
       };
       "cpu_usage" = {
-        position = 3;
+        position = 4;
         settings = {
           format = ": %usage";
           max_threshold = 75;
@@ -363,7 +380,7 @@ in
 
       };
       "memory" = {
-        position = 2;
+        position = 3;
         settings = {
           memory_used_method = "classical";
           format = "RAM :: %used / %total";
@@ -371,16 +388,27 @@ in
         };
       };
       "battery BAT0" = {
-        position = 1;
+        position = 2;
         settings = {
           format = "BAT0 ⚡: %percentage";
           threshold_type = "percentage";
           low_threshold = 10;
-
         };
-
       };
-
+      "wireless wlp0s20f3" = {
+        position = 1;
+        settings = {
+          format_up = " (%quality) %ip";
+          format_down = "WLS: down";
+        };
+      };
+      "ethernet enp0s31f6:" = {
+        position = 1;
+        settings = {
+          format_up = "(%speed) %ip";
+          format_down = "ETH: down";
+        };
+      };
     };
 
   };

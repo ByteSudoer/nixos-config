@@ -346,6 +346,14 @@ in
           }
         ];
       };
+      bars = [
+
+        {
+          statusCommand = "${pkgs.i3blocks}/bin/i3blocks -c $HOME/.config/i3blocks/bottom";
+          trayOutput = "primary";
+        }
+
+      ];
     };
     extraConfig = ''
       #Display the popup if it belongs to the fullscreen application only
@@ -357,66 +365,96 @@ in
   };
 
   # i3status bar configuration
-  programs.i3status = {
+  # programs.i3status = {
+  #   enable = true;
+  #   enableDefault = false;
+  #   package = pkgs.i3status;
+  #
+  #   modules = {
+  #     "time" = {
+  #       position = 6;
+  #       settings = {
+  #         format = "%Y-%m-%d  %H:%M:%S";
+  #       };
+  #
+  #     };
+  #     "disk /" = {
+  #       position = 5;
+  #       settings = {
+  #         format = " %avail";
+  #       };
+  #
+  #     };
+  #     "cpu_usage" = {
+  #       position = 4;
+  #       settings = {
+  #         format = ": %usage";
+  #         max_threshold = 75;
+  #       };
+  #
+  #     };
+  #     "memory" = {
+  #       position = 3;
+  #       settings = {
+  #         memory_used_method = "classical";
+  #         format = "RAM :: %used / %total";
+  #
+  #       };
+  #     };
+  #     "battery BAT0" = {
+  #       position = 2;
+  #       settings = {
+  #         format = "BAT0 ⚡: %percentage";
+  #         threshold_type = "percentage";
+  #         low_threshold = 10;
+  #       };
+  #     };
+  #     "wireless wlp0s20f3" = {
+  #       position = 1;
+  #       settings = {
+  #         format_up = " (%quality) %ip";
+  #         format_down = "WLS: down";
+  #       };
+  #     };
+  #     "ethernet enp0s31f6:" = {
+  #       position = 1;
+  #       settings = {
+  #         format_up = "(%speed) %ip";
+  #         format_down = "ETH: down";
+  #       };
+  #     };
+  #   };
+  #
+  # };
+  programs.i3blocks = {
     enable = true;
-    enableDefault = false;
-    package = pkgs.i3status;
-
-    modules = {
-      "time" = {
-        position = 6;
-        settings = {
-          format = "%Y-%m-%d  %H:%M:%S";
+    package = pkgs.i3blocks;
+    bars = {
+      # top = {
+      #   title = {
+      #     interval = "persist";
+      #     command = "${pkgs.xtitle}/bin/xtitle -";
+      #   };
+      # };
+      bottom = {
+        memory = {
+          command = "free -h | awk '/Mem:/ { printf(\" 🐏 %5s/%s \\n\", $3, $2) }'";
+          interval = 1;
+          color = "#FEC925";
+        };
+        disk = lib.hm.dag.entryAfter [ "memory" ] {
+          command = "df -h / | awk '/\\//{ printf(\" 💾 %4s/%s \\n\", $4, $2) }'";
+          interval = 2;
+          color = "#C9E3D8";
         };
 
-      };
-      "disk /" = {
-        position = 5;
-        settings = {
-          format = " %avail";
+        date = lib.hm.dag.entryAfter [ "disk" ] {
+          command = "date +\" %a, %d %b - %H:%M:%S\"";
+          interval = 1;
         };
 
-      };
-      "cpu_usage" = {
-        position = 4;
-        settings = {
-          format = ": %usage";
-          max_threshold = 75;
-        };
-
-      };
-      "memory" = {
-        position = 3;
-        settings = {
-          memory_used_method = "classical";
-          format = "RAM :: %used / %total";
-
-        };
-      };
-      "battery BAT0" = {
-        position = 2;
-        settings = {
-          format = "BAT0 ⚡: %percentage";
-          threshold_type = "percentage";
-          low_threshold = 10;
-        };
-      };
-      "wireless wlp0s20f3" = {
-        position = 1;
-        settings = {
-          format_up = " (%quality) %ip";
-          format_down = "WLS: down";
-        };
-      };
-      "ethernet enp0s31f6:" = {
-        position = 1;
-        settings = {
-          format_up = "(%speed) %ip";
-          format_down = "ETH: down";
-        };
       };
     };
-
   };
 
 }

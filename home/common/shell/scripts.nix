@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    battery_info
     defaultLayout
     fehrandom
     get_weather

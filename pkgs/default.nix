@@ -7,6 +7,7 @@
   # permer = pkgs.callPackage ./permer { };
 
   # Scripts
+  battery_info = pkgs.callPackage ./scripts/battery_info.nix { };
   defaultLayout = pkgs.callPackage ./scripts/defaultLayout.nix { };
   fehrandom = pkgs.callPackage ./scripts/fehrandom.nix { inherit colorscheme; };
   get_weather = pkgs.callPackage ./scripts/get_weather.nix { };
@@ -31,5 +32,4 @@
   # Spotifty
   spotify-ad = pkgs.callPackage ./spotify { };
 
-
-} 
+}

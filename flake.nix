@@ -71,8 +71,8 @@
       inherit (self) outputs;
       stateVersion = "24.05";
       username = "bytesudoer";
-      colorscheme = "gruvbox";
-      desktop = "i3";
+      colorscheme = "dracula";
+      desktop = "plasma";
       libx = import ./lib {
         inherit
           inputs

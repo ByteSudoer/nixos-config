@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 function run {
-  if ! pgrep $1; then
-    $@ &
-  fi
+	if ! pgrep $1; then
+		$@ &
+	fi
 
 }
 
@@ -17,8 +17,8 @@ run numlockx on &
 # run volumeicon
 # run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #run /usr/lib/xfce4/notifyd/xfce4-notifyd &
-run fehrandom
-run wallpapers
+run fehrandom &
+run wallpapers &
 
 # run defLayout
 # run conky -c $HOME/.config/awesome/system-overview

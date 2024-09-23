@@ -123,12 +123,12 @@ os.setlocale(os.getenv("LANG")) -- to localize the clock
 
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
--- local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
--- local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 -- local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
@@ -196,14 +196,14 @@ function theme.at_screen_connect(s)
 		{
 			-- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			-- spotify_widget({
-			-- 	font = "Source Code Pro 9",
-			-- 	play_icon = "/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg",
-			-- 	pause_icon = "/usr/share/icons/Papirus-Dark/24x24/panel/spotify-indicator.svg",
-			-- 	dim_when_paused = true,
-			-- 	dim_opacity = 0.5,
-			-- 	max_lenght = 5,
-			-- }),
+			spotify_widget({
+				font = "Source Code Pro 9",
+				-- play_icon = "/usr/share/icons/Papirus-Light/24x24/categories/spotify.svg",
+				-- pause_icon = "/usr/share/icons/Papirus-Dark/24x24/panel/spotify-indicator.svg",
+				dim_when_paused = true,
+				dim_opacity = 0.5,
+				max_lenght = 5,
+			}),
 			wibox.widget.systray(),
 			-- todo_widget(),
 			-- docker_widget({

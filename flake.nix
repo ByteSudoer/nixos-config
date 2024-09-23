@@ -59,11 +59,12 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-unstable
-    , nix-formatter-pack
-    , ...
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      nix-formatter-pack,
+      ...
     }@inputs:
 
     let
@@ -71,7 +72,7 @@
       stateVersion = "24.05";
       username = "bytesudoer";
       colorscheme = "dracula";
-      desktop = "plasma";
+      desktop = "awesome";
       libx = import ./lib {
         inherit
           inputs

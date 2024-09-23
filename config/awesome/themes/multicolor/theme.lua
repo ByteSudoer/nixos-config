@@ -128,6 +128,7 @@ local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 -- local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 -- local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
@@ -233,6 +234,10 @@ function theme.at_screen_connect(s)
 				step = 5,
 			}),
 			-- battery_widget(),
+			batteryarc_widget({
+				show_current_level = true,
+				arc_thickness = 1,
+			}),
 			weather_widget({
 				api_key = "7b78ee65feb3b7d1cf3a81ccedad3871",
 				coordinates = { 36.81897, 10.16579 },

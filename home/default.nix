@@ -1,12 +1,13 @@
-{ config
-, extra
-, desktop
-, lib
-, outputs
-, stateVersion
-, username
-, pkgs
-, ...
+{
+  config,
+  extra,
+  desktop,
+  lib,
+  outputs,
+  stateVersion,
+  username,
+  pkgs,
+  ...
 }:
 {
   # Only import desktop configuration if the host is desktop enabled

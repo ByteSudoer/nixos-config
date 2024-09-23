@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 function run {
-	if ! pgrep $1; then
-		$@ &
-	fi
+  if ! pgrep $1; then
+    $@ &
+  fi
 
 }
+
+run defaultLayout &
 run nm-applet &
 #run caffeine
 # run variety
@@ -13,10 +15,10 @@ run nm-applet &
 # run blueberry-tray
 run numlockx on &
 # run volumeicon
-run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #run /usr/lib/xfce4/notifyd/xfce4-notifyd &
-run fehrandom &
-run wallpapers &
+run fehrandom
+run wallpapers
 
 # run defLayout
 # run conky -c $HOME/.config/awesome/system-overview
@@ -33,7 +35,6 @@ run discord --start-minimized &
 run ferdium &
 # run birdtray &
 #run telegram-desktop
-run defaultLayout &
 # Launch polybar
 # "$HOME"/.config/polybar/launch.sh &
 # run dropbox &

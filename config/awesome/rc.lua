@@ -868,7 +868,7 @@ awful.rules.rules = {
 				"pinentry",
 				"veromix",
 				"xtightvncviewer",
-				"xfce4-appfinder",
+				"Xfce4-appfinder",
 			},
 
 			name = {

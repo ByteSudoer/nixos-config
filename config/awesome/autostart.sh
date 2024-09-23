@@ -7,7 +7,9 @@ function run {
 
 }
 
-run defaultLayout &
+run defaultLayout
+run fehrandom
+run wallpapers
 run nm-applet &
 #run caffeine
 # run variety
@@ -17,8 +19,6 @@ run numlockx on &
 # run volumeicon
 # run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #run /usr/lib/xfce4/notifyd/xfce4-notifyd &
-run fehrandom &
-run wallpapers &
 
 # run defLayout
 # run conky -c $HOME/.config/awesome/system-overview
@@ -33,6 +33,7 @@ run dropbox &
 #run ckb-next -b
 run discord --start-minimized &
 run ferdium &
+run flameshot &
 # run birdtray &
 #run telegram-desktop
 # Launch polybar

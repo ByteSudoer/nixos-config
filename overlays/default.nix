@@ -1,8 +1,7 @@
 # This file defines overlays
-{
-  inputs,
-  colorscheme,
-  ...
+{ inputs
+, colorscheme
+, ...
 }:
 {
   # This one brings our custom packages from the 'pkgs' directory

@@ -1,9 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  colorscheme,
-  ...
+{ pkgs
+, lib
+, config
+, colorscheme
+, ...
 }:
 let
   inherit (config.xsession.windowManager.i3.config) modifier;
@@ -12,14 +11,10 @@ let
   altModifier = "Mod1";
   gapValue = 5;
 
-  display1 = "eDP-1";
-  display2 = "HDMI-1";
-
   workspace1 = "1: Linux ";
   workspace2 = "2: Web ";
   workspace3 = "3: Music ";
   workspace4 = "4: Files ";
-  workspace5 = "5: Mail ";
   workspace6 = "6: Virt ";
 
   colorsConfiguration =
@@ -99,72 +94,6 @@ let
           border = "#cc241d";
           childBorder = "#cc241d";
           indicator = "#cc241d";
-          text = "#F8F8F2";
-        };
-
-      };
-
-  barConfiguration =
-    if colorscheme == "dracula" then
-      {
-        background = "#282A36";
-        statusline = "#F8F8F2";
-        separator = "#44475A";
-        activeWorkspace = {
-          background = "#44475A";
-          border = "#6272A4";
-          text = "#F8F8F2";
-        };
-        bindingMode = {
-          background = "#FF5555";
-          border = "#FF5555";
-          text = "#F8F8F2";
-        };
-        focusedWorkspace = {
-          background = "#44475A";
-          border = "#44475A";
-          text = "#F8F8F2";
-        };
-        inactiveWorkspace = {
-          background = "#282A36";
-          border = "#282A36";
-          text = "#BFBFBF";
-        };
-        urgentWorkspace = {
-          background = "#FF5555";
-          border = "#FF5555";
-          text = "#F8F8F2";
-        };
-
-      }
-    else
-      {
-        background = "#282828";
-        statusline = "#d79921";
-        separator = "#a8984";
-        activeWorkspace = {
-          background = "#1d2021";
-          border = "#1d2021";
-          text = "#d79921";
-        };
-        bindingMode = {
-          background = "#cc241d";
-          border = "#cc241d";
-          text = "#F8F8F2";
-        };
-        focusedWorkspace = {
-          background = "#689d68";
-          border = "#689d68";
-          text = "#1d2021";
-        };
-        inactiveWorkspace = {
-          background = "#282A36";
-          border = "#282A36";
-          text = "#d79921";
-        };
-        urgentWorkspace = {
-          background = "#cc241d";
-          border = "#cc241d";
           text = "#F8F8F2";
         };
 
@@ -327,9 +256,9 @@ in
         "${modifier}+4" = "workspace number ${workspace4}";
       };
       assigns = {
-        "${workspace2}" = [ { class = "firefox$"; } ];
-        "${workspace3}" = [ { class = "Spotify"; } ];
-        "${workspace4}" = [ { class = "Thunar"; } ];
+        "${workspace2}" = [{ class = "firefox$"; }];
+        "${workspace3}" = [{ class = "Spotify"; }];
+        "${workspace4}" = [{ class = "Thunar"; }];
         "${workspace6}" = [
           { class = "Virt-manager"; }
           { class = "VirtualBox Manager"; }

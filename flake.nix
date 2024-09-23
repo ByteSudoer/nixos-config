@@ -59,12 +59,11 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgs-unstable,
-      nix-formatter-pack,
-      ...
+    { self
+    , nixpkgs
+    , nixpkgs-unstable
+    , nix-formatter-pack
+    , ...
     }@inputs:
 
     let

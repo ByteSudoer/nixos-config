@@ -1,0 +1,42 @@
+#!/bin/bash
+
+function run {
+  if ! pgrep $1 ;
+  then
+    $@&
+  fi
+}
+run volumeicon &
+run nm-applet &
+#run caffeine
+# run variety
+run xfce4-power-manager &
+run blueberry-tray &
+run numlockx on &
+# run volumeicon
+run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+run /usr/lib/xfce4/notifyd/xfce4-notifyd &
+run ferdium &
+# run defLayout
+# run conky -c $HOME/.config/awesome/system-overview
+#you can set wallpapers in themes as well
+# feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#run applications from startup
+#run firefox
+#run atom
+#run dropbox
+#run insync start
+#run spotify
+#run ckb-next -b
+run discord --start-minimized &
+# run birdtray &
+#run telegram-desktop
+# run nitrogen --restore
+run defaultLayout &
+# Launch polybar
+# "$HOME"/.config/polybar/launch.sh &
+run dropbox &
+fehrandom &
+wallpapers.sh &
+flameshot &
+# restart_window_manager &

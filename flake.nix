@@ -72,7 +72,7 @@
       stateVersion = "24.05";
       username = "bytesudoer";
       colorscheme = "dracula";
-      desktop = "plasma";
+      desktop = "i3";
       libx = import ./lib {
         inherit
           inputs

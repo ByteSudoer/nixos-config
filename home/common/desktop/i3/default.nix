@@ -249,6 +249,10 @@ in
           command = "flameshot";
           notification = false;
         }
+        {
+          command = "dropbox";
+          notification = false;
+        }
 
         ### Tray
         {
@@ -437,7 +441,12 @@ in
       #   };
       # };
       bottom = {
-        memory = {
+
+        music = {
+          command = "${pkgs.spotify-cli-linux}/bin/spotifycli --status | xargs echo ";
+          interval = 2;
+        };
+        memory = lib.hm.dag.entryAfter [ "music" ] {
           command = "free -h | awk '/Mem:/ { printf(\" 🐏 %5s/%s \\n\", $3, $2) }'";
           interval = 1;
           color = "#FEC925";
@@ -447,13 +456,15 @@ in
           interval = 2;
           color = "#C9E3D8";
         };
-
         battery = lib.hm.dag.entryAfter [ "disk" ] {
           command = "battery_info";
           interval = 2;
         };
-
-        date = lib.hm.dag.entryAfter [ "battery" ] {
+        weather = lib.hm.dag.entryAfter [ "battery" ] {
+          command = "curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo";
+          interval = 3600;
+        };
+        date = lib.hm.dag.entryAfter [ "weather" ] {
           command = "date +\" %a, %d %b  %H:%M:%S\"";
           interval = 1;
         };

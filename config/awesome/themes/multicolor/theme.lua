@@ -16,49 +16,49 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme = {}
 theme.confdir = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.font = "Comic Mono 10"
-theme.taglist_font = "Comic Mono 10"
+theme.font = "JetBrains Mono 10"
+theme.taglist_font = "JetBrains Mono 10"
 -- Gruvbox
-theme.menu_bg_normal = "#1d2021"
-theme.menu_bg_focus = "#1d2021"
--- theme.bg_normal                                 = "#565F65"
-theme.bg_normal = "#1d2021"
-theme.bg_focus = "#1d2021"
-theme.bg_urgent = "#1d2021"
-theme.fg_normal = "#f9f5d7"
-theme.fg_focus = "#ff8c00"
-theme.fg_urgent = "#af1d18"
-theme.fg_minimize = "#f9f5d7"
-theme.border_width = dpi(3)
-theme.border_normal = "#1c2022"
-theme.border_focus = "#fb4934"
-theme.border_marked = "#3ca4d8"
-theme.menu_border_width = 0
-theme.menu_width = dpi(130)
-theme.menu_submenu_icon = theme.confdir .. "/icons/submenu.png"
-theme.menu_fg_normal = "#aaaaaa"
-theme.menu_fg_focus = "#ff8c00"
--- theme.menu_bg_normal = "#050505dd"
--- theme.menu_bg_focus = "#050505dd"
-
--- theme.menu_bg_normal = "#282a36"
--- theme.menu_bg_focus = "#44475a"
+-- theme.menu_bg_normal = "#1d2021"
+-- theme.menu_bg_focus = "#1d2021"
+-- -- theme.bg_normal                                 = "#565F65"
 -- theme.bg_normal = "#1d2021"
 -- theme.bg_focus = "#1d2021"
 -- theme.bg_urgent = "#1d2021"
 -- theme.fg_normal = "#f9f5d7"
--- theme.fg_focus = "#bd93f9"
--- theme.fg_urgent = "#ff5555"
+-- theme.fg_focus = "#ff8c00"
+-- theme.fg_urgent = "#af1d18"
 -- theme.fg_minimize = "#f9f5d7"
 -- theme.border_width = dpi(3)
 -- theme.border_normal = "#1c2022"
--- theme.border_focus = "#8be9fd"
+-- theme.border_focus = "#fb4934"
 -- theme.border_marked = "#3ca4d8"
 -- theme.menu_border_width = 0
 -- theme.menu_width = dpi(130)
 -- theme.menu_submenu_icon = theme.confdir .. "/icons/submenu.png"
--- theme.menu_fg_normal = "#bd93f9"
--- theme.menu_fg_focus = "#ffb86c"
+-- theme.menu_fg_normal = "#aaaaaa"
+-- theme.menu_fg_focus = "#ff8c00"
+-- theme.menu_bg_normal = "#050505dd"
+-- theme.menu_bg_focus = "#050505dd"
+
+theme.menu_bg_normal = "#282a36"
+theme.menu_bg_focus = "#44475a"
+theme.bg_normal = "#1d2021"
+theme.bg_focus = "#1d2021"
+theme.bg_urgent = "#1d2021"
+theme.fg_normal = "#f9f5d7"
+theme.fg_focus = "#bd93f9"
+theme.fg_urgent = "#ff5555"
+theme.fg_minimize = "#f9f5d7"
+theme.border_width = dpi(3)
+theme.border_normal = "#1c2022"
+theme.border_focus = "#8be9fd"
+theme.border_marked = "#3ca4d8"
+theme.menu_border_width = 0
+theme.menu_width = dpi(130)
+theme.menu_submenu_icon = theme.confdir .. "/icons/submenu.png"
+theme.menu_fg_normal = "#bd93f9"
+theme.menu_fg_focus = "#ffb86c"
 
 ----------------
 theme.widget_temp = theme.confdir .. "/icons/temp.png"
@@ -232,7 +232,7 @@ function theme.at_screen_connect(s)
 				mixer_cmd = "pavucontrol",
 				step = 5,
 			}),
-			-- battery_widget(),
+			battery_widget(),
 			weather_widget({
 				api_key = "7b78ee65feb3b7d1cf3a81ccedad3871",
 				coordinates = { 36.81897, 10.16579 },

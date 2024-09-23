@@ -10,6 +10,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    pulseaudio
     xarchiver
     xclip
     libsForQt5.qt5.qtquickcontrols2

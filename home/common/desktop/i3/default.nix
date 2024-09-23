@@ -448,8 +448,13 @@ in
           color = "#C9E3D8";
         };
 
-        date = lib.hm.dag.entryAfter [ "disk" ] {
-          command = "date +\" %a, %d %b - %H:%M:%S\"";
+        battery = lib.hm.dag.entryAfter [ "disk" ] {
+          command = "battery_info";
+          interval = 2;
+        };
+
+        date = lib.hm.dag.entryAfter [ "battery" ] {
+          command = "date +\" %a, %d %b  %H:%M:%S\"";
           interval = 1;
         };
 

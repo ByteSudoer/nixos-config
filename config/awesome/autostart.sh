@@ -7,9 +7,9 @@ function run {
 
 }
 
-run defaultLayout
-run fehrandom
-run wallpapers
+run defaultLayout &
+run fehrandom &
+run wallpapers &
 run nm-applet &
 #run caffeine
 # run variety

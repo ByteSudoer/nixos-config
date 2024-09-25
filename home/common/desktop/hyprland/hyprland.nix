@@ -21,6 +21,7 @@
         "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
         "discord --start-minimized"
         "ferdium"
+        "dropbox"
         "xwaylandvideobridge"
         "copyq --start-server"
       ];

@@ -2,18 +2,16 @@
 {
   programs.hyprland = {
     enable = true;
-
-    xwayland.enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland;
 
   };
   # For Screen Sharing
   services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   wlr.enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # };
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects

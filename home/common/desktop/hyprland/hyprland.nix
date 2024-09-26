@@ -145,6 +145,12 @@
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
 
+        "size 800 450, title:(Picture-in-Picture)"
+        "pin, title:^(Picture-in-Picture)$"
+        "float, title:^(Firefox)$"
+        "size 800 450, title:(Firefox)"
+        " pin, title:^(Firefox)$"
+
       ];
 
       ## Environment Variables

@@ -33,9 +33,9 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    };
+    # hyprland = {
+    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # };
     #Automatic CPU speed & power optimizer for Linux
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
@@ -71,8 +71,8 @@
       inherit (self) outputs;
       stateVersion = "24.05";
       username = "bytesudoer";
-      colorscheme = "dracula";
-      desktop = "awesome";
+      colorscheme = "gruvbox";
+      desktop = "hyprland";
       libx = import ./lib {
         inherit
           inputs

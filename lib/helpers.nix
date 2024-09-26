@@ -1,8 +1,9 @@
-{ inputs
-, outputs
-, stateVersion
-, username
-, ...
+{
+  inputs,
+  outputs,
+  stateVersion,
+  username,
+  ...
 }:
 let
   workstations = [
@@ -24,10 +25,10 @@ in
 
   # Helper function for generating home-manager configs
   mkHome =
-    { hostname
-    , user ? username
-    , desktop ? null
-    ,
+    {
+      hostname,
+      user ? username,
+      desktop ? null,
     }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -46,10 +47,10 @@ in
 
   # Helper function for generating host configs
   mkHost =
-    { hostname
-    , desktop ? null
-    , pkgsInput ? inputs.nixpkgs
-    ,
+    {
+      hostname,
+      desktop ? null,
+      pkgsInput ? inputs.nixpkgs,
     }:
     pkgsInput.lib.nixosSystem {
       specialArgs = {
@@ -66,16 +67,16 @@ in
     };
 
   mkSystem =
-    { hostname
-    , installer ? null
-    , desktop ? null
-    , extra ? null
-    , fs ? null
-    , pkgs ? inputs.nixpkgs
-    , user ? username
-    , colorscheme ? "dracula"
-    , platform ? "x86_64-linux"
-    ,
+    {
+      hostname,
+      installer ? null,
+      desktop ? null,
+      extra ? null,
+      fs ? null,
+      pkgs ? inputs.nixpkgs,
+      user ? username,
+      colorscheme ? "dracula",
+      platform ? "x86_64-linux",
     }:
     pkgs.lib.nixosSystem {
       specialArgs = {
@@ -121,7 +122,7 @@ in
             # Ensure Plasma Manager is available:
             sharedModules = [
               inputs.sops.homeManagerModules.sops
-              inputs.hyprland.homeManagerModules.default
+              # inputs.hyprland.homeManagerModules.default
               inputs.nix-index-database.hmModules.nix-index
               inputs.plasma-manager.homeManagerModules.plasma-manager
             ];

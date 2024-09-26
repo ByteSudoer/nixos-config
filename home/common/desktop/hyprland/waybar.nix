@@ -1,7 +1,8 @@
-{ inputs
-, colorscheme
-, config
-, ...
+{
+  inputs,
+  colorscheme,
+  config,
+  ...
 }:
 let
   color =
@@ -69,8 +70,8 @@ in
           };
         };
         "battery" = {
-          bat = "BAT1";
-          adapter = "ADP1";
+          bat = "BAT0";
+          adapter = "AC";
           interval = 60;
           states = {
             warning = 30;

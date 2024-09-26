@@ -22,6 +22,10 @@
       #   kdePackages.qtsvg
       #   kdePackages.qtdeclarative
       # ];
+      wayland = {
+        enable = true;
+        compositor = "weston";
+      };
     };
   };
   services.xserver = {

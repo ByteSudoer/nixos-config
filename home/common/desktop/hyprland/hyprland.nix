@@ -31,6 +31,7 @@
         "xwaylandvideobridge"
         "copyq --start-server"
       ];
+
       # KeyBorad Bindings
       bind = [
         "$mod,return,exec,alacritty"
@@ -130,6 +131,13 @@
         "opacity 0.8 0.8,class:^(Spotify)$"
         "opacity 0.8 0.8,class:^(discord)$"
 
+        ## Workspace & Window Rules
+        "workspace 3,class:^(VirtualBox Manager)$"
+        "workspace 3,class:^(virt-manager)$"
+        "workspace 4,class:^(Spotify)$"
+        "workspace 5,class:^(discord)$"
+        "workspace 5,class:^(Ferdium)$"
+
         #xwaylandvideobridge Rules
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"
@@ -154,7 +162,6 @@
       ## Decoration
       decoration = {
         rounding = 5;
-
         blur = {
           enabled = true;
           size = 3;

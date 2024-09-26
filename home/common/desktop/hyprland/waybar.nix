@@ -32,7 +32,7 @@ in
         ];
         modules-center = [ "hyprland/workspaces" ];
         modules-right = [
-          "custom/notifhistory"
+          # "custom/notification"
           "tray"
           "wireplumber"
           "bluetooth"
@@ -193,14 +193,13 @@ in
           exec = "waybar-mediaplayer --player spotify 2> /dev/null";
           exec-if = "pgrep spotify";
         };
-        "custom-notifhistory" = {
+        "custom/notifhistory" = {
           exec = "dunstctl history";
           return-type = "json";
           format = "{icon} {}";
-
-          # format-icons = {
-          #   none = "";
-          # };
+          format-icons = {
+            none = "";
+          };
         };
         "custom/notification" = {
           tooltip = false;

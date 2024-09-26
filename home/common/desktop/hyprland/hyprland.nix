@@ -10,6 +10,11 @@
 
       "$mod" = "SUPER";
       monitor = "eDP-1, 1920x1200, auto, 1.0";
+      general = {
+        border_size = 1;
+        gaps_in = 2;
+        gaps_out = 10;
+      };
 
       input = {
         kb_layout = "fr";
@@ -34,6 +39,10 @@
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
         "$mod,v,exec,pavucontrol"
+
+        # Resize windows
+        "ALT SHIFT,l,resizeactive,10 -10"
+        "ALT SHIFT,h,resizeactive,-10 10"
 
         ## Change focus
         "$mod,l,movefocus,r"
@@ -69,7 +78,7 @@
         "SHIFT,Print,exec,grimblast --notify save area"
         "$mod SHIFT,Print,exec,grimblast --notify save output"
 
-        #Lock Screen 
+        #Lock Screen
         ",F12,exec,lock"
 
         #General Dispatechers
@@ -101,7 +110,11 @@
       };
 
       # Window Rules
-      windowrule = [ "float,^(pavucontrol)$" ];
+      windowrule = [
+        "float,^(pavucontrol)$"
+        "float,^(Authentication Required)$"
+      ];
+
       windowrulev2 = [
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"

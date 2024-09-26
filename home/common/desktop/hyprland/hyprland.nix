@@ -112,7 +112,7 @@
       # Window Rules
       windowrule = [
         "float,^(pavucontrol)$"
-        "float,^(Authentication Required)$"
+        "float,title:^(Authentication Required)$"
       ];
 
       windowrulev2 = [
@@ -146,7 +146,7 @@
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         # XDG Specifications
-        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_CURRENT_DESKTOP,Sway"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
       ];

@@ -19,7 +19,7 @@
     nwg-look
     glib
 
-    #Spotify Control 
+    #Spotify Control
     playerctl
 
     grimblast

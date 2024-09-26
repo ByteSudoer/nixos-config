@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
 let
   icons_path = "/home/bytesudoer/nixos-config/config/icons";
+  background-color-main-window = if colorscheme == "dracula" then "#1E1E2E" else "#32302F";
+  background-color-main-button = if colorscheme == "dracula" then "#242434" else "#665C54";
+  hover-button-color = if colorscheme == "dracula" then "#89B4FA" else "#FABD2F";
 in
 {
   programs.wlogout = {
@@ -56,13 +59,13 @@ in
 
       /** ********** Main Window ********** **/
       window {
-      	background-color: #1E1E2E;
+      	background-color: ${background-color-main-window};
       }
 
       /** ********** Buttons ********** **/
       button {
-      	background-color: #242434;
-          color: #FFFFFF;
+      	background-color: ${background-color-main-button};
+        color: #FFFFFF;
       	border: 2px solid #282838;
       	border-radius: 20px;
       	background-repeat: no-repeat;
@@ -71,7 +74,7 @@ in
       }
 
       button:focus, button:active, button:hover {
-      	background-color: #89B4FA;
+      	background-color: ${hover-button-color};
       	outline-style: none;
       }
 

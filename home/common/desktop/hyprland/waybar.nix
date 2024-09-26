@@ -1,7 +1,8 @@
-{ inputs
-, colorscheme
-, config
-, ...
+{
+  inputs,
+  colorscheme,
+  config,
+  ...
 }:
 let
   color =

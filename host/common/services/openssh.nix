@@ -7,6 +7,7 @@ let
   ];
 in
 {
+  programs.ssh.startAgent = true;
   services.openssh = {
     enable = true;
     settings = {
@@ -14,7 +15,4 @@ in
       PermitRootLogin = lib.mkDefault "no";
     };
   };
-
-  programs.ssh.startAgent = true;
-  networking.firewall.allowedTCPPorts = [ ];
 }

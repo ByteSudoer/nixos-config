@@ -36,7 +36,7 @@
       bind = [
         "$mod,return,exec,alacritty"
         "$mod,w,exec,firefox"
-        "$mod SHIFT,return,exec,thunar"
+        "$mod SHIFT,return,exec,${pkgs.kdePackages.dolphin}/bin/dolphin"
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
         "$mod,v,exec,pavucontrol"
@@ -120,6 +120,7 @@
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
         "float,class:(thunar)"
+        "float,class:(dolphin)"
         "float,class:(wihotspot-gui)"
         "float,title:(Bluetooth)"
         "float,title:(Picture-in-Picture)"
@@ -128,6 +129,7 @@
         "opacity 0.8 0.8,class:^(Alacritty)$"
         "opacity 0.8 0.8,class:^(firefox)$"
         "opacity 0.8 0.8,class:^(thunar)$"
+        "opacity 0.8 0.8,class:^(dolphin)$"
         "opacity 0.8 0.8,class:^(Spotify)$"
         "opacity 0.8 0.8,class:^(discord)$"
 

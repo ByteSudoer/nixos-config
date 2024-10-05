@@ -18,6 +18,8 @@
     libsForQt5.qt5ct
     libsForQt5.polkit-kde-agent
     lxqt.lxqt-policykit
+    ark
+    evince
   ];
 
   ## Needed fot swaylock

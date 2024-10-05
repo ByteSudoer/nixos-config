@@ -1,4 +1,9 @@
-_: {
+{ desktop, pkgs, ... }:
+let
+  copy_command =
+    if desktop == "hyprland" then "${pkgs.wl-clipboard}/bin/wl-copy" else "xcopy -selection clipboard";
+in
+{
   programs.command-not-found.enable = false;
   programs.nix-index = {
     enable = true;
@@ -69,7 +74,7 @@ _: {
       doc = "rustup doc";
       his = "history | cut -c 29- | sort -u | fzf | sh -";
       update = "sudo nix-chanel --update";
-      copy = "xclip -selection clipboard";
+      copy = copy_command;
       v = "nvim -p";
       ssha = "eval $(ssh-agent)";
 

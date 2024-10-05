@@ -1,4 +1,9 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  colorscheme,
+  desktop,
+  ...
+}:
 
 let
   colorPlugin =
@@ -8,6 +13,11 @@ let
       "gruvbox"
     else
       "dracula";
+  copy-command =
+    if desktop == "hyprland" then
+      "${pkgs.wl-clipboard}/bin/wl-clipboard"
+    else
+      "xclip -in -selection clipboard";
 in
 {
 
@@ -75,7 +85,7 @@ in
        unbind p
       bind p paste-buffer
       bind-key -T copy-mode-vi v send-keys -X begin-selection
-      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard' 
+      bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel '${copy-command}'
 
       bind n command-prompt "rename-window '%%'"
       bind w new-window -c "#{pane_current-path}"

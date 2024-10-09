@@ -122,6 +122,7 @@
       vim-nix
     ];
     extraPackages = with pkgs; [
+      wl-clipboard
       unstable.terraform-ls
       unstable.actionlint
       unstable.prettierd

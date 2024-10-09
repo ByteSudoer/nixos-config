@@ -13,11 +13,26 @@ in
     hosts = {
       "192.168.100.1" = [ "router" ];
       "192.168.100.29" = [ "pi" ];
+      "192.168.100.110" = [ "proxmox" ];
     };
     firewall = {
-      enable = isInList hostname hostnames;
+      enable = !isInList hostname hostnames;
       allowedTCPPorts = [ ] ++ lib.optionals (portForward == true) [ 32222 ];
-
+    };
+    nat = {
+      enable = !isInList hostname hostnames;
+      internalInterface = [
+        "enp0s31f6"
+        "wlp0s20f3"
+      ];
+      externalInterface = "virbr0";
+      forwardPorts =
+        { }
+        ++ lib.optionals (portForward == true) {
+          sourcePort = 32222;
+          proto = "tcp";
+          destination = "192.168.122.25:22";
+        };
     };
 
   };

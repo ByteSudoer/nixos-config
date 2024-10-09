@@ -1,5 +1,17 @@
-_: {
-  virtualisation.libvirtd.enable = true;
+{ pkgs, ... }:
+{
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      allowedBridges = [
+        "virbr0"
+        "virbr1"
+      ];
+    };
+  };
+  environment.systemPackages = [
+    pkgs.passt
+  ];
   programs.virt-manager.enable = true;
   # virtualisation.forwardPorts = [
   #   {

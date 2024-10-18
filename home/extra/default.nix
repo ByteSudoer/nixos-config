@@ -5,12 +5,12 @@
     ./ciscoPacketTracer.nix
     ./discord.nix
     ./distrobox.nix
-    # ./drawio.nix
+    ./drawio.nix
     ./dropbox.nix
     ./ferdium.nix
     ./imagers.nix
     ./insomnia.nix
-    # ./intellij.nix
+    ./intellij.nix
     ./libreoffice.nix
     # ./ngrok.nix
     # ./obs.nix

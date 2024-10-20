@@ -105,11 +105,11 @@
         "nmt": "nmt"
       },
       "locked": {
-        "lastModified": 1727389685,
-        "narHash": "sha256-grS02HxtEmgywgWZlH5akEsA+PS+TQzPLEYsB76nigs=",
+        "lastModified": 1729445390,
+        "narHash": "sha256-TxJ7RZLlBkKWZos1ai3eWIH0fBq1G6SVE+q3dW+0qRU=",
         "owner": "Gerschtli",
         "repo": "nix-formatter-pack",
-        "rev": "53d37755dab26eaebcc9f89b48039ac17cb9a4b2",
+        "rev": "9f4bcf647cad2edafda7e1143071e0daf37cbc41",
         "type": "github"
       },
       "original": {
@@ -140,11 +140,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1729333370,
-        "narHash": "sha256-NU+tYe3QWzDNpB8RagpqR3hNQXn4BNuBd7ZGosMHLL8=",
+        "lastModified": 1729417461,
+        "narHash": "sha256-p0j/sUs7noqZw0W+SEuZXskzOfgOH7yY80ksIM0fCi4=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "38279034170b1e2929b2be33bdaedbf14a57bfeb",
+        "rev": "8f38d8a4754cf673c2609c4ed399630db87e678b",
         "type": "github"
       },
       "original": {

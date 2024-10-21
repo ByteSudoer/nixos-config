@@ -2,7 +2,7 @@
 {
   services.flameshot = {
     enable = true;
-    package = pkgs.flameshot;
+    package = pkgs.flameshot-wayland;
 
     # Configuration to be saved in an INI file
     settings = {

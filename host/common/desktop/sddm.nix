@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  desktop,
+  ...
+}:
 {
   environment.systemPackages = [
     (pkgs.catppuccin-sddm.override {
@@ -22,10 +27,14 @@
       #   kdePackages.qtsvg
       #   kdePackages.qtdeclarative
       # ];
-      wayland = {
-        enable = true;
-        compositor = "weston";
-      };
+      wayland =
+        if desktop == "hyprland" then
+          {
+            enable = true;
+            compositor = "weston";
+          }
+        else
+          { };
     };
   };
   services.xserver = {

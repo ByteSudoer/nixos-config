@@ -1,7 +1,7 @@
 { desktop, pkgs, ... }:
 let
   copy_command =
-    if desktop == "hyprland" then "${pkgs.wl-clipboard}/bin/wl-copy" else "xcopy -selection clipboard";
+    if desktop == "hyprland" then "${pkgs.wl-clipboard}/bin/wl-copy" else "xclip -selection clipboard";
 in
 {
   programs.command-not-found.enable = false;

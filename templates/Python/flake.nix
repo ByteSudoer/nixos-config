@@ -15,7 +15,15 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            python3Full
+            python.withPackages
+            (
+              ps: with ps; [
+                boto3
+                pandas
+                requests
+              ]
+            )
+            python3
             #The PyPA recommended tool for installing Python packages
             python311Packages.pip
             virtualenv

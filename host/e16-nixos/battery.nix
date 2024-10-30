@@ -15,10 +15,10 @@
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 60;
+      CPU_MAX_PERF_ON_BAT = 70;
 
       #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 70; # 60 and bellow it starts to charge
+      START_CHARGE_THRESH_BAT0 = 70; # 70 and bellow it starts to charge
       STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
       #Configure CPU “turbo boost”
       CPU_BOOST_ON_AC = 1;

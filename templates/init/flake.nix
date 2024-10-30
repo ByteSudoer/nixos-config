@@ -19,8 +19,8 @@
         devShells.default = pkgs.mkShell {
           name = "devops";
           packages = with pkgs; [
-            taplo
-            terraform
+            curl
+            jq
           ];
           shellHook = ''
             export NIXPKGS_ALLOW_UNFREE=1

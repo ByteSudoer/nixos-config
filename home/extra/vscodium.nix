@@ -19,12 +19,17 @@
       enkia.tokyo-night
       jdinhlife.gruvbox
 
+      #Icons
+      vscode-icons-team.vscode-icons
+
     ];
     userSettings = {
       "files.autoSave" = "onFocusChange";
       "[nix]"."editor.tabSize" = 2;
       "telemetry.telemetryLevel" = "off";
       "redhat.telemetry.enabled" = false;
+      "workbench.colorTheme" = "Tokyo Night";
+      "editor.formatOnSave" = true;
     };
 
   };

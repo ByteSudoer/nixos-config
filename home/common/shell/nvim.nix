@@ -1,4 +1,10 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  lib,
+  colorscheme,
+  desktop,
+  ...
+}:
 
 {
   programs.neovim = {
@@ -74,7 +80,7 @@
         '';
 
       }
-      #Fidget Loading Bar 
+      #Fidget Loading Bar
       fidget-nvim
       #Comment Line and Blocks of code
       comment-nvim
@@ -92,7 +98,7 @@
       telescope-file-browser-nvim
       plenary-nvim
 
-      #Git 
+      #Git
       gitsigns-nvim
       vim-fugitive
 
@@ -121,26 +127,29 @@
 
       vim-nix
     ];
-    extraPackages = with pkgs; [
-      wl-clipboard
-      unstable.terraform-ls
-      unstable.actionlint
-      unstable.prettierd
-      unstable.marksman
-      unstable.nil
-      unstable.nixfmt-rfc-style
-      unstable.deadnix
-      unstable.statix
-      # unstable.nixpkgs-fmt
-      unstable.shellcheck
-      unstable.shfmt
-      unstable.lua-language-server
-      unstable.nodePackages_latest.bash-language-server
-      unstable.nodePackages_latest.yaml-language-server
-      unstable.nodePackages.typescript-language-server
-      unstable.stylua
-      unstable.luajitPackages.luacheck
-    ];
+    extraPackages =
+      with pkgs;
+      [
+        unstable.terraform-ls
+        unstable.actionlint
+        unstable.prettierd
+        unstable.marksman
+        unstable.nil
+        unstable.nixfmt-rfc-style
+        unstable.deadnix
+        unstable.statix
+        # unstable.nixpkgs-fmt
+        unstable.shellcheck
+        unstable.shfmt
+        unstable.lua-language-server
+        unstable.nodePackages_latest.bash-language-server
+        unstable.nodePackages_latest.yaml-language-server
+        unstable.nodePackages.typescript-language-server
+        unstable.stylua
+        unstable.luajitPackages.luacheck
+        unstable.black
+      ]
+      ++ lib.optional (desktop == "hyprland") [ wl-clipboard ];
 
   };
 }

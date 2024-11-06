@@ -1,8 +1,9 @@
-{ pkgs
-, lib
-, modulesPath
-, platform
-, ...
+{
+  pkgs,
+  lib,
+  modulesPath,
+  platform,
+  ...
 }:
 {
   imports = [
@@ -12,5 +13,6 @@
   ];
 
   services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
   nixpkgs.hostPlatform = lib.mkDefault "${platform}";
 }

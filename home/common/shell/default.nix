@@ -11,6 +11,7 @@
     ./fzf.nix
     ./gh.nix
     ./git.nix
+    ./info.nix
     ./jq.nix
     ./neofetch.nix
     ./nix.nix

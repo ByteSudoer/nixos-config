@@ -17,7 +17,10 @@
       "dumb.rdb"
       ".elixir_ls/"
       ".vscode/"
-      "npm-debug.log"
+      "*.log"
+      "*.out"
+      "dist/"
+      "result"
     ];
 
     aliases = {
@@ -26,8 +29,17 @@
       cmm = "commit --amend --no-edit";
       ll = "log --oneline";
       st = "status -sb";
+      graph = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
+    difftastic = {
+      display = "side-by-side-show-both";
+      enable = true;
+    };
+
     extraConfig = {
+      core = {
+        pager = "bat";
+      };
       init = {
         defaultBranch = "main";
       };

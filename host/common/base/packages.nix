@@ -24,5 +24,6 @@
     usbutils
     vim
     wget
+    zip
   ];
 }

@@ -17,7 +17,7 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
 
-  modifications = _final: prev: {
+  modifications = _final: _prev: {
     # ciscoPacketTracer8 = prev.ciscoPacketTracer8.overrideAttrs (_oldAttrs: rec {
     #   desktopItems = [
     #     (prev.makeDesktopItem {
@@ -33,9 +33,9 @@
     #     })
     #   ];
     # });
-    flameshot-wayland = prev.flameshot.overrideAttrs {
-      enableWlrSupport = true;
-    };
+    # flameshot-wayland = prev.flameshot.overrideAttrs {
+    #   enableWlrSupport = true;
+    # };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

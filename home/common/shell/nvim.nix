@@ -149,7 +149,7 @@
         unstable.luajitPackages.luacheck
         unstable.black
       ]
-      ++ lib.optional (desktop == "hyprland") [ wl-clipboard ];
+      ++ lib.optional (desktop == "hyprland") wl-clipboard;
 
   };
 }

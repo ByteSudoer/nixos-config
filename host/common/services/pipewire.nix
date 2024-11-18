@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
 {
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
   services.pipewire = {
     audio.enable = true;
     enable = true;

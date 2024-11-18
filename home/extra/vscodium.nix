@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, colorscheme, ... }:
+let
+  ColorScheme = if colorscheme == "dracula" then "Tokyo Night" else "Gruvbox Dark Hard";
+in
 {
   programs.vscode = {
     enable = true;
@@ -28,7 +31,7 @@
       "[nix]"."editor.tabSize" = 2;
       "telemetry.telemetryLevel" = "off";
       "redhat.telemetry.enabled" = false;
-      "workbench.colorTheme" = "Tokyo Night";
+      "workbench.colorTheme" = "${ColorScheme}";
       "editor.formatOnSave" = true;
     };
 

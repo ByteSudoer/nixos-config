@@ -11,6 +11,7 @@ in
       #Nix support
       bbenoist.nix
       jnoortheen.nix-ide
+      hashicorp.terraform
 
       #Vim KeyBinding
       vscodevim.vim

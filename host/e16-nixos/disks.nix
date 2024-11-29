@@ -1,10 +1,11 @@
-{ disks ? [ "/dev/nvme0n1" ]
-, ...
+{
+  disks ? [ "/dev/nvme0n1" ],
+  ...
 }:
 {
   disko.devices = {
     disk = {
-      vdb = {
+      nvme = {
         device = builtins.elemAt disks 0;
         type = "disk";
         content = {
@@ -20,7 +21,7 @@
               };
             };
             root = {
-              end = "-1G";
+              end = "-5G";
               content = {
                 type = "filesystem";
                 format = "ext4";
@@ -28,7 +29,7 @@
               };
             };
             encryptedSwap = {
-              size = "10M";
+              size = "100M";
               content = {
                 type = "swap";
                 randomEncryption = true;

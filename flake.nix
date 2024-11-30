@@ -2,7 +2,7 @@
   description = "ByteSudoer's NixOS Config";
   inputs = {
     #Stable Branch
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     #Unstable Branch
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -30,7 +30,7 @@
 
     #Manage Home Directory and ~/.config
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # hyprland = {
@@ -69,7 +69,7 @@
 
     let
       inherit (self) outputs;
-      stateVersion = "24.05";
+      stateVersion = "24.11";
       username = "bytesudoer";
       colorscheme = "dracula";
       desktop = "plasma";

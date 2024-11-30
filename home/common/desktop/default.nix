@@ -29,7 +29,7 @@
     xdg-utils
     xorg.xlsclients
     #WebCam
-    gnome.cheese
+    cheese
     gparted
     xfce.xfce4-appfinder
     kolourpaint

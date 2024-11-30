@@ -15,7 +15,7 @@
     # ./ngrok.nix
     # ./obs.nix
     ./obsidian.nix
-    # ./qbittorrent.nix
+    ./qbittorrent.nix
     # ./slack.nix
     ./spotify.nix
     ./utils.nix

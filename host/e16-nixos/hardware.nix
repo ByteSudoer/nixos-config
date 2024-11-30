@@ -32,8 +32,8 @@
     fprintd = {
       enable = true;
       package = pkgs.fprintd;
-      tod.enable = true;
-      tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
+      # tod.enable = true;
+      # tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
       # tod.driver = pkgs.libfprint-2-tod1-vfs0090; # driver for 2016 ThinkPads
       # tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
     };
@@ -52,10 +52,10 @@
     };
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
-    driSupport = true;
+    enable32Bit = true;
+    # driSupport = true;
     # extraPackages = with pkgs; [
     #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
     #   intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)

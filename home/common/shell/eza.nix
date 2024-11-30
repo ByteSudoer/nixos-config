@@ -5,6 +5,6 @@
     package = pkgs.eza;
     enableBashIntegration = true;
     git = true;
-    icons = true;
+    icons = "auto";
   };
 }

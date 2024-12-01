@@ -9,9 +9,9 @@
     ./feh.nix
     ./fonts.nix
     ./flameshot.nix
-    ./gtk.nix
+    # ./gtk.nix
     ./picom.nix
-    ./qt.nix
+    # ./qt.nix
     ./rofi.nix
     ./volumeicon.nix
     ./xdg.nix
@@ -29,7 +29,7 @@
     xdg-utils
     xorg.xlsclients
     #WebCam
-    cheese
+    gnome.cheese
     gparted
     xfce.xfce4-appfinder
     kolourpaint

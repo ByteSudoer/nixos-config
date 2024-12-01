@@ -2,7 +2,7 @@ _: {
   qt = {
     enable = true;
     platformTheme.name = "gtk";
-    style.name = "Dracula";
+    style.name = "Nordic";
   };
 
   # home = {

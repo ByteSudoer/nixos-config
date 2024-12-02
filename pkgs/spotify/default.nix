@@ -1,7 +1,7 @@
-{ spotify
-, rustPlatform
-, fetchFromGitHub
-,
+{
+  spotify,
+  rustPlatform,
+  fetchFromGitHub,
 }:
 let
   spotify-adblock = rustPlatform.buildRustPackage {
@@ -13,7 +13,7 @@ let
       rev = "22847a7bfa87edf4ca58ee950fd8977d20f0d337";
       hash = "sha256-5tZ+Y7dhzb6wmyQ+5FIJDHH0KqkXbiB259Yo7ATGjSU=";
     };
-    cargoSha256 = "sha256-VwYMDEbFhGmpWCrdh/Aa49vvalh42C6E3/t067mxmoI=";
+    cargoHash = "sha256-VwYMDEbFhGmpWCrdh/Aa49vvalh42C6E3/t067mxmoI=";
 
     patchPhase = ''
       substituteInPlace src/lib.rs \

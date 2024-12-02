@@ -34,6 +34,7 @@ in
       "redhat.telemetry.enabled" = false;
       "workbench.colorTheme" = "${ColorScheme}";
       "editor.formatOnSave" = true;
+      "workbench.iconTheme" = "vscode-icons";
     };
 
   };

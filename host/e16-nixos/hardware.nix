@@ -30,12 +30,12 @@
   };
   services = {
     fprintd = {
-      enable = true;
-      package = pkgs.fprintd;
-      # tod.enable = true;
+      enable = false;
+      package = pkgs.fprintd-tod;
+      tod.enable = true;
       # tod.driver = pkgs.libfprint-2-tod1-goodix; # Goodix driver module
       # tod.driver = pkgs.libfprint-2-tod1-vfs0090; # driver for 2016 ThinkPads
-      # tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
+      tod.driver = pkgs.libfprint-2-tod1-goodix-550a; # Goodix 550a driver (from Lenovo)
     };
   };
 
@@ -55,12 +55,13 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    # driSupport = true;
-    # extraPackages = with pkgs; [
-    #   intel-media-driver # LIBVA_DRIVER_NAME=iHD
-    #   intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-    #   libvdpau-va-gl
-    # ];
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      # intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      # libvdpau-va-gl
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
+
   };
   #  services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
 

@@ -65,6 +65,14 @@
   };
   #  services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
 
+  # security.pam.services.sudo = {
+  #   text = ''
+  #     auth       sufficient   pam_unix.so try_first_pass
+  #     auth       sufficient   pam_fprintd.so
+  #     auth       required     pam_deny.so
+  #   '';
+  # };
+
   #Enable firmware update service
   services.fwupd.enable = lib.mkDefault true;
   # Cooling management

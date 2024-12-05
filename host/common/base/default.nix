@@ -1,7 +1,8 @@
-{ hostname
-, pkgs
-, lib
-, ...
+{
+  hostname,
+  pkgs,
+  lib,
+  ...
 }:
 let
   # Break these packages out so they can be imported elsewhere as a common set
@@ -15,7 +16,6 @@ in
     ./console.nix
     ./fonts.nix
     ./locale.nix
-
     ../services/openssh.nix
   ];
 
@@ -30,9 +30,4 @@ in
     polkit.enable = true;
     rtkit.enable = true;
   };
-
-  # Create dirs for home-manager
-  # systemd.tmpfiles.rules = [
-  #   "d /nix/var/nix/profiles/per-user/${username} 0755 ${username} root"
-  # ];
 }

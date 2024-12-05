@@ -1,7 +1,8 @@
-{ desktop
-, hostname
-, lib
-, ...
+{
+  desktop,
+  hostname,
+  lib,
+  ...
 }:
 let
   isDesktop = builtins.isString desktop;

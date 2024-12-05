@@ -19,10 +19,6 @@
 
       (modulesPath + "/installer/scan/not-detected.nix")
       ./${hostname}
-
-      # (./. + "/${hostname}/boot.nix")
-      # (./. + "/${hostname}/hardware.nix")
-
       ./common/base
       ./common/users
     ]
@@ -34,10 +30,10 @@
 
     config = {
 
-      permittedInsecurePackages = [
-        "electron-19.1.9"
-        "electron-25.9.0"
-      ];
+      # permittedInsecurePackages = [
+      #   "electron-19.1.9"
+      #   "electron-25.9.0"
+      # ];
 
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfree = true;
@@ -63,7 +59,7 @@
   nix = {
     gc = {
       automatic = true;
-      options = "--delete-older-than 14d";
+      options = "--delete-older-than 21d";
     };
 
     # This will add each flake input as a registry

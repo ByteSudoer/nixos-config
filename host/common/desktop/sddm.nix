@@ -27,6 +27,11 @@
       #   kdePackages.qtsvg
       #   kdePackages.qtdeclarative
       # ];
+      settings = {
+        General = {
+          InputMethod = "";
+        };
+      };
       wayland =
         if desktop == "hyprland" then
           {

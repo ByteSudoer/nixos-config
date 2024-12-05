@@ -8,7 +8,7 @@
     # Configuration to be saved in an INI file
     settings = {
       General = {
-        savePath = "${config.home.homeDirectory}/Pictures/Screenshots";
+        savePath = "${config.home.homeDirectory}/Pictures/screenshots";
         startupLaunch = true;
         showDesktopNotification = true;
         saveAsFileExtension = ".png";

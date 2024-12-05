@@ -13,7 +13,7 @@
     # ./intellij.nix
     ./libreoffice.nix
     # ./ngrok.nix
-    # ./obs.nix
+    ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
     # ./slack.nix

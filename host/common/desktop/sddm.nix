@@ -20,13 +20,8 @@
       enable = true;
       package = lib.mkForce pkgs.kdePackages.sddm;
       theme = "catppuccin-mocha";
-      # "${import ../../../pkgs/sddm-themes/sddm-${colorscheme}.nix { inherit pkgs; }}";
       autoNumlock = true;
       enableHidpi = true;
-      # extraPackages = with pkgs;[
-      #   kdePackages.qtsvg
-      #   kdePackages.qtdeclarative
-      # ];
       settings = {
         General = {
           InputMethod = "";

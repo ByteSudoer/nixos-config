@@ -21,8 +21,4 @@
     ./utils.nix
     ./vscodium.nix
   ];
-
-  # home.packages = with pkgs;[
-  #   linux-wifi-hotspot
-  # ];
 }

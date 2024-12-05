@@ -19,6 +19,8 @@
     ./nvim.nix
     ./ripgrep.nix
     ./scripts.nix
+    ./sops.nix
+    ./ssh_block.nix
     ./starship.nix
     ./tmux.nix
     ./xdg.nix

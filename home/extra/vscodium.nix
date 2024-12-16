@@ -26,6 +26,9 @@ in
       #Icons
       vscode-icons-team.vscode-icons
 
+      # Github Actions
+      github.vscode-github-actions
+
     ];
     userSettings = {
       "files.autoSave" = "onFocusChange";
@@ -35,6 +38,27 @@ in
       "workbench.colorTheme" = "${ColorScheme}";
       "editor.formatOnSave" = true;
       "workbench.iconTheme" = "vscode-icons";
+
+      #Terraform Formatting
+      "[terraform]" = {
+        "editor.defaultFormatter" = "hashicorp.terraform";
+        "editor.formatOnSave" = false;
+        "editor.codeActionsOnSave" = {
+          "source.formatAll.terraform" = true;
+        };
+      };
+      "[terraform-vars]" = {
+        "editor.defaultFormatter" = "hashicorp.terraform";
+        "editor.formatOnSave" = false;
+        "editor.codeActionsOnSave" = {
+          "source.formatAll.terraform" = true;
+        };
+      };
+      "terraform" = {
+        "experimentalFeatures.prefillRequiredFields" = true;
+        "experimentalFeatures.validateOnSave" = true;
+        "editor.suggest.preview" = true;
+      };
     };
 
   };

@@ -11,10 +11,8 @@
     userDirs = {
       enable = true;
       createDirectories = lib.mkDefault true;
-
       download = config.home.homeDirectory + "/Downloads";
       pictures = config.home.homeDirectory + "/Pictures";
-
       desktop = config.home.homeDirectory;
       documents = config.home.homeDirectory + "/Documents";
       music = config.home.homeDirectory + "/Music";
@@ -25,8 +23,14 @@
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
       };
-
     };
 
+    mimeApps = {
+      enable = false;
+      defaultApplications = {
+        "text/html" = "firefox.desktop";
+      };
+
+    };
   };
 }

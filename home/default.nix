@@ -15,6 +15,7 @@
   imports =
     [
       # If you want to use modules your own flake exports (from modules/home-manager):
+      outputs.homeManagerModules.drawio
       outputs.homeManagerModules.ngrok
       outputs.homeManagerModules.nix-init
 

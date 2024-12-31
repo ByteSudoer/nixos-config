@@ -20,7 +20,7 @@ in
       defaultText = lib.literalExpression "pkgs.ghostty";
       description = "The ghostty package to install";
     };
-    settings = lib.mkOption {
+    config = lib.mkOption {
       inherit (tomlFormat) type;
       default = { };
       example = lib.litteralExpression '''';
@@ -34,8 +34,8 @@ in
   };
   config = lib.mkIf cfg.enable {
     home.packages = [ cfg.package ];
-    xdg.configFile."ghostty/config" = lib.mkIf (cfg.settings != { }) {
-      source = (tomlFormat.generate "config" cfg.settings);
+    xdg.configFile."ghostty/config" = lib.mkIf (cfg.config != { }) {
+      source = (tomlFormat.generate "config" cfg.config);
     };
   };
 }

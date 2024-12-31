@@ -5,6 +5,15 @@
   desktop,
   ...
 }:
+let
+  colorPalette =
+    if colorscheme == "dracula" then
+      "dracula"
+    else if colorscheme == "gruvbox" then
+      "gruvbox"
+    else
+      "tokyonight-storm";
+in
 
 {
   programs.neovim = {
@@ -21,7 +30,7 @@
 
     extraConfig = ''
 
-      colorscheme ${colorscheme}
+      colorscheme ${colorPalette}
       luafile $HOME/nixos-config/config/nvim/options.lua
       luafile $HOME/nixos-config/config/nvim/autotag.lua
       luafile $HOME/nixos-config/config/nvim/comment.lua
@@ -45,7 +54,6 @@
       luafile $HOME/nixos-config/config/nvim/devicons.lua
       luafile $HOME/nixos-config/config/nvim/which_key.lua
 
-
     '';
     # extraLuaConfig = ''
     #
@@ -55,6 +63,8 @@
       #Color Scheme
       gruvbox-nvim
       dracula-nvim
+      tokyonight-nvim
+      transparent-nvim
       nvim-colorizer-lua
       # Nvim Tree
       nvim-tree-lua
@@ -74,7 +84,7 @@
         config = ''
           require("lualine").setup({
             options= {
-              theme = "${colorscheme}",
+              theme = "${colorPalette}",
             },
           })
         '';

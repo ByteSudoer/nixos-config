@@ -3,7 +3,7 @@
     enable = true;
     shortcuts = {
       "ActivityManager"."switch-to-activity-b0b334e0-2a65-468c-b086-035bacaddc9a" = [ ];
-      "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = ",none,Switch to Last-Used Keyboard Layout";
+      "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = "Meta+Alt+L,none,Switch to Last-Used Keyboard Layout";
       "KDE Keyboard Layout Switcher"."Switch to Next Keyboard Layout" = [ ];
       "kaccess"."Toggle Screen Reader On and Off" = "Meta+Alt+S";
       "kcm_touchpad"."Disable Touchpad" = "Touchpad Off";
@@ -19,7 +19,7 @@
       "kmix"."mic_mute" = ["Microphone Mute" "" "Meta+Volume Mute\\, ,Microphone Mute" "Meta+Volume Mute,Mute Microphone"];
       "kmix"."mute" = "Volume Mute";
       "ksmserver"."Halt Without Confirmation" = [ ];
-      "ksmserver"."Lock Session" = ["Meta+L" "" "Screensaver\\, ,Meta+L" "Screensaver,Lock Session"];
+      "ksmserver"."Lock Session" = ["Screensaver\\, Meta+L" "Screensaver\\, ,Meta+L" "Screensaver,Lock Session"];
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
       "ksmserver"."Log Out Without Confirmation" = [ ];
       "ksmserver"."LogOut" = [ ];
@@ -29,7 +29,7 @@
       "kwin"."Activate Window Demanding Attention" = "Meta+Ctrl+A";
       "kwin"."Cycle Overview" = [ ];
       "kwin"."Cycle Overview Opposite" = [ ];
-      "kwin"."Decrease Opacity" = "none,,Decrease Opacity of Active Window by 5%";
+      "kwin"."Decrease Opacity" = [ ];
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
       "kwin"."ExposeAll" = ["Ctrl+F10" "" "Launch (C)\\, ,Ctrl+F10" "Launch (C),Toggle Present Windows (All desktops)"];
@@ -138,8 +138,8 @@
       "kwin"."Window Quick Tile Bottom" = "Meta+Down";
       "kwin"."Window Quick Tile Bottom Left" = [ ];
       "kwin"."Window Quick Tile Bottom Right" = [ ];
-      "kwin"."Window Quick Tile Left" = "Meta+Left";
-      "kwin"."Window Quick Tile Right" = "Meta+Right";
+      "kwin"."Window Quick Tile Left" = ["Meta+H" "Meta+Left\\, Meta+Left\\, ,Meta+Left,Quick Tile Window to the Left"];
+      "kwin"."Window Quick Tile Right" = ["" "Meta+Right\\, Meta+Right\\, ,Meta+Right,Quick Tile Window to the Right"];
       "kwin"."Window Quick Tile Top" = "Meta+Up";
       "kwin"."Window Quick Tile Top Left" = [ ];
       "kwin"."Window Quick Tile Top Right" = [ ];
@@ -183,7 +183,7 @@
       "kwin"."view_actual_size" = ",Meta+0,Zoom to Actual Size";
       "kwin"."view_zoom_in" = ["Meta++" "" "Meta+=\\, Zoom In,Meta++" "Meta+=,Zoom In"];
       "kwin"."view_zoom_out" = "Meta+-";
-      "mediacontrol"."mediavolumedown" = "none,,Media volume down";
+      "mediacontrol"."mediavolumedown" = "\\, ,,Media volume down";
       "mediacontrol"."mediavolumeup" = [ ];
       "mediacontrol"."nextmedia" = "Media Next";
       "mediacontrol"."pausemedia" = "Media Pause";
@@ -222,8 +222,8 @@
       "plasmashell"."cyclePrevAction" = [ ];
       "plasmashell"."edit_clipboard" = [ ];
       "plasmashell"."manage activities" = "Meta+Q";
-      "plasmashell"."next activity" = ",none,Walk through activities";
-      "plasmashell"."previous activity" = ",none,Walk through activities (Reverse)";
+      "plasmashell"."next activity" = [ ];
+      "plasmashell"."previous activity" = [ ];
       "plasmashell"."repeat_action" = "Meta+Ctrl+R";
       "plasmashell"."show dashboard" = "Ctrl+F12";
       "plasmashell"."show-barcode" = [ ];
@@ -232,8 +232,9 @@
       "plasmashell"."switch to next activity" = [ ];
       "plasmashell"."switch to previous activity" = [ ];
       "plasmashell"."toggle do not disturb" = [ ];
-      "services/Alacritty.desktop"."New" = "Meta+Return";
-      "services/firefox.desktop"."_launch" = "Meta+W";
+      "services/Alacritty.desktop"."_launch" = "Meta+Return";
+      "services/com.mitchellh.ghostty.desktop"."new-window" = "Meta+Return";
+      "services/firefox.desktop"."new-window" = "Meta+W";
       "services/lock.desktop"."_launch" = "F12";
       "services/net.local.lock.desktop"."_launch" = "F12";
       "services/org.kde.spectacle.desktop"."RecordWindow" = [ ];
@@ -271,6 +272,8 @@
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "839,584";
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
+      "kdeglobals"."General"."TerminalApplication" = "ghostty";
+      "kdeglobals"."General"."TerminalService" = "com.mitchellh.ghostty.desktop";
       "kdeglobals"."General"."XftHintStyle" = "hintslight";
       "kdeglobals"."General"."XftSubPixel" = "rgb";
       "kdeglobals"."General"."fixed" = "JetBrains Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
@@ -835,7 +838,10 @@
       "khotkeysrc"."WM"."inactiveBackgroundx5b$dx5d" = "";
       "khotkeysrc"."WM"."inactiveBlendx5b$dx5d" = "";
       "khotkeysrc"."WM"."inactiveForegroundx5b$dx5d" = "";
+      "klipperrc"."General"."IgnoreImages" = false;
+      "klipperrc"."General"."MaxClipItems" = 100;
       "kscreenlockerrc"."Daemon"."Autolock" = false;
+      "kscreenlockerrc"."Daemon"."Timeout" = 0;
       "kscreenlockerrc"."Greeter.Wallpaper.org.kde.image.General"."Image" = "/nix/store/a7jszbwh7l4k0zvghkssav97qjnj6k1b-plasma-workspace-wallpapers-5.27.10/share/wallpapers/Honeywave/";
       "kscreenlockerrc"."Greeter.Wallpaper.org.kde.image.General"."PreviewImage" = "/nix/store/a7jszbwh7l4k0zvghkssav97qjnj6k1b-plasma-workspace-wallpapers-5.27.10/share/wallpapers/Honeywave/";
       "kscreenlockerrc"."Greeter/Wallpaper/org.kde.image/General"."Image" = "/nix/store/qqw9866gj0ic7qlxs54xrilh57bi0wfj-plasma-workspace-wallpapers-6.2.4/share/wallpapers/ScarletTree/";
@@ -853,19 +859,19 @@
       "kwinrc"."Tiling.12793ed5-1fb0-5329-b373-cd3f1bacd48e"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling.213a9620-187e-58a6-b80b-85d8fb95dfce"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/0b82a555-e5cc-523d-991e-eb0e4286ea46"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
-      "kwinrc"."Tiling/12793ed5-1fb0-5329-b373-cd3f1bacd48e"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
+      "kwinrc"."Tiling/12793ed5-1fb0-5329-b373-cd3f1bacd48e"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
       "kwinrc"."Tiling/213a9620-187e-58a6-b80b-85d8fb95dfce"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
-      "kwinrc"."Tiling/27b8a485-dede-5bbb-9bd0-0cfc52449f58"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
+      "kwinrc"."Tiling/27b8a485-dede-5bbb-9bd0-0cfc52449f58"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/5516a996-4d13-51ae-9c18-57c7c8ed61a7"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
       "kwinrc"."Tiling/58ca410b-ce44-58d6-82b9-fefe44aba0e3"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/5b7a5ba4-43cc-5910-8e98-f358f9d54b43"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
-      "kwinrc"."Tiling/68b7b471-fc7d-5fd9-8502-b3930c280d09"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
+      "kwinrc"."Tiling/68b7b471-fc7d-5fd9-8502-b3930c280d09"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/720c5b46-3e59-5df9-9a22-986b8d1d58c1"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/7caf90f0-2b1d-5e97-b62f-e867e165c2f1"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
-      "kwinrc"."Tiling/b0247fc9-b7bd-5754-9da6-b591acabbe69"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
+      "kwinrc"."Tiling/b0247fc9-b7bd-5754-9da6-b591acabbe69"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/bbf69504-1b34-5cc1-8dce-32920793be98"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/c46800a2-08cc-5778-9b92-4f49ac8d07a9"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
-      "kwinrc"."Tiling/f4b947e8-c2f9-5119-8f53-e5642e11527d"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":\x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}\x5d}";
+      "kwinrc"."Tiling/f4b947e8-c2f9-5119-8f53-e5642e11527d"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Tiling/fb1825c7-a6c3-5674-9302-5deb8c345ca4"."tiles" = "{\"layoutDirection\":\"horizontal\",\"tiles\":x5b{\"width\":0.25},{\"width\":0.5},{\"width\":0.25}x5d}";
       "kwinrc"."Xwayland"."Scale" = 1;
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";

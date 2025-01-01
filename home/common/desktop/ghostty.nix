@@ -11,10 +11,15 @@ in
 
 {
   programs.ghostty = {
-    enable = false;
+    enable = true;
     package = pkgs.unstable.ghostty;
     config = {
       theme = "${theme}";
+
+      #Mouse config
+      mouse-hide-while-typing = true;
+      mouse-shift-capture = true;
+      mouse-scroll-multiplier = 1;
 
       #GTK config
       gtk-titlebar = false;

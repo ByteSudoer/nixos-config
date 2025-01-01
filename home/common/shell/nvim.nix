@@ -49,6 +49,7 @@ in
       luafile $HOME/nixos-config/config/nvim/mappings.lua
       luafile $HOME/nixos-config/config/nvim/bufferline.lua
       luafile $HOME/nixos-config/config/nvim/treesitter.lua
+      luafile $HOME/nixos-config/config/nvim/transparent.lua
       luafile $HOME/nixos-config/config/nvim/toggleterm.lua
       luafile $HOME/nixos-config/config/nvim/utils.lua
       luafile $HOME/nixos-config/config/nvim/devicons.lua

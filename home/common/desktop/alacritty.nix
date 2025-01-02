@@ -1,7 +1,10 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  colorscheme,
+  font,
+  ...
+}:
 let
-  font = "JetBrainsMono";
-
   # Define the color schemes
   colorConfig =
     if colorscheme == "gruvbox" then

@@ -72,6 +72,10 @@
       username = "bytesudoer";
       colorscheme = "dracula";
       desktop = "plasma";
+      terminal = "alacritty";
+      font = "JetBrainsMono";
+      browser = "firefox";
+
       libx = import ./lib {
         inherit
           inputs
@@ -79,6 +83,9 @@
           stateVersion
           username
           colorscheme
+          terminal
+          font
+          browser
           ;
       };
     in
@@ -102,6 +109,9 @@
           hostname = "e16-nixos";
           desktop = "${desktop}";
           colorscheme = "${colorscheme}";
+          terminal = "${terminal}";
+          font = "${font}";
+          browser = "${browser}";
           extra = "yes";
         };
         msi-nixos = libx.mkSystem {

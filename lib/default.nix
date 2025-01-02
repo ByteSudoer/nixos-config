@@ -1,9 +1,13 @@
-{ inputs
-, outputs
-, stateVersion
-, username
-, colorscheme
-, ...
+{
+  inputs,
+  outputs,
+  stateVersion,
+  username,
+  colorscheme,
+  terminal,
+  browser,
+  font,
+  ...
 }:
 let
   helpers = import ./helpers.nix {
@@ -13,6 +17,9 @@ let
       stateVersion
       username
       colorscheme
+      terminal
+      font
+      browser
       ;
   };
 in

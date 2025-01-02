@@ -1,13 +1,15 @@
-{ pkgs
-, lib
-, config
-, colorscheme
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  colorscheme,
+  terminal,
+  font,
+  browser,
+  ...
 }:
 let
   inherit (config.xsession.windowManager.i3.config) modifier;
-  terminal = "alacritty";
-  browser = "firefox";
   altModifier = "Mod1";
   gapValue = 5;
 
@@ -107,7 +109,7 @@ in
     package = pkgs.i3;
 
     config = {
-      terminal = "alacritty";
+      terminal = "${terminal}";
       ## Super Key
       modifier = "Mod4";
 
@@ -127,7 +129,7 @@ in
         };
       };
       fonts = {
-        names = [ "JetBrains Mono" ];
+        names = [ "${font}" ];
         style = "Regular";
         size = 11.0;
       };
@@ -256,9 +258,9 @@ in
         "${modifier}+4" = "workspace number ${workspace4}";
       };
       assigns = {
-        "${workspace2}" = [{ class = "firefox$"; }];
-        "${workspace3}" = [{ class = "Spotify"; }];
-        "${workspace4}" = [{ class = "Thunar"; }];
+        "${workspace2}" = [ { class = "firefox$"; } ];
+        "${workspace3}" = [ { class = "Spotify"; } ];
+        "${workspace4}" = [ { class = "Thunar"; } ];
         "${workspace6}" = [
           { class = "Virt-manager"; }
           { class = "VirtualBox Manager"; }

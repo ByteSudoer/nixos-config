@@ -1,4 +1,10 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  colorscheme,
+  terminal,
+  browser,
+  ...
+}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -34,8 +40,8 @@
 
       # KeyBorad Bindings
       bind = [
-        "$mod,return,exec,alacritty"
-        "$mod,w,exec,firefox"
+        "$mod,return,exec,${terminal}"
+        "$mod,w,exec,${browser}"
         "$mod SHIFT,return,exec,${pkgs.kdePackages.dolphin}/bin/dolphin"
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
@@ -126,8 +132,8 @@
         "float,title:(Picture-in-Picture)"
 
         ## Opacity Rules
-        "opacity 0.8 0.8,class:^(Alacritty)$"
-        "opacity 0.8 0.8,class:^(firefox)$"
+        "opacity 0.8 0.8,class:^(${terminal})$"
+        "opacity 0.8 0.8,class:^(${browser})$"
         "opacity 0.8 0.8,class:^(thunar)$"
         "opacity 0.8 0.8,class:^(dolphin)$"
         "opacity 0.8 0.8,class:^(Spotify)$"
@@ -149,9 +155,9 @@
 
         "size 800 450, title:(Picture-in-Picture)"
         "pin, title:^(Picture-in-Picture)$"
-        "float, title:^(Firefox)$"
-        "size 800 450, title:(Firefox)"
-        " pin, title:^(Firefox)$"
+        "float, title:^(${browser})$"
+        "size 800 450, title:(${browser})"
+        " pin, title:^(${browser})$"
 
       ];
 

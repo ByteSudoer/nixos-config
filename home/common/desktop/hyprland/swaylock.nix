@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, font, ... }:
 {
   programs.swaylock = {
     enable = true;
@@ -8,7 +8,7 @@
       image = "$HOME/nixos-config/Wallpapers/gruvbox/random.jpg";
 
       #Configure Font
-      font = "JetBrains Mono";
+      font = "${font}";
       font-size = 14;
 
     };

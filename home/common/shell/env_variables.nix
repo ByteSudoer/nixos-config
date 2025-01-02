@@ -1,8 +1,8 @@
-{ config, ... }:
+{ config, terminal, ... }:
 {
-  systemd.user.sessionVariables = rec {
+  systemd.user.sessionVariables = {
 
-    TERM = "alacritty";
+    TERM = "${terminal}";
     EDITOR = "nvim";
     VISUAL = "nvim";
     MANPAGER = "nvim +Man!";

@@ -1,4 +1,9 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  colorscheme,
+  font,
+  ...
+}:
 let
   icons_path = "/home/bytesudoer/nixos-config/config/icons";
   background-color-main-window = if colorscheme == "dracula" then "#1E1E2E" else "#32302F";
@@ -52,7 +57,7 @@ in
     style = ''
             /** ********** Fonts ********** **/
         * {
-          font-family: "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
+          font-family: "${font}", "Iosevka Nerd Font", archcraft, sans-serif;
           font-size: 14px;
           font-weight: bold;
       }

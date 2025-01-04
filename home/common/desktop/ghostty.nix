@@ -1,4 +1,9 @@
-{ pkgs, colorscheme, ... }:
+{
+  pkgs,
+  colorscheme,
+  font,
+  ...
+}:
 let
   theme =
     if colorscheme == "dracula" then
@@ -22,7 +27,7 @@ in
 
       ############Font config
       font-size = 11;
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = "${font}";
 
       ############Global config
       title = "ByteSudoer";
@@ -49,21 +54,21 @@ in
       window-theme = "system";
       desktop-notifications = true;
       bold-is-bright = true;
+      window-decoration = false;
 
     };
 
     #Keybindings config
     clearDefaultKeybindings = true;
     keybindings = {
-      "ctrl+space>r" = "reload_config";
-      #Tab Navigation
-      "ctrl+space>c" = "new_tab";
-      "ctrl+space>h" = "previous_tab";
-      "ctrl+space>l" = "next_tab";
+      # "ctrl+space>r" = "reload_config";
+      # #Tab Navigation
+      # "ctrl+space>c" = "new_tab";
+      # "ctrl+space>h" = "previous_tab";
+      # "ctrl+space>l" = "next_tab";
       #Font size Manipulation
       "ctrl+shift+plus" = "increase_font_size:1";
       "ctrl+shift+minus" = "decrease_font_size:1";
-
     };
   };
 }

@@ -13,36 +13,15 @@ in
 {
   programs.plasma = {
     enable = true;
-    #   immutableByDefault = true;
-    #   overrideConfig = true;
-    #
-    hotkeys.commands = {
-      "launch-web-browser" = {
-        name = "Launch Browser";
-        key = "Meta+w";
-        command = "${browser}";
-      };
-      "launch-termainl" = {
-        name = "Launch Terminal";
-        key = "Meta+Return";
-        command = "${terminal}";
-      };
-      "launch-file-manager" = {
-        name = "Launch File Manager";
-        key = "Meta+Shift+Return";
-        command = "thunar";
-      };
-      "launch-xfce-app-finder" = {
-        name = "Launch XFCE app finder";
-        key = "Meta+<";
-        command = "xfce4-appfinder";
-      };
-      "custom-lock-screen" = {
-        name = "Lock Screen with betterlockscreen";
-        key = "F12";
-        command = "lock";
-      };
-    };
+    # immutableByDefault = true;
+    # overrideConfig = true;
+    # hotkeys.commands = {
+    #   "custom-lock-screen" = {
+    #     name = "Lock Screen with betterlockscreen";
+    #     key = "F12";
+    #     command = "lock";
+    #   };
+    # };
     input = {
       keyboard = {
         numlockOnStartup = "on";
@@ -57,14 +36,68 @@ in
         ];
       };
     };
-    shortcuts = {
-      kwin = {
-        "Quick Tile Window to the Left" = "Meta+H";
-        "Quick Tile Window to the Right" = "Meta+L";
-        "Quick Tile Window to the Up" = "Meta+K";
-        "Quick Tile Window to the Down" = "Meta+J";
-      };
-    };
+    # shortcuts = {
+    #   "${browser}.desktop" = {
+    #     "_launch" = "Meta+w";
+    #   };
+    #   "${terminal}.desktop" = {
+    #     "_launch" = "Meta+Return";
+    #   };
+    #   "xfce4-appinder.desktop" = {
+    #     "_launch" = "Meta+<";
+    #   };
+    #   "thunar.desktop" = {
+    #     "_launch" = "Meta+Shift+Return";
+    #   };
+    #
+    #   kwin = {
+    #     "Expose" = "Meta+,";
+    #     "Quick Tile Window to the Down" = "Meta+J";
+    #     "Quick Tile Window to the Left" = "Meta+H";
+    #     "Quick Tile Window to the Right" = "Meta+L";
+    #     "Quick Tile Window to the Up" = "Meta+K";
+    #   };
+    # };
+    # Panels
+    # panels = [
+    #   {
+    #     alignment = "center";
+    #     floating = true;
+    #     hiding = "normalpanel";
+    #     height = 34;
+    #     lengthMode = "fill";
+    #     location = "bottom";
+    #     screen = 0;
+    #     widgets = [
+    #       "org.kde.plasma.kickoff"
+    #       "org.kde.plasma.pager"
+    #       "org.kde.plasma.icontasks"
+    #       "org.kde.plasma.marginsseparator"
+    #       "org.kde.plasma.systemtray"
+    #       "org.kde.plasma.digitalclock"
+    #       "org.kde.plasma.showdesktop"
+    #     ];
+    #   }
+    #   {
+    #     alignment = "center";
+    #     floating = true;
+    #     hiding = "normalpanel";
+    #     height = 34;
+    #     lengthMode = "fill";
+    #     location = "bottom";
+    #     screen = 1;
+    #     widgets = [
+    #       "org.kde.plasma.kickoff"
+    #       "org.kde.plasma.pager"
+    #       "org.kde.plasma.icontasks"
+    #       "org.kde.plasma.marginsseparator"
+    #       "org.kde.plasma.systemtray"
+    #       "org.kde.plasma.digitalclock"
+    #       "org.kde.plasma.showdesktop"
+    #     ];
+    #
+    #   }
+    # ];
     fonts = {
       general = {
         family = "${selected_font}";
@@ -103,20 +136,31 @@ in
       };
     };
     workspace = {
-      colorScheme = "Nordic-darker";
+      colorScheme = "BreezeDark";
       cursor = {
         size = 20;
-        theme = "Nordic-cursors";
+        theme = "Breeze";
       };
       iconTheme = "Breeze Dark";
-
-      wallpaperSlideShow = {
-        interval = 300;
-        path = /home/${username}/nixos-config/Wallpapers/${colorscheme};
+      # wallpaperSlideShow = {
+      #   interval = 300;
+      #   path = /home/${username}/nixos-config/Wallpapers/${colorscheme};
+      # };
+      # splashScreen = {
+      #   theme = "Breeze";
+      # };
+    };
+    # Config files
+    configFile = {
+      #Notification
+      plasmanotifyrc = {
+        Notifications = {
+          PopupPosition = "TopRight";
+        };
       };
-
     };
   };
+  # Next configure Panels
   # Okular PDF viewer
   programs.okular = {
     enable = true;

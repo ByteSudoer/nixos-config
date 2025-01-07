@@ -2,11 +2,11 @@
 let
   palette =
     if colorscheme == "dracula" then
-      "dracula"
+      "tokyo-night"
     else if colorscheme == "gruvbox" then
       "gruvbox_material_dark"
     else
-      "default";
+      "Default";
 in
 {
   programs.btop = {
@@ -15,6 +15,9 @@ in
     settings = {
       color_theme = "${palette}";
       update_ms = 1500;
+      truecolor = true;
+      rounded_corners = true;
+      shown_boxes = "proc cpu mem net";
     };
   };
 }

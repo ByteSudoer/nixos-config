@@ -8,6 +8,9 @@ all: clean format check
 
 build:
 	sudo nixos-rebuild switch --flake .#${HOSTNAME} && notify-send "Update Done"
+
+build-debug:
+	sudo nixos-rebuild switch --flake .#${HOSTNAME} --show-trace && notify-send "Update Done with Debug ON"
 check:
 	nix flake check
 clean:

@@ -23,6 +23,15 @@ in
       enkia.tokyo-night
       jdinhlife.gruvbox
 
+      #Formatting
+      charliermarsh.ruff
+
+      #Python
+      ms-python.python
+
+      #Spell Checker
+      streetsidesoftware.code-spell-checker
+
       #Icons
       vscode-icons-team.vscode-icons
 
@@ -35,9 +44,21 @@ in
       "[nix]"."editor.tabSize" = 2;
       "telemetry.telemetryLevel" = "off";
       "redhat.telemetry.enabled" = false;
-      "workbench.colorTheme" = "${ColorScheme}";
-      "editor.formatOnSave" = true;
-      "workbench.iconTheme" = "vscode-icons";
+
+      "workbench" = {
+        "colorTheme" = "${ColorScheme}";
+        "iconTheme" = "vscode-icons";
+        "list" = {
+          "smoothScrolling" = true;
+        };
+      };
+
+      "editor" = {
+        "formatOnSave" = true;
+        "smoothScrolling" = true;
+        "cursorBlinking" = "smooth";
+        "cursorSmoothCaretAnnimation" = "on";
+      };
 
       #Terraform Formatting
       "[terraform]" = {
@@ -59,6 +80,56 @@ in
         "experimentalFeatures.validateOnSave" = true;
         "editor.suggest.preview" = true;
       };
+
+      #Python & Notebook linting and Formatting
+      "[python]" = {
+        "editor.formatOnSave" = true;
+        "editor.codeActionsOnSave" = {
+          "source.fixAll" = "explicit";
+          "source.organizeImports" = "explicit";
+        };
+        "editor.defaultFormatter" = "charliermarsh.ruff";
+      };
+      "notebook.formatOnSave.enabled" = true;
+      "notebook.codeActionsOnSave" = {
+        "notebook.source.fixAll" = "explicit";
+        "notebook.source.organizeImports" = "explicit";
+      };
+
+      # Spell Checker Configuration
+      "cSpell.enabled" = true;
+      "cSpell.language" = "en,fr";
+      "cSpell.diagnosticLevel" = "Information";
+      "cSpell.maxNumberOfProblems" = 100;
+      "cSpell.numSuggestions" = 8;
+      "cSpell.minWordLength" = 4;
+      "cSpell.enabledFileTypes" = [
+        "bash"
+        "c"
+        "csharp"
+        "go"
+        "javascript"
+        "javascriptreact"
+        "markdown"
+        "php"
+        "plaintext"
+        "python"
+        "rust"
+        "sql"
+        "typescript"
+        "typescriptreact"
+        "yaml"
+      ];
+      "cSpell.ignorePaths" = [
+        "node_modules"
+        "**/node_modules"
+        "**/node_modules/**"
+        "node_modules/**"
+        "vscode-extension"
+        ".git"
+        "*.dll"
+        "**/*.dll"
+      ];
     };
 
   };

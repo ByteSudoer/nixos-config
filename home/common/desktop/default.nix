@@ -9,7 +9,6 @@
     ./feh.nix
     ./fonts.nix
     ./flameshot.nix
-    ./ghostty.nix
     # ./gtk.nix
     ./picom.nix
     # ./qt.nix

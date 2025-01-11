@@ -70,9 +70,10 @@
       inherit (self) outputs;
       stateVersion = "24.11";
       username = "bytesudoer";
-      colorscheme = "dracula";
-      desktop = "plasma";
+      colorscheme = "gruvbox";
+      desktop = "hyprland";
       terminal = "alacritty";
+      filemanager = "thunar";
       font = "JetBrainsMono";
       browser = "firefox";
 
@@ -86,6 +87,7 @@
           terminal
           font
           browser
+          filemanager
           ;
       };
     in
@@ -112,6 +114,7 @@
           terminal = "${terminal}";
           font = "${font}";
           browser = "${browser}";
+          filemanager = "${filemanager}";
           extra = "yes";
         };
         msi-nixos = libx.mkSystem {

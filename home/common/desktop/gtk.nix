@@ -5,12 +5,12 @@ let
     if colorscheme == "dracula" then
       {
         cursorTheme = {
-          package = pkgs.nordic;
-          name = "Norcdic";
+          package = pkgs.dracula-theme;
+          name = "Dracula-cursors";
         };
         theme = {
-          package = pkgs.nordic;
-          name = "Nordic";
+          package = pkgs.dracula-theme;
+          name = "Dracula";
         };
         iconTheme = {
           package = pkgs.dracula-icon-theme;
@@ -40,8 +40,8 @@ in
 {
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.nordic;
-    name = "Nordic";
+    package = pkgs.dracula-theme;
+    name = "Dracula-cursors";
     size = 16;
     x11.enable = true;
   };

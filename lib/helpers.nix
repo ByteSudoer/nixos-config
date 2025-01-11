@@ -6,6 +6,7 @@
   terminal,
   font,
   browser,
+  filemanager,
   ...
 }:
 let
@@ -81,6 +82,7 @@ in
       terminal ? "alacritty",
       font ? "JetBrainsMono",
       browser ? null,
+      filemanager ? null,
       colorscheme ? "dracula",
       platform ? "x86_64-linux",
     }:
@@ -97,6 +99,7 @@ in
           terminal
           font
           browser
+          filemanager
           extra
           fs
           colorscheme
@@ -127,6 +130,7 @@ in
                 colorscheme
                 terminal
                 browser
+                filemanager
                 font
                 ;
               username = user;

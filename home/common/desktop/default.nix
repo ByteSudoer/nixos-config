@@ -9,9 +9,9 @@
     ./feh.nix
     ./fonts.nix
     ./flameshot.nix
-    # ./gtk.nix
+    ./gtk.nix
     ./picom.nix
-    # ./qt.nix
+    ./qt.nix
     ./rofi.nix
     ./volumeicon.nix
     ./xdg.nix

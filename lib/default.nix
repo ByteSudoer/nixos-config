@@ -7,6 +7,7 @@
   terminal,
   browser,
   font,
+  filemanager,
   ...
 }:
 let
@@ -20,6 +21,7 @@ let
       terminal
       font
       browser
+      filemanager
       ;
   };
 in

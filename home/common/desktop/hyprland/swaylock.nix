@@ -9,7 +9,7 @@
 
       #Configure Font
       font = "${font}";
-      font-size = 14;
+      font-size = 20;
 
     };
   };

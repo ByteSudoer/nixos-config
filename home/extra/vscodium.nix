@@ -23,11 +23,10 @@ in
       enkia.tokyo-night
       jdinhlife.gruvbox
 
-      #Formatting
-      charliermarsh.ruff
-
       #Python
       ms-python.python
+      ms-python.black-formatter
+      charliermarsh.ruff
 
       #Spell Checker
       streetsidesoftware.code-spell-checker
@@ -86,10 +85,11 @@ in
         "editor.formatOnSave" = true;
         "editor.codeActionsOnSave" = {
           "source.fixAll" = "explicit";
-          "source.organizeImports" = "explicit";
+          "source.organizeImports" = true;
         };
         "editor.defaultFormatter" = "charliermarsh.ruff";
       };
+
       "notebook.formatOnSave.enabled" = true;
       "notebook.codeActionsOnSave" = {
         "notebook.source.fixAll" = "explicit";

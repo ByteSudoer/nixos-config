@@ -1,6 +1,6 @@
 { pkgs, ... }:
 pkgs.writeShellScriptBin "swww_randomize" ''
-    #!/usr/bin/env bash 
+    #!/usr/bin/env bash
 
 
   # This script will randomly go through the files of a directory, setting it
@@ -29,7 +29,7 @@ pkgs.writeShellScriptBin "swww_randomize" ''
   		done \
   		| sort -n | cut -d':' -f2- \
   		| while read -r img; do
-  			swww img "$img"
+  			swww img "$img" -t outer
   			sleep $INTERVAL
   		done
   done

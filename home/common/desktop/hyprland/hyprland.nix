@@ -3,17 +3,33 @@
   colorscheme,
   terminal,
   browser,
+  filemanager,
+  lib,
   ...
 }:
+let
+  capitalizeFirstLetter =
+    word:
+    let
+      firstLetter = builtins.substring 0 1 word;
+      rest = builtins.substring 1 (builtins.stringLength word - 1) word;
+    in
+    lib.toUpper firstLetter + rest;
+
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     # enableNvidiaPatches = true;
     #https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.hyprland.systemd.enable
-    # systemd.enable = true;
+    systemd = {
+      enable = true;
+      variables = [
+        "--all"
+      ];
+    };
     settings = {
-
       "$mod" = "SUPER";
       monitor = "eDP-1, 1920x1200, auto, 1.0";
       general = {
@@ -42,7 +58,7 @@
       bind = [
         "$mod,return,exec,${terminal}"
         "$mod,w,exec,${browser}"
-        "$mod SHIFT,return,exec,${pkgs.kdePackages.dolphin}/bin/dolphin"
+        "$mod SHIFT,return,exec,${filemanager}"
         "$mod SHIFT,q,killactive"
         "$mod,code:94,exec,${pkgs.bash}/bin/bash $HOME/.config/rofi/launchers/type-4/launcher.sh"
         "$mod,v,exec,pavucontrol"
@@ -76,7 +92,7 @@
         #Brightness and Audio Controls
         ",XF86MonBrightnessUp,exec,brightnessctl set 10%+"
         ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
-        ",XF86AudioRaiseVolume,exec,amixer sset Master 10%+"
+        ",XF86AudioRaiseVolume,exec,amixrr sset Master 10%+"
         ",XF86AudioLowerVolume,exec,amixer sset Master 10%-"
         ",XF86AudioMute,exec,amixer sset Master toggle"
 
@@ -125,17 +141,16 @@
       windowrulev2 = [
         "float,class:(lxqt-policykit-agent)"
         "float,class:(xfce4-taskmanager)"
-        "float,class:(thunar)"
+        "float,class:(${filemanager})"
         "float,class:(dolphin)"
         "float,class:(wihotspot-gui)"
         "float,title:(Bluetooth)"
         "float,title:(Picture-in-Picture)"
 
         ## Opacity Rules
-        "opacity 0.8 0.8,class:^(${terminal})$"
+        "opacity 0.8 0.8,class:^(${capitalizeFirstLetter terminal})$"
         "opacity 0.8 0.8,class:^(${browser})$"
-        "opacity 0.8 0.8,class:^(thunar)$"
-        "opacity 0.8 0.8,class:^(dolphin)$"
+        "opacity 0.8 0.8,class:^(${filemanager})$"
         "opacity 0.8 0.8,class:^(Spotify)$"
         "opacity 0.8 0.8,class:^(discord)$"
 
@@ -168,9 +183,9 @@
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         # XDG Specifications
-        "XDG_CURRENT_DESKTOP,Sway"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
+        # "XDG_CURRENT_DESKTOP,Sway"
+        # "XDG_SESSION_TYPE,wayland"
+        # "XDG_SESSION_DESKTOP,Hyprland"
       ];
 
       ## Decoration

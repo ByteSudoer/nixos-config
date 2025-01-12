@@ -17,7 +17,10 @@
     evince
   ];
 
-  ## Needed fot swaylock
-  security.pam.services.swaylock = { };
+  ## Needed for swaylock
+  # security.pam.services.swaylock = { };
+
+  ## Needed for Hyprlock
+  security.pam.services.hyprlock = { };
 
 }

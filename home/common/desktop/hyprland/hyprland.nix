@@ -45,6 +45,7 @@ in
       exec-once = [
         "waybar"
         "lxqt-policykit-agent"
+        "nm-applet --indicatorg"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
         "discord --start-minimized"
@@ -146,6 +147,7 @@ in
         "float,class:(wihotspot-gui)"
         "float,title:(Bluetooth)"
         "float,title:(Picture-in-Picture)"
+        "noblur,class:^()$,title:^()$" # Disable blur for context menus
 
         ## Opacity Rules
         "opacity 0.8 0.8,class:^(${capitalizeFirstLetter terminal})$"

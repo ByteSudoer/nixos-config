@@ -177,7 +177,7 @@ in
           return-type = "json";
           format = "{}";
           tooltip = true;
-          interval = 3600;
+          interval = 120;
         };
         "custom/spotify" = {
           format = "{icon} {}";
@@ -229,7 +229,7 @@ in
       	border: none;
       	border-radius: 10px;
           font-family: "JetBrainsMono Nerd Font" ;
-      	font-size: 15px;
+      	font-size: 14px;
       	min-height: 10px;
       }
 
@@ -335,6 +335,7 @@ in
       #clock {
       	margin-top: 6px;
       	margin-left: 8px;
+      	margin-right: 5px;
       	padding-left: 10px;
       	padding-right: 10px;
       	margin-bottom: 0px;
@@ -423,8 +424,8 @@ in
           padding-right: 5px;
           border-radius: 10px;
           transition: none;
-          color: #ffffff;
-          background: #44475a;
+          color: #${config.colorScheme.palette.base00};
+          background: #${config.colorScheme.palette.base0B};
         }
       #custom-notification {
       	margin-top: 6px;

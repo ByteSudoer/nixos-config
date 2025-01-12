@@ -3,6 +3,7 @@
   imports = [
     ./eww.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./swaylock.nix
     ./waybar.nix
     ./wlogout.nix
@@ -25,7 +26,6 @@
     grimblast
 
     #Notification Center
-    swaynotificationcenter
     ## Manage Wallpapers
     swww
     swww_randomize

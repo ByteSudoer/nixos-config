@@ -4,7 +4,7 @@ pkgs.writeShellScriptBin "lock" ''
 
     image=/home/bytesudoer/Pictures/Wallpapers/dracula/kernel.png
     if [ "$WAYLAND_DISPLAY" ]; then
-      lock_command="swaylock"
+      lock_command="hyprlock"
     else
       lock_command="betterlockscreen -l"
     fi

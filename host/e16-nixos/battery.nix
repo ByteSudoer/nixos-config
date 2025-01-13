@@ -27,7 +27,14 @@
 
       #Disable WIFI CARD when connected to LAN with a cable
       DEVICES_TO_DISABLE_ON_LAN_CONNECT = "wifi";
+      # Disable  audio power saving mode
+      # SOUND_POWER_SAVE_ON_AC = 0;
+      # SOUND_POWER_SAVE_ON_BAT = 0;
+      # SOUND_POWER_SAVE_CONTROLLER = "N";
+      USB_EXCLUDE_AUDIO = 1;
 
+      #Exclude Mouse &  Keyboad & headphones from autosuspend mode
+      USB_DENYLIST = "4c4a:4155 248a:5b2f 145f:0323";
     };
   };
 

@@ -1,215 +1,181 @@
-# This file has been adapted from the Kitty home-manager module but has
-# been changed significantly. This should be upstreamed to home-manager
-# when the project is out of beta.
 {
   config,
   lib,
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.programs.ghostty;
 
-  eitherStrBoolNum = with types; either str (either bool number);
-
-  # Either a (str | bool | number) or a list of (str | bool | number)
-  anyConfigType = with types; either (listOf eitherStrBoolNum) eitherStrBoolNum;
-
-  toGhosttyConfig = generators.toKeyValue {
+  keyValueSettings = {
     listsAsDuplicateKeys = true;
-    mkKeyValue =
-      key: value:
-      let
-        value' = (if isBool value then boolToString else toString) value;
-      in
-      # TODO(clo4): trim off trailing zeroes for floats?
-      "${key} = ${value'}";
+    mkKeyValue = lib.generators.mkKeyValueDefault { } " = ";
   };
-
-  toGhosttyKeybindings = generators.toKeyValue {
-    listsAsDuplicateKeys = true;
-    mkKeyValue = key: value: "keybind = ${key}=${value}";
-  };
-
-  shellIntegrationInit = {
-    bash = ''
-      if test -n "$GHOSTTY_RESOURCES_DIR"; then
-        source "$GHOSTTY_RESOURCES_DIR/shell-integration/bash/ghostty.bash"
-      fi
-    '';
-    fish = ''
-      if set -q GHOSTTY_RESOURCES_DIR
-        source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
-        set --prepend fish_complete_path "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_completions.d"
-      end
-    '';
-    zsh = ''
-      if test -n "$GHOSTTY_RESOURCES_DIR"; then
-        autoload -Uz -- "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
-        ghostty-integration
-        unfunction ghostty-integration
-      fi
-    '';
-  };
+  keyValue = pkgs.formats.keyValue keyValueSettings;
 in
 {
+  meta.maintainers = [ lib.maintainers.HeitorAugustoLN ];
+
   options.programs.ghostty = {
-    enable = mkEnableOption "Ghostty terminal emulator";
+    enable = lib.mkEnableOption "Ghostty";
 
-    settings = mkOption {
-      type = types.attrsOf anyConfigType;
+    package = lib.mkPackageOption pkgs "ghostty" { };
+
+    settings = lib.mkOption {
+      inherit (keyValue) type;
       default = { };
-      example = literalExpression ''
+      example = lib.literalExpression ''
         {
-          cursor-style-blink = false;
-          font-family = "Roboto Mono";
-          font-size = 14;
-          window-theme = "dark";
+          theme = "catppuccin-mocha";
+          font-size = 10;
         }
       '';
       description = ''
-        Configuration written to
-        {file}`$XDG_CONFIG_HOME/ghostty/config`. The full list of settings is
-        available in this file:
-        <https://github.com/mitchellh/ghostty/blob/main/src/config/Config.zig>
+        Configuration written to {file}`$XDG_CONFIG_HOME/ghostty/config`.
 
-        To configure the shell integration, see the documentation for
-        `programs.ghostty.shellIntegration.enable`.
-
-        The acceptable values are numbers, booleans, strings, or a list of
-        these types. Lists will be turned
-
-        This configuration can also include external configuration files
+        See <https://ghostty.org/docs/config/reference> for more information.
       '';
     };
 
-    shellIntegration =
-      let
-        defaultShellIntegration = {
-          default = cfg.shellIntegration.enable;
-          defaultText = literalExpression "config.programs.ghostty.shellIntegration.enable";
+    themes = lib.mkOption {
+      type = lib.types.attrsOf keyValue.type;
+      default = { };
+      example = {
+        catppuccin-mocha = {
+          palette = [
+            "0=#45475a"
+            "1=#f38ba8"
+            "2=#a6e3a1"
+            "3=#f9e2af"
+            "4=#89b4fa"
+            "5=#f5c2e7"
+            "6=#94e2d5"
+            "7=#bac2de"
+            "8=#585b70"
+            "9=#f38ba8"
+            "10=#a6e3a1"
+            "11=#f9e2af"
+            "12=#89b4fa"
+            "13=#f5c2e7"
+            "14=#94e2d5"
+            "15=#a6adc8"
+          ];
+          background = "1e1e2e";
+          foreground = "cdd6f4";
+          cursor-color = "f5e0dc";
+          selection-background = "353749";
+          selection-foreground = "cdd6f4";
         };
-      in
-      {
-        enable = mkOption {
-          type = types.bool;
-          default = true;
-          example = false;
-          description = ''
-            Whether to enable the managed Ghostty shell integration.
-
-            With this option enabled, the `shell-integration` directive is
-            set to `none`. The shell integration is added to Fish, Bash, and
-            Zsh through their initialization scripts as opposed to being detected
-            and managed by the terminal itself.
-
-            The integration can be disabled per shell using the
-            `programs.ghostty.shellIntegration.enableXyzIntegration` settings.
-
-            If *this* setting is disabled, it is not added to any shell, and
-            the responsibility of enabling the shell integration must be handled
-            by the terminal and your own config.
-          '';
-        };
-
-        enableBashIntegration = mkEnableOption "Ghostty Bash integration" // defaultShellIntegration;
-
-        enableZshIntegration = mkEnableOption "Ghostty Zsh integration" // defaultShellIntegration;
-
-        enableFishIntegration = mkEnableOption "Ghostty Fish integration" // defaultShellIntegration;
       };
-
-    clearDefaultKeybindings = mkOption {
-      type = types.bool;
-      default = false;
       description = ''
-        Clears all default keybindings when enabled.
+        Custom themes written to {file}`$XDG_CONFIG_HOME/ghostty/themes`.
+
+        See <https://ghostty.org/docs/features/theme#authoring-a-custom-theme> for more information.
       '';
     };
 
-    keybindings = mkOption {
-      type = with types; attrsOf str;
-      default = { };
-      description = ''
-        Set custom Ghostty keybindings.
-
-        Keybindings consist of a key, optionally preceded by modifiers, and
-        separated by the + symbol.
-        Keys are spelled in English, such as 'minus' for the '-' character,
-        or 'left' for the left arrow.
-
-        The following key names can be used as modifiers:
-        'ctrl', 'super', 'shift', 'alt', 'caps_lock', 'num_lock'
-
-        The list of available actions that can be bound is located in the Action
-        enum in this file:
-        <https://github.com/mitchellh/ghostty/blob/main/src/input/Binding.zig>
-      '';
-      example = literalExpression ''
-        {
-          "super+shift+d" = "unbind";
-          "super+shift+h" = "goto_split:left";
-          "super+shift+j" = "goto_split:bottom";
-          "super+shift+k" = "goto_split:top";
-          "super+shift+l" = "goto_split:right";
-        }
-      '';
+    clearDefaultKeybinds = lib.mkEnableOption "" // {
+      description = "Whether to clear default keybinds.";
     };
 
-    package = mkPackageOption pkgs "Ghostty" {
-      # making it nullable allows you to skip building/installing
-      # it if you're managing it externally, e.g. using the signed
-      # macOS builds.
-      nullable = true;
-      default = null;
+    installVimSyntax = lib.mkEnableOption "installation of Ghostty configuration syntax for Vim";
+
+    installBatSyntax = lib.mkEnableOption "installation of Ghostty configuration syntax for bat" // {
+      default = true;
     };
 
-    extraConfig = mkOption {
-      default = "";
-      type = types.lines;
-      description = "Additional configuration to add.";
-    };
+    enableBashIntegration = lib.mkEnableOption ''
+      bash shell integration.
+
+      This is ensures that shell integration works in more scenarios, such as switching shells within Ghostty.
+      But it is not needed to have shell integration.
+      See <https://ghostty.org/docs/features/shell-integration#manual-shell-integration-setup> for more information
+    '';
+
+    enableFishIntegration = lib.mkEnableOption ''
+      fish shell integration.
+
+      This is ensures that shell integration works in more scenarios, such as switching shells within Ghostty.
+      But it is not needed to have shell integration.
+      See <https://ghostty.org/docs/features/shell-integration#manual-shell-integration-setup> for more information
+    '';
+
+    enableZshIntegration = lib.mkEnableOption ''
+      zsh shell integration.
+
+      This is ensures that shell integration works in more scenarios, such as switching shells within Ghostty.
+      But it is not needed to have shell integration.
+      See <https://ghostty.org/docs/features/shell-integration#manual-shell-integration-setup> for more information
+    '';
   };
 
-  config = mkIf cfg.enable {
-    home.packages = mkIf (cfg.package != null) [ cfg.package ];
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      {
+        home.packages = [ cfg.package ];
 
-    xdg.configFile."ghostty/config" = {
-      text = concatStringsSep "\n" [
-        ''
-          # Generated by Home Manager.
-          # See https://github.com/mitchellh/ghostty
-        ''
+        programs.ghostty.settings = lib.mkIf cfg.clearDefaultKeybinds {
+          keybind = lib.mkBefore [ "clear" ];
+        };
 
-        (optionalString cfg.clearDefaultKeybindings ''
-          # `clear` is a special keybind that removes all keybindings
-          # up to that point, so making sure it's first guarantees that
-          # only the default keybindings are removed. You can still use
-          # it later in the config, although there isn't any reason to.
-          keybind = clear
-        '')
+        # MacOS also supports XDG configuration directory, so we use it for both
+        # Linux and macOS to reduce complexity
+        xdg.configFile = lib.mkMerge [
+          {
+            "ghostty/config" = lib.mkIf (cfg.settings != { }) {
+              source = keyValue.generate "ghostty-config" cfg.settings;
+              onChange = "${lib.getExe cfg.package} +validate-config";
+            };
+          }
 
-        (optionalString cfg.shellIntegration.enable ''
-          # Shell integration is sourced and configured manually
-          shell-integration = none
-        '')
+          (lib.mkIf (cfg.themes != { }) (
+            lib.mapAttrs' (name: value: {
+              name = "ghostty/themes/${name}";
+              value.source = keyValue.generate "ghostty-${name}-theme" value;
+            }) cfg.themes
+          ))
+        ];
+      }
 
-        (toGhosttyConfig cfg.settings)
+      (lib.mkIf cfg.installVimSyntax {
+        programs.vim.plugins = [ cfg.package.vim ];
+      })
 
-        (toGhosttyKeybindings cfg.keybindings)
+      (lib.mkIf cfg.installBatSyntax {
+        programs.bat = {
+          syntaxes.ghostty = {
+            src = cfg.package;
+            file = "share/bat/syntaxes/ghostty.sublime-syntax";
+          };
+          config.map-syntax = [ "${config.xdg.configHome}/ghostty/config:Ghostty Config" ];
+        };
+      })
 
-        (optionalString (cfg.extraConfig != "") ''
-          # Extra config
-          ${cfg.extraConfig}
-        '')
-      ];
-    };
+      (lib.mkIf cfg.enableBashIntegration {
+        # Make order 101 to be placed exactly after bash completions, as Ghostty
+        # documentation suggests sourcing the script as soon as possible
+        programs.bash.initExtra = lib.mkOrder 101 ''
+          if [[ -n "''${GHOSTTY_RESOURCES_DIR}" ]]; then
+            builtin source "''${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+          fi
+        '';
+      })
 
-    programs.bash.initExtra = mkIf cfg.shellIntegration.enableBashIntegration shellIntegrationInit.bash;
+      (lib.mkIf cfg.enableFishIntegration {
+        programs.fish.shellInit = ''
+          if set -q GHOSTTY_RESOURCES_DIR
+            source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+          end
+        '';
+      })
 
-    programs.zsh.initExtra = mkIf cfg.shellIntegration.enableZshIntegration shellIntegrationInit.zsh;
-
-    programs.fish.interactiveShellInit = mkIf cfg.shellIntegration.enableFishIntegration shellIntegrationInit.fish;
-  };
+      (lib.mkIf cfg.enableZshIntegration {
+        programs.zsh.initExtra = ''
+          if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+            source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+          fi
+        '';
+      })
+    ]
+  );
 }

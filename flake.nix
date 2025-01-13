@@ -72,7 +72,7 @@
       username = "bytesudoer";
       colorscheme = "gruvbox";
       desktop = "hyprland";
-      terminal = "alacritty";
+      terminal = "ghostty";
       filemanager = "thunar";
       font = "JetBrainsMono";
       browser = "firefox";

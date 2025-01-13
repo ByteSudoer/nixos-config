@@ -2,6 +2,7 @@
   pkgs,
   colorscheme,
   font,
+  terminal,
   ...
 }:
 let
@@ -9,20 +10,18 @@ let
     if colorscheme == "Dracula" then
       "dracula"
     else if colorscheme == "gruvbox" then
-      "GruvBox Dark"
+      "GruvboxDarkHard"
     else
-      "TokyoNight Storm";
+      "TokyoNightStorm";
 in
 {
   programs.ghostty = {
-    enable = true;
+    enable = terminal == "ghostty";
     package = pkgs.ghostty;
 
-    # Shell integration
-    shellIntegration = {
-      enable = true;
-      enableBashIntegration = true;
-    };
+    enableBashIntegration = true;
+    installBatSyntax = true;
+    installVimSyntax = true;
 
     # Global Settings
     settings = {
@@ -31,6 +30,25 @@ in
 
       #Appearance
       theme = "${theme}";
+
+      #Cursor
+      cursor-style = "block";
+      cursor-style-blink = true;
+
+      # Mouse config
+      mouse-hide-while-typing = false;
+      mouse-shift-capture = true;
+      mouse-scroll-multiplier = 1;
+
+      #Misc
+      title = "ByteSudoer"; # Window Title
+      scrollback-limit = 1000000;
+
+      #Class for window managers
+      window-decoration = false; # Disable native decorations
+      class = "ghostty";
+      x11-instance-name = "ghostty";
+
     };
   };
 }

@@ -93,9 +93,10 @@ in
         #Brightness and Audio Controls
         ",XF86MonBrightnessUp,exec,brightnessctl set 10%+"
         ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
-        ",XF86AudioRaiseVolume,exec,amixrr sset Master 10%+"
+        ",XF86AudioRaiseVolume,exec,amixer sset Master 10%+"
         ",XF86AudioLowerVolume,exec,amixer sset Master 10%-"
         ",XF86AudioMute,exec,amixer sset Master toggle"
+        ",XF86AudioMicMute,exec,amixer sset Capture toggle"
 
         #ScreenShot
         ",Print,exec,grimblast --notify copy area"

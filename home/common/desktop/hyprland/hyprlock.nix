@@ -36,16 +36,16 @@ in
       };
 
       background = {
-        path = "/home/${username}/nixos-config/Wallpapers/${colorscheme}/random.jpg";
-        blur_passes = 2;
-        contrast = 1;
-        brightness = 0.5;
-        vibrancy = 0.2;
-        vibrancy_darkness = 0.2;
+        path = "/home/${username}/nixos-config/Wallpapers/${colorscheme}/gruv_linux.png";
+        blur_passes = 0;
+        # contrast = 1;
+        # brightness = 1;
+        # vibrancy = 0.2;
+        # vibrancy_darkness = 0.2;
       };
 
       input-field = {
-        size = "250, 60";
+        size = "300, 70";
         monitor = "";
         dots_size = 0.2;
         dots_spacing = 0.35;
@@ -56,7 +56,7 @@ in
         outer_color = colors.outer_color;
         outline_thickness = 2;
         placeholder_text = "Input Password ....";
-        position = "0, -200";
+        position = "0, -300";
         halign = "center";
         valign = "center";
       };
@@ -66,7 +66,7 @@ in
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +'%A, %B %d')\"";
-          color = colors.outer_color;
+          color = colors.font_color_password;
           font_size = 22;
           font_family = "${font}";
           position = "0, 300";
@@ -77,7 +77,7 @@ in
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +'%H:%M')\"";
-          color = colors.outer_color;
+          color = colors.font_color_password;
           font_size = 95;
           font_family = "JetBrains Mono Extrabold";
           position = "0, 200";
@@ -88,7 +88,7 @@ in
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(playerctl metadata --format '{{artist}} - {{title}}')\"";
-          color = colors.outer_color;
+          color = colors.font_color;
           font_size = 18;
           font_family = "Metropolis Light, Font Awesome 6 Free Solid";
           position = "0, 50";

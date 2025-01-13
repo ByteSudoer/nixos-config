@@ -45,7 +45,7 @@ in
       exec-once = [
         "waybar"
         "lxqt-policykit-agent"
-        "nm-applet --indicatorg"
+        "nm-applet --indicator"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
         "discord --start-minimized"
@@ -150,8 +150,8 @@ in
         "noblur,class:^()$,title:^()$" # Disable blur for context menus
 
         ## Opacity Rules
-        "opacity 0.8 0.8,class:^(${capitalizeFirstLetter terminal})$"
-        "opacity 0.8 0.8,class:^(${browser})$"
+        "opacity 0.8 0.8,class:^(${terminal})$"
+        # "opacity 0.9 0.9,class:^(${browser})$"
         "opacity 0.8 0.8,class:^(${filemanager})$"
         "opacity 0.8 0.8,class:^(Spotify)$"
         "opacity 0.8 0.8,class:^(discord)$"

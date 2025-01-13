@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    # ./copyq.nix
     ./eww.nix
     ./hyprland.nix
     ./hyprlock.nix
@@ -12,11 +13,9 @@
   home.packages = with pkgs; [
     #Control Brightness
     brightnessctl
-    #Clipman manager
     copyq
 
     #GTK Apps
-    lxappearance
     nwg-look
     glib
 

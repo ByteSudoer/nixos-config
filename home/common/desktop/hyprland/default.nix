@@ -5,6 +5,7 @@
     ./eww.nix
     ./hyprland.nix
     ./hyprlock.nix
+    ./hyprsome.nix
     ./swaylock.nix
     ./waybar.nix
     ./wlogout.nix

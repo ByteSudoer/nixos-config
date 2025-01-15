@@ -31,7 +31,10 @@ in
     };
     settings = {
       "$mod" = "SUPER";
-      monitor = "eDP-1, 1920x1200, auto, 1.0";
+      monitor = [
+        "eDP-1, 1920x1200, auto, 1.0"
+        "HDMI-A-1, 1920x1080, auto, 1.0"
+      ];
       general = {
         border_size = 1;
         gaps_in = 2;
@@ -134,6 +137,25 @@ in
 
       };
 
+      #Workspace Bindings
+      workspace = [
+        "eDP-1,1"
+        "HDMI-A-1,11"
+
+        #Workspaces Bindings
+        "1,monitor:eDP-1"
+        "2,monitor:eDP-1"
+        "3,monitor:eDP-1"
+        "4,monitor:eDP-1"
+        "5,monitor:eDP-1"
+
+        "11,monitor:HDMI-A-1"
+        "12,monitor:HDMI-A-1"
+        "13,monitor:HDMI-A-1"
+        "14,monitor:HDMI-A-1"
+        "15,monitor:HDMI-A-1"
+
+      ];
       # Window Rules
       windowrule = [
         "float,^(pavucontrol)$"

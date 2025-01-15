@@ -141,7 +141,7 @@ in
           max-length = 10;
         };
         "hyprland/workspaces" = {
-          all-outputs = true;
+          # all-outputs = true;
           format = "{name}: {icon}";
           format-icons = {
             "1" = "";
@@ -149,18 +149,28 @@ in
             "3" = "";
             "4" = "";
             "5" = "";
-            "6" = "";
+
+            "11" = "";
+            "12" = "";
+            "13" = "";
+            "14" = "";
+            "15" = "";
           };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
           persistent-workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
-            "6" = [ ];
+            "1" = [ "eDP-1" ];
+            "2" = [ "eDP-1" ];
+            "3" = [ "eDP-1" ];
+            "4" = [ "eDP-1" ];
+            "5" = [ "eDP-1" ];
+
+            "11" = [ "HDMI-A-1" ];
+            "12" = [ "HDMI-A-1" ];
+            "13" = [ "HDMI-A-1" ];
+            "14" = [ "HDMI-A-1" ];
+            "15" = [ "HDMI-A-1" ];
           };
         };
         tray = {

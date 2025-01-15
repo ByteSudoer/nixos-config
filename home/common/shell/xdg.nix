@@ -21,7 +21,7 @@
       videos = config.home.homeDirectory + "/Videos";
 
       extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
+        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
       };
     };
 

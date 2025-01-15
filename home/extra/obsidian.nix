@@ -9,6 +9,7 @@ let
     pushd $VAULT_DIRECTORY
     git add .
     git commit -m "$(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+    git push origin main
     popd
 
   '';

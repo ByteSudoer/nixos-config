@@ -70,9 +70,9 @@
       inherit (self) outputs;
       stateVersion = "24.11";
       username = "bytesudoer";
-      colorscheme = "gruvbox";
-      desktop = "hyprland";
-      terminal = "ghostty";
+      colorscheme = "dracula";
+      desktop = "plasma";
+      terminal = "alacritty";
       filemanager = "thunar";
       font = "JetBrainsMono";
       browser = "firefox";

@@ -23,8 +23,8 @@ _: {
   #   lxappearance
   # ];
 
-  xdg.configFile.xfce4 = {
-    source = ../../../../config/xfce4;
-    recursive = true;
-  };
+  # xdg.configFile.xfce4 = {
+  #   source = ../../../../config/xfce4;
+  #   recursive = true;
+  # };
 }

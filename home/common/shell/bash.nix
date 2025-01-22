@@ -32,6 +32,29 @@ in
       batdiff() {
         git diff --name-only --relative --diff-filter=d | xargs bat --diff
       }
+
+      # Function for shutdown
+      shutdown() {
+        echo -e "\033[31mAre you sure you want to shut down? (yes/no)\033[0m"
+        read answer
+        if [ "$answer" = "yes" ]; then
+          /run/current-system/sw/bin/shutdown "$@"
+        else
+          echo "Shutdown canceled."
+        fi
+      }
+
+      # Function for reboot
+      reboot() {
+        echo -e "\033[31mAre you sure you want to reboot? (yes/no)\033[0m"
+        read answer
+        if [ "$answer" = "yes" ]; then
+          /run/current-system/sw/bin/reboot "$@"
+        else
+          echo "Reboot canceled."
+        fi
+      }
+
     '';
 
     initExtra = ''

@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    copyq
+  ];
 
   # home.packages = with pkgs; [
   #   xfce.xfce4-whiskermenu-plugin

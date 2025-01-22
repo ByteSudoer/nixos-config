@@ -1,6 +1,7 @@
-_: {
+{ pkgs, ... }:
+{
 
-  # home.packages = with pkgs;[
+  # home.packages = with pkgs; [
   #   xfce.xfce4-whiskermenu-plugin
   #   xfce.xfce4-weather-plugin
   #   xfce.xfce4-volumed-pulse
@@ -14,17 +15,21 @@ _: {
   #   xfce.xfce4-netload-plugin
   #   xfce.xfce4-datetime-plugin
   #   xfce.xfce4-battery-plugin
+  #   xfce.xfce4-clipman-plugin
   #   xorg.xdpyinfo
   #   xarchiver
   #   xclip
   #
-  #   libsForQt5.qt5.qtquickcontrols2
-  #   libsForQt5.qt5.qtgraphicaleffects
   #   lxappearance
   # ];
+  xfconf = {
+    enable = true;
+    settings = {
+      keyboards = {
+        "Default/Numlock" = true;
+      };
 
-  # xdg.configFile.xfce4 = {
-  #   source = ../../../../config/xfce4;
-  #   recursive = true;
-  # };
+    };
+  };
+
 }

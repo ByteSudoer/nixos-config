@@ -7,8 +7,9 @@
       xterm.enable = false;
       xfce.enable = true;
     };
-    displayManager.defaultSession = "xfce";
   };
+
+  services.displayManager.defaultSession = "xfce";
   environment.systemPackages = with pkgs; [
 
     xfce.xfce4-whiskermenu-plugin

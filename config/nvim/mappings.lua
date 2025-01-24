@@ -30,6 +30,11 @@ vim.g.mapleader = " "
 
 -- delete does not replace system vim & clipboard
 map(mode.normal, "x", '"_x')
+map(mode.normal, "d", '"_d')
+map(mode.normal, "dd", '"_dd')
+
+map(mode.visual, "d", '"_d')
+map(mode.visual, "dd", '"_dd')
 -- increment and decrement
 map(mode.normal, "+", "<C-a>")
 map(mode.normal, "-", "<C-x>")

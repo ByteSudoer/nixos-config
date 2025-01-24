@@ -23,6 +23,10 @@
           hostname = "192.168.122.10";
           user = "ubuntu";
         };
+        "kali" = {
+          hostname = "192.168.122.20";
+          user = "kali";
+        };
 
       };
     };

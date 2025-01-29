@@ -13,6 +13,7 @@
     ./git.nix
     ./info.nix
     ./jq.nix
+    ./lazygit.nix
     ./neofetch.nix
     ./nix.nix
     ./nix-init.nix

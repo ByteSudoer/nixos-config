@@ -8,7 +8,7 @@
     ./drawio.nix
     ./dropbox.nix
     ./ferdium.nix
-    ./gitkraken.nix
+    ./github-desktop.nix
     ./imagers.nix
     ./insomnia.nix
     ./intellij.nix

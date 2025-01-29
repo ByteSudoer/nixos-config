@@ -67,6 +67,7 @@ in
       la = "eza -a --color=always  --git --icons --group-directories-first";
       ll = "eza -l --color=always  --git --icons --group-directories-first";
       lt = "eza -aT --color=always --git --icons --group-directories-first";
+      lr = "eza -alR --color=always --git --icons --group-directories-first";
       cp = "cp -i -v";
       mv = "mv -i -v";
       mkdir = "mkdir -p";

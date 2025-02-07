@@ -21,13 +21,13 @@ in
     };
     nat = {
       enable = !isInList hostname hostnames;
-      internalInterface = [
+      internalInterfaces = [
         "enp0s31f6"
         "wlp0s20f3"
       ];
       externalInterface = "virbr0";
       forwardPorts =
-        { }
+        [ ]
         ++ lib.optionals (portForward == true) {
           sourcePort = 32222;
           proto = "tcp";

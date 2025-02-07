@@ -17,6 +17,7 @@ in
     ./fonts.nix
     ./locale.nix
     ../services/openssh.nix
+    ../services/firewall.nix
   ];
 
   networking = {

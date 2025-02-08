@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     copyq
+    xarchiver
   ];
 
   # home.packages = with pkgs; [

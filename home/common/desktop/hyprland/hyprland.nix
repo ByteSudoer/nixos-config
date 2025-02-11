@@ -7,16 +7,6 @@
   lib,
   ...
 }:
-let
-  capitalizeFirstLetter =
-    word:
-    let
-      firstLetter = builtins.substring 0 1 word;
-      rest = builtins.substring 1 (builtins.stringLength word - 1) word;
-    in
-    lib.toUpper firstLetter + rest;
-
-in
 {
   wayland.windowManager.hyprland = {
     enable = true;

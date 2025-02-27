@@ -3,16 +3,31 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-      allowedBridges = [
-        "virbr0"
-        "virbr1"
-      ];
+      # allowedBridges = [
+      #   "virbr0"
+      #   "virbr1"
+      # ];
+
+    };
+    hooks.qemu = {
+      ub2204 = ./qemu-hook.sh;
     };
   };
-  environment.systemPackages = [
-    pkgs.passt
-  ];
+  # environment.systemPackages = [
+  #   pkgs.passt
+  # ];
   programs.virt-manager.enable = true;
+  # networking = {
+  #   nat.enable = true;
+  #   nat.externalInterface = "wlp0s20f3";
+  #   nat.internalInterfaces = [ "virbr0" ];
+  #   firewall.extraCommands = ''
+  #     iptables -t nat -A PREROUTING -p tcp --dport 4443 -j DNAT --to-destination 192.168.122.100:443
+  #
+  #       iptables -t nat -A POSTROUTING -p tcp -d 192.168.122.100 --dport 443 -j MASQUERADE
+  #   '';
+  #
+  # };
   # virtualisation.forwardPorts = [
   #   {
   #     from = "host";

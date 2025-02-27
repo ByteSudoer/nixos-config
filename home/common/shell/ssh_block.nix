@@ -23,6 +23,12 @@
           hostname = "192.168.122.10";
           user = "ubuntu";
         };
+        "shuffle" = {
+          hostname = "192.168.13.110";
+          user = "ubuntu";
+          identityFile = "${config.home.homeDirectory}/.ssh/ubuntu-vm";
+
+        };
         "kali" = {
           hostname = "192.168.122.20";
           user = "kali";

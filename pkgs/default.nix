@@ -16,6 +16,7 @@
   mediaplayer = pkgs.callPackage ./scripts/mediaplayer.nix { };
   # m-control-center = pkgs.callPackage ./MControlerCenter { };
   picom_toggle = pkgs.callPackage ./scripts/picom_toggle.nix { };
+  pdf_merger = pkgs.callPackage ./scripts/pdf_merger.nix { };
   rofi_window = pkgs.callPackage ./scripts/rofi_window.nix { };
   sp = pkgs.callPackage ./scripts/sp.nix { };
   swww_randomize = pkgs.callPackage ./scripts/swww_randomize.nix { };

@@ -8,9 +8,9 @@
       #   "virbr1"
       # ];
 
-    };
-    hooks.qemu = {
-      ub2204 = ./qemu-hook.sh;
+      # hooks.qemu = {
+      #   "qradar" = ./qemu-hook.sh;
+      # };
     };
   };
   # environment.systemPackages = [

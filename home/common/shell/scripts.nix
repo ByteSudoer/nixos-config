@@ -7,6 +7,7 @@
     get_weather
     lock
     mediaplayer
+    pdf_merger
     picom_toggle
     rofi_window
     sp

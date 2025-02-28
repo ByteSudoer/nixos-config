@@ -27,7 +27,11 @@
           hostname = "192.168.13.110";
           user = "ubuntu";
           identityFile = "${config.home.homeDirectory}/.ssh/ubuntu-vm";
-
+        };
+        "attacker-ubuntu" = {
+          hostname = "192.168.13.20";
+          user = "ubuntu";
+          identityFile = "${config.home.homeDirectory}/.ssh/ubuntu-vm";
         };
         "kali" = {
           hostname = "192.168.122.20";

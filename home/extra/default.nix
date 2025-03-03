@@ -9,6 +9,7 @@
     ./dropbox.nix
     ./ferdium.nix
     # ./github-desktop.nix
+    ./hardinfo.nix
     ./imagers.nix
     ./insomnia.nix
     ./intellij.nix

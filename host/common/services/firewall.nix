@@ -21,7 +21,7 @@ in
     };
     nat = {
       enable = !isInList hostname hostnames;
-      internalInterface = [
+      internalInterfaces = [
         "enp0s31f6"
         "wlp0s20f3"
       ];

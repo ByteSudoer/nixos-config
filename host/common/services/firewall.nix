@@ -17,23 +17,23 @@ in
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 44333 ] ++ lib.optionals (portForward == true) [ 32222 ];
+      allowedTCPPorts = [ ] ++ lib.optionals (portForward == true) [ 32222 ];
     };
-    # nat = {
-    #   enable = !isInList hostname hostnames;
-    #   internalInterface = [
-    #     "enp0s31f6"
-    #     "wlp0s20f3"
-    #   ];
-    #   externalInterface = "virbr0";
-    #   forwardPorts =
-    #     { }
-    #     ++ lib.optionals (portForward == true) {
-    #       sourcePort = 32222;
-    #       proto = "tcp";
-    #       destination = "192.168.122.25:22";
-    #     };
-    # };
+    nat = {
+      enable = !isInList hostname hostnames;
+      internalInterface = [
+        "enp0s31f6"
+        "wlp0s20f3"
+      ];
+      externalInterface = "virbr0";
+      forwardPorts =
+        { }
+        ++ lib.optionals (portForward == true) {
+          sourcePort = 32222;
+          proto = "tcp";
+          destination = "192.168.122.25:22";
+        };
+    };
 
   };
 }

@@ -18,6 +18,7 @@
     ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
+    ./remmina.nix
     # ./slack.nix
     ./spotify.nix
     ./utils.nix

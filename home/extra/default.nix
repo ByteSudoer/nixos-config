@@ -12,7 +12,7 @@
     ./hardinfo.nix
     ./imagers.nix
     ./insomnia.nix
-    ./intellij.nix
+    # ./intellij.nix
     ./libreoffice.nix
     # ./ngrok.nix
     ./obs.nix

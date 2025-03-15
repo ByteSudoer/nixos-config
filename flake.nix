@@ -71,7 +71,7 @@
       stateVersion = "24.11";
       username = "bytesudoer";
       colorscheme = "dracula";
-      desktop = "plasma";
+      desktop = "xfce";
       terminal = "alacritty";
       filemanager = "thunar";
       font = "JetBrainsMono";

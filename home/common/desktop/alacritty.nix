@@ -81,6 +81,7 @@ in
       env = {
         TERM = "alacritty";
         IS_ALACRITTY = "true";
+        WINIT_X11_SCALE_FACTOR = "1";
       };
       scrolling = {
         history = 100000;

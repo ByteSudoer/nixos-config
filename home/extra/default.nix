@@ -12,10 +12,10 @@
     ./hardinfo.nix
     ./imagers.nix
     ./insomnia.nix
-    # ./intellij.nix
+    ./intellij.nix
     ./libreoffice.nix
     # ./ngrok.nix
-    ./obs.nix
+    # ./obs.nix
     ./obsidian.nix
     ./qbittorrent.nix
     ./remmina.nix

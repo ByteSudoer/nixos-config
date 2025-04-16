@@ -29,7 +29,7 @@
       };
     in
     {
-      vmware-workstation = _prev.vmware-workstation.overrideAttrs (oldAttrs: rec {
+      vmware-workstation = _prev.vmware-workstation.overrideAttrs (_oldAttrs: rec {
         src = _prev.requireFile rec {
           name = "VMware-Workstation-${finalAttrs.version}-${finalAttrs.build}.x86_64.bundle.tar";
           url = "${baseUrl}/core/${name}";

@@ -21,6 +21,7 @@
     ./remmina.nix
     # ./slack.nix
     ./spotify.nix
+    ./texEnv.nix
     ./utils.nix
     ./vscodium.nix
   ];

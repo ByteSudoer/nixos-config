@@ -9,7 +9,6 @@
     {
       nixpkgs,
       flake-utils,
-      self,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -46,7 +45,7 @@
               ;
           })
           which
-          python39Packages.pygments
+          python3Packages.pygments
         ];
         dev-packages = with pkgs; [
           texlab
@@ -57,6 +56,7 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
+            pkgs.texstudio
             latex-packages
             dev-packages
           ];

@@ -1,0 +1,97 @@
+{
+  "[nix]": {
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  "[tex]": {
+    "editor.formatOnSave": true
+  },
+  "[terraform-vars]": {
+    "editor.codeActionsOnSave": {
+      "source.formatAll.terraform": "explicit"
+    },
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": false
+  },
+  "[terraform]": {
+    "editor.codeActionsOnSave": {
+      "source.formatAll.terraform": "explicit"
+    },
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": false
+  },
+  "cSpell.diagnosticLevel": "Information",
+  "cSpell.enabled": true,
+  "cSpell.enabledFileTypes": {
+    "bash": true,
+    "c": true,
+    "csharp": true,
+    "go": true,
+    "javascript": true,
+    "javascriptreact": true,
+    "markdown": true,
+    "php": true,
+    "plaintext": true,
+    "python": true,
+    "rust": true,
+    "sql": true,
+    "typescript": true,
+    "typescriptreact": true,
+    "yaml": true
+  },
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    "node_modules/**",
+    "vscode-extension",
+    ".git",
+    "*.dll",
+    "**/*.dll"
+  ],
+  "cSpell.language": "en,fr",
+  "cSpell.maxNumberOfProblems": 100,
+  "cSpell.minWordLength": 4,
+  "cSpell.numSuggestions": 8,
+  "editor": {
+    "cursorBlinking": "smooth",
+    "cursorSmoothCaretAnnimation": "on",
+    "formatOnSave": true,
+    "smoothScrolling": true
+  },
+  "files.autoSave": "onFocusChange",
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.formatOnSave.enabled": true,
+  "redhat.telemetry.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "terraform": {
+    "editor.suggest.preview": true,
+    "experimentalFeatures.prefillRequiredFields": true,
+    "experimentalFeatures.validateOnSave": true
+  },
+  "workbench": {
+    "colorTheme": "Tokyo Night",
+    "iconTheme": "vscode-icons",
+    "list": {
+      "smoothScrolling": true
+    }
+  },
+  "editor.minimap.enabled": false,
+  "cSpell.dictionaries": [
+    "french"
+  ],
+  "cSpell.userWords": [
+    "CISO",
+    "SIEM"
+  ]
+}

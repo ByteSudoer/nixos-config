@@ -96,5 +96,6 @@
     "SIEM",
     "siems",
     "Siems"
-  ]
+  ],
+  "editor.wordWrap": "on"
 }

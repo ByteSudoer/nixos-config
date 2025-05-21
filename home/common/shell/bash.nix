@@ -85,7 +85,7 @@ in
       wget = "wget -c";
       userlist = "cut -d: -f1 /etc/passwd";
       pdf = "zathura";
-      cat = "bat --theme=Dracula";
+      cat = "bat";
       oldcat = "cat";
       configs = "cd $HOME/nixos-config";
       nixpkgs-repo = "cd $HOME/AllDev/Nix/nixpkgs";

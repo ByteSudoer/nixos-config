@@ -8,7 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     docker-compose
-    distrobox
     ctop
   ];
 }

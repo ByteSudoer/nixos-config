@@ -1,4 +1,5 @@
-_: {
+{ pkgs, ... }:
+{
   boot = {
     kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;
@@ -31,6 +32,7 @@ _: {
       options kvm_intel nested=1
     '';
 
+    #kernelPackages = pkgs.linuxPackages_6_14;
     extraModulePackages = [ ];
     # Whether to delete all files in /tmp during boot.
     tmp.cleanOnBoot = true;

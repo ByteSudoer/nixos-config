@@ -26,7 +26,7 @@
       RESTORE_THRESHOLDS_ON_BAT = 1;
 
       #Disable WIFI CARD when connected to LAN with a cable
-      DEVICES_TO_DISABLE_ON_LAN_CONNECT = "wifi";
+      # DEVICES_TO_DISABLE_ON_LAN_CONNECT = "wifi";
       # Disable  audio power saving mode
       # SOUND_POWER_SAVE_ON_AC = 0;
       # SOUND_POWER_SAVE_ON_BAT = 0;

@@ -39,7 +39,7 @@
 
   #sound.enable = true;
 
-  hardware = {
+  services = {
     pulseaudio.enable = lib.mkForce false;
   };
 

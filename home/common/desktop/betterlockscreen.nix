@@ -2,6 +2,7 @@
 {
   services.betterlockscreen = {
     enable = true;
-    package = pkgs.unstable.betterlockscreen;
+    package = pkgs.betterlockscreen;
+    inactiveInterval = 10;
   };
 }

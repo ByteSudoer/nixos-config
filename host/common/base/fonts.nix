@@ -1,4 +1,5 @@
-_: {
+{ pkgs, ... }:
+{
 
   fonts = {
     # Enable a basic set of fonts providing several font styles and families and reasonable coverage of Unicode.
@@ -29,5 +30,22 @@ _: {
         lcdfilter = "light";
       };
     };
+
+    packages = with pkgs; [
+
+      dejavu_fonts
+      comic-mono
+      source-code-pro
+      jetbrains-mono
+      fira-code-symbols
+      ibm-plex
+
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
+      nerd-fonts.space-mono
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.ubuntu-sans
+
+    ];
   };
 }

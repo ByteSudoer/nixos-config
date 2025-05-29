@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    ventoy
+    #ventoy
     usbimager
     rpi-imager
   ];

@@ -6,7 +6,7 @@
 }:
 {
   virtualisation.vmware = {
-    host.enable = lib.isString extra;
+    host.enable = !lib.isString extra;
     host.package = pkgs.vmware-workstation;
   };
 

@@ -19,7 +19,7 @@
       outputs.homeManagerModules.hyprsome
       #outputs.homeManagerModules.ghostty
       outputs.homeManagerModules.ngrok
-      outputs.homeManagerModules.nix-init
+      # outputs.homeManagerModules.nix-init
 
       # Or modules exported from other flakes (such as nix-colors):
       # inputs.nix-colors.homeManagerModules.default

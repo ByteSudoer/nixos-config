@@ -33,7 +33,7 @@
     cheese
     gparted
     xfce.xfce4-appfinder
-    kolourpaint
+    kdePackages.kolourpaint
   ];
 
 }

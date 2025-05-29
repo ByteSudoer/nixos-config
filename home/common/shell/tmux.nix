@@ -8,7 +8,7 @@
 let
   colorPlugin =
     if colorscheme == "dracula" then
-      "catppuccin"
+      "dracula"
     else if colorscheme == "gruvbox" then
       "gruvbox"
     else
@@ -39,43 +39,43 @@ in
       {
 
         plugin = tmuxPlugins.${colorPlugin};
-        extraConfig = ''
-                  set -g @catppuccin_window_right_separator "█ "
-          set -g @catppuccin_window_number_position "right"
-          set -g @catppuccin_window_middle_separator " | "
-
-          set -g @catppuccin_window_default_fill "none"
-
-          set -g @catppuccin_window_current_fill "all"
-
-          set -g @catppuccin_status_modules "application session"
-          set -g @catppuccin_status_left_separator "█"
-          set -g @catppuccin_status_right_separator "█"
-
-          set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
-        '';
-
         # extraConfig = ''
-        #   set -g @dracula-plugins "battery ram-usage time"
-        #   set -g @dracula-ram-usage-label "M"
-        #   set -g @dracula-show-timezone false
-        #   set -g @dracula-day-month true
+        #           set -g @catppuccin_window_right_separator "█ "
+        #   set -g @catppuccin_window_number_position "right"
+        #   set -g @catppuccin_window_middle_separator " | "
+        #
+        #   set -g @catppuccin_window_default_fill "none"
+        #
+        #   set -g @catppuccin_window_current_fill "all"
+        #
+        #   set -g @catppuccin_status_modules "application session"
+        #   set -g @catppuccin_status_left_separator "█"
+        #   set -g @catppuccin_status_right_separator "█"
+        #
+        #   set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
         # '';
+
+        extraConfig = ''
+          set -g @dracula-plugins "battery cpu-usage ram-usage time"
+          set -g @dracula-cpu-usage-label " "
+          set -g @dracula-ram-usage-label " "
+          set -g @dracula-show-timezone false
+          set -g @dracula-day-month true
+        '';
         #
       }
-      # { plugin = tmuxPlugins.gruvbox; }
       { plugin = tmuxPlugins.sensible; }
       { plugin = tmuxPlugins.copycat; }
     ];
     extraConfig = ''
-        set-option -sa terminal-overrides ",$TERM:RGB"
+      set-option -sa terminal-overrides ",$TERM:RGB"
 
-        unbind C-b
-        unbind v
-        unbind h
-        unbind %
-        unbind '"'
-        unbind r
+      unbind C-b
+      unbind v
+      unbind h
+      unbind %
+      unbind '"'
+      unbind r
 
       unbind n #DEFAULT KEY: Move to next window
       unbind w #DEFAULT KEY: change current window interactively 

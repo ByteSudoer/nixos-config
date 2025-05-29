@@ -13,7 +13,7 @@ in
     enable = true;
     package = pkgs.vscodium;
     mutableExtensionsDir = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
 
       #Nix support
       bbenoist.nix

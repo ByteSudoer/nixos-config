@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.betterlockscreen = {
-    enable = true;
+    enable = false;
     package = pkgs.betterlockscreen;
     inactiveInterval = 10;
   };

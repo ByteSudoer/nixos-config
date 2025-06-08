@@ -97,5 +97,7 @@
     "siems",
     "Siems"
   ],
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.latex.build.forceRecipeUsage": false
 }

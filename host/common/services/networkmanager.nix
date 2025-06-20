@@ -29,6 +29,42 @@ in
       # };
     };
   };
+  # networking.interfaces."macvlan0" = {
+  #   enable = true;
+  #   macvlan = {
+  #     parent = "wlp0s20f3";
+  #     mode = "bridge";
+  #   };
+  #   useDHCP = true;
+  # };
+
+  systemd.network = {
+    enable = false;
+    netdevs = {
+      "10-macvlan0" = {
+        netdevConfig = {
+          Kind = "macvlan";
+          Name = "macvlan0";
+        };
+        macvlanConfig = {
+          Mode = "bridge";
+        };
+      };
+    };
+    networks = {
+      "20-wlp0s20f3" = {
+        matchConfig.Name = "wlp0s20f3";
+        networkConfig.MACVLAN = "macvlan0";
+        linkConfig.RequiredForOnline = "carrier";
+      };
+      "30-macvlan0" = {
+        matchConfig.Name = "macvlan0";
+        networkConfig = {
+          DHCP = "yes";
+        };
+      };
+    };
+  };
   systemd.services.macchanger = {
     enable = true;
     description = "macchanger on ${card}";

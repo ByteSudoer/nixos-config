@@ -5,7 +5,7 @@ pkgs.writeShellScriptBin "lock" ''
     if [ "$WAYLAND_DISPLAY" ]; then
       lock_command="hyprlock"
     else
-      lock_command="${pkgs.betterlockscreen}/bin/betterlockscreen -l"
+      lock_command="${pkgs.xfce.xfce4-session}/bin/xflock4"
     fi
 
 

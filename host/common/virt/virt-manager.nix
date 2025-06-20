@@ -3,10 +3,11 @@
   virtualisation = {
     libvirtd = {
       enable = true;
-      # allowedBridges = [
-      #   "virbr0"
-      #   "virbr1"
-      # ];
+      allowedBridges = [
+        "virbr0"
+        "br0"
+      ];
+      qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
 
       # hooks.qemu = {
       #   "qradar" = ./qemu-hook.sh;

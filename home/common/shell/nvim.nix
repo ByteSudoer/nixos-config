@@ -18,7 +18,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-unwrapped;
+    package = pkgs.unstable.neovim-unwrapped;
     #Set as default editor using the EDITOR env variable
     defaultEditor = true;
     #Set Aliases

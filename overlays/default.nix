@@ -19,17 +19,6 @@
 
   modifications =
     final: prev:
-    let
-      finalAttrs = final.vmware-workstation;
-      baseUrl = "https://softwareupdate.vmware.com/cds/vmw-desktop/ws/${finalAttrs.version}/${finalAttrs.build}/linux";
-      version = "17.6.2";
-      build = "24409262";
-      vmware-unpack-env = prev.buildFHSEnv {
-        pname = "vmware-unpack-env";
-        inherit (finalAttrs) version;
-        targetPkgs = pkgs: [ pkgs.zlib ];
-      };
-    in
     {
       # vmware-workstation = prev.vmware-workstation.overrideAttrs rec {
       #   src = prev.requireFile rec {

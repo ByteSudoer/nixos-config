@@ -7,9 +7,6 @@
   username,
   ...
 }:
-let
-  selected_font = "JetBrains Mono";
-in
 {
   # programs.plasma = {
   #   enable = true;

@@ -5,9 +5,6 @@
   username,
   ...
 }:
-let
-  ColorScheme = if colorscheme == "dracula" then "Tokyo Night" else "Gruvbox Dark Hard";
-in
 {
   programs.vscode = {
     enable = true;

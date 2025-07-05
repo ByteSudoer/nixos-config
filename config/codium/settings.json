@@ -86,16 +86,8 @@
     }
   },
   "editor.minimap.enabled": false,
-  "cSpell.dictionaries": [
-    "french"
-  ],
-  "cSpell.userWords": [
-    "CISO",
-    "siem",
-    "SIEM",
-    "siems",
-    "Siems"
-  ],
+  "cSpell.dictionaries": ["french"],
+  "cSpell.userWords": ["CISO", "siem", "SIEM", "siems", "Siems"],
   "editor.wordWrap": "on",
   "latex-workshop.formatting.latex": "latexindent",
   "latex-workshop.latex.build.forceRecipeUsage": false,
@@ -143,9 +135,7 @@
     {
       "name": "latexmk_rconly",
       "command": "latexmk",
-      "args": [
-        "%DOC%"
-      ],
+      "args": ["%DOC%"],
       "env": {}
     },
     {
@@ -163,9 +153,7 @@
     {
       "name": "biber",
       "command": "biber",
-      "args": [
-        "%DOCFILE%"
-      ],
+      "args": ["%DOCFILE%"],
       "env": {}
     },
     {
@@ -185,17 +173,13 @@
     {
       "name": "glossary",
       "command": "makeglossaries",
-      "args": [
-        "%DOCFILE%"
-      ],
+      "args": ["%DOCFILE%"],
       "env": {}
     },
     {
       "name": "bibtex",
       "command": "bibtex",
-      "args": [
-        "%DOCFILE%"
-      ],
+      "args": ["%DOCFILE%"],
       "env": {}
     },
     {
@@ -210,10 +194,7 @@
     {
       "name": "jnw2tex",
       "command": "julia",
-      "args": [
-        "-e",
-        "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-      ],
+      "args": ["-e", "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"],
       "env": {}
     },
     {
@@ -228,81 +209,63 @@
     {
       "name": "tectonic",
       "command": "tectonic",
-      "args": [
-        "--synctex",
-        "--keep-logs",
-        "%DOC%.tex"
-      ],
+      "args": ["--synctex", "--keep-logs", "%DOC%.tex"],
       "env": {}
+    },
+    {
+      "name": "mergepdf",
+      "command": "pdfunite",
+      "args": [
+        "Page_Garde_front.pdf",
+        "%OUTDIR%/%DOCFILE%.pdf",
+        "Page_Garde_back.pdf",
+        "%OUTDIR%/%DOCFILE%-final.pdf"
+      ]
     }
   ],
   "latex-workshop.latex.recipes": [
     {
       "name": "master compiler",
-      "tools": [
-        "latexmk",
-        "biber",
-        "index",
-        "glossary",
-        "latexmk",
-        "latexmk"
-      ]
+      "tools": ["latexmk", "biber", "index", "glossary", "latexmk"]
+    },
+    {
+      "name": "Compile and Merge Covers",
+      "tools": ["latexmk", "biber", "index", "glossary", "latexmk", "mergepdf"]
     },
     {
       "name": "latexmk 🔃",
-      "tools": [
-        "latexmk"
-      ]
+      "tools": ["latexmk"]
     },
     {
       "name": "latexmk (latexmkrc)",
-      "tools": [
-        "latexmk_rconly"
-      ]
+      "tools": ["latexmk_rconly"]
     },
     {
       "name": "latexmk (lualatex)",
-      "tools": [
-        "lualatexmk"
-      ]
+      "tools": ["lualatexmk"]
     },
     {
       "name": "latexmk (xelatex)",
-      "tools": [
-        "xelatexmk"
-      ]
+      "tools": ["xelatexmk"]
     },
     {
       "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
     {
       "name": "Compile Rnw files",
-      "tools": [
-        "rnw2tex",
-        "latexmk"
-      ]
+      "tools": ["rnw2tex", "latexmk"]
     },
     {
       "name": "Compile Jnw files",
-      "tools": [
-        "jnw2tex",
-        "latexmk"
-      ]
+      "tools": ["jnw2tex", "latexmk"]
     },
     {
       "name": "tectonic",
-      "tools": [
-        "tectonic"
-      ]
+      "tools": ["tectonic"]
     }
   ],
   "latex-workshop.latex.build.rootfileInStatus": true,
   "explorer.autoOpenDroppedFile": false,
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "onFocusChange"
 }

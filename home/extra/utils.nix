@@ -11,5 +11,7 @@
     networkmanagerapplet
     numlockx
 
+    ## Internet Downloader
+    motrix
   ];
 }

@@ -5,15 +5,21 @@
       enable = true;
       allowedBridges = [
         "virbr0"
+        "virbr1"
         "br0"
       ];
       qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
 
       # hooks.qemu = {
-      #   "qradar" = ./qemu-hook.sh;
+      #   "bridge" = ./qemu-hook.sh;
       # };
     };
   };
+  # boot.kernel.sysctl = {
+  #   "net.ipv4.conf.wlp0s20f3.proxy_arp" = 1;
+  #   "net.ipv4.conf.virbr1.proxy_arp" = 1;
+  #
+  # };
   # environment.systemPackages = [
   #   pkgs.passt
   # ];

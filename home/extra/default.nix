@@ -21,6 +21,7 @@
     ./obsidian.nix
     ./qbittorrent.nix
     ./remmina.nix
+    ./security.nix
     # ./slack.nix
     ./spotify.nix
     ./utils.nix

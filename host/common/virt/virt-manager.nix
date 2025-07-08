@@ -1,5 +1,15 @@
-{ pkgs, ... }:
 {
+  pkgs,
+  nixvirt,
+  ...
+}:
+{
+
+  programs = {
+    virt-manager = {
+      enable = true;
+    };
+  };
   virtualisation = {
     libvirtd = {
       enable = true;
@@ -8,12 +18,59 @@
         "virbr1"
         "br0"
       ];
-      qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+      qemu = {
+        vhostUserPackages = with pkgs; [ virtiofsd ];
+      };
 
       # hooks.qemu = {
       #   "bridge" = ./qemu-hook.sh;
       # };
     };
+
+    # libvirt = {
+    #   enable = true;
+    #   connections = {
+    #     "qemu:///system" = {
+    #       networks = [
+    #         {
+    #           definition = nixvirt.lib.network.writeXML {
+    #             name = "nattttt";
+    #             uuid = "67a06f76-9e6b-444e-9fb5-9b2591bedb94";
+    #             forward = {
+    #               mode = "nat";
+    #             };
+    #             bridge = {
+    #               name = "virbr0";
+    #               stp = "on";
+    #               delay = "0";
+    #             };
+    #             mac = {
+    #               address = "52:54:00:16:06:a1";
+    #             };
+    #             domain = {
+    #               name = "network";
+    #             };
+    #             ip = {
+    #               address = "192.168.13.1";
+    #               netmask = "255.255.255.0";
+    #               dhcp = {
+    #                 range = {
+    #                   start = "192.168.13.5";
+    #                   end = "192.168.13.254";
+    #                 };
+    #               };
+    #             };
+    #           };
+    #           active = false;
+    #           restart = true;
+    #         }
+    #
+    #       ];
+    #
+    #     };
+    #   };
+    #
+    # };
   };
   # boot.kernel.sysctl = {
   #   "net.ipv4.conf.wlp0s20f3.proxy_arp" = 1;
@@ -23,7 +80,6 @@
   # environment.systemPackages = [
   #   pkgs.passt
   # ];
-  programs.virt-manager.enable = true;
   # networking = {
   #   nat.enable = true;
   #   nat.externalInterface = "wlp0s20f3";

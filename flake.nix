@@ -53,6 +53,11 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Declare VM (libvirt domains)
+    # nixvirt = {
+    #   url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-colors.url = "github:misterio77/nix-colors";
 
   };

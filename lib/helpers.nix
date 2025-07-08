@@ -112,6 +112,7 @@ in
         inputs.sops.nixosModules.sops
         inputs.disko.nixosModules.disko
         inputs.home-manager.nixosModules.home-manager
+        #inputs.nixvirt.nixosModules.default
         {
           home-manager = {
 

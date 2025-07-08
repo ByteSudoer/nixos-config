@@ -2,6 +2,7 @@
 {
   basePackages = with pkgs; [
     binutils
+    cryptsetup
     curl
     dig
     dua

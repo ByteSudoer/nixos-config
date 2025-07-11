@@ -18,6 +18,22 @@ in
     firewall = {
       enable = true;
       allowedTCPPorts = [ ] ++ lib.optionals (portForward == true) [ 32222 ];
+      allowedTCPPortRanges =
+        [ ]
+        ++ lib.optionals (!isInList hostname hostnames) [
+          {
+            from = 1714;
+            to = 1764;
+          }
+        ];
+      allowedUDPPortRanges =
+        [ ]
+        ++ lib.optionals (!isInList hostname hostnames) [
+          {
+            from = 1714;
+            to = 1764;
+          }
+        ];
     };
     nat = {
       enable = !isInList hostname hostnames;

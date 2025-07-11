@@ -14,6 +14,7 @@
     ./imagers.nix
     ./insomnia.nix
     ./intellij.nix
+    ./kdeconnect.nix
     ./kdenlive.nix
     ./libreoffice.nix
     # ./ngrok.nix

@@ -8,6 +8,7 @@
   browser,
   font,
   filemanager,
+  sudo,
   ...
 }:
 let
@@ -22,6 +23,7 @@ let
       font
       browser
       filemanager
+      sudo
       ;
   };
 in

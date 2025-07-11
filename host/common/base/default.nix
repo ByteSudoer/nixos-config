@@ -16,6 +16,7 @@ in
     ./console.nix
     ./fonts.nix
     ./locale.nix
+    ./sudo.nix
     ../services/openssh.nix
     ../services/firewall.nix
   ];

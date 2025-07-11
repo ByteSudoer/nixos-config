@@ -81,6 +81,8 @@
       filemanager = "thunar";
       font = "JetBrainsMono";
       browser = "firefox";
+      # Implementations of sudo : [doas,sudo,sudo-rs]
+      sudo = "sudo-rs";
 
       libx = import ./lib {
         inherit
@@ -93,6 +95,7 @@
           font
           browser
           filemanager
+          sudo
           ;
       };
     in
@@ -120,6 +123,7 @@
           font = "${font}";
           browser = "${browser}";
           filemanager = "${filemanager}";
+          sudo = "${sudo}";
           extra = "yes";
         };
         msi-nixos = libx.mkSystem {

@@ -7,6 +7,7 @@
   font,
   browser,
   filemanager,
+  sudo,
   ...
 }:
 let
@@ -65,6 +66,7 @@ in
           username
           hostname
           desktop
+          sudo
           ;
       };
       modules = [ ../host ];
@@ -85,6 +87,7 @@ in
       filemanager ? null,
       colorscheme ? "dracula",
       platform ? "x86_64-linux",
+      sudo ? "sudo",
     }:
     pkgs.lib.nixosSystem {
       specialArgs = {
@@ -103,6 +106,7 @@ in
           extra
           fs
           colorscheme
+          sudo
           ;
       };
 
@@ -133,6 +137,8 @@ in
                 browser
                 filemanager
                 font
+                sudo
+
                 ;
               username = user;
             };

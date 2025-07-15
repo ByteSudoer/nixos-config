@@ -18,8 +18,8 @@ let
       fi
     fi
   '';
-in
 
+in
 {
   networking = {
     networkmanager = {

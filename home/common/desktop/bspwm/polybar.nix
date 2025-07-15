@@ -121,9 +121,6 @@ in
       };
 
     };
-    script = "
-      polybar
-      mainbar-bspwm &
-    ";
+    script = "\n      polybar\n      mainbar-bspwm &\n    ";
   };
 }

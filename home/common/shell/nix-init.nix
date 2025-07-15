@@ -4,9 +4,7 @@
     enable = true;
     package = pkgs.unstable.nix-init;
     settings = {
-      maintainers = [
-        "ByteSudoer"
-      ];
+      maintainers = [ "ByteSudoer" ];
     };
   };
 }

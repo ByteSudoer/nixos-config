@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   # Get the Needed fonts
   # home.packages = with pkgs; [
   #

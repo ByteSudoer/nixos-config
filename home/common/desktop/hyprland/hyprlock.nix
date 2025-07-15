@@ -52,8 +52,8 @@ in
         dots_center = true;
         fade_on_empty = false;
         font_color = colors.font_color_password;
-        inner_color = colors.inner_color;
-        outer_color = colors.outer_color;
+        inherit (colors) inner_color;
+        inherit (colors) outer_color;
         outline_thickness = 2;
         placeholder_text = "Input Password ....";
         position = "0, -300";
@@ -65,7 +65,7 @@ in
         # Date
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$(date +'%A, %B %d')\"";
+          text = ''cmd[update:1000] echo "$(date +'%A, %B %d')"'';
           color = colors.font_color_password;
           font_size = 22;
           font_family = "${font}";
@@ -76,7 +76,7 @@ in
         # Time
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$(date +'%H:%M')\"";
+          text = ''cmd[update:1000] echo "$(date +'%H:%M')"'';
           color = colors.font_color_password;
           font_size = 95;
           font_family = "JetBrains Mono Extrabold";
@@ -87,7 +87,7 @@ in
         # Current Song
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$(playerctl metadata --format '{{artist}} - {{title}}')\"";
+          text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{artist}} - {{title}}')"'';
           color = colors.font_color;
           font_size = 18;
           font_family = "Metropolis Light, Font Awesome 6 Free Solid";

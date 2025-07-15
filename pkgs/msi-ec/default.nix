@@ -1,4 +1,9 @@
-{ stdenv, lib, fetchFromGitHub, kernel }:
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  kernel,
+}:
 
 #https://wiki.nixos.org/wiki/Linux_kernel
 stdenv.mkDerivation rec {
@@ -20,8 +25,6 @@ stdenv.mkDerivation rec {
     export sourceRoot=$(pwd)/${src.name}
   '';
 
-
-
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
   makeFlags = [
@@ -34,9 +37,6 @@ stdenv.mkDerivation rec {
 
   buildFlags = [ "modules" ];
   installFlags = [ "INSTALL_MOD_PATH=$(out)" ];
-
-
-
 
   # installPhase = ''
   #   mkdir -p $out/lib/modules/${KVER}/extra

@@ -79,7 +79,7 @@ in
       "_GTK_FRAME_EXTENTS@:c"
       "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
     ];
-    #Settigs 
+    #Settigs
     settings = {
       blur = {
         method = "dual_kawase";

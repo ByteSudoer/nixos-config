@@ -154,17 +154,21 @@
 
       homeManagerModules = import ./modules/home-manager;
 
-      formatter = libx.forAllSystems (
-        system:
-        nix-formatter-pack.lib.mkFormatter {
-          pkgs = nixpkgs-unstable.legacyPackages.${system};
-          config.tools = {
-            deadnix.enable = true;
-            nixpkgs-fmt.enable = true;
-            statix.enable = true;
-          };
-        }
-      );
+      formatter = libx.forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
+
+      # formatter = libx.forAllSystems (
+      #   system:
+      #   nix-formatter-pack.lib.mkFormatter {
+      #     pkgs = nixpkgs-unstable.legacyPackages.${system}.nixfmt-tree;
+      #     config.tools = {
+      #       alejandra.enable = false;
+      #       deadnix.enable = true;
+      #       nixfmt.enable = false;
+      #       nixpkgs-fmt.enable = false;
+      #       statix.enable = true;
+      #     };
+      #   }
+      # );
 
       # Custom packages; acessible via 'nix build', 'nix shell', etc
       packages = libx.forAllSystems (

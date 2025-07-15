@@ -1,5 +1,6 @@
 { pkgs, ... }:
-let content = builtins.readFile ./templateInit.sh;
+let
+  content = builtins.readFile ./templateInit.sh;
 in
 pkgs.writeShellScriptBin "templateInit" ''
   echo ${content}

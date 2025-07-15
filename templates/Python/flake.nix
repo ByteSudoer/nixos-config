@@ -15,11 +15,7 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            (python3.withPackages (
-              ps: with ps; [
-                requests
-              ]
-            ))
+            (python3.withPackages (ps: with ps; [ requests ]))
             python3
             #The PyPA recommended tool for installing Python packages
             python311Packages.pip

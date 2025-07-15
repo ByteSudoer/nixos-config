@@ -1,9 +1,5 @@
 # This file defines overlays
-{
-  inputs,
-  colorscheme,
-  ...
-}:
+{ inputs, colorscheme, ... }:
 {
   # This one brings our custom packages from the 'pkgs' directory
   additions =
@@ -17,31 +13,18 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
 
-  modifications =
-    final: prev:
-    let
-      finalAttrs = final.vmware-workstation;
-      baseUrl = "https://softwareupdate.vmware.com/cds/vmw-desktop/ws/${finalAttrs.version}/${finalAttrs.build}/linux";
-      version = "17.6.2";
-      build = "24409262";
-      vmware-unpack-env = prev.buildFHSEnv {
-        pname = "vmware-unpack-env";
-        inherit (finalAttrs) version;
-        targetPkgs = pkgs: [ pkgs.zlib ];
-      };
-    in
-    {
-      # vmware-workstation = prev.vmware-workstation.overrideAttrs rec {
-      #   src = prev.requireFile rec {
-      #     name = "VMware-Workstation-${version}-${build}.x86_64.bundle.tar";
-      #     url = "file:///home/bytesudoer/Downloads/VMware-Workstation-Full-17.6.2-24409262.x86_64.bundle";
-      #     hash = "sha256-FzcS/koLJTXiUWH5H1Au0Eiz8VAH8mboidkQeDLRPmQ=";
-      #   };
-      # unpackPhase = ''
-      #   ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh VMware-Workstation-Full-17.6.2-24409262.x86_64.bundle --extract unpacked"
-      # '';
-      # };
-    };
+  modifications = _final: _prev: {
+    # vmware-workstation = prev.vmware-workstation.overrideAttrs rec {
+    #   src = prev.requireFile rec {
+    #     name = "VMware-Workstation-${version}-${build}.x86_64.bundle.tar";
+    #     url = "file:///home/bytesudoer/Downloads/VMware-Workstation-Full-17.6.2-24409262.x86_64.bundle";
+    #     hash = "sha256-FzcS/koLJTXiUWH5H1Au0Eiz8VAH8mboidkQeDLRPmQ=";
+    #   };
+    # unpackPhase = ''
+    #   ${vmware-unpack-env}/bin/vmware-unpack-env -c "sh VMware-Workstation-Full-17.6.2-24409262.x86_64.bundle --extract unpacked"
+    # '';
+    # };
+  };
   # Optional extras, if you want to include them:
   # ciscoPacketTracer8 = _prev.ciscoPacketTracer8.overrideAttrs (_oldAttrs: rec {
   #   desktopItems = [

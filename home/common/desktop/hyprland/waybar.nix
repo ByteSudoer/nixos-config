@@ -12,8 +12,8 @@ let
       "gruvbox-dark-hard"
     else
       "Dracula";
-in
 
+in
 {
   imports = [ inputs.nix-colors.homeManagerModules.default ];
   colorScheme = inputs.nix-colors.colorSchemes.${color};
@@ -105,10 +105,18 @@ in
           format = " {status}";
           format-connected = " {device_alias}";
           format-connected-battery = " {device_alias} {device_battery_percentage}%";
-          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          tooltip-format = ''
+            {controller_alias}	{controller_address}
+
+            {num_connections} connected'';
+          tooltip-format-connected = ''
+            {controller_alias}	{controller_address}
+
+            {num_connections} connected
+
+            {device_enumerate}'';
+          tooltip-format-enumerate-connected = "{device_alias}	{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}	{device_address}	{device_battery_percentage}%";
           on-click = "blueberry";
         };
         wireplumber = {

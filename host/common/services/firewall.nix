@@ -18,23 +18,19 @@ in
     firewall = {
       enable = true;
       logRefusedConnections = true;
-      allowedTCPPorts = [ ] ++ lib.optionals (portForward == true) [ 32222 ];
-      allowedTCPPortRanges =
-        [ ]
-        ++ lib.optionals (isInList hostname hostnames) [
-          {
-            from = 1714;
-            to = 1764;
-          }
-        ];
-      allowedUDPPortRanges =
-        [ ]
-        ++ lib.optionals (isInList hostname hostnames) [
-          {
-            from = 1714;
-            to = 1764;
-          }
-        ];
+      allowedTCPPorts = lib.optionals portForward [ 32222 ];
+      allowedTCPPortRanges = lib.optionals (isInList hostname hostnames) [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = lib.optionals (isInList hostname hostnames) [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
     };
     nat = {
       enable = isInList hostname hostnames;
@@ -43,17 +39,15 @@ in
         "wlp0s20f3"
       ];
       externalInterface = "virbr0";
-      forwardPorts =
-        [ ]
-        ++ lib.optionals (portForward == true) [
-          {
+      forwardPorts = lib.optionals portForward [
+        {
 
-            sourcePort = 32222;
-            proto = "tcp";
-            destination = "192.168.122.25:22";
+          sourcePort = 32222;
+          proto = "tcp";
+          destination = "192.168.122.25:22";
 
-          }
-        ];
+        }
+      ];
     };
 
   };

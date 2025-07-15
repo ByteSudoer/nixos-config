@@ -102,7 +102,6 @@ let
       };
 
 in
-
 {
   xsession.windowManager.i3 = {
     enable = true;
@@ -273,12 +272,8 @@ in
       };
       floating = {
         criteria = [
-          {
-            class = "Pavucontrol";
-          }
-          {
-            class = "Xfce4-appfinder";
-          }
+          { class = "Pavucontrol"; }
+          { class = "Xfce4-appfinder"; }
         ];
       };
       bars = [
@@ -396,7 +391,7 @@ in
           interval = 3600;
         };
         date = lib.hm.dag.entryAfter [ "weather" ] {
-          command = "date +\" %a, %d %b  %H:%M:%S\"";
+          command = ''date +" %a, %d %b  %H:%M:%S"'';
           interval = 1;
         };
 

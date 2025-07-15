@@ -1,16 +1,4 @@
-{
-  font,
-  terminal,
-  browser,
-  pkgs,
-  colorscheme,
-  username,
-  ...
-}:
-let
-  selected_font = "JetBrains Mono";
-in
-{
+_: {
   # programs.plasma = {
   #   enable = true;
   # immutableByDefault = true;

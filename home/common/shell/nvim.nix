@@ -13,8 +13,8 @@ let
       "gruvbox"
     else
       "tokyonight-storm";
-in
 
+in
 {
   programs.neovim = {
     enable = true;

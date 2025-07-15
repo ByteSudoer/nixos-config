@@ -22,7 +22,5 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = [ cfg.package ];
-  };
+  config = mkIf cfg.enable { home.packages = [ cfg.package ]; };
 }

@@ -57,10 +57,10 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ cfg.package ];
     xdg.configFile."draw.io/config.json" = lib.mkIf (cfg.settings != { }) {
-      source = (jsonFormat.generate "config.json" cfg.settings);
+      source = jsonFormat.generate "config.json" cfg.settings;
     };
     xdg.configFile."draw.io/Preferences" = lib.mkIf (cfg.preferences != { }) {
-      source = (jsonFormat.generate "Preferences" cfg.preferences);
+      source = jsonFormat.generate "Preferences" cfg.preferences;
     };
   };
 }

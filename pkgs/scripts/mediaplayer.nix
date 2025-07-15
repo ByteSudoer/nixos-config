@@ -1,12 +1,12 @@
-{ lib
-, stdenvNoCC
-, glib
-, gobject-introspection
-, playerctl
-, python3
-, waybar
-, wrapGAppsHook
-,
+{
+  lib,
+  stdenvNoCC,
+  glib,
+  gobject-introspection,
+  playerctl,
+  python3,
+  waybar,
+  wrapGAppsHook,
 }:
 
 stdenvNoCC.mkDerivation rec {

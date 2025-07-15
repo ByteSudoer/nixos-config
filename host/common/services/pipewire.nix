@@ -17,11 +17,7 @@
         "99-disable-suspend" = {
           "monitor.alsa.rules" = [
             {
-              matches = [
-                {
-                  "node.name" = "~alsa_output.*";
-                }
-              ];
+              matches = [ { "node.name" = "~alsa_output.*"; } ];
               actions = {
                 update-props = {
                   "session.suspend-timeout-seconds" = 0;

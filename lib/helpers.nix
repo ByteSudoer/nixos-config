@@ -3,10 +3,6 @@
   outputs,
   stateVersion,
   username,
-  terminal,
-  font,
-  browser,
-  filemanager,
   sudo,
   ...
 }:

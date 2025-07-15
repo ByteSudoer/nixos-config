@@ -1,11 +1,12 @@
-{ lib
-, fetchFromGitHub
-, curl
-, github-cli
-, stdenv
+{
+  lib,
+  fetchFromGitHub,
+  curl,
+  github-cli,
+  stdenv,
 }:
 
-stdenv.mkDerivation rec{
+stdenv.mkDerivation rec {
   pname = "gh-graph";
   version = "unstable-2021";
   src = fetchFromGitHub {

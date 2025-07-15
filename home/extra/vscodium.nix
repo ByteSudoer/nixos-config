@@ -1,13 +1,9 @@
 {
   pkgs,
   config,
-  colorscheme,
   username,
   ...
 }:
-let
-  ColorScheme = if colorscheme == "dracula" then "Tokyo Night" else "Gruvbox Dark Hard";
-in
 {
   programs.vscode = {
     enable = true;
@@ -49,7 +45,6 @@ in
   };
 
   # User Settings file
-  home.file.".config/VSCodium/User/settings.json".source = (
-    config.lib.file.mkOutOfStoreSymlink "/home/${username}/nixos-config/config/codium/settings.json"
-  );
+  home.file.".config/VSCodium/User/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/${username}/nixos-config/config/codium/settings.json";
 }

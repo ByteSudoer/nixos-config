@@ -40,7 +40,7 @@
             symfony-cli
             php81Packages.composer
           ];
-          shellHook = '''';
+          shellHook = "";
         };
       }
     );

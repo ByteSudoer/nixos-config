@@ -1,9 +1,10 @@
-{ lib
-, python3
-, fetchPypi
-, gtk3
-, hicolor-icon-theme
-, autoPatchelfHook
+{
+  lib,
+  python3,
+  fetchPypi,
+  gtk3,
+  hicolor-icon-theme,
+  autoPatchelfHook,
 
 }:
 

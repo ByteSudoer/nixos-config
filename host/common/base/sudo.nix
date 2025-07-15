@@ -10,7 +10,7 @@
       enable = sudo == "sudo";
     };
     sudo-rs = {
-      enable = true;
+      enable = sudo == "sudo-rs";
       package = pkgs.sudo-rs;
       execWheelOnly = lib.mkForce true;
       wheelNeedsPassword = lib.mkForce true;

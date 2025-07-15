@@ -21,6 +21,7 @@
     traceroute
     trash-cli
     tree
+    unrar
     unzip
     usbutils
     vim

@@ -8,6 +8,14 @@ all: clean format check
 
 build:
 	sudo nixos-rebuild switch --flake .#${HOSTNAME} && notify-send "Update Done"
+	# @echo "Rebuilding system for $(HOSTNAME)..."
+	# @bash -c '\
+	# 	sudo nixos-rebuild switch --flake .#$(HOSTNAME) |& nom && \
+	# 	if command -v notify-send >/dev/null; then \
+	# 		notify-send "Update Done"; \
+	# 	fi && \
+	# 	exec bash \
+	# '
 
 build-debug:
 	sudo nixos-rebuild switch --flake .#${HOSTNAME} --show-trace && notify-send "Update Done with Debug ON"

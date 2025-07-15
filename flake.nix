@@ -139,7 +139,7 @@
         };
         vm = libx.mkSystem {
           hostname = "vm";
-          desktop = "i3";
+          desktop = "plasma";
           colorscheme = "gruvbox";
         };
 

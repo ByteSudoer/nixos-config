@@ -1,9 +1,9 @@
 _: {
   # Nvidia
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    # driSupport = true;
+    # driSupport32Bit = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {

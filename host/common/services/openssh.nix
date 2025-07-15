@@ -9,7 +9,7 @@ in
 {
   programs.ssh.startAgent = true;
   services.openssh = {
-    enable = false;
+    enable = isInList hostname hostnames;
     openFirewall = false;
     settings = {
       PasswordAuthentication = isInList hostname hostnames;

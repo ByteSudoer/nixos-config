@@ -146,7 +146,7 @@ in
             sharedModules = [
               inputs.sops.homeManagerModules.sops
               # inputs.hyprland.homeManagerModules.default
-              inputs.nix-index-database.hmModules.nix-index
+              inputs.nix-index-database.homeModules.nix-index
               inputs.plasma-manager.homeManagerModules.plasma-manager
             ];
 

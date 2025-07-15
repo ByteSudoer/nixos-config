@@ -34,7 +34,11 @@
 
     #kernelPackages = pkgs.linuxPackages_6_14;
     extraModulePackages = [ ];
-    # Whether to delete all files in /tmp during boot.
-    tmp.cleanOnBoot = true;
+    tmp = {
+      # Whether to delete all files in /tmp during boot.
+      cleanOnBoot = true;
+      #Enable tmpfs for /tmp
+      useTmpfs = true;
+    };
   };
 }

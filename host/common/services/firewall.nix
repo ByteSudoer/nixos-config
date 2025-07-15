@@ -17,6 +17,7 @@ in
     };
     firewall = {
       enable = true;
+      logRefusedConnections = true;
       allowedTCPPorts = [ ] ++ lib.optionals (portForward == true) [ 32222 ];
       allowedTCPPortRanges =
         [ ]

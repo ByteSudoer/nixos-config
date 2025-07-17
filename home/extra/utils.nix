@@ -6,10 +6,14 @@
     arandr
     arion
 
-    bc
+    bc # Terminal calculator
+
+    dconf2nix # Nix code from Dconf files
 
     networkmanagerapplet
-    numlockx
+    numlockx # handle Numlock operations
+    hyperfine # Terminal benchmarking
+    speedtest-go # Terminal speedtest.net
 
     ## Internet Downloader
     motrix

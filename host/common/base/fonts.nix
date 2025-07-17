@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
 
   fonts = {
@@ -13,6 +18,7 @@
 
     fontconfig = {
       antialias = true;
+      cache32Bit = lib.mkForce config.hardware.graphics.enable32Bit;
       # defaultFonts = {
       #   serif = [ "Source Serif" ];
       #   sansSerif = [ "Work Sans" "Fira Sans" "FiraGO" ];

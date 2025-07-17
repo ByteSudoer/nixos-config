@@ -1,6 +1,5 @@
 # ByteSudoer's nixos-config
 
-
 This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for configuring my machines.
 
 ## Structure
@@ -11,7 +10,6 @@ This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for confi
 - [pkgs]: my custom package definitions
 - [scripts]: helper scripts for machine setup
 
-
 <!-- Structure -->
 
 [home]: ./home
@@ -20,10 +18,12 @@ This repository contains a [Nix Flake](https://nixos.wiki/wiki/Flakes) for confi
 [pkgs]: ./pkgs
 [scripts]: ./scripts
 
-
 ## TODO
-- [X] Add Disko support for different host 
-- [X] Add nix-index to home-manager
-- [X] Encrypt Secrets with sops
-- [ ] Configure env variables for hyprland with colorscheme global variable support
+
+- [x] Add Disko support for different host
+- [x] Add nix-index to home-manager
+- [x] Encrypt Secrets with sops
+- [x] Configure env variables for hyprland with colorscheme global variable support
 - [ ] Documentation for nix-ld(whether to integrate it or not)
+- [ ] xdg-override check for possible use cases
+- [ ] NixVirt check for possible use cases (already added as flake input)

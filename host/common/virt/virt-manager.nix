@@ -16,12 +16,22 @@
       ];
       qemu = {
         vhostUserPackages = with pkgs; [ virtiofsd ];
+        # Enable TPM emulation
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [ pkgs.OVMFFull.fd ];
+        };
+
       };
 
       # hooks.qemu = {
       #   "bridge" = ./qemu-hook.sh;
       # };
     };
+
+    # Enable USB redirection
+    spiceUSBRedirection.enable = true;
 
     # libvirt = {
     #   enable = true;

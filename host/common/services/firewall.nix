@@ -33,12 +33,9 @@ in
       ];
     };
     nat = {
-      enable = isInList hostname hostnames;
-      internalInterfaces = [
-        "enp0s31f6"
-        "wlp0s20f3"
-      ];
-      externalInterface = "virbr0";
+      enable = !isInList hostname hostnames;
+      internalInterfaces = [ "wlp0s20f3" ];
+      externalInterface = "virbr1";
       forwardPorts = lib.optionals portForward [
         {
 

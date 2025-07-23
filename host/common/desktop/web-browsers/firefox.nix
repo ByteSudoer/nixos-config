@@ -24,9 +24,18 @@ in
       "en-US"
     ] ++ lib.optional isExtra "fr";
     policies = lib.mkIf (isInList hostname hostnames) {
-      "Homepage" = {
-        "URL" = "https://duckduckgo.com/";
-      };
+      # "Homepage" = {
+      #   "URL" = "https://duckduckgo.com/";
+      # };
+      #Configure tracking protection
+      # "EnableTrackingProtection" = {
+      #   "Value" = true;
+      #   #whether or not a user can change it.
+      #   "Locked" = false;
+      #   "Cryptomining" = true;
+      #   "EmailTracking" = true;
+      #   "Fingerprinting" = true;
+      # };
       "NewTabPage" = true;
       "NoDefaultBookmarks" = true;
       "SearchEngines" = {

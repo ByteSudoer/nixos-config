@@ -8,14 +8,14 @@
     ./drawio.nix
     ./dropbox.nix
     ./ferdium.nix
-    ./gimp.nix
+    # ./gimp.nix
     # ./github-desktop.nix
     ./hardinfo.nix
     ./imagers.nix
     ./insomnia.nix
     ./intellij.nix
     ./kdeconnect.nix
-    ./kdenlive.nix
+    # ./kdenlive.nix
     ./libreoffice.nix
     # ./ngrok.nix
     ./obs.nix

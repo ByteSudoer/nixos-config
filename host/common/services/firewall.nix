@@ -12,8 +12,8 @@ in
   networking = {
     hosts = {
       "192.168.100.1" = [ "router" ];
-      "192.168.100.29" = [ "pi" ];
-      "192.168.100.110" = [ "proxmox" ];
+      "10.10.0.20" = [ "raspberrypi" ];
+      "10.10.0.30" = [ "proxmox" ];
     };
     firewall = {
       enable = true;

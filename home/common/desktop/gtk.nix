@@ -27,9 +27,10 @@ let
           package = pkgs.gruvbox-gtk-theme;
           name = "Gruvbox-Dark";
         };
+
         iconTheme = {
-          package = pkgs.arc-icon-theme;
-          name = "Arc";
+          package = pkgs.dracula-icon-theme;
+          name = "Dracula";
         };
       }
     else

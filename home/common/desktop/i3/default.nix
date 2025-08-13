@@ -6,6 +6,7 @@
   terminal,
   font,
   browser,
+  username,
   ...
 }:
 let
@@ -105,7 +106,7 @@ in
 {
   xsession.windowManager.i3 = {
     enable = true;
-    package = pkgs.i3;
+    package = pkgs.unstable.i3;
 
     config = {
       terminal = "${terminal}";
@@ -166,6 +167,16 @@ in
           always = true;
           notification = false;
         }
+        {
+          command = "snixembed";
+          always = true;
+          notification = false;
+        }
+        # {
+        #   command = "picom";
+        #   always = true;
+        #   notification = false;
+        # }
         #Applications
         {
           command = "discord --start-minimized";
@@ -190,14 +201,18 @@ in
           notification = false;
         }
         {
+          command = "blueman-tray";
+          notification = false;
+        }
+        {
           command = "numlockx on";
           always = true;
           notification = false;
         }
-        {
-          command = "volumeicon";
-          notification = false;
-        }
+        # {
+        #   command = "volumeicon";
+        #   notification = false;
+        # }
       ];
       keybindings = lib.mkOptionDefault {
         "${modifier}+Return" = "exec ${terminal}";
@@ -209,7 +224,7 @@ in
         "${modifier}+x" = "exec xfce4-appfinder";
 
         # kill focused window
-        "${modifier}+c" = "kill";
+        #"${modifier}+c" = "kill";
         "${altModifier}+F4" = "kill";
 
         #Change focus
@@ -243,7 +258,7 @@ in
         "${modifier}+f" = "fullscreen toggle";
 
         # toggle tiling / floating
-        #"${modifier}+space" = "floating toggle";
+        "${modifier}+Shift+space" = "floating toggle";
 
         # Change modes
         "${modifier}+r" = "mode resize";
@@ -258,6 +273,7 @@ in
         "${modifier}+4" = "workspace number ${workspace4}";
       };
       assigns = {
+        "${workspace1}" = [ { class = "Alacritty$"; } ];
         "${workspace2}" = [ { class = "firefox$"; } ];
         "${workspace3}" = [ { class = "Spotify"; } ];
         "${workspace4}" = [ { class = "Thunar"; } ];
@@ -273,18 +289,60 @@ in
       };
       floating = {
         criteria = [
-          { class = "Pavucontrol"; }
+          { class = "pavucontrol"; }
           { class = "Xfce4-appfinder"; }
         ];
       };
-      # bars = [
-      #
-      #   {
-      #     statusCommand = "${pkgs.i3blocks}/bin/i3blocks -c $HOME/.config/i3blocks/bottom";
-      #     trayOutput = "primary";
-      #   }
-      #
-      # ];
+      bars = [
+
+        {
+          # statusCommand = "${pkgs.i3blocks}/bin/i3blocks -c $HOME/.config/i3blocks/bottom";
+          # statusCommand = "${pkgs.i3status}/bin/i3status";
+          statusCommand = "${pkgs.unstable.i3status-rust}/bin/i3status-rs $HOME/.config/i3status-rust/config-default.toml";
+          fonts = {
+            names = [ "${font}" ];
+            style = "Bold";
+            size = 11.0;
+          };
+          #separatorSymbol = " ";
+          colors = {
+            background = "#282828";
+            statusline = "#ebdbb2";
+            separator = "#ebdbb2";
+
+            focusedWorkspace = {
+              border = "#458588";
+              background = "#458588";
+              text = "#282828";
+            };
+            activeWorkspace = {
+              border = "#3c3836";
+              background = "#3c3836";
+              text = "#ebdbb2";
+            };
+            inactiveWorkspace = {
+              border = "#1d2021";
+              background = "#1d2021";
+              text = "#928374";
+            };
+            urgentWorkspace = {
+              border = "#cc241d";
+              background = "#cc241d";
+              text = "#ebdbb2";
+            };
+            bindingMode = {
+              border = "#cc241d";
+              background = "#cc241d";
+              text = "#ebdbb2";
+            };
+          };
+          #padding = "3px 0";
+          trayOutput = "primary";
+          trayPadding = 5;
+          #workspaceMinWidth = 50;
+        }
+
+      ];
     };
     extraConfig = ''
       #Display the popup if it belongs to the fullscreen application only
@@ -296,56 +354,124 @@ in
   };
 
   programs.i3status-rust = {
-    enable = false;
-    package = pkgs.i3status-rust;
+    enable = true;
+    package = pkgs.unstable.i3status-rust;
     bars = {
       default = {
         blocks = [
+          # {
+          #   block = "music";
+          #   format = " $prev $icon $play $next ";
+          #   player = "spotify";
+          # }
           {
+            alert = 10.0;
             block = "disk_space";
-            path = "/home/bytesudoer/";
             info_type = "available";
             interval = 60;
+            path = "/home/${username}";
             warning = 20.0;
-            alert = 10.0;
+            format = " $icon $available ";
+            format_alt = " $icon $available / $total ";
+            theme_overrides = {
+              idle_bg = "#cc241d";
+
+            };
           }
           {
             block = "memory";
-            format_mem = " $icon $mem_used_percents ";
-            format_swap = " $icon $swap_used_percents ";
+            format = " $icon $mem_total_used_percents.eng(w:2) ";
+            format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
           }
           {
             block = "cpu";
             interval = 1;
+            format = " $icon $utilization ";
+            format_alt = " $icon $barchart $utilization ";
+            info_cpu = 20;
+            warning_cpu = 50;
+            critical_cpu = 90;
+          }
+          # {
+          #   block = "load";
+          #   format = " $icon $1m ";
+          #   interval = 1;
+          # }
+          {
+            block = "sound";
+            format = " $icon $output_name {$volume.eng(w:2) |}";
+            click = [
+              {
+                button = "left";
+                cmd = "pavucontrol --tab=3";
+              }
+            ];
+            mappings = {
+              "alsa_output.pci-0000_00_1f.3.analog-stereo" = "";
+              "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink" = "";
+            };
+            theme_overrides = {
+              idle_bg = "#689d6a";
+            };
           }
           {
-            block = "load";
-            interval = 1;
-            format = " $icon $1m ";
+            block = "net";
+            interval = 5;
+            theme_overrides = {
+              idle_bg = "#b57614";
+            };
           }
-          { block = "sound"; }
+          {
+            block = "battery";
+            device = "BAT0";
+            format = " $icon $percentage ";
+            # format_alt = " $percentage {$time_remaining.dur(hms:true, min_unit:m) |}";
+            theme_overrides = {
+              idle_bg = "#fbf1c7";
+              idle_fg = "#282828";
+            };
+          }
           {
             block = "time";
-            interval = 60;
             format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+            interval = 60;
+            theme_overrides = {
+              idle_bg = "#076678";
+
+            };
+          }
+          {
+            block = "custom";
+            command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)";
+            interval = 600;
           }
         ];
         settings = {
           theme = {
             theme = "gruvbox-dark";
+            overrides = {
+              seperator = " | ";
+            };
           };
         };
-        icons = "awesome5";
+        icons = "material-nf";
         theme = "gruvbox-dark";
       };
     };
-
   };
   # i3status bar configuration
   programs.i3status = {
     enable = false;
     enableDefault = false;
     package = pkgs.i3status;
+
+    general = {
+      colors = true;
+      color_good = "#e0e0e0";
+      color_degraded = "#d7ae00";
+      color_bad = "#cc241d";
+      interval = 1;
+    };
 
     modules = {
       "time" = {
@@ -355,7 +481,7 @@ in
         };
 
       };
-      "disk /" = {
+      "disk /home/${username}" = {
         position = 5;
         settings = {
           format = " %avail";
@@ -381,11 +507,18 @@ in
       "battery BAT0" = {
         position = 2;
         settings = {
-          format = "BAT0 ⚡: %percentage";
-          threshold_type = "percentage";
+          format = "<span color='#34e0bf' size='large'>%status</span> <span bgcolor='#34e0bf' foreground='black'> %percentage </span>";
+          format_down = "No battery";
+          status_chr = "⚡ ";
+          status_bat = " ";
+          status_unk = "? UNK";
+          status_full = "󰂄 FULL";
+          path = "/sys/class/power_supply/BAT0/uevent";
           low_threshold = 10;
+          last_full_capacity = true;
         };
       };
+
       "wireless wlp0s20f3" = {
         position = 1;
         settings = {
@@ -396,8 +529,8 @@ in
       "ethernet enp0s31f6" = {
         position = 1;
         settings = {
-          format_up = "(%speed) %ip";
-          format_down = "ETH: down";
+          format_up = " %ip ";
+          format_down = "  ";
         };
       };
     };

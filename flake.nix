@@ -53,6 +53,10 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     # Declare VM (libvirt domains)
     # nixvirt = {
     #   url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
@@ -75,8 +79,8 @@
       inherit (self) outputs;
       stateVersion = "25.05";
       username = "bytesudoer";
-      colorscheme = "dracula";
-      desktop = "xfce";
+      colorscheme = "gruvbox";
+      desktop = "i3";
       terminal = "alacritty";
       filemanager = "thunar";
       font = "JetBrainsMono";

@@ -11,8 +11,8 @@ in
 {
   services.picom = {
     enable = isInList desktop windowManagers;
-    package = pkgs.picom-pijulius;
-    backend = "glx";
+    package = pkgs.picom;
+    backend = "xrender";
     extraArgs = [ "--experimental-backends" ];
     # vSync = true;
     # Opacity
@@ -25,7 +25,7 @@ in
       "100:class_g    = 'URxvt'"
       # "100:class_g	  = 'Alacritty' && 'kitty' && focused"
       "80:class_g	  = 'kitty' && !focused"
-      "70:class_g    = 'Alacritty'"
+      "90:class_g    = 'Alacritty'"
       "100:class_g    *?= 'code-oss'"
       "100:class_g    = 'Meld'"
       "100:class_g    = 'TelegramDesktop'"
@@ -35,20 +35,20 @@ in
       "90:class_g     = 'Thunar'"
       "90:class_g     *?= 'rofi'"
       "90:class_g     *?= 'discord'"
-      "90:class_g     *?= 'spotify'"
+      "100:class_g     *?= 'spotify'"
       "90:class_g     *?= 'obsidian'"
       "90:class_g     *?= 'bitwarden'"
       "90:class_g     *?= 'VsCodium'"
     ];
     # Fading
-    fade = true;
+    fade = false;
     fadeSteps = [
       3.0e-2
       3.0e-2
     ];
     fadeExclude = [ "class_g = 'slop'" ];
     #Shadow
-    shadow = true;
+    shadow = false;
     # shadowOffsets = [
     #   -18
     #   -18

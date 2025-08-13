@@ -53,10 +53,10 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # catppuccin = {
+    #   url = "github:catppuccin/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
     # Declare VM (libvirt domains)
     # nixvirt = {
     #   url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";

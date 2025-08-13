@@ -5,7 +5,7 @@ pkgs.writeShellScriptBin "lock" ''
     if [ "$WAYLAND_DISPLAY" ]; then
       lock_command="hyprlock"
     else
-      lock_command="${pkgs.xfce.xfce4-session}/bin/xflock4"
+      lock_command="${pkgs.unstable.betterlockscreen}/bin/betterlockscreen --lock"
     fi
 
 
@@ -26,5 +26,5 @@ pkgs.writeShellScriptBin "lock" ''
   $lock_command
 
   #Unmute Output
-  ${pkgs.alsa-utils}/bin/amixer set Master unmute
+  #${pkgs.alsa-utils}/bin/amixer set Master unmute
 ''

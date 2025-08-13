@@ -31,8 +31,8 @@ let
           name = "Capitaine Cursors (Gruvbox)";
         };
         theme = {
-          package = pkgs.gruvbox-dark-gtk;
-          name = "gruvbox-dark";
+          package = pkgs.gruvbox-material-gtk-theme;
+          name = "Gruvbox-Material-Dark";
         };
         iconTheme = {
           package = pkgs.dracula-icon-theme;

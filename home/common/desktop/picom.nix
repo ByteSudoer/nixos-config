@@ -76,8 +76,8 @@ in
       "class_g ?= 'Cairo-dock'"
       "class_g ?= 'Xfce4-notifyd'"
       "class_g ?= 'Xfce4-power-manager'"
-      "_GTK_FRAME_EXTENTS@:c"
-      "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+      # "_GTK_FRAME_EXTENTS@:c"
+      # "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
     ];
     #Settigs
     settings = {
@@ -89,6 +89,9 @@ in
         background-fixed = false;
         kern = "3x3box";
       };
+      blur-background-exclude = [
+        "(class_g = 'firefox' || class_g = 'Firefox' || class_g = 'Thunderbird') && (window_type = 'utility' || window_type = 'popup_menu') && argb"
+      ];
     };
   };
 }

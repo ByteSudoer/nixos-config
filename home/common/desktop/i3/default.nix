@@ -205,6 +205,7 @@ in
         "${modifier}+Shift+q" = "kill";
         "${modifier}+w" = "exec ${browser}";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+        #Key code for <
         "${modifier}+x" = "exec xfce4-appfinder";
 
         # kill focused window
@@ -276,14 +277,14 @@ in
           { class = "Xfce4-appfinder"; }
         ];
       };
-      bars = [
-
-        {
-          statusCommand = "${pkgs.i3blocks}/bin/i3blocks -c $HOME/.config/i3blocks/bottom";
-          trayOutput = "primary";
-        }
-
-      ];
+      # bars = [
+      #
+      #   {
+      #     statusCommand = "${pkgs.i3blocks}/bin/i3blocks -c $HOME/.config/i3blocks/bottom";
+      #     trayOutput = "primary";
+      #   }
+      #
+      # ];
     };
     extraConfig = ''
       #Display the popup if it belongs to the fullscreen application only
@@ -294,70 +295,117 @@ in
 
   };
 
+  programs.i3status-rust = {
+    enable = false;
+    package = pkgs.i3status-rust;
+    bars = {
+      default = {
+        blocks = [
+          {
+            block = "disk_space";
+            path = "/home/bytesudoer/";
+            info_type = "available";
+            interval = 60;
+            warning = 20.0;
+            alert = 10.0;
+          }
+          {
+            block = "memory";
+            format_mem = " $icon $mem_used_percents ";
+            format_swap = " $icon $swap_used_percents ";
+          }
+          {
+            block = "cpu";
+            interval = 1;
+          }
+          {
+            block = "load";
+            interval = 1;
+            format = " $icon $1m ";
+          }
+          { block = "sound"; }
+          {
+            block = "time";
+            interval = 60;
+            format = " $timestamp.datetime(f:'%a %d/%m %R') ";
+          }
+        ];
+        settings = {
+          theme = {
+            theme = "gruvbox-dark";
+          };
+        };
+        icons = "awesome5";
+        theme = "gruvbox-dark";
+      };
+    };
+
+  };
   # i3status bar configuration
-  # programs.i3status = {
-  #   enable = true;
-  #   enableDefault = false;
-  #   package = pkgs.i3status;
-  #
-  #   modules = {
-  #     "time" = {
-  #       position = 6;
-  #       settings = {
-  #         format = "%Y-%m-%d  %H:%M:%S";
-  #       };
-  #
-  #     };
-  #     "disk /" = {
-  #       position = 5;
-  #       settings = {
-  #         format = " %avail";
-  #       };
-  #
-  #     };
-  #     "cpu_usage" = {
-  #       position = 4;
-  #       settings = {
-  #         format = ": %usage";
-  #         max_threshold = 75;
-  #       };
-  #
-  #     };
-  #     "memory" = {
-  #       position = 3;
-  #       settings = {
-  #         memory_used_method = "classical";
-  #         format = "RAM :: %used / %total";
-  #
-  #       };
-  #     };
-  #     "battery BAT0" = {
-  #       position = 2;
-  #       settings = {
-  #         format = "BAT0 ⚡: %percentage";
-  #         threshold_type = "percentage";
-  #         low_threshold = 10;
-  #       };
-  #     };
-  #     "wireless wlp0s20f3" = {
-  #       position = 1;
-  #       settings = {
-  #         format_up = " (%quality) %ip";
-  #         format_down = "WLS: down";
-  #       };
-  #     };
-  #     "ethernet enp0s31f6:" = {
-  #       position = 1;
-  #       settings = {
-  #         format_up = "(%speed) %ip";
-  #         format_down = "ETH: down";
-  #       };
-  #     };
-  #   };
-  #
-  # };
+  programs.i3status = {
+    enable = false;
+    enableDefault = false;
+    package = pkgs.i3status;
+
+    modules = {
+      "time" = {
+        position = 6;
+        settings = {
+          format = "%Y-%m-%d  %H:%M:%S";
+        };
+
+      };
+      "disk /" = {
+        position = 5;
+        settings = {
+          format = " %avail";
+        };
+
+      };
+      "cpu_usage" = {
+        position = 4;
+        settings = {
+          format = ": %usage";
+          max_threshold = 75;
+        };
+
+      };
+      "memory" = {
+        position = 3;
+        settings = {
+          memory_used_method = "classical";
+          format = "RAM :: %used / %total";
+
+        };
+      };
+      "battery BAT0" = {
+        position = 2;
+        settings = {
+          format = "BAT0 ⚡: %percentage";
+          threshold_type = "percentage";
+          low_threshold = 10;
+        };
+      };
+      "wireless wlp0s20f3" = {
+        position = 1;
+        settings = {
+          format_up = " (%quality) %ip";
+          format_down = "WLS: down";
+        };
+      };
+      "ethernet enp0s31f6" = {
+        position = 1;
+        settings = {
+          format_up = "(%speed) %ip";
+          format_down = "ETH: down";
+        };
+      };
+    };
+
+  };
+
   programs.i3blocks = {
-    enable = true;
+    enable = false;
     package = pkgs.i3blocks;
     bars = {
       # top = {

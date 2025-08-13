@@ -16,6 +16,13 @@ let
           package = pkgs.dracula-icon-theme;
           name = "Dracula";
         };
+        pointerTheme = {
+          gtk.enable = true;
+          package = pkgs.dracula-theme;
+          name = "Dracula-cursors";
+          size = 16;
+          x11.enable = true;
+        };
       }
     else if colorscheme == "gruvbox" then
       {
@@ -27,10 +34,16 @@ let
           package = pkgs.gruvbox-gtk-theme;
           name = "Gruvbox-Dark";
         };
-
         iconTheme = {
           package = pkgs.dracula-icon-theme;
           name = "Dracula";
+        };
+        pointerTheme = {
+          gtk.enable = true;
+          package = pkgs.capitaine-cursors-themed;
+          name = "Capitaine Cursors (Gruvbox)";
+          size = 16;
+          x11.enable = true;
         };
       }
     else
@@ -39,13 +52,8 @@ let
       };
 in
 {
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.dracula-theme;
-    name = "Dracula-cursors";
-    size = 16;
-    x11.enable = true;
-  };
+  home.pointerCursor = themeConfig.pointerTheme;
+
   gtk = {
     enable = true;
     font = {

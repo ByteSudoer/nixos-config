@@ -13,7 +13,7 @@
   #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   # };
   environment.systemPackages = with pkgs; [
-    ark
+    kdePackages.ark
     evince
   ];
 

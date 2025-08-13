@@ -31,7 +31,7 @@
     swww_randomize
     wev
 
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
 
     #Eq of xrandr
     wlr-randr

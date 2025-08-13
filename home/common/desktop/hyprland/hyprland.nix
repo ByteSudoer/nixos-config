@@ -19,8 +19,8 @@
     settings = {
       "$mod" = "SUPER";
       monitor = [
-        "eDP-1, 1920x1200, auto, 1.0"
-        "HDMI-A-1, 1920x1080, auto, 1.0"
+        "eDP-1, 1920x1200, 1920x0, 1"
+        "HDMI-A-1, 1920x1080, 0x0, 1"
       ];
       general = {
         border_size = 1;
@@ -145,7 +145,7 @@
       ];
       # Window Rules
       windowrule = [
-        "float,^(pavucontrol)$"
+        "float,title:^(pavucontrol)$"
         "float,title:^(Authentication Required)$"
       ];
 

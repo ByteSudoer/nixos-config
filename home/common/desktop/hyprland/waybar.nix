@@ -149,7 +149,7 @@ in
           max-length = 10;
         };
         "hyprland/workspaces" = {
-          # all-outputs = true;
+          all-outputs = true;
           format = "{name}: {icon}";
           format-icons = {
             "1" = "";
@@ -157,6 +157,8 @@ in
             "3" = "";
             "4" = "";
             "5" = "";
+            # active = "";
+            # default = "";
 
             "11" = "";
             "12" = "";

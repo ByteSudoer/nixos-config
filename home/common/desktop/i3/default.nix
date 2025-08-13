@@ -172,11 +172,11 @@ in
           always = true;
           notification = false;
         }
-        # {
-        #   command = "picom";
-        #   always = true;
-        #   notification = false;
-        # }
+        {
+          command = "picom";
+          always = true;
+          notification = false;
+        }
         #Applications
         {
           command = "discord --start-minimized";
@@ -252,13 +252,13 @@ in
         #Move aroun workspaces
         "${altModifier}+Shift+l" = "workspace next";
         "${altModifier}+Shift+h" = "workspace prev";
-        "${altModifier}+Tab" = "workspace back_and_forth";
+        "${altModifier}+Tab" = "exec bash $HOME/.config/rofi/launchers/type-3/launcher.sh";
 
         #Toggling fullsceen
-        "${modifier}+f" = "fullscreen toggle";
+        "${modifier}+m" = "fullscreen toggle";
 
         # toggle tiling / floating
-        "${modifier}+Shift+space" = "floating toggle";
+        "${modifier}+f" = "floating toggle";
 
         # Change modes
         "${modifier}+r" = "mode resize";
@@ -349,6 +349,8 @@ in
       popup_during_fullscreen smart
       # Only initiate a tiling drag when the modifier is held:
       tiling_drag modifier
+      # Change focus to window once opened
+      focus_on_window_activation focus
     '';
 
   };
@@ -382,6 +384,9 @@ in
             block = "memory";
             format = " $icon $mem_total_used_percents.eng(w:2) ";
             format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
+            theme_overrides = {
+              idle_bg = "#fb4934";
+            };
           }
           {
             block = "cpu";
@@ -391,6 +396,9 @@ in
             info_cpu = 20;
             warning_cpu = 50;
             critical_cpu = 90;
+            theme_overrides = {
+              idle_bg = "#b16286";
+            };
           }
           # {
           #   block = "load";
@@ -407,7 +415,7 @@ in
               }
             ];
             mappings = {
-              "alsa_output.pci-0000_00_1f.3.analog-stereo" = "";
+              "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink" = "";
               "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink" = "";
             };
             theme_overrides = {
@@ -442,8 +450,26 @@ in
           }
           {
             block = "custom";
+            command = "echo $USER";
+            interval = 600;
+            click = [
+              {
+                button = "left";
+                cmd = "bash $HOME/.config/rofi/powermenu/type-3/powermenu.sh";
+              }
+            ];
+            theme_overrides = {
+              idle_bg = "#504945";
+            };
+          }
+          {
+            block = "custom";
             command = "sed 's/  //' <(curl 'https://wttr.in/?format=1' -s)";
             interval = 600;
+            # theme_overrides = {
+            #   idle_bg = "#83a598";
+            #   idle_fg = "#282828";
+            # };
           }
         ];
         settings = {

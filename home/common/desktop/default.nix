@@ -5,6 +5,7 @@
 
     ./alacritty.nix
     ./betterlockscreen.nix
+    # ./catppuccin.nix
     ./dunst.nix
     ./feh.nix
     ./fonts.nix

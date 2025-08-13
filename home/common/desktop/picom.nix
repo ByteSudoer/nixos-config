@@ -17,29 +17,30 @@ in
     # vSync = true;
     # Opacity
     activeOpacity = 1.0;
-    inactiveOpacity = 0.8;
-    opacityRules = [
-      "100:class_g    = 'Bar'" # lemonbar
-      "100:class_g    = 'slop'" # maim
-      "100:class_g    = 'XTerm'"
-      "100:class_g    = 'URxvt'"
-      # "100:class_g	  = 'Alacritty' && 'kitty' && focused"
-      "80:class_g	  = 'kitty' && !focused"
-      "90:class_g    = 'Alacritty'"
-      "100:class_g    *?= 'code-oss'"
-      "100:class_g    = 'Meld'"
-      "100:class_g    = 'TelegramDesktop'"
-      "100:class_g    = 'Joplin'"
-      "100:class_g     ?= 'firefox'"
-      "100:class_g    = 'Thunderbird'"
-      "90:class_g     = 'Thunar'"
-      "90:class_g     *?= 'rofi'"
-      "90:class_g     *?= 'discord'"
-      "100:class_g     *?= 'spotify'"
-      "90:class_g     *?= 'obsidian'"
-      "90:class_g     *?= 'bitwarden'"
-      "90:class_g     *?= 'VsCodium'"
-    ];
+    inactiveOpacity = 1.0;
+    # inactiveOpacity = 0.8;
+    # opacityRules = [
+    #   "100:class_g    = 'Bar'" # lemonbar
+    #   "100:class_g    = 'slop'" # maim
+    #   "100:class_g    = 'XTerm'"
+    #   "100:class_g    = 'URxvt'"
+    #   # "100:class_g	  = 'Alacritty' && 'kitty' && focused"
+    #   "80:class_g	  = 'kitty' && !focused"
+    #   "90:class_g    = 'Alacritty'"
+    #   "100:class_g    *?= 'code-oss'"
+    #   "100:class_g    = 'Meld'"
+    #   "100:class_g    = 'TelegramDesktop'"
+    #   "100:class_g    = 'Joplin'"
+    #   "100:class_g     ?= 'firefox'"
+    #   "100:class_g    = 'Thunderbird'"
+    #   "90:class_g     = 'Thunar'"
+    #   "90:class_g     *?= 'rofi'"
+    #   "90:class_g     *?= 'discord'"
+    #   "100:class_g     *?= 'spotify'"
+    #   "90:class_g     *?= 'obsidian'"
+    #   "90:class_g     *?= 'bitwarden'"
+    #   "90:class_g     *?= 'VsCodium'"
+    # ];
     # Fading
     fade = false;
     fadeSteps = [
@@ -81,17 +82,17 @@ in
     ];
     #Settigs
     settings = {
-      blur = {
-        method = "dual_kawase";
-        strength = 5;
-        background = false;
-        background-frame = false;
-        background-fixed = false;
-        kern = "3x3box";
-      };
-      blur-background-exclude = [
-        "(class_g = 'firefox' || class_g = 'Firefox' || class_g = 'Thunderbird') && (window_type = 'utility' || window_type = 'popup_menu') && argb"
-      ];
+      # blur = {
+      #   method = "dual_kawase";
+      #   strength = 5;
+      #   background = false;
+      #   background-frame = false;
+      #   background-fixed = false;
+      #   kern = "3x3box";
+      # };
+      # blur-background-exclude = [
+      #   "(class_g = 'firefox' || class_g = 'Firefox' || class_g = 'Thunderbird') && (window_type = 'utility' || window_type = 'popup_menu') && argb"
+      # ];
     };
   };
 }

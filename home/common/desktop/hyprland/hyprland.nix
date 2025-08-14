@@ -43,6 +43,7 @@
         "dropbox"
         "xwaylandvideobridge"
         "copyq --start-server"
+        "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:root"
       ];
 
       # KeyBorad Bindings
@@ -156,11 +157,12 @@
         "float,class:(dolphin)"
         "float,class:(wihotspot-gui)"
         "float,title:(Bluetooth)"
+        "float,title:(Virtual Machine Manager)"
         "float,title:(Picture-in-Picture)"
         "noblur,class:^()$,title:^()$" # Disable blur for context menus
 
         ## Opacity Rules
-        "opacity 0.8 0.8,class:^(${terminal})$"
+        "opacity 0.9 0.9,class:^(Alacritty)$"
         # "opacity 0.9 0.9,class:^(${browser})$"
         "opacity 0.8 0.8,class:^(${filemanager})$"
         "opacity 0.8 0.8,class:^(Spotify)$"
@@ -168,7 +170,7 @@
 
         ## Workspace & Window Rules
         "workspace 3,class:^(VirtualBox Manager)$"
-        "workspace 3,class:^(virt-manager)$"
+        "workspace 3,class:^(Virtual Machine Manager)$"
         "workspace 4,class:^(Spotify)$"
         "workspace 5,class:^(discord)$"
         "workspace 5,class:^(Ferdium)$"
@@ -195,9 +197,9 @@
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         # XDG Specifications
-        # "XDG_CURRENT_DESKTOP,Sway"
-        # "XDG_SESSION_TYPE,wayland"
-        # "XDG_SESSION_DESKTOP,Hyprland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
       ];
 
       ## Decoration

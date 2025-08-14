@@ -277,6 +277,7 @@ in
       	font-size: 4px;
       	margin-bottom: 0px;
       	border-radius: 10px;
+        color: #FFFFFF;
       	background: #${config.colorScheme.palette.base00};
       	transition: none;
       }

@@ -28,11 +28,11 @@ in
     package = pkgs.hyprlock;
     settings = {
       general = {
-        disable_loading_bar = true;
+        # disable_loading_bar = true;
         grace = 0;
         hide_cursor = false;
-        no_fade_in = true;
-        no_fade_out = true;
+        # no_fade_in = true;
+        # no_fade_out = true;
       };
 
       background = {
@@ -85,16 +85,16 @@ in
           valign = "center";
         }
         # Current Song
-        {
-          monitor = "";
-          text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{artist}} - {{title}}')"'';
-          color = colors.font_color;
-          font_size = 18;
-          font_family = "Metropolis Light, Font Awesome 6 Free Solid";
-          position = "0, 50";
-          halign = "center";
-          valign = "bottom";
-        }
+        # {
+        #   monitor = "";
+        #   text = ''cmd[update:1000] echo "$(playerctl metadata --format '{{artist}} - {{title}}')"'';
+        #   color = colors.font_color;
+        #   font_size = 18;
+        #   font_family = "Metropolis Light, Font Awesome 6 Free Solid";
+        #   position = "0, 50";
+        #   halign = "center";
+        #   valign = "bottom";
+        # }
       ];
 
       image = [

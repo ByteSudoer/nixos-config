@@ -2,6 +2,6 @@
 {
   services.hyprpolkitagent = {
     enable = true;
-    pkgs = pkgs.hyprpolkitagent;
+    package = pkgs.hyprpolkitagent;
   };
 }

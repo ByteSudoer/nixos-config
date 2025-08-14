@@ -36,7 +36,7 @@ in
       }
       {
         label = "logout";
-        action = "loginctl kill-user $USER";
+        action = "hyprctl dispath exit";
         text = "Logout";
         keybind = "k";
       }

@@ -14,6 +14,7 @@
   # };
   environment.systemPackages = with pkgs; [
     kdePackages.ark
+    kdePackages.qtwayland
     evince
     wlprop
   ];

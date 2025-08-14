@@ -12,12 +12,13 @@
 let
   inherit (config.xsession.windowManager.i3.config) modifier;
   altModifier = "Mod1";
-  gapValue = 5;
+  gapValue = 3;
 
   workspace1 = "1: Linux ";
   workspace2 = "2: Web ";
   workspace3 = "3: Music ";
   workspace4 = "4: Files ";
+  workspace5 = "Mail ";
   workspace6 = "6: Virt ";
 
   colorsConfiguration =
@@ -271,6 +272,7 @@ in
         "${modifier}+2" = "workspace number ${workspace2}";
         "${modifier}+3" = "workspace number ${workspace3}";
         "${modifier}+4" = "workspace number ${workspace4}";
+        "${modifier}+5" = "workspace number ${workspace5}";
       };
       assigns = {
         "${workspace1}" = [ { class = "Alacritty$"; } ];
@@ -291,6 +293,8 @@ in
         criteria = [
           { class = "pavucontrol"; }
           { class = "Xfce4-appfinder"; }
+          { class = "Xfce4-taskmanager"; }
+          { class = "Nm-connection-editor"; }
         ];
       };
       bars = [
@@ -302,7 +306,7 @@ in
           fonts = {
             names = [ "${font}" ];
             style = "Bold";
-            size = 11.0;
+            size = 10.0;
           };
           #separatorSymbol = " ";
           colors = {
@@ -339,7 +343,45 @@ in
           #padding = "3px 0";
           trayOutput = "primary";
           trayPadding = 5;
+          workspaceButtons = true;
+          workspaceNumbers = true;
           #workspaceMinWidth = 50;
+          extraConfig = ''
+            # This shows all workspaces even when empty:
+            workspace_buttons yes
+          '';
+        }
+
+      ];
+
+      workspaceAutoBackAndForth = true;
+      workspaceOutputAssign = [
+        {
+          workspace = "${workspace1}";
+          output = "HDMI-1";
+        }
+
+        {
+          workspace = "${workspace2}";
+          output = "HDMI-1";
+        }
+
+        {
+          workspace = "${workspace3}";
+          output = "HDMI-1";
+        }
+        {
+          workspace = "${workspace4}";
+          output = "HDMI-1";
+        }
+        {
+          workspace = "${workspace5}";
+          output = "HDMI-1";
+        }
+
+        {
+          workspace = "${workspace6}";
+          output = "HDMI-1";
         }
 
       ];
@@ -382,20 +424,33 @@ in
           }
           {
             block = "memory";
-            format = " $icon $mem_total_used_percents.eng(w:2) ";
+            format = " $icon $mem_used_percents.eng(w:2) ";
             format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
+            interval = 10;
+            click = [
+              {
+                button = "left";
+                cmd = "${pkgs.xfce.xfce4-taskmanager}/bin/xfce4-taskmanager";
+              }
+            ];
             theme_overrides = {
               idle_bg = "#fb4934";
             };
           }
           {
             block = "cpu";
-            interval = 1;
+            interval = 5;
             format = " $icon $utilization ";
             format_alt = " $icon $barchart $utilization ";
             info_cpu = 20;
             warning_cpu = 50;
             critical_cpu = 90;
+            click = [
+              {
+                button = "left";
+                cmd = "${pkgs.xfce.xfce4-taskmanager}/bin/xfce4-taskmanager";
+              }
+            ];
             theme_overrides = {
               idle_bg = "#b16286";
             };
@@ -424,7 +479,15 @@ in
           }
           {
             block = "net";
+            format = " $icon {$signal_strength |Wired connection}";
             interval = 5;
+            click = [
+              {
+                button = "left";
+                cmd = "nm-connection-editor";
+              }
+            ];
+
             theme_overrides = {
               idle_bg = "#b57614";
             };

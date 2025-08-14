@@ -12,8 +12,8 @@ in
   services.picom = {
     enable = isInList desktop windowManagers;
     package = pkgs.picom;
-    backend = "xrender";
-    extraArgs = [ "--experimental-backends" ];
+    backend = "glx";
+    # extraArgs = [ "--experimental-backends" ];
     # vSync = true;
     # Opacity
     activeOpacity = 1.0;

@@ -25,6 +25,7 @@
     ./security.nix
     # ./slack.nix
     ./spotify.nix
+    ./thunderbird.nix
     ./utils.nix
     ./vscodium.nix
   ];

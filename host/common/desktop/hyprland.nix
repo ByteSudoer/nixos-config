@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.ark
     evince
+    wlprop
   ];
 
   ## Needed for swaylock

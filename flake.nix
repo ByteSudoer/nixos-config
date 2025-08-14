@@ -79,8 +79,8 @@
       inherit (self) outputs;
       stateVersion = "25.05";
       username = "bytesudoer";
-      colorscheme = "dracula";
-      desktop = "xfce";
+      colorscheme = "gruvbox";
+      desktop = "hyprland";
       terminal = "alacritty";
       filemanager = "thunar";
       font = "JetBrainsMono";

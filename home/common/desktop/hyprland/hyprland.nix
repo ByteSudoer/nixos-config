@@ -34,7 +34,7 @@
       };
       exec-once = [
         "waybar"
-        "lxqt-policykit-agent"
+        #"lxqt-policykit-agent"
         "nm-applet --indicator"
         "swww init"
         "swww_randomize $HOME/nixos-config/Wallpapers/${colorscheme}"
@@ -126,8 +126,8 @@
 
       #Workspace Bindings
       workspace = [
-        "eDP-1,1"
-        "HDMI-A-1,11"
+        # "eDP-1,1"
+        # "HDMI-A-1,11"
 
         #Workspaces Bindings
         "1,monitor:eDP-1"
@@ -145,7 +145,7 @@
       ];
       # Window Rules
       windowrule = [
-        "float,title:^(pavucontrol)$"
+        "float,title:^(Volume Control)$"
         "float,title:^(Authentication Required)$"
       ];
 

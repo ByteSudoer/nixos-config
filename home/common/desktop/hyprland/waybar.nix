@@ -170,17 +170,18 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
           persistent-workspaces = {
-            "1" = [ "eDP-1" ];
-            "2" = [ "eDP-1" ];
-            "3" = [ "eDP-1" ];
-            "4" = [ "eDP-1" ];
-            "5" = [ "eDP-1" ];
-
-            "11" = [ "HDMI-A-1" ];
-            "12" = [ "HDMI-A-1" ];
-            "13" = [ "HDMI-A-1" ];
-            "14" = [ "HDMI-A-1" ];
-            "15" = [ "HDMI-A-1" ];
+            "*" = 5;
+            # "1" = [ "eDP-1" ];
+            # "2" = [ "eDP-1" ];
+            # "3" = [ "eDP-1" ];
+            # "4" = [ "eDP-1" ];
+            # "5" = [ "eDP-1" ];
+            #
+            # "11" = [ "HDMI-A-1" ];
+            # "12" = [ "HDMI-A-1" ];
+            # "13" = [ "HDMI-A-1" ];
+            # "14" = [ "HDMI-A-1" ];
+            # "15" = [ "HDMI-A-1" ];
           };
         };
         tray = {

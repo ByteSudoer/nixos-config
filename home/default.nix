@@ -12,23 +12,22 @@
 {
   # Only import desktop configuration if the host is desktop enabled
   # Only import user specific configuration if they have bespoke settings
-  imports =
-    [
-      # If you want to use modules your own flake exports (from modules/home-manager):
-      outputs.homeManagerModules.drawio
-      outputs.homeManagerModules.hyprsome
-      #outputs.homeManagerModules.ghostty
-      outputs.homeManagerModules.ngrok
-      # outputs.homeManagerModules.nix-init
+  imports = [
+    # If you want to use modules your own flake exports (from modules/home-manager):
+    outputs.homeManagerModules.drawio
+    outputs.homeManagerModules.hyprsome
+    #outputs.homeManagerModules.ghostty
+    outputs.homeManagerModules.ngrok
+    # outputs.homeManagerModules.nix-init
 
-      # Or modules exported from other flakes (such as nix-colors):
-      # inputs.nix-colors.homeManagerModules.default
+    # Or modules exported from other flakes (such as nix-colors):
+    # inputs.nix-colors.homeManagerModules.default
 
-      ./common/shell
-    ]
-    ++ lib.optional (builtins.isString desktop) ./common/desktop
-    ++ lib.optional (builtins.isString extra) ./extra
-    ++ lib.optional (builtins.pathExists (./. + "/users/${username}")) ./users/${username};
+    ./common/shell
+  ]
+  ++ lib.optional (builtins.isString desktop) ./common/desktop
+  ++ lib.optional (builtins.isString extra) ./extra
+  ++ lib.optional (builtins.pathExists (./. + "/users/${username}")) ./users/${username};
 
   home = {
     inherit username stateVersion;

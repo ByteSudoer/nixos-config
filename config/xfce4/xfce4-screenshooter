@@ -1,1 +1,12 @@
-/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/xfce4-screenshooter
+app=feh
+custom_action_command=/nix/store/iwhc2fmbpbjarnmw81p4m3xkv0mdk5p3-xfce4-screenshooter-1.11.1/libexec/xfce4/screenshooter/scripts/imgur-upload.sh %f %imgur_client_id
+last_user=
+last_extension=png
+show_in_folder=false
+screenshot_dir=file:/home/bytesudoer/Downloads
+action=1
+delay=0
+region=3
+show_mouse=1
+show_border=1
+

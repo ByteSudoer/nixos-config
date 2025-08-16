@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
@@ -7,7 +7,7 @@
     <value type="int" value="2"/>
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
-      <property name="icon-size" type="uint" value="16"/>
+      <property name="icon-size" type="uint" value="0"/>
       <property name="length" type="uint" value="100"/>
       <property name="output-name" type="string" value="Primary"/>
       <property name="plugin-ids" type="array">
@@ -15,7 +15,7 @@
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
-        <value type="int" value="17"/>
+        <value type="int" value="10"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
@@ -24,47 +24,62 @@
         <value type="int" value="16"/>
         <value type="int" value="15"/>
         <value type="int" value="12"/>
+        <value type="int" value="17"/>
         <value type="int" value="13"/>
-        <value type="int" value="10"/>
         <value type="int" value="14"/>
+        <value type="int" value="18"/>
       </property>
       <property name="position" type="string" value="p=8;x=960;y=1066"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="31"/>
+      <property name="size" type="uint" value="30"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="length" type="double" value="100"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="22"/>
-        <value type="int" value="24"/>
-        <value type="int" value="19"/>
-        <value type="int" value="23"/>
-        <value type="int" value="21"/>
         <value type="int" value="7"/>
+        <value type="int" value="19"/>
         <value type="int" value="26"/>
-        <value type="int" value="27"/>
         <value type="int" value="20"/>
+        <value type="int" value="32"/>
+        <value type="int" value="23"/>
+        <value type="int" value="27"/>
+        <value type="int" value="25"/>
+        <value type="int" value="22"/>
+        <value type="int" value="28"/>
+        <value type="int" value="21"/>
+        <value type="int" value="30"/>
+        <value type="int" value="24"/>
       </property>
-      <property name="position" type="string" value="p=8;x=96;y=1055"/>
+      <property name="position" type="string" value="p=8;x=2880;y=1181"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="30"/>
+      <property name="size" type="uint" value="35"/>
+      <property name="span-monitors" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="whiskermenu">
       <property name="button-icon" type="string" value="preferences-system-linux"/>
-      <property name="button-title" type="string" value="Nixos"/>
+      <property name="button-title" type="string" value="NixOS"/>
       <property name="show-button-title" type="bool" value="true"/>
     </property>
     <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-12" type="string" value="clock"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="digital-date-font" type="string" value="JetBrainsMonoNL Nerd Font 9"/>
+      <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-time-font" type="string" value="JetBrainsMonoNL Nerd Font 9"/>
+      <property name="digital-time-format" type="string" value="%T"/>
+    </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-14" type="string" value="actions"/>
+    <property name="plugin-14" type="string" value="actions">
+      <property name="appearance" type="uint" value="1"/>
+      <property name="button-title" type="uint" value="3"/>
+      <property name="custom-title" type="string" value="ByteSudoer"/>
+    </property>
     <property name="plugin-15" type="string" value="netload"/>
     <property name="plugin-16" type="string" value="systemload">
       <property name="memory" type="empty">
@@ -108,7 +123,7 @@
         <property name="use-color" type="bool" value="false"/>
       </property>
       <property name="single-row" type="bool" value="true"/>
-      <property name="theme-dir" type="string" value="/nix/store/8jm6aq039y7y08r6ygji4j99gwfswdx0-xfce4-weather-plugin-0.11.1/share/xfce4/weather/icons/liquid"/>
+      <property name="theme-dir" type="string" value="/nix/store/86zhm4dqzvqzsx4zppy4ih9pa38y2s5x-xfce4-weather-plugin-0.11.3/share/xfce4/weather/icons/liquid"/>
       <property name="timezone" type="string" value="Africa/Tunis"/>
       <property name="tooltip-style" type="int" value="1"/>
       <property name="units" type="empty">
@@ -120,68 +135,67 @@
         <property name="windspeed" type="int" value="0"/>
       </property>
     </property>
+    <property name="plugin-18" type="string" value="showdesktop"/>
     <property name="plugin-19" type="string" value="separator">
-      <property name="expand" type="bool" value="true"/>
+      <property name="expand" type="bool" value="false"/>
     </property>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
       <property name="show-labels" type="bool" value="false"/>
     </property>
-    <property name="plugin-20" type="string" value="actions"/>
-    <property name="plugin-21" type="string" value="pager">
-      <property name="rows" type="uint" value="1"/>
+    <property name="plugin-20" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-22" type="string" value="whiskermenu">
-      <property name="button-icon" type="string" value="preferences-system-linux"/>
-      <property name="button-title" type="string" value="Linux"/>
-      <property name="show-button-title" type="bool" value="true"/>
+    <property name="plugin-21" type="string" value="clock">
+      <property name="digital-date-font" type="string" value="JetBrainsMonoNL Nerd Font Mono 10"/>
+      <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-time-font" type="string" value="JetBrainsMono Nerd Font Mono 10"/>
+      <property name="digital-time-format" type="string" value="%T"/>
+      <property name="show-week-numbers" type="bool" value="true"/>
     </property>
-    <property name="plugin-23" type="string" value="separator">
-      <property name="expand" type="bool" value="false"/>
+    <property name="plugin-22" type="string" value="netload"/>
+    <property name="plugin-23" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="known-players" type="string" value="spotify"/>
     </property>
-    <property name="plugin-24" type="string" value="tasklist">
+    <property name="plugin-24" type="string" value="showdesktop"/>
+    <property name="plugin-25" type="string" value="systemload">
+      <property name="memory" type="empty">
+        <property name="color" type="array">
+          <value type="double" value="0.6470588235294118"/>
+          <value type="double" value="0.11372549019607843"/>
+          <value type="double" value="0.17647058823529413"/>
+          <value type="double" value="1"/>
+        </property>
+      </property>
+      <property name="network" type="empty">
+        <property name="enabled" type="bool" value="false"/>
+      </property>
+      <property name="timeout" type="uint" value="1000"/>
+    </property>
+    <property name="plugin-26" type="string" value="tasklist">
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="include-all-monitors" type="bool" value="true"/>
+      <property name="show-handle" type="bool" value="true"/>
       <property name="show-labels" type="bool" value="false"/>
+      <property name="show-tooltips" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="1"/>
     </property>
-    <property name="plugin-26" type="string" value="systemload"/>
-    <property name="plugin-27" type="string" value="weather">
-      <property name="cache-max-age" type="int" value="172800"/>
-      <property name="forecast" type="empty">
-        <property name="days" type="int" value="5"/>
-        <property name="layout" type="int" value="1"/>
-      </property>
-      <property name="location" type="empty">
-        <property name="latitude" type="string" value="36.856200"/>
-        <property name="longitude" type="string" value="10.190600"/>
-        <property name="name" type="string" value="Aryanah, Tunisia"/>
-      </property>
-      <property name="msl" type="int" value="14"/>
-      <property name="offset" type="string" value="+01:00"/>
-      <property name="power-saving" type="bool" value="true"/>
-      <property name="round" type="bool" value="true"/>
-      <property name="scrollbox" type="empty">
-        <property name="animate" type="bool" value="true"/>
-        <property name="color" type="string" value="rgba(0,0,0,0)"/>
-        <property name="lines" type="int" value="1"/>
-        <property name="show" type="bool" value="true"/>
-        <property name="use-color" type="bool" value="false"/>
-      </property>
-      <property name="single-row" type="bool" value="true"/>
-      <property name="theme-dir" type="string" value="/usr/share/xfce4/weather/icons/liquid"/>
-      <property name="timezone" type="string" value="Africa/Tunis"/>
-      <property name="tooltip-style" type="int" value="1"/>
-      <property name="units" type="empty">
-        <property name="altitude" type="int" value="0"/>
-        <property name="apparent-temperature" type="int" value="0"/>
-        <property name="precipitation" type="int" value="0"/>
-        <property name="pressure" type="int" value="0"/>
-        <property name="temperature" type="int" value="0"/>
-        <property name="windspeed" type="int" value="0"/>
-      </property>
+    <property name="plugin-27" type="string" value="pager">
+      <property name="rows" type="uint" value="2"/>
     </property>
+    <property name="plugin-28" type="string" value="battery"/>
     <property name="plugin-3" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
+    <property name="plugin-30" type="string" value="actions">
+      <property name="appearance" type="uint" value="1"/>
+      <property name="button-title" type="uint" value="3"/>
+      <property name="custom-title" type="string" value="ByteSudoer"/>
+    </property>
+    <property name="plugin-32" type="string" value="notification-plugin"/>
     <property name="plugin-4" type="string" value="pager">
       <property name="rows" type="uint" value="2"/>
     </property>
@@ -190,7 +204,57 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="known-items" type="array">
+        <value type="string" value="dropbox-client-4360"/>
+        <value type="string" value="qBittorrent"/>
+        <value type="string" value="dropbox-client-4261"/>
+        <value type="string" value="dropbox-client-4113"/>
+        <value type="string" value="dropbox-client-39169"/>
+        <value type="string" value="dropbox-client-4216"/>
+        <value type="string" value="dropbox-client-125769"/>
+        <value type="string" value="dropbox-client-4129"/>
+        <value type="string" value="dropbox-client-4177"/>
+        <value type="string" value="obs"/>
+        <value type="string" value="dropbox-client-4092"/>
+        <value type="string" value="dropbox-client-4169"/>
+        <value type="string" value="dropbox-client-4200"/>
+        <value type="string" value="dropbox-client-4173"/>
+        <value type="string" value="qt-virt-manager"/>
+        <value type="string" value="dropbox-client-4187"/>
+        <value type="string" value="dropbox-client-4335"/>
+        <value type="string" value="dropbox-client-4047"/>
+        <value type="string" value="uget-gtk"/>
+        <value type="string" value="dropbox-client-4183"/>
+        <value type="string" value="dropbox-client-4876"/>
+        <value type="string" value="dropbox-client-4056"/>
+        <value type="string" value="dropbox-client-3805"/>
         <value type="string" value="blueman"/>
+        <value type="string" value="dropbox-client-1217"/>
+        <value type="string" value="dropbox-client-1016"/>
+        <value type="string" value="dropbox-client-1206"/>
+        <value type="string" value="dropbox-client-1201"/>
+        <value type="string" value="dropbox-client-1233"/>
+        <value type="string" value="dropbox-client-1421"/>
+        <value type="string" value="dropbox-client-1202"/>
+        <value type="string" value="dropbox-client-1193"/>
+        <value type="string" value="dropbox-client-1197"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="dropbox-client-1219"/>
+        <value type="string" value="dropbox-client-1221"/>
+        <value type="string" value="dropbox-client-1229"/>
+        <value type="string" value="dropbox-client-1222"/>
+        <value type="string" value="dropbox-client-1216"/>
+        <value type="string" value="dropbox-client-1239"/>
+        <value type="string" value="dropbox-client-1223"/>
+        <value type="string" value="dropbox-client-1212"/>
+        <value type="string" value="dropbox-client-3908"/>
+        <value type="string" value="dropbox-client-1264"/>
+        <value type="string" value="dropbox-client-1266"/>
+        <value type="string" value="dropbox-client-1154"/>
+        <value type="string" value="dropbox-client-1133"/>
+        <value type="string" value="dropbox-client-1153"/>
+        <value type="string" value="dropbox-client-1161"/>
+        <value type="string" value="dropbox-client-1180"/>
+        <value type="string" value="dropbox-client-891"/>
         <value type="string" value="steam"/>
         <value type="string" value="chrome_status_icon_3"/>
         <value type="string" value="chrome_status_icon_2"/>
@@ -198,7 +262,15 @@
         <value type="string" value="chrome_status_icon_1"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value=".ferdium-wrapped"/>
+        <value type="string" value="uget-gtk"/>
+        <value type="string" value=".virt-manager-wrapped"/>
+        <value type="string" value="wi-fi network connection “huawei-2.4g-uyc8” active: huawei-2.4g-uyc8 (72%)"/>
+        <value type="string" value="flameshot"/>
+        <value type="string" value="clipman"/>
         <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="wi-fi network connection “huawei-7zew” active: huawei-7zew (55%)"/>
         <value type="string" value="wi-fi network connection “huawei-7zew” active: huawei-7zew (46%)"/>
         <value type="string" value="wi-fi network connection “huawei-7zew” active: huawei-7zew (40%)"/>
         <value type="string" value="wi-fi network connection “huawei-7zew” active: huawei-7zew (49%)"/>
@@ -220,9 +292,11 @@
       </property>
       <property name="square-icons" type="bool" value="true"/>
     </property>
-    <property name="plugin-7" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="known-players" type="string" value="firefox;spotify"/>
+    <property name="plugin-7" type="string" value="whiskermenu">
+      <property name="button-icon" type="string" value="distributor-logo-nixos"/>
+      <property name="button-title" type="string" value="Linux"/>
+      <property name="show-button-title" type="bool" value="true"/>
+      <property name="view-mode" type="int" value="1"/>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>

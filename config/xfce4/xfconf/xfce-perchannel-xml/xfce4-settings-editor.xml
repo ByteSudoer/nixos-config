@@ -1,1 +1,9 @@
-/nix/store/bmkb8bbh0dbzr74fisvpm7rv6av12xvn-home-manager-files/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-editor.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-settings-editor" version="1.0">
+  <property name="last" type="empty">
+    <property name="window-width" type="int" value="640"/>
+    <property name="window-height" type="int" value="500"/>
+    <property name="paned-position" type="int" value="180"/>
+  </property>
+</channel>

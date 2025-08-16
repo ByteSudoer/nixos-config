@@ -131,17 +131,17 @@
         # "HDMI-A-1,11"
 
         #Workspaces Bindings
-        "1,monitor:eDP-1"
-        "2,monitor:eDP-1"
-        "3,monitor:eDP-1"
-        "4,monitor:eDP-1"
-        "5,monitor:eDP-1"
-
-        "11,monitor:HDMI-A-1"
-        "12,monitor:HDMI-A-1"
-        "13,monitor:HDMI-A-1"
-        "14,monitor:HDMI-A-1"
-        "15,monitor:HDMI-A-1"
+        # "1,monitor:eDP-1"
+        # "2,monitor:eDP-1"
+        # "3,monitor:eDP-1"
+        # "4,monitor:eDP-1"
+        # "5,monitor:eDP-1"
+        #
+        # "11,monitor:HDMI-A-1"
+        # "12,monitor:HDMI-A-1"
+        # "13,monitor:HDMI-A-1"
+        # "14,monitor:HDMI-A-1"
+        # "15,monitor:HDMI-A-1"
 
       ];
       # Window Rules
@@ -169,7 +169,7 @@
         "opacity 0.8 0.8,class:^(discord)$"
 
         ## Workspace & Window Rules
-        "workspace 3,class:^(VirtualBox Manager)$"
+        "workspace 3,title:^(VirtualBox Manager)$"
         "workspace 3,class:^(Virtual Machine Manager)$"
         "workspace 4,class:^(Spotify)$"
         "workspace 5,class:^(discord)$"

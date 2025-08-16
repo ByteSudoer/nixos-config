@@ -17,6 +17,7 @@
     kdePackages.qtwayland
     evince
     wlprop
+    snixembed
   ];
 
   ## Needed for swaylock

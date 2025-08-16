@@ -149,7 +149,7 @@ in
           max-length = 10;
         };
         "hyprland/workspaces" = {
-          all-outputs = true;
+          all-outputs = false;
           format = "{name}: {icon}";
           format-icons = {
             "1" = "";
@@ -170,7 +170,8 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
 
           persistent-workspaces = {
-            "*" = 5;
+            "eDP-1" = 5;
+            "HDMI-A-1" = 5;
             # "1" = [ "eDP-1" ];
             # "2" = [ "eDP-1" ];
             # "3" = [ "eDP-1" ];

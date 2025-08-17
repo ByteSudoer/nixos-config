@@ -43,28 +43,28 @@
                     "-f"
                   ];
                   subvolumes = {
-                    "/rootfs" = {
+                    "@rootfs" = {
                       mountpoint = "/";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
                       ];
                     };
-                    "/nix" = {
+                    "@nix" = {
                       mountpoint = "/nix";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
                       ];
                     };
-                    "/var" = {
+                    "@var" = {
                       mountpoint = "/var";
                       mountOptions = [
                         "compress=zstd"
                         "noatime"
                       ];
                     };
-                    "/swap" = {
+                    "@swap" = {
                       mountpoint = "/.swapvol";
                       swap = {
                         swapfile.size = "8G";
@@ -90,6 +90,7 @@
                 name = "crypthome";
                 settings = {
                   allowDiscards = true; # TRIM
+                  keyFile = "/root/crypthome.key";
                 };
                 content = {
                   type = "btrfs";
@@ -99,7 +100,7 @@
                     "-f"
                   ];
                   subvolumes = {
-                    "/home" = {
+                    "@home" = {
                       mountpoint = "/home";
                       mountOptions = [
                         "compress=zstd"

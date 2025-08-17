@@ -1,11 +1,14 @@
 _: {
   boot = {
-    kernel.sysctl = {
-      "net.ipv4.ip_forward" = 1;
-    };
+    # kernel.sysctl = {
+    #   "net.ipv4.ip_forward" = 1;
+    # };
 
     #kernelPackages = pkgs.linuxPackages_6_9;
     initrd = {
+      secrets = {
+        "/root/crypthome.key" = "/root/crypthome.key";
+      };
       availableKernelModules = [
         #eXtensible Host Controller Interface (xHCI) Host Controller Driver(usb 3.0 and 2.0)
         "xhci_pci"
@@ -40,4 +43,10 @@ _: {
       useTmpfs = true;
     };
   };
+  system.activationScripts.createCryptKey = ''
+    if [ ! -f /root/crypthome.key ];then
+      dd if=/dev/urandom of=/root/crypthome.key bs=1024 count=ipv4
+      chmod 400 /root/crypthome.key
+    fi
+  '';
 }

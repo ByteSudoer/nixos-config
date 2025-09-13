@@ -331,5 +331,6 @@
   "latex-workshop.latex.build.rootfileInStatus": true,
   "explorer.autoOpenDroppedFile": false,
   "files.autoSave": "onFocusChange",
-  "workbench.colorTheme": "Gruvbox Dark Hard"
+  "workbench.colorTheme": "Tokyo Night",
+  "latex-workshop.latex.recipe.default": "lastUsed"
 }

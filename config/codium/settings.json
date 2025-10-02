@@ -17,14 +17,14 @@
     "editor.codeActionsOnSave": {
       "source.formatAll.terraform": "explicit"
     },
-    "editor.defaultFormatter": "hashicorp.terraform",
+    //"editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": false
   },
   "[terraform]": {
     "editor.codeActionsOnSave": {
       "source.formatAll.terraform": "explicit"
     },
-    "editor.defaultFormatter": "hashicorp.terraform",
+    //"editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": false
   },
   "cSpell.diagnosticLevel": "Information",

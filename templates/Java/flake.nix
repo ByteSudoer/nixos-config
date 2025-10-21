@@ -15,7 +15,7 @@
           (_final: prev: rec {
             jdk = prev."jdk${toString javaVersion}";
             gradle = prev.gradle.override { java = jdk; };
-            maven = prev.maven.override { inherit jdk; };
+            maven = prev.maven.override { jdk_headless = jdk; };
           })
         ];
         pkgs = import nixpkgs { inherit overlays system; };

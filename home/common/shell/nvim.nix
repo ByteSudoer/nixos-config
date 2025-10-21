@@ -149,6 +149,7 @@ in
         unstable.nixfmt-rfc-style
         unstable.deadnix
         unstable.statix
+        unstable.shellharden
         # unstable.nixpkgs-fmt
         unstable.shellcheck
         unstable.shfmt

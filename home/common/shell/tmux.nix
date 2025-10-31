@@ -57,8 +57,8 @@ in
 
         extraConfig = ''
           set -g @dracula-plugins "battery cpu-usage ram-usage time"
-          set -g @dracula-cpu-usage-label " "
-          set -g @dracula-ram-usage-label " "
+          set -g @dracula-cpu-usage-label ""
+          set -g @dracula-ram-usage-label ""
           set -g @dracula-show-timezone false
           set -g @dracula-day-month true
         '';

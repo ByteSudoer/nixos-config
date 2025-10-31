@@ -13,7 +13,7 @@
     ./hardinfo.nix
     ./imagers.nix
     ./insomnia.nix
-    # ./intellij.nix
+    ./intellij.nix
     ./kdeconnect.nix
     # ./kdenlive.nix
     ./libreoffice.nix

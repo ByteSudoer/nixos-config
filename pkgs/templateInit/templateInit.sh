@@ -16,7 +16,7 @@ supported_projects=(
   "Latex"
   "Nix"
   "Node.js"
-  "PHP/symfony"
+  "Php"
   "Python"
   "Rust"
 )
@@ -87,7 +87,7 @@ Go)
   ;;
 Latex)
   echo "Latex Env"
-  cp "$dir/Tex/flake.nix" $destination
+  cp "$dir/Tex/flake.nix" "$destination"
   init_envrc_file
   ;;
 *)

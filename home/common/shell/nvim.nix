@@ -116,9 +116,11 @@ in
       #Floatting terminal
       toggleterm-nvim
 
+      #Rust dev
+      rustaceanvim
       ##LSP
       nvim-lspconfig
-      rust-tools-nvim
+      #rust-tools-nvim
       none-ls-nvim
       # null-ls-nvim
       lspkind-nvim
@@ -149,6 +151,7 @@ in
         unstable.nixfmt-rfc-style
         unstable.deadnix
         unstable.statix
+        unstable.helm-ls
         unstable.shellharden
         # unstable.nixpkgs-fmt
         unstable.shellcheck

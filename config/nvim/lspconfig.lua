@@ -22,6 +22,15 @@ vim.lsp.enable("sqls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("terraformls")
 vim.lsp.enable("yamlls")
+
+local bufnr = vim.api.nvim_get_current_buf()
+vim.keymap.set("n", "<leader>a", function()
+	vim.cmd.RustLsp("codeAction") -- supports rust-analyzer's grouping
+	-- or vim.lsp.buf.codeAction() if you don't want grouping.
+end, { silent = true, buffer = bufnr })
+
+-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+vim.lsp.inlay_hint.enable(vim.lsp.inlay_hint.is_enabled())
 -- vim.lsp.config.lua_ls.setup({
 -- 	on_attach = on_attach,
 -- 	settings = {

@@ -1,4 +1,9 @@
-{ desktop, pkgs, ... }:
+{
+  desktop,
+  pkgs,
+  config,
+  ...
+}:
 let
   copy_command =
     if desktop == "hyprland" then "${pkgs.wl-clipboard}/bin/wl-copy" else "xclip -selection clipboard";
@@ -59,7 +64,6 @@ in
 
     initExtra = ''
       nerdfetch
-
     '';
     shellAliases = {
       # Better Format with exa

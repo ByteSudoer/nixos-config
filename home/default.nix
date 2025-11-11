@@ -35,6 +35,9 @@
     activation.report-changes = config.lib.dag.entryAnywhere ''
       ${pkgs.nvd}/bin/nvd diff $oldGenPath $newGenPath
     '';
+    sessionVariables = {
+      GITHUB_TOKEN = config.sops.secrets.github_token.path;
+    };
   };
 
   sops = lib.mkIf (username == "bytesudoer") {
@@ -57,6 +60,7 @@
     };
 
   };
+  # environment.variables.GITHUB_TOKEN = builtins.readFile config.sops.secrets.github_token.path;
 
   # nixpkgs = {
   #   overlays = [

@@ -13,4 +13,5 @@
   swww_randomize = pkgs.callPackage ./swww_randomize.nix { };
   tmuxSession = pkgs.callPackage ./tmuxSession.nix { };
   wallpapers = pkgs.callPackage ./wallpapers.nix { };
+  waydroid_session = pkgs.callPackage ./waydroid-session.nix { };
 }

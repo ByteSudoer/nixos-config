@@ -11,8 +11,9 @@
     picom_toggle
     rofi_window
     sp
+    templateInit
     tmuxSession
     wallpapers
-    templateInit
+    waydroid_sesion
   ];
 }

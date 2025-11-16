@@ -31,12 +31,12 @@ let
           name = "Capitaine Cursors (Gruvbox)";
         };
         theme = {
-          package = pkgs.gruvbox-material-gtk-theme;
-          name = "Gruvbox-Material-Dark";
+          package = pkgs.gruvbox-gtk-theme;
+          name = "Gruvbox-Dark";
         };
         iconTheme = {
-          package = pkgs.dracula-icon-theme;
-          name = "Dracula";
+          package = pkgs.gruvbox-plus-icons;
+          name = "Gruvbox Plus Dark";
         };
         pointerTheme = {
           gtk.enable = true;
@@ -62,6 +62,7 @@ in
 
     };
 
-    inherit (themeConfig) cursorTheme theme iconTheme;
+    inherit (themeConfig) cursorTheme theme;
+    # inherit (themeConfig) cursorTheme theme iconTheme;
   };
 }

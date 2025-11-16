@@ -23,6 +23,7 @@
   tmuxSession = pkgs.callPackage ./scripts/tmuxSession.nix { };
   # tlp-ui = pkgs.callPackage ./tlp-ui { };
   wallpapers = pkgs.callPackage ./scripts/wallpapers.nix { };
+  waydroid_session = pkgs.callPackage ./scripts/waydroid-session.nix { };
 
   # Utilities
   # nerdfetch = pkgs.callPackage ./nerdfetch { };

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   home.packages = with pkgs; [
     battery_info
@@ -14,6 +17,5 @@
     templateInit
     tmuxSession
     wallpapers
-    waydroid_sesion
   ];
 }

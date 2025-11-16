@@ -5,7 +5,7 @@ let
   gitSyncObsidian = pkgs.writeScriptBin "git-sync-obsidian-service" ''
     #!/usr/bin/env bash
 
-    VAULT_DIRECTORY="$HOME/Documents/Notes"
+    VAULT_DIRECTORY="$HOME/Documents/notes"
     pushd $VAULT_DIRECTORY
     git add .
     git commit -m "$(date '+%Y-%m-%d %H:%M:%S')" || exit 0

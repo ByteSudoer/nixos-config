@@ -17,6 +17,7 @@ in
     ./fonts.nix
     ./locale.nix
     ./sudo.nix
+    ./preload.nix
     ../services/openssh.nix
     ../services/firewall.nix
   ];

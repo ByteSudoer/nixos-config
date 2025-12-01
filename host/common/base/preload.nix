@@ -5,7 +5,7 @@
 {
   services = {
     preload = {
-      enable = true;
+      enable = false;
       package = pkgs.preload;
     };
 

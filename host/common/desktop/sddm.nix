@@ -7,11 +7,11 @@
 {
   environment.systemPackages = [
     (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Noto Sans";
+      flavor = "latte";
+      font = "JetBrains Mono";
       fontSize = "9";
-      background = "${../../../Wallpapers/dracula/tux.png}";
-      loginBackground = true;
+      background = "${../../../Wallpapers/gruvbox/gruvbox-dark-rainbow.png}";
+      loginBackground = false;
     })
   ];
   services.displayManager = {
@@ -19,7 +19,7 @@
     sddm = {
       enable = true;
       package = lib.mkForce pkgs.kdePackages.sddm;
-      theme = "catppuccin-mocha";
+      theme = "catppuccin-latte";
       autoNumlock = true;
       enableHidpi = true;
       settings = {

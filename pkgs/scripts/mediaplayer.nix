@@ -6,7 +6,7 @@
   playerctl,
   python3,
   waybar,
-  wrapGAppsHook,
+  wrapGAppsHook3,
 }:
 
 stdenvNoCC.mkDerivation rec {
@@ -21,7 +21,7 @@ stdenvNoCC.mkDerivation rec {
   strictDeps = true;
   nativeBuildInputs = [
     gobject-introspection
-    wrapGAppsHook
+    wrapGAppsHook3
   ];
 
   propagatedBuildInputs = [

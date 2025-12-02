@@ -30,9 +30,10 @@ in
       hostname,
       user ? username,
       desktop ? null,
+      platform ? "x86_64-linux",
     }:
     inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = inputs.nixpkgs.legacyPackages.${platform};
       extraSpecialArgs = {
         inherit
           inputs

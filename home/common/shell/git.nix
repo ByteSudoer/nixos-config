@@ -3,10 +3,8 @@
 
   # Configure Git
   programs.git = {
-    package = pkgs.gitAndTools.gitFull;
+    package = pkgs.gitFull;
     enable = true;
-    userName = "ByteSudoer";
-    userEmail = "ByteSudoer@users.noreply.github.com";
     # Replaces ~/.gitignore
     ignores = [
       ".cache/"
@@ -23,28 +21,39 @@
       "result"
     ];
 
-    aliases = {
-      addall = "add --all";
-      cm = "commit -m";
-      cmm = "commit --amend --no-edit";
-      ll = "log --oneline";
-      st = "status -sb";
-      graph = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+    settings = {
+      user = {
+        name = "ByteSudoer";
+        email = "ByteSudoer@users.noreply.github.com";
+      };
+
+      extraConfig = {
+        core = {
+          pager = "bat";
+        };
+        init = {
+          defaultBranch = "main";
+        };
+      };
+
+      aliases = {
+        addall = "add --all";
+        cm = "commit -m";
+        cmm = "commit --amend --no-edit";
+        ll = "log --oneline";
+        st = "status -sb";
+        graph = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      };
+
     };
-    difftastic = {
+
+  };
+
+  programs.difftastic = {
+    enable = true;
+    options = {
       display = "side-by-side-show-both";
-      enable = true;
     };
-
-    extraConfig = {
-      core = {
-        pager = "bat";
-      };
-      init = {
-        defaultBranch = "main";
-      };
-    };
-
   };
 
 }

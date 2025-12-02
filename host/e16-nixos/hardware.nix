@@ -12,6 +12,7 @@
   imports = [
     # acpi_call makes tlp work for newer thinkpads
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-intel
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -29,18 +30,18 @@
   };
 
   hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-        intel-media-driver # LIBVA_DRIVER_NAME=iHD
-        vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
-
-    };
+    # graphics = {
+    #   enable = true;
+    #   enable32Bit = true;
+    #   extraPackages = with pkgs; [
+    #     intel-media-driver # LIBVA_DRIVER_NAME=iHD
+    #     vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+    #     vaapiVdpau
+    #     libvdpau-va-gl
+    #   ];
+    #   extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
+    #
+    # };
     intel-gpu-tools.enable = true;
   };
 

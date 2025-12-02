@@ -18,10 +18,11 @@
         vhostUserPackages = with pkgs; [ virtiofsd ];
         # Enable TPM emulation
         swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [ pkgs.OVMFFull.fd ];
-        };
+        # NOTE: Deprecated starting from the 25.11 release
+        # ovmf = {
+        #   enable = true;
+        #   packages = [ pkgs.OVMFFull.fd ];
+        # };
 
       };
 

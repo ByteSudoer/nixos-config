@@ -11,7 +11,7 @@
     # To make nix3 commands consistent with your flake
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
-    package = lib.mkForce pkgs.unstable.nix;
+    package = lib.mkForce pkgs.nix;
     settings = {
 
       keep-outputs = true;

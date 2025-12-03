@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   desktop,
   ...
 }:
@@ -15,11 +14,10 @@
     })
   ];
   services.displayManager = {
-
     sddm = {
       enable = true;
-      package = lib.mkForce pkgs.kdePackages.sddm;
-      theme = "catppuccin-latte";
+      package = pkgs.kdePackages.sddm;
+      theme = "catppuccin-latte-mauve";
       autoNumlock = true;
       enableHidpi = true;
       settings = {

@@ -26,17 +26,14 @@
         name = "ByteSudoer";
         email = "ByteSudoer@users.noreply.github.com";
       };
-
-      extraConfig = {
-        core = {
-          pager = "bat";
-        };
-        init = {
-          defaultBranch = "main";
-        };
+      core = {
+        pager = "bat";
+      };
+      init = {
+        defaultBranch = "main";
       };
 
-      aliases = {
+      alias = {
         addall = "add --all";
         cm = "commit -m";
         cmm = "commit --amend --no-edit";

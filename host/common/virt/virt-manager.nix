@@ -35,12 +35,12 @@
       #   "bridge" = ./qemu-hook.sh;
       # };
     };
-    # Spice protocol improves VM display and input responsiveness
-    services.spice-vdagentd.enable = true;
-  };
 
-  # Enable USB redirection
-  spiceUSBRedirection.enable = true;
+    # Enable USB redirection
+    spiceUSBRedirection.enable = true;
+    # # Spice protocol improves VM display and input responsiveness
+    # services.spice-vdagentd.enable = true;
+  };
 
   # libvirt = {
   #   enable = true;

@@ -6,14 +6,19 @@
       enable = true;
     };
   };
+  environment.systemPackages = with pkgs; [
+    # Optional
+    virt-viewer
+  ];
+
   virtualisation = {
     libvirtd = {
       enable = true;
-      allowedBridges = [
-        "virbr0"
-        "virbr1"
-        "br0"
-      ];
+      # allowedBridges = [
+      #   "virbr0"
+      #   "virbr1"
+      #   "br0"
+      # ];
       qemu = {
         vhostUserPackages = with pkgs; [ virtiofsd ];
         # Enable TPM emulation
@@ -30,55 +35,57 @@
       #   "bridge" = ./qemu-hook.sh;
       # };
     };
-
-    # Enable USB redirection
-    spiceUSBRedirection.enable = true;
-
-    # libvirt = {
-    #   enable = true;
-    #   connections = {
-    #     "qemu:///system" = {
-    #       networks = [
-    #         {
-    #           definition = nixvirt.lib.network.writeXML {
-    #             name = "nattttt";
-    #             uuid = "67a06f76-9e6b-444e-9fb5-9b2591bedb94";
-    #             forward = {
-    #               mode = "nat";
-    #             };
-    #             bridge = {
-    #               name = "virbr0";
-    #               stp = "on";
-    #               delay = "0";
-    #             };
-    #             mac = {
-    #               address = "52:54:00:16:06:a1";
-    #             };
-    #             domain = {
-    #               name = "network";
-    #             };
-    #             ip = {
-    #               address = "192.168.13.1";
-    #               netmask = "255.255.255.0";
-    #               dhcp = {
-    #                 range = {
-    #                   start = "192.168.13.5";
-    #                   end = "192.168.13.254";
-    #                 };
-    #               };
-    #             };
-    #           };
-    #           active = false;
-    #           restart = true;
-    #         }
-    #
-    #       ];
-    #
-    #     };
-    #   };
-    #
-    # };
+    # Spice protocol improves VM display and input responsiveness
+    services.spice-vdagentd.enable = true;
   };
+
+  # Enable USB redirection
+  spiceUSBRedirection.enable = true;
+
+  # libvirt = {
+  #   enable = true;
+  #   connections = {
+  #     "qemu:///system" = {
+  #       networks = [
+  #         {
+  #           definition = nixvirt.lib.network.writeXML {
+  #             name = "nattttt";
+  #             uuid = "67a06f76-9e6b-444e-9fb5-9b2591bedb94";
+  #             forward = {
+  #               mode = "nat";
+  #             };
+  #             bridge = {
+  #               name = "virbr0";
+  #               stp = "on";
+  #               delay = "0";
+  #             };
+  #             mac = {
+  #               address = "52:54:00:16:06:a1";
+  #             };
+  #             domain = {
+  #               name = "network";
+  #             };
+  #             ip = {
+  #               address = "192.168.13.1";
+  #               netmask = "255.255.255.0";
+  #               dhcp = {
+  #                 range = {
+  #                   start = "192.168.13.5";
+  #                   end = "192.168.13.254";
+  #                 };
+  #               };
+  #             };
+  #           };
+  #           active = false;
+  #           restart = true;
+  #         }
+  #
+  #       ];
+  #
+  #     };
+  #   };
+  #
+  # };
   # boot.kernel.sysctl = {
   #   "net.ipv4.conf.wlp0s20f3.proxy_arp" = 1;
   #   "net.ipv4.conf.virbr1.proxy_arp" = 1;

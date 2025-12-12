@@ -14,23 +14,23 @@ in
     isNormalUser = true;
     shell = pkgs.bash;
     hashedPassword = "$6$bF6bcFWzGjYi2xuV$YQtyWi6VAAQlnQgzA7g0YcuWWJBw3Kgyat.6Qhu6PAh1hbF.yO1JWlZloQa3t/K4XUqpZPlnItMEh0pwHP28N1";
-    extraGroups =
-      [
-        "audio"
-        "storage"
-        "sound"
-        "networkmanager"
-        "users"
-        "video"
-        "wheel"
-      ]
-      ++ ifExists [
-        "libvirtd"
-        "docker"
-        "plugdev"
-        "render"
-        "lxd"
-      ];
+    extraGroups = [
+      "audio"
+      "networkmanager"
+      "sound"
+      "storage"
+      "users"
+      "video"
+      "wheel"
+    ]
+    ++ ifExists [
+      "docker"
+      "kvm"
+      "libvirtd"
+      "lxd"
+      "plugdev"
+      "render"
+    ];
 
     openssh.authorizedKeys.keys = [
       ''

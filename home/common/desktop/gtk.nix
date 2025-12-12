@@ -62,7 +62,7 @@ in
 
     };
 
-    inherit (themeConfig) cursorTheme theme;
+    #inherit (themeConfig) cursorTheme theme;
     # inherit (themeConfig) cursorTheme theme iconTheme;
   };
 }
